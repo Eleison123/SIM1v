@@ -1,6 +1,3 @@
-
-
-
 <?php
 include"../seguridad.php";
 require_once("../../conexiones/conexion.php");

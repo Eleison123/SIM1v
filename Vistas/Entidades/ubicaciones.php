@@ -42,7 +42,7 @@ document.oncontextmenu = function(){return false}
     <div id="men">
 <nav id="menu">
     <ul>
-        <li><a href="pagprin.php" >INICIO</a></li>
+        <li><a href="../pagprin.php" >INICIO</a></li>
         <li><a href="Entidades/publicacion.php">PUBLICACIÓN</a></li>
         <li><a href="Entidades/horario.php">HORARIO</a></li>
         <li><a href="Entidades/cuenta.php">CUENTA</a></li>
@@ -132,7 +132,7 @@ document.oncontextmenu = function(){return false}
                                                     </form>
                                                   </td>";
                                             echo "<td>
-                                                    <form  method='post' action='../../Controller/eliminarubicacion.php'>
+                                                    <form  method='post' action='../../Controller/eliminarubicaciones.php'>
                                                         <input type='hidden' name='idubicacion' value=".$row1['idubicacion'].">
                                                         <input class='conf' type='submit' name='Eliminar' value='Eliminar' alingn='center'>
                                                         <img src='../../imagenes/borrar.png' class='icon'>
