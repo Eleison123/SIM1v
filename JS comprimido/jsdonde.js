@@ -1,0 +1,1 @@
+$(function(){$(window).scroll(function(){var e=$(window).scrollTop();if(e!=0)$("#nav").stop().animate({opacity:"1"},400);else $("#nav").stop().animate({opacity:"1"},400)});$("#nav").hover(function(e){var t=$(window).scrollTop();if(t!=0){$("#nav").stop().animate({opacity:"1"},400)}},function(e){var t=$(window).scrollTop();if(t!=0){$("#nav").stop().animate({opacity:"1"},400)}})})

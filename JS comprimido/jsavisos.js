@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#HES").click(function(){var e=$("#HES").attr("value");$("#carrera").load("modificar/genera-carrera.php?id="+e)})});$(document).ready(function(){$("#carreras").click(function(){var e=$(this).find(":selected").val();$("#he").load("modificar/genera-he.php?id="+e);$("#carrera").empty()})})

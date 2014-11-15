@@ -1,0 +1,32 @@
+body{
+	background:#39414A;
+}
+#menu{
+	width: 100%;
+	background-color: #00b034;
+	height: 90px;
+	margin: 0px;
+	margin-bottom: 5px;
+
+	-webkit-box-shadow: inset 0px 0px 151px -31px rgba(0,0,0,0.75);
+			-moz-box-shadow: inset 0px 0px 151px -31px rgba(0,0,0,0.75);
+			box-shadow: inset 0px 0px 151px -31px rgba(0,0,0,0.75);
+
+	
+}
+.icon{
+	float: right;
+	opacity: .6;
+	width: 40px;
+	height: 40px;
+	padding-top: 7px;
+	margin: 20px;
+}
+#dond3{
+	opacity: .7;
+	float: left;
+	font-style: bold;
+	font-size: 40px;
+	color: #FFF;
+	padding: 15px;
+}

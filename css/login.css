@@ -1,0 +1,60 @@
+
+/* CSS Document */
+body{
+	background-image: url("../imagenes/textura-back.jpg");
+	padding-left: 35%;
+	padding-top: 20%;
+}
+#recuadro{
+	width:250px;
+	height:150px;
+	padding:10px;
+	background: #ed9600;
+	border-radius:5px;
+	float: left;
+}
+#contenedor1{
+	width: 250px;
+	height: auto;
+	margin-left: 250px;
+	margin-top:6px;
+	}
+#efe{
+	margin: 0px;
+	margin-top: 5px;
+}
+#botones{
+	position: relative;
+	width: 270px;
+	height: auto;
+	margin: 0px;
+	margin-top: 40px;
+	border-radius: 4px;
+	padding: 5px;
+}
+label{
+	color:#FFF;
+	font-weight:bold;
+  font-size: 15px;
+  display: block;
+
+}
+input{
+border-radius: 3px;
+}
+#usuario{
+	width: 200px;
+}
+#contrasena{
+	width: 200px;
+}
+.boton{
+	width:95px;
+	height:50px;
+	border:none;
+	color:#39414A;
+	padding:4px;
+	margin-left: 25px;
+	cursor:pointer;
+	font-weight: bold;
+}

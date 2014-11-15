@@ -1,0 +1,61 @@
+body{
+	background:#39414A;
+}
+
+#Log{
+	width: auto;
+	height: 350px;
+	background: #0066CC;
+	border-radius: 15px;
+	padding: 10px;
+	 position: fixed;
+	margin-left:250px;
+
+	
+}
+#tit{
+	opacity: .6;
+	color: #FFF;
+}
+#Log a{
+	opacity: .5;
+	color: #FFF;
+	
+}
+#fac{
+	width: 250px;
+	height: 50px;
+	border-radius: 5px;
+}
+#botones{
+	position: relative;
+	padding-left: 30px;
+	width: 60px;
+}
+#logo{
+ width: 250px;
+ height: 350px;
+ border-radius: 10px;
+ margin-left: 0px;
+
+ margin-left: 500px;
+}
+#contenedor{
+width: 250px;
+	height: 300px;
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-top: 15%;
+
+}
+input{
+	border-radius: 5px;
+	border: none;
+	width: 180px;
+	height: 50px;
+	position: relative;
+	font-weight: bold;
+	color: #0066CC;
+	background: #FFF;
+	font-weight: bold;
+}

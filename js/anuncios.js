@@ -1,0 +1,375 @@
+
+/////////////////77
+$(document).ready(function(){
+	$('#beca2').hide();
+	$('#empleo2').hide();
+	$('#certificacion2').hide();
+	$('#seminario2').hide();
+	$('#junta2').hide();
+	$('#aviso2').hide();
+	$('#otro2').hide();
+	$('#cen').hide();
+	$('#beca2').hide();
+	$('#empleo2').hide();
+	$('#certificacion2').hide();
+	$('#seminario2').hide();
+	$('#junta2').hide();
+	$('#aviso2').hide();
+	$('#otro2').hide();
+
+});
+
+//////////////////////7
+$(document).ready(function(){
+$('#becas').click(function(){
+	$('#beca1').hide();
+	$('#empleo1').hide();
+	$('#certificacion1').hide();
+	$('#seminario1').hide();
+	$('#junta1').hide();
+	$('#aviso1').hide();
+	$('#otro1').hide();
+	$('#beca2').fadeIn();
+	$('#empleo2').hide();
+	$('#certificacion2').hide();
+	$('#seminario2').hide();
+	$('#junta2').hide();
+	$('#aviso2').hide();
+	$('#otro2').hide();
+	
+});
+});
+///////////////////
+$(document).ready(function(){
+$('#becas3').click(function(){
+	$('#beca1').hide();
+	$('#empleo1').hide();
+	$('#certificacion1').hide();
+	$('#seminario1').hide();
+	$('#junta1').hide();
+	$('#aviso1').hide();
+	$('#otro1').hide();
+	$('#empleo2').hide();
+	$('#certificacion2').hide();
+	$('#seminario2').hide();
+	$('#junta2').hide();
+	$('#aviso2').hide();
+	$('#otro2').hide();
+	$('#botoncitos').hide();
+	$('#cen').show('slow');
+	$('#beca2').fadeIn();
+});
+});
+///////////////
+$(document).ready(function(){
+    $('.cuadrobeca').click(function(){
+        var id= $(this).attr("value");
+        $('#beca1').fadeIn();
+        $('#beca1').load('modificar/genera-aviso-otro.php?id='+id);
+        $('#beca2').hide();
+    });
+});
+
+//////////////////////7
+$(document).ready(function(){
+	$('#empleo').click(function(){
+	$('#beca1').hide();
+	$('#empleo1').hide();
+	$('#certificacion1').hide();
+	$('#seminario1').hide();
+	$('#junta1').hide();
+	$('#aviso1').hide();
+	$('#otro1').hide();
+	$('#beca2').hide();
+	$('#empleo2').fadeIn();
+	$('#certificacion2').hide();
+	$('#seminario2').hide();
+	$('#junta2').hide();
+	$('#aviso2').hide();
+	$('#otro2').hide();
+	
+});});
+///////////////
+$(document).ready(function(){
+	$('#empleo3').click(function(){
+	$('#beca1').hide();
+	$('#empleo1').hide();
+	$('#certificacion1').hide();
+	$('#seminario1').hide();
+	$('#junta1').hide();
+	$('#aviso1').hide();
+	$('#otro1').hide();
+	$('#beca2').hide();
+	$('#empleo2').fadeIn();
+	$('#certificacion2').hide();
+	$('#seminario2').hide();
+	$('#junta2').hide();
+	$('#aviso2').hide();
+	$('#otro2').hide();
+	$('#cen').show('slow');
+	$('#botoncitos').hide();
+	
+});});
+////////////////77777777
+$(document).ready(function(){
+    $('.cuadroempleo').click(function(){
+        var id= $(this).attr("value");
+        $('#empleo1').fadeIn();
+        $('#empleo1').load('modificar/genera-aviso-otro.php?id='+id);
+        $('#empleo2').hide();
+    });
+});
+
+//////////////////////7
+$(document).ready(function(){
+	$('#certificacion').click(function(){
+	$('#beca1').hide();
+	$('#empleo1').hide();
+	$('#certificacion1').hide();
+	$('#seminario1').hide();
+	$('#junta1').hide();
+	$('#aviso1').hide();
+	$('#otro1').hide();
+	$('#beca2').hide();
+	$('#empleo2').hide();
+	$('#certificacion2').fadeIn();
+	$('#seminario2').hide();
+	$('#junta2').hide();
+	$('#aviso2').hide();
+	$('#otro2').hide();
+	
+});});
+///////////////
+$(document).ready(function(){
+	$('#certificacion3').click(function(){
+	$('#beca1').hide();
+	$('#empleo1').hide();
+	$('#certificacion1').hide();
+	$('#seminario1').hide();
+	$('#junta1').hide();
+	$('#aviso1').hide();
+	$('#otro1').hide();
+	$('#beca2').hide();
+	$('#empleo2').hide();
+	$('#certificacion2').fadeIn();
+	$('#seminario2').hide();
+	$('#junta2').hide();
+	$('#aviso2').hide();
+	$('#otro2').hide();
+	$('#botoncitos').hide();
+	$('#cen').show('slow');
+	
+});});
+//////////////////77
+$(document).ready(function(){
+    $('.cuadrocertificacion').click(function(){
+        var id= $(this).attr("value");
+        $('#certificacion1').fadeIn();
+        $('#certificacion1').load('modificar/genera-aviso-otro.php?id='+id);
+        $('#certificacion2').hide();
+    });
+});
+
+
+
+//////////////////////7
+$(document).ready(function(){
+	$('#seminario').click(function(){
+	$('#seminario2').fadeIn();
+	$('#beca1').hide();
+	$('#empleo1').hide();
+	$('#certificacion1').hide();
+	$('#seminario1').hide();
+	$('#junta1').hide();
+	$('#aviso1').hide();
+	$('#otro1').hide();
+	$('#beca2').hide();
+	$('#empleo2').hide();
+	$('#certificacion2').hide();
+	
+	$('#junta2').hide();
+	$('#aviso2').hide();
+	$('#otro2').hide();
+	
+});});
+//////////////////////7
+$(document).ready(function(){
+	$('#seminario3').click(function(){
+	$('#seminario2').fadeIn();
+	$('#beca1').hide();
+	$('#empleo1').hide();
+	$('#certificacion1').hide();
+	$('#seminario1').hide();
+	$('#junta1').hide();
+	$('#aviso1').hide();
+	$('#otro1').hide();
+	$('#beca2').hide();
+	$('#empleo2').hide();
+	$('#certificacion2').hide();
+	
+	$('#junta2').hide();
+	$('#aviso2').hide();
+	$('#otro2').hide();
+	$('#botoncitos').hide();
+	$('#cen').show('slow');
+
+	
+});});
+///////////////
+$(document).ready(function(){
+    $('.cuadroseminario').click(function(){
+        var id= $(this).attr("value");
+        $('#seminario1').fadeIn();
+        $('#seminario1').load('modificar/genera-aviso-otro.php?id='+id);
+        $('#seminario2').hide();
+    });
+});
+
+//////////////////////7
+$(document).ready(function(){
+	$('#junta').click(function(){
+	$('#beca1').hide();
+	$('#empleo1').hide();
+	$('#certificacion1').hide();
+	$('#seminario1').hide();
+	$('#junta1').hide();
+	$('#aviso1').hide();
+	$('#otro1').hide();
+	$('#beca2').hide();
+	$('#empleo2').hide();
+	$('#certificacion2').hide();
+	$('#seminario2').hide();
+	$('#junta2').fadeIn();
+	$('#aviso2').hide();
+	$('#otro2').hide();
+	
+});});
+///////////////
+$(document).ready(function(){
+	$('#junta3').click(function(){
+	$('#beca1').hide();
+	$('#empleo1').hide();
+	$('#certificacion1').hide();
+	$('#seminario1').hide();
+	$('#junta1').hide();
+	$('#aviso1').hide();
+	$('#otro1').hide();
+	$('#beca2').hide();
+	$('#empleo2').hide();
+	$('#certificacion2').hide();
+	$('#seminario2').hide();
+	$('#junta2').fadeIn();
+	$('#aviso2').hide();
+	$('#otro2').hide();
+	$('#botoncitos').hide();
+	$('#cen').show('slow');
+});});
+////////////////////7
+$(document).ready(function(){
+    $('.cuadrojunta').click(function(){
+        var id= $(this).attr("value");
+        $('#junta1').fadeIn();
+        $('#junta1').load('modificar/genera-aviso-otro.php?id='+id);
+        $('#junta2').hide();
+    });
+});
+
+//////////////////////7
+$(document).ready(function(){
+	$('#aviso').click(function(){
+	$('#beca1').hide();
+	$('#empleo1').hide();
+	$('#certificacion1').hide();
+	$('#seminario1').hide();
+	$('#junta1').hide();
+	$('#aviso1').hide();
+	$('#otro1').hide();
+	$('#beca2').hide();
+	$('#empleo2').hide();
+	$('#certificacion2').hide();
+	$('#seminario2').hide();
+	$('#junta2').hide();
+	$('#aviso2').fadeIn();
+	$('#otro2').hide();
+	
+});});
+///////////////
+$(document).ready(function(){
+	$('#aviso3').click(function(){
+	$('#beca1').hide();
+	$('#empleo1').hide();
+	$('#certificacion1').hide();
+	$('#seminario1').hide();
+	$('#junta1').hide();
+	$('#aviso1').hide();
+	$('#otro1').hide();
+	$('#beca2').hide();
+	$('#empleo2').hide();
+	$('#certificacion2').hide();
+	$('#seminario2').hide();
+	$('#junta2').hide();
+	$('#aviso2').fadeIn();
+	$('#otro2').hide();
+	$('#botoncitos').hide();
+	$('#cen').show('slow');
+	
+});});
+///////////////
+$(document).ready(function(){
+    $('.cuadroaviso').click(function(){
+        var id= $(this).attr("value");
+        $('#aviso1').show();
+        $('#aviso1').load('modificar/genera-aviso-otro.php?id='+id);
+        $('#aviso2').hide();
+    });
+});
+
+//////////////////////7
+$(document).ready(function(){
+	$('#otro').click(function(){
+	$('#beca1').hide();
+	$('#empleo1').hide();
+	$('#certificacion1').hide();
+	$('#seminario1').hide();
+	$('#junta1').hide();
+	$('#aviso1').hide();
+	$('#otro1').hide();
+	$('#beca2').hide();
+	$('#empleo2').hide();
+	$('#certificacion2').hide();
+	$('#seminario2').hide();
+	$('#junta2').hide();
+	$('#aviso2').hide();
+	$('#otro2').fadeIn();
+	
+});});
+///////////////
+$(document).ready(function(){
+	$('#otro3').click(function(){
+	$('#beca1').hide();
+	$('#empleo1').hide();
+	$('#certificacion1').hide();
+	$('#seminario1').hide();
+	$('#junta1').hide();
+	$('#aviso1').hide();
+	$('#otro1').hide();
+	$('#beca2').hide();
+	$('#empleo2').hide();
+	$('#certificacion2').hide();
+	$('#seminario2').hide();
+	$('#junta2').hide();
+	$('#aviso2').hide();
+	$('#otro2').fadeIn();
+	$('#botoncitos').hide();
+	$('#cen').show('slow');
+	
+});});
+/////////////////7
+$(document).ready(function(){
+    $('.cuadrootro').click(function(){
+        var id= $(this).attr("value");
+        $('#otro1').show();
+        $('#otro1').load('modificar/genera-aviso-otro.php?id='+id);
+        $('#otro2').hide();
+    });
+});

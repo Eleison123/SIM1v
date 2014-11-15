@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+<meata>
+<javascript tuepe="text">
+<link stylesheet src="sidisd.css">
+<title>prueba</title>
+</head>
+
+<body>
+<h1>Titulos</h1
+<hr>
+<table>
+	<tr>
+		<td>ddddddddddddddddddd</td>
+		<td>yyyyyyyyyyyyyyyyyyy</td>
+	</tr>
+</table>
+<div>--arriba--
+<div>
+abajo--
+</div>
+</div><br>
+
+<p>faffasaskajsgj</p>
+<a href="www.dirsoft.com">DRISOFT</a><br>
+
+<label>Presioname</label><br>
+
+<input type="submit" value="Guardar" ><br>
+
+<strong>No Presiona aquí</strong>
+
+<input type="checkbox">	
+<input type="checkbox"><br>
+
+<label>Acaaa!</label><br>
+<input type="radio">
+<input type="radio"><br>
+
+<section>
+	<option>Hola</option>
+	<option>Adios</option>
+	<option>Hola</option>
+</section>
+
+</body>
+
+<footer>
+<label>Code by Leo </label>
+</footer>
+
+</html>

@@ -1,0 +1,70 @@
+import java.util.*;
+public class main{
+public static void main(String[] args) 
+{ 
+Scanner pe=new Scanner(Sysrem.in);
+int pesoa,peso1,peso2,peso3,peso4,peso5,peso6,peso7,peso8,peso9,peso10, media1,
+media2,media3,media4,media5;
+string persona1,persona2,persona3,persona4,persona5;
+For(i=0,i<=5,i++){
+System.out.println("Dame el peso anterior");
+pesoa=pe.nextInt();
+System.out.println("Dame peso de bascula 1");
+pesoa=pe;
+System.out.println("Dame peso de bascula 2");
+pesoa=penextInt();
+System.out.println("Dame peso de bascula 3");
+pesoa=penextInt();
+System.out.println("Dame peso de bascula 4");
+pesoa=penextInt();
+System.out.println("Dame peso de bascula 5");
+pesoa=pe.nextInt();
+System.out.println("Dame peso de bascula 6");
+pesoa=pe.nextInt();
+System.out.println("Dame peso de bascula 7");
+pesoa=pe.nextInt();
+System.out.println("Dame peso de bascula 8");
+pesoa=pe.nextInt();
+System.out.println("Dame peso de bascula 9");
+pesoa=pe.nextInt();
+System.out.println("Dame peso de bascula 10");
+pesoa=pe.nextInt();
+if(i==1){
+media1=peso1+peso2+peso3+peso4+peso5+peso6+peso7+peso8+peso9+peso10;
+media1=media1/10;
+if(media1<pesoa)
+persona1="Bajo";
+}else{persona1"Subio";}
+if(i==2){
+media2=peso1+peso2+peso3+peso4+peso5+peso6+peso7+peso8+peso9+peso10;
+media2=media2/10;
+if(media2<pesoa)
+persona2="Bajo";
+}else{persona2="Subio";}
+if(i==3){
+media3=peso1+peso2+peso3+peso4+peso5+peso6+peso7+peso8+peso9+peso10;
+media3=media3/10;
+if(media3<pesoa)
+persona3="Bajo";
+}else{persona3="Subio";}
+if(i==4){
+media4=peso1+peso2+peso3+peso4+peso5+peso6+peso7+peso8+peso9+peso10;
+media4=media4/10;
+if(media4<pesoa)
+persona4="Bajo";
+}else{persona="Subio";}
+if(i==5){
+media5=peso1+peso2+peso3+peso4+peso5+peso6+peso7+peso8+peso9+peso10;
+media5=media5/10;
+if(media5<pesoa)
+persona5="Bajo";
+}else{persona5="Subio";}
+
+}
+System.out.println("Persona 1:", persona1);
+System.out.println("Persona 2:", persona2);
+System.out.println("Persona 3:", persona3);
+System.out.println("Persona 4:", persona4);
+System.out.println("Persona 5:", persona5);
+}
+}
