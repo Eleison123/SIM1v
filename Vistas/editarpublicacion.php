@@ -390,7 +390,7 @@ $(document).ready(function(){
  <input type="text" id="contacto1p"  name="contacto1p" <?php echo "value='"; echo $contacto; echo "'"; ?>><br><br>
 
  <label class="text1">Imagen de la Publicación </label>
- <input type="file"  id="imagess" name="imagess"><br><br>
+ <input type="file"  id="imagess" name="imagess" value=<?php echo "'"; echo $img; echo "'"; ?>><br><br>
  <div id="image"><img id="image" src=<?php echo"'"; echo $img; echo "'";  ?>></div><br>
 
 <label  class="text1">Información Breve de la Publicación:</label><br>

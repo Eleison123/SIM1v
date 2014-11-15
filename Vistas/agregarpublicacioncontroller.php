@@ -74,7 +74,7 @@ $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR
     
             $archivo = $_FILES['imagen']['tmp_name'];
             $destino1 =$_FILES['imagen']['name'];
-            $destino= "../imgPublicaciones/".$destino1."";
+            $destino= "../../imgPublicaciones/".$destino1."";
             $_FILES['imagen']['size'];
              $data= "Nombre:".$nombre.".Fecha Realización:.".$fecharea.".Hora Realización:.".$horarea.".Lugar:.".$lugar.".Contacto:.".$contacto.".URL:.".$url."";
 
