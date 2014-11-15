@@ -91,7 +91,8 @@ document.oncontextmenu = function(){return false}
                          echo"<tr>";
                             echo"
                             <th>Nombre</th>
-                            <th>Descripción</th>
+                        <th></th>
+                            
                             <th></th>
                             <th></th>
                             </tr>";
@@ -122,8 +123,9 @@ document.oncontextmenu = function(){return false}
                         while($row1=mysql_fetch_array($rs)){
                                    echo "<tr>";
                                         echo "<td><a class='text10'>".$row1['nombre']."</a></td>";
+                                        echo "<td></td>";
                                             echo "<td>
-                                                    <form  method='post' action='../Editar/editarubicacion.php'>
+                                                    <form  method='post' action='../Editar/editarubicaciones.php'>
                                                         <input type='hidden' name='idubi' value=".$row1['idubicacion'].">
                                                         <input type='submit' value='Editar'  name='Editar' class='conf'>
                                                         <img src='../../imagenes/editar.png' class='icon'>

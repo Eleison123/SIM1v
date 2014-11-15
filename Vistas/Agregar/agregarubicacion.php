@@ -1,4 +1,4 @@
-<?php require_once ("../../Controller/agregarcarrera.php"); ?>
+<?php require_once ("../../Controller/agregarubicaciones.php"); ?>
 <!DOCTYPE html>
 <html leng="es">
 <head>
@@ -13,41 +13,46 @@ document.oncontextmenu = function(){return false}
 </script>
 <title>Agregar Ubicación</title>
 </head>
-<div id="cabeza">
+
+<div id="portada">
+    <img id="imgportada" src="../../imagenes/header.jpg">
+</div>
+<center><div id="cabeza">
     
     <div id="men">
 <nav id="menu">
     <ul>
-        <li><a href="../pagprin.php">Inicio</a></li>
-        <li><a href="../Entidades/publicacion.php">Publicación</a></li>
-        <li><a href="../Entidades/horario.php">Horarios</a></li>
-        <li><a href="../Entidades/cuenta.php">Cuenta</a></li>
-        <li><a href="../Entidades/facultad.php">Facultad</a></li>
-        <li><a href="../Entidades/eeducativa.php">E.Educativa</a></li>
-        <li><a href="../Entidades/registro.php">Registro</a></li>
-        <li><a href="../Entidades/carrera.php">Carrera</a></li>  
-        <li><a href="../Entidades/catedratico.php">Catedrático</a></li>
-        <li><a href="../Entidades/catedratico.php">Ubicaciones</a></li>   
-        <li><a href="../Entidades/salir.php">Salir</a></li> 
+        <li><a href="../pagprin.php" >INICIO</a></li>
+        <li><a href="../Entidades/publicacion.php">PUBLICACIÓN</a></li>
+        <li><a href="../Entidades/horario.php">HORARIO</a></li>
+        <li><a href="../Entidades/cuenta.php">CUENTA</a></li>
+        <li><a href="../Entidades/facultad.php">FACULTAD</a></li>
+        <li><a href="../Entidades/eeducativa.php">E.EDUCATIVA</a></li>
+        <li><a href="../Entidades/registro.php">REGISTRO</a></li>
+        <li><a href="../Entidades/carrera.php">CARRERA</a></li>  
+        <li><a href="../Entidades/catedratico.php">CATEDRÁTICO</a></li>   
+        <li><a href="../Entidades/ubicaciones.php" id="qwerty">UBICACIONES</a></li>   
+        <li><a href="../Entidades/salir.php">SALIR</a></li> 
     </ul>
 </nav>
 </div>
 
-</div>
+</div></center>
 <body>
     <div id="cuerpo">
-        <figure>
-            <img src="../../imagenes/agregarcarrera.png">
+        <figure><br><br>
+            <img src="../../imagenes/ubicaciones.png"><br><br>
         </figure>
        
 
         
         <div id="bienvenida">
         <form method="post">
+            <fieldset>
             <label><strong><a class="text1">Nombre:</a></strong></label><br>
             <input type="text" name="nombre" required><br>
             <label><strong><a class="text1">Descripción:</a></strong></label><br>
-            <input type="textarea" name="desc">
+            <textarea name="descripcion"></textarea>
         
             <?php
             require_once("../../conexiones/conexion.php");
@@ -68,12 +73,13 @@ document.oncontextmenu = function(){return false}
                 echo "<br>";
             echo "<br><br>";
             ?>
+            </fieldset>
         <input  type="submit"  value="Guardar" id="btnguardar" name="guardar" > <input type="reset" id="btnreset">
         </form>
     </div>
     </div>
 </body>
-    <footer id="footer">
-        Code by Omar Santiaguillo Arcos 1v Coatlicue
-    </footer>
+    <div id="final">
+    <img src="../../imagenes/footer.jpg" id="footer">
+</div>
 </html>
