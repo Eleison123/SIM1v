@@ -4,7 +4,7 @@ include"../seguridad.php";
     //si presiona guardar //
     if (@$_POST['guardar']){
     // se mete la conexión //
-    require_once("../../Conexiones/conexion.php");
+    require_once("../Conexiones/conexion.php");
         if(isset($_POST['nombre'])and
             ($_POST['sede']!="")){ 
             //limpiamos caracteres especiales

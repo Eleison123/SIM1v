@@ -4,7 +4,7 @@ include "../../Vistas/seguridad.php";
     // Si presiona guardar
     if (@$_POST['guardar']) {
         //agregamos al cnexión
-    require_once("../conexiones/conexion.php");
+    require_once("../../conexiones/conexion.php");
         if(isset($_POST['periodo'])and
         ($_POST['materia'])and
         ($_POST['catedratico'])and
