@@ -41,17 +41,17 @@ $(document).ready(function(event){
     <div id="men">
 <nav id="menu">
     <ul>
-        <li><a href="../pagprin.php">Inicio</a></li>
-        <li><a href="publicacion.php">Publicación</a></li>
-        <li><a href="horario.php" id="qwerty">Horarios</a></li>
-        <li><a href="cuenta.php">Cuenta</a></li>
-        <li><a href="facultad.php">Facultad</a></li>
-        <li><a href="eeducativa.php">E.Educativa</a></li>
-        <li><a href="registro.php">Registro</a></li>
-        <li><a href="carrera.php">Carrera</a></li>  
-        <li><a href="catedratico.php">Catedrático</a></li>
-        <li><a href="ubicaciones.php">Ubicaciones</a></li>   
-        <li><a href="salir.php">Salir</a></li>  
+        <li><a href="pagprin.php" >INICIO</a></li>
+        <li><a href="Entidades/publicacion.php">PUBLICACIÓN</a></li>
+        <li><a href="Entidades/horario.php" id="qwerty">HORARIO</a></li>
+        <li><a href="Entidades/cuenta.php">CUENTA</a></li>
+        <li><a href="Entidades/facultad.php">FACULTAD</a></li>
+        <li><a href="Entidades/eeducativa.php">E.EDUCATIVA</a></li>
+        <li><a href="Entidades/registro.php">REGISTRO</a></li>
+        <li><a href="Entidades/carrera.php">CARRERA</a></li>  
+        <li><a href="Entidades/catedratico.php">CATEDRÁTICO</a></li>   
+        <li><a href="Entidades/ubicaciones.php">UBICACIONES</a></li>   
+        <li><a href="Entidades/salir.php">SALIR</a></li> 
     </ul>
 </nav>
 </div>
@@ -60,8 +60,8 @@ $(document).ready(function(event){
 
 <body>
 <div id="cuerpo">
-<figure id="figura">
-<img src="../../imagenes/horario.png">
+<figure id="figura"><br><br>
+<img src="../../imagenes/horario.png"><br><br>
 </figure><br><br><br>
 
  

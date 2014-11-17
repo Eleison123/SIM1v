@@ -60,7 +60,7 @@ document.oncontextmenu = function(){return false}
  <legend class="text2">Datos del Horario</legend>
  <div id="formularioh">
  <form method="post">
-<label class="text1">Día:</label><br>
+<label class="text1">TIPO:</label><br>
             <select id="tipo" name="tipo">
             <option selected value="">Seleccionar tipo</option>
             <option value="Lunes">Escolar</option>
@@ -68,9 +68,9 @@ document.oncontextmenu = function(){return false}
             <option value="Miercoles">Extraordinario</option>
             <option value="Jueves">Título</option>
             <option value="Viernes">Tutoría</option>
-            </select></br></br>
+            </select></br>
  
- <label for="" class="text1" id="catel1h">Catedratico:</label><br>
+ <label for="" class="text1" id="catel1h">CATEDRÁTICO:</label><br>
 <?php 
  
  require_once("../../conexiones/conexion.php");
@@ -99,13 +99,13 @@ while($row=mysql_fetch_array($resul)){
 
 ?>
 </select><br>
- <label for="nrc1h" class="text1" id="nrcl1h">Experiencia Educativa:</label><br>
+ <label for="nrc1h" class="text1" id="nrcl1h">EXPERIENCIA EDUCATIVA:</label><br>
 
 <select name="materia" id="materia" placeholder="Materia">
     <option selected value="">Seleccionar Experiencia Educativa</option>
 </select><br>
 
-<label class="text1">Carrera:</label><br>
+<label class="text1">CARRERA:</label><br>
 <?php 
  @session_start();
  require_once("../../conexiones/conexion.php");
@@ -130,7 +130,7 @@ echo "</select>";
 ?>
 <br>
 
-        <label for="dia1h" class="text1">Día:</label><br>
+        <label for="dia1h" class="text1">DÍA:</label><br>
             <select id="dia1h" name="dia">
             <option selected value="">Seleccionar día</option>
             <option value="Lunes">Lunes</option>
@@ -138,27 +138,28 @@ echo "</select>";
             <option value="Miercoles">Miercoles</option>
             <option value="Jueves">Jueves</option>
             <option value="Viernes">Viernes</option>
-            </select></br></br>
+            </select></br>
              
- <label for="horarea1h" class="text1" id="horareal1h">Hora Inicio:</label>
- <input type="time" id="fecharea1h" name="horaini" class="inhora"required><br><br>
+ <label for="horarea1h" class="text1" id="horareal1h">HORA INICIO:</label><br>
+ <input type="time" id="fecharea1h" name="horaini" class="inhora"required><br>
  
- <label for="horareaf1h" class="text1" id="horareafl1h">Hora Término:</label>
- <input type="time" id="horareaf1h" name="horafin" class="inhora"></br></br>
+ <label for="horareaf1h" class="text1" id="horareafl1h">HORA TÉRMINO:</label><br>
+ <input type="time" id="horareaf1h" name="horafin" class="inhora"></br>
     
-        <label for="lugar1p" class="text1">Lugar de Realizacion:</label><br>
+        <label for="lugar1p" class="text1">LUGAR DE REALIZACIÓN:</label><br>
         <input type="text" id="lugar1p" placeholder="Lugar de realizacion de la publicacion" name="lugar"required><br><br>
-</fieldset>
+</fieldset><br><br>
 <fieldset><legend><a class="text2">Vigencia</a></legend>
-    <a class="text1">La vigencia ayuda a que el sistema no muestre horarios pasados.</a><br><br>
-    <label><a class="text1">Fecha Publicación:</a></label>
-    <input type="date" class="infecha" name="fechapub"><br><br>
-    <label><a class="text1">Hora Publicación:</a></label>
-    <input type="time" class="inhora" name="horapub"><br><br>
-<label><a class="text1">Fecha término de Vigencia</a></label>
+    <a class="text1">*La vigencia ayuda a que el sistema no muestre horarios pasados.</a><br><br>
+    <label><a class="text1">FECHA DE PUBLICACIÓN:</a></label><br>
+    <input type="date" class="infecha" name="fechapub"><br>
+    <label><a class="text1">HORA PUBLICACIÓN:</a></label><br>
+    <input type="time" class="inhora" name="horapub"><br>
+<label><a class="text1">FECHA VIGENCIA:</a></label><br>
 <input type="date" class="infecha" name="fechvig"required/>
 </fieldset>
-        <input type="submit" value="Guardar" id="btnguardar" name="guardar"><input type="reset" id="btnreset">
+        <input type="submit" value="GUARDAR" id="btnguardar" name="guardar">
+    <input type="reset" id="btnreset" value="RESET">
   </form>
 </div>
     </div>

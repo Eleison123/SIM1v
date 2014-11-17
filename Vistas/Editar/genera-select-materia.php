@@ -8,7 +8,7 @@ require_once("../../Conexiones/conexion.php");
         echo "<option value='";
         echo $fila['idExperienciaEducativa'];
         echo"'>";
-        echo $fila['nombre'];
+        echo $fila['Nombre'];
         echo "</option>";
     };
 ?>

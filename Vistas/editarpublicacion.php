@@ -113,7 +113,7 @@ fechavig ='".$fechavig."'
  WHERE idpublicacion='".$id1."'";
 $resse= mysql_query($sqlf) or die (mysql_error());
 echo "<script>alert('Mi publicacion ha sido modificada');
-            window.location = 'publicacion.php';</script>";
+            window.location = 'Entidades/publicacion.php';</script>";
 
 
 }else{
