@@ -147,7 +147,18 @@ echo "</select>";
  <input type="time" id="horareaf1h" name="horafin" class="inhora"></br>
     
         <label for="lugar1p" class="text1">LUGAR DE REALIZACIÓN:</label><br>
-        <input type="text" id="lugar1p" placeholder="Lugar de realizacion de la publicacion" name="lugar"required><br><br>
+        <select id="lugar1p" name="lugar" required>
+            <option selected>Selecciona un lugar</option>
+            <?php   
+                $sqlugar= "SELECT idubicacion,nombre FROM ubicacion;";
+                $result=mysql_query($sqlugar) or die (mysql_error());
+                while ($row2=mysql_fetch_array($result)) {
+                    echo "<option value='".$row2['idubicacion']."'>";
+                    echo $row2['nombre'];
+                    echo "</option>";
+                  }  
+            ?>
+        </select>
 </fieldset><br><br>
 <fieldset><legend><a class="text2">Vigencia</a></legend>
     <a class="text1">*La vigencia ayuda a que el sistema no muestre horarios pasados.</a><br><br>
@@ -156,7 +167,7 @@ echo "</select>";
     <label><a class="text1">HORA PUBLICACIÓN:</a></label><br>
     <input type="time" class="inhora" name="horapub"><br>
 <label><a class="text1">FECHA VIGENCIA:</a></label><br>
-<input type="date" class="infecha" name="fechvig"required/>
+<input type="date" class="infecha" name="fechavig" required/>
 </fieldset>
         <input type="submit" value="GUARDAR" id="btnguardar" name="guardar">
     <input type="reset" id="btnreset" value="RESET">

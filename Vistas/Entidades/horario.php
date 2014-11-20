@@ -128,7 +128,7 @@ $(document).ready(function(event){
 
                         while($row1=mysql_fetch_array($rs)){
                                    echo "<tr>";
-                                    $mysqlm="SELECT nombre,nrc,nrc98 FROM experienciaeducativa WHERE idexperienciaeducativa = '".$row1['idexperienciaeducativa']."'";
+                                    $mysqlm="SELECT nombre,nrc,nrc98 FROM experienciaeducativa WHERE idExperienciaEducativa = '".$row1['idExperienciaEducativa']."'";
                                     $mysqlc="SELECT nombre,apellidomaterno,apellidopaterno FROM catedratico WHERE idcatedratico='".$row1['idcatedratico']."'";
                                     $resul1=mysql_query($mysqlm) or die(mysql_error());
                                     $resul2=mysql_query($mysqlc) or die(mysql_error());
@@ -150,12 +150,12 @@ $(document).ready(function(event){
                         echo "<td>
 
  <form  method='post' action='../Editar/editarhorario.php'>
-    <input type='hidden' name='idhes' value=".$row1['idhorario'].">
+    <input type='hidden' name='idhes' value=".$row1['idHorario'].">
     <input type='submit' value='Editar'  name='Editar' class='conf'><img src='../../imagenes/editar.png' class='icon'>
      </form>";
                         echo "<td>
     <form  method='post' action='../../Controller/eliminarhorario.php'>
-    <input type='hidden' name='idhes' value=".$row1['idhorario'].">
+    <input type='hidden' name='idhes' value=".$row1['idHorario'].">
     <input class='conf' type='submit' name='Eliminar' value='Eliminar' alingn='center'>
     <img src='../../imagenes/borrar.png' class='icon'>
      </form>";
@@ -190,5 +190,8 @@ $(document).ready(function(event){
 ?>
 
 </body><br><br><br>
+<div id="final">
+    <img src="../../imagenes/footer.jpg" id="footer">
+</div>
 
 </html>
