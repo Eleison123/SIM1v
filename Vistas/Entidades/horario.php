@@ -41,7 +41,7 @@ $(document).ready(function(event){
     <div id="men">
 <nav id="menu">
     <ul>
-        <li><a href="pagprin.php" >INICIO</a></li>
+        <li><a href="../pagprin.php" >INICIO</a></li>
         <li><a href="Entidades/publicacion.php">PUBLICACIÓN</a></li>
         <li><a href="Entidades/horario.php" id="qwerty">HORARIO</a></li>
         <li><a href="Entidades/cuenta.php">CUENTA</a></li>
@@ -189,9 +189,10 @@ $(document).ready(function(event){
 
 ?>
 
-</body><br><br><br>
+</body><br><br><br></div></div></div>
+<footer>
 <div id="final">
     <img src="../../imagenes/footer.jpg" id="footer">
 </div>
-
+</footer>
 </html>

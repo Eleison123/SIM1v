@@ -13,7 +13,7 @@
 include"../seguridad.php";
 require_once("../../conexiones/conexion.php");
  if (@$_POST['guardar']) {
-if(isset($_POST['periodo'])and
+if(isset($_POST['fechvig'])and
 ($_POST['materia'])and
 ($_POST['catedratico'])and
 ($_POST['carrera'])and
@@ -22,8 +22,7 @@ if(isset($_POST['periodo'])and
 ($_POST['dia'])and
 ($_POST['lugar']!="")){ 
 
-     $periodo1 = mysql_real_escape_string($_POST['periodo']);
-     $periodo1 = filter_var($periodo1, FILTER_SANITIZE_SPECIAL_CHARS);
+   
      $materia1 = mysql_real_escape_string($_POST['materia']);
      $materia1 = filter_var($materia1, FILTER_SANITIZE_SPECIAL_CHARS);
      $catedratico1 = mysql_real_escape_string($_POST['catedratico']);
@@ -47,27 +46,20 @@ if(isset($_POST['periodo'])and
 
 
 
-
-     $sqlf="UPDATE fecha SET
-dia = '".$dia1."', 
-horain = '".$horaini1."', 
-horafin = '".$horafin1."'
- WHERE idfecha='".$fecha1."'";
-$resultadof = mysql_query($sqlf) or die(mysql_error());
-
-
-$sqlq="UPDATE horarioescolar SET
-periodo = '".$periodo1."',
-idmateria = '".$materia1."',
+$sqlq="UPDATE horario SET
+idExperienciaEducativa = '".$materia1."',
 idcatedratico = '".$catedratico1."',
 idcarrera = '".$carrera1."',
-lugar = '".$lugar1."',
+idubicacion = '".$lugar1."',
+dia = '".$dia1."', 
+horain = '".$horaini1."', 
+horafin = '".$horafin1."',
 fechavig ='".$fechavigen."'
-WHERE idhorarioescolar='".$id1."'";
+WHERE idHorario='".$id1."'";
 $resultadoq = mysql_query($sqlq) or die(mysql_error());
 mysql_close();
  echo "<script>alert('Mi horario ha sido editado');
-            window.location = '../horarioescolar.php';</script>";
+            window.location = '../Entidades/horario.php';</script>";
 
 
 }//termina si estan vacio
@@ -76,18 +68,22 @@ else{
 }
 }
 else{
-$hes=$_POST['idHorario'];
-$mysqlid="SELECT idHorario, periodo,tipo,  idExperienciaEducativa, idcatedratico, idfecha, idcarrera, idfacultad, lugar,fechavig FROM horario WHERE idExperienciaEducativa=".$hes."";
+$hes=$_POST['idhes'];
+$mysqlid="SELECT * FROM horario WHERE idHorario=".$hes."";
 $resulid=mysql_query($mysqlid) or die(mysql_error());
  $fil = mysql_fetch_array($resulid, MYSQL_BOTH);
 
-    $periodo= $fil['periodo'];
+    
      $materia = $fil['idExperienciaEducativa'];
-     $catedratico = $fil['idcatedratico'];
-     $carrera = $fil['idcarrera'];
-     $fecha = $fil['idfecha'];
-     $lugar = $fil['lugar'];
-     $carrera = $fil['idcarrera'];
+     $catedratico = $fil['idCatedratico'];
+     $carrera = $fil['idCarrera'];
+     $diapub = $fil['diapub'];
+     $horapub=$fil['horapub'];
+     $lugar = $fil['idubicacion'];
+     $horaini=$fil['horain'];
+     $horafin=$fil['horafin'];
+     $tipo= $fil['tipo'];
+     $dia=$fil['dia'];
      $vig= $fil['fechavig'];
 
  }
@@ -99,7 +95,7 @@ $resulid=mysql_query($mysqlid) or die(mysql_error());
 <!-- Metas -->
 <meta charset="utf-8">
 <!-- CSS -->
-<link rel="stylesheet" href="../css/css1a.css">
+<link rel="stylesheet" href="../../css/css1a.css">
 <!-- JS -->
 <script language="Javascript" type="text/javascript">
 //<![CDATA[
@@ -118,7 +114,7 @@ document.oncontextmenu = function(){return false}
 <div id="portada">
     <img id="imgportada" src="../../imagenes/header.jpg">
 </div>
-<div id="cabeza">
+<center><div id="cabeza">
     
     <div id="men">
 <nav id="menu">
@@ -138,29 +134,27 @@ document.oncontextmenu = function(){return false}
 </nav>
 </div>
 
-</div>
+</div></center>
 
 <body>
     <div id="cuerpo">
-<figure>
-<img src="../imagenes/editarhorario.png">
+<figure><br><br>
+<img src="../../imagenes/horario.png"><br><br>
 </figure>
 
 
 <form method="post" >
-    <fieldset>
-<label for="periodo1h" class="text1">Periodo:</label><br>
- <input type="text" id"periodo1h"  name="periodo" <?php echo "value='"; echo $periodo; echo"'";?> ><br>
+    <fieldset><legend><a class="text2">DATOS DEL HORARIO</a></legend>
  <input type="text"   hidden name="id" <?php echo "value='"; echo $hes; echo"'";?> >
  <input type="text"  hidden name="fecha" <?php echo "value='"; echo $fecha; echo"'";?> >
  
 <label for="" class="text1" id="catel1h">Catedratico:</label><br>
 <?php 
  
- @require_once("../conexiones/conexion.php");
+ @require_once("../../Conexiones/conexion.php");
  //Preguntamos quien es el administrador para obtener la "idfacultad"
     $nombreadmin = $_SESSION['nombreUsuario'];
-    $sql = "select idfacultad from administrador where nombre='".$nombreadmin."';";    
+    $sql = "SELECT idfacultad FROM cuenta WHERE usuario='".$nombreadmin."';";    
     $resultado = mysql_query($sql) or die(mysql_error());
     $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
     $fac = $fil[0];
@@ -195,7 +189,7 @@ while($row=mysql_fetch_array($resul)){
 ?>
 </select><br>
 <?php
-@require_once("../conexiones/conexion.php");
+@require_once("../../Conexiones/conexion.php");
  //Preguntamos quien es el administrador para obtener la "idfacultad"
     $nombreadmin = $_SESSION['nombreUsuario'];
     $sql = "SELECT nombre FROM experienciaeducativa WHERE idExperienciaEducativa='".$materia."';";    
@@ -203,7 +197,7 @@ while($row=mysql_fetch_array($resul)){
     $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
     $fam = $fil[0];
     ?>
-<label for="nrc1h" class="text1" id="nrcl1h">Materia:</label><br>
+<label for="nrc1h" class="text1" id="nrcl1h">Experiencia Educativa:</label><br>
  
 <select name="materia" id="materia" placeholder="Materia">
     <option selected <?php echo"value='"; echo $materia; echo "'"; echo ">"; echo $fam;?></option>
@@ -215,7 +209,7 @@ while($row=mysql_fetch_array($resul)){
 <label class="text1">Carrera:</label><br>
 <?php 
  @session_start();
- require_once("../conexiones/conexion.php");
+ require_once("../../conexiones/conexion.php");
  //Preguntamos quien es el administrador para obtener la "idfacultad"
     $nombreadmin = $_SESSION['nombreUsuario'];
     $sql = "SELECT idfacultad from cuenta where usuario='".$nombreadmin."';";    
@@ -240,24 +234,18 @@ while($row=mysql_fetch_array($resul)){
 }
 }
 echo "</select><br>";
-$sqlfecha="SELECT dia, horain, horafin FROM fecha WHERE idfecha='".$fecha."'";
-$resulfecha = mysql_query($sqlfecha) or die(mysql_error());
-    $fil = mysql_fetch_array($resulfecha, MYSQL_BOTH);
-    $dia = $fil[0];
-    $horaini = $fil[1];
-    $horafin = $fil[2];
 ?>
 
 
  
- <label for="horarea1h" class="text1" id="horareal1h">Hora Inicio:</label>
+ <label for="horarea1h" class="text1" id="horareal1h">Hora Inicio:</label><br>
  <input type="time" id="fecharea1h" name="horaini"required class="inhora"<?php echo"value='"; echo $horaini; echo "'";?> >
- 
- <label for="horareaf1h" class="text1" id="horareafl1h">Hora Termino:</label>
+ <br>
+ <label for="horareaf1h" class="text1" id="horareafl1h">Hora Termino:</label><br>
  <input type="time" id="horareaf1h" name="horafin" class="inhora"<?php echo"value='"; echo $horafin; echo "'";?>><br>
  
  
-        <label for="dia1h" class="text1">Dia:</label>
+        <label for="dia1h" class="text1">Dia:</label><br>
             <select id="dia1h" name="dia" class="infecha">
             <option selected  <?php echo "value='"; echo $dia; echo "'";echo ">"; echo $dia;?></option>
             <?php 
@@ -278,10 +266,10 @@ $resulfecha = mysql_query($sqlfecha) or die(mysql_error());
             }
             ?>
             
-            </select><br><br>
+            </select><br>
  
     
-        <label for="lugar1p" class="text1">Lugar de Realizacion:</label>
+        <label for="lugar1p" class="text1">Lugar de Realizacion:</label><br>
         <input type="text" id="lugar1p" placeholder="Lugar de realizacion de la publicacion" name="lugar"required
         <?php echo "value='"; echo $lugar; echo "'"; ?>><br><br>
 
@@ -292,11 +280,12 @@ $resulfecha = mysql_query($sqlfecha) or die(mysql_error());
 
 <input type="date" class="infecha" name="fechvig" <?php echo"value='"; echo $vig; echo"'"; ?> > 
 </fieldset>
-        <input type="submit" value="Guardar" id="btnguardar" name="guardar">
+        <input type="submit" value="GUARDAR" id="btnguardar" name="guardar">
  
 </form>
-</body>
-<footer id="footer">
-        Code by Omar Santiaguillo Arcos 1v Coatlicue
-    </footer>
+</body></div>
+<div id="final">
+    <img src="../../imagenes/footer.jpg" id="footer">
+</div>
+
 </html>
