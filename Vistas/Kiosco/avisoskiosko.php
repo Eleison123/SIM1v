@@ -38,7 +38,7 @@ document.oncontextmenu = function(){return false}
 			<p class="texto">Certificacion</p>
 		    </div>
 		    <div class="botonera" id="seminario" title="Todas las publicaciones">
-			<img class="icon" src="../.../imagenes/icon2.png">
+			<img class="icon" src="../../imagenes/icon2.png">
 			<p class="texto">Seminario</p>
 		    </div>
 		     <div class="botonera" id="junta" title="Todas las publicaciones">
@@ -79,25 +79,25 @@ document.oncontextmenu = function(){return false}
 </div>
 
 <div id="becas3">
-<div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/icon2.png">
+<div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/megafono.png">
       <p class="texto">Becas</p></div></div></div>
 
-<div id="empleo3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/icon2.png">
+<div id="empleo3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/megafono.png">
       <p class="texto">Empleo</p></div></div></div>
 
-<div id="certificacion3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/icon2.png">
+<div id="certificacion3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/megafono.png">
       <p class="texto">Certificacion</p></div></div></div>
 
-<div id="seminario3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/icon2.png">
+<div id="seminario3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/megafono.png">
       <p class="texto">Seminario</p></div></div></div>
 
-<div id="junta3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/icon2.png">
+<div id="junta3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/megafono.png">
       <p class="texto">Junta</p></div></div></div>
 
-<div id="aviso3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/icon2.png">
+<div id="aviso3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/megafono.png">
       <p class="texto">Aviso</p></div></div></div>
 
-<div id="otro3"><div class="marcax"><div class="cuadro"> <img class="icon" src="../../imagenes/icon2.png">
+<div id="otro3"><div class="marcax"><div class="cuadro"> <img class="icon" src="../../imagenes/megafono.png">
       <p class="texto">Otro</p></div></div></div>
 
 

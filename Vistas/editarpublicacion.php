@@ -429,15 +429,10 @@ $(document).ready(function(){
 <label class="text1">Color de la Publicación:</label><br>
  <div id="divcolor">
  <input type="radio" id="radio" name="color" <?php echo "value='"; echo $color; echo "'"; ?> checked="checked"><a class="text1" style="color:black">Selección Anterior</a><br>
- <input type="radio" id="radio" name="color" value="#BA21E0" ><a class="text1" style="color:#BA21E0">Morado</a><br>
- <input type="radio" id="radio" name="color" value="#EA8DFE"><a class="text1" style="color:#EA8DFE">Rosa</a><br>
- <input type="radio" id="radio" name="color" value="#FF7575"><a class="text1" style="color:#FF7575">Rojo</a><br>
- <input type="radio" id="radio" name="color" value="#4985D6"><a class="text1" style="color:#4985D6">Azul Tecnológico</a><br>
- <input type="radio" id="radio" name="color" value="#29AFD6"><a class="text1" style="color:#29AFD6">Azul Cielo</a><br>
- <input type="radio" id="radio" name="color" value="#80B584"><a class="text1" style="color:#80B584">Verde Militar</a><br>
- <input type="radio" id="radio" name="color" value="#E6CE00"><a class="text1" style="color:#E6CE00">Amarillo Mostaza</a><br>
- <input type="radio" id="radio" name="color" value="#FFA04A"><a class="text1" style="color:#FFA04A">Naranja</a><br>
- <input type="radio" id="radio" name="color" value="#D0977B"><a class="text1" style="color:#D0977B">Café</a><br>
+  <input type="radio" id="radio" name="color" value="#CC3C2D" ><a class="text1" style="color:#CC3C2D">Rojo</a><br>
+ <input type="radio" id="radio" name="color" value="#19B495"><a class="text1" style="color:#19B495">Verde</a><br>
+ <input type="radio" id="radio" name="color" value="#0099CC"><a class="text1" style="color:#0099CC" >Azul</a><br>
+ <input type="radio" id="radio" name="color" value="#E67E22"><a class="text1" style="color:#E67E22">Naranja</a><br>
  </div>
 
  <label class="text1">Color Tipografía de la Publicación:</label><br>

@@ -61,7 +61,7 @@ $(document).ready(function(){
 										echo "<div id='anuncio2' style='background: ".$color."' >";
 										echo "<div id='titulox'>";
 										echo"<h1 style='color:".$colorletra."' id='titulo'class='texto10'>".$nombre."</h1></div>";
-										echo "<img class='sep' src='imagenes/separador2.png'><br><br>";
+										echo "<hr>";
 										echo "<a class='texto1' style='color:".$colorletra."'>".$categoria."</a>";
 										echo "<div id='qrbajo'>
 										<img id='qrimg1' src='".$qr."'>

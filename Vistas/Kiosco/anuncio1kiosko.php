@@ -1,6 +1,3 @@
-
-
-
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#rotar').cycle({
@@ -9,12 +6,6 @@
 			delay:  -3000
 		});
 	});    
-</script>
-<script type="text/javascript">
-$(document).ready(function(){
-	$('#container').hide();
-	$('#container').fadeIn('slow');
-});
 </script>
 
 <div id="container">
@@ -92,41 +83,79 @@ if ($img=="imgPublicaciones/") {
 	echo"<div id='anuncio'style='background:".$color."'>";
  			
  			echo"<h1 style='color:".$colorletra."'id='titulo' class='texto10'>".$nombre."</h1>";
- 			echo "<img class='sep' src='../imagenes/separador2.png'";
+ 			echo"<hr>";
  			echo"<div >";
  				
  				echo"<div id='infor'>";
  					echo "<br><p style='color:".$colorletra."'  class='infor'>".$infobreve."</p><br>";
  					echo "</div>";
- 					echo "<img class='sep' src='../imagenes/separador2.png'";
+ 					echo "<hr>";
  					echo "<br>";
+                        echo"<div id='inform'>";
+ 					echo "<p style='color:".$colorletra."'  class='inform'>".$infobreve."</p><br>";
+ 					
+ 					echo "</div>";
+ 					
  					echo "<div id='bajo1'>";
- 					echo"<table id='bajo3'><tr>";
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>Lugar</a></td>";
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>Contacto</a></td>";
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>Fecha Inicio</a></td>";
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>Fecha Termino</a></td></tr><tr>";
+ 					
+ 					echo "<br>";
+ 					echo"<table id='bajo31'>";
+ 					echo "<tr>
+                            <td>
+                                <img src='../imagenes/icon-inicio.png' id='ti'>
+                                <a style='color:".$colorletra."' class='texto17'>Fecha Inicio</a>
+                            </td>";
+ 					echo "  <td>
+                                <a style='color:".$colorletra."' class='texto17'> ".$fecharea." / </a>";
+ 					echo "      <a style='color:".$colorletra."' class='texto17'> ".$horarea."</a>
+                            </td>
+                         </tr>";
+ 					
+ 					 echo "<tr>
+                            <td>
+                                <img src='../imagenes/icon-termino.png'id='ti'>
+                                <a style='color:".$colorletra."' class='texto17'>Fecha Término</a>
+                            </td>";
+ 					echo "  <td>
+                                <a style='color:".$colorletra."' class='texto17'>".$fechater." / </a>";
+ 					echo "      <a style='color:".$colorletra."' class='texto17'> ".$horater."</a>
+                            </td></tr>";
+ 					
  					
  					if ($lugar!="") {
- 						echo "<td><a style='color:".$colorletra."' class='texto1'>".$lugar."</a></td>";
+                        echo "<tr>
+                                <td>
+                                    <img src='../imagenes/icon-lugar.png'id='ti'>
+                                    <a style='color:".$colorletra."' class='texto17'>Lugar</a>
+                                </td>";
+ 						echo "  <td>
+                                    <a style='color:".$colorletra."' class='texto17'>".$lugar."</a>
+                                </td>
+                              </tr>";
  					}
  					if($contacto!=""){
- 						echo "<td><a style='color:".$colorletra."' class='texto1'>".$contacto."</a></td>";
+                        echo "<tr>
+                                <td>
+                                    <img src='../imagenes/icon-contacto.png'id='ti'>
+                                    <a style='color:".$colorletra."' class='texto17'>Contacto</a>
+                                    </td>";
+ 						echo "      <td>
+                                        <a style='color:".$colorletra."' class='texto17'>".$contacto."</a>
+                                    </td>
+                            ";
  					}
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>".$fecharea." / </a>";
- 					echo "<a style='color:".$colorletra."' class='texto1'> ".$horarea."</a></td>";
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>".$fechater." / </a>";
- 					echo "<a style='color:".$colorletra."' class='texto1'>".$horater."</a></td>";
- 					echo "</tr></table>";
+                   
+ 					
+ 					echo "</tr></table>";echo "</div>";
  						echo "<div id='qr'>";
  						echo "<a style='color:".$colorletra."' class='texto1'></a>";
  						echo "<img id='qrimg' src='".$qr."'";
  						echo "</div>";
  					
  					
- 				echo"</div>";
+ 		
  			echo "</div>";
- 		echo"</div>";
+ 		echo"</div>";echo "</div>";
 }
 else{
 	$numavi2=$numavi2+1;
@@ -134,43 +163,75 @@ else{
 			echo"<div id='anuncio1'style='background:".$color."'>";
  			echo"<img id='imagen' src=".$img."  >";
  			echo"<h1 style='color:".$colorletra."'  id='titulo' class='texto1'>".$nombre."</h1>";
- 			echo "<img class='sepi' src='../imagenes/separador2.png'";
+ 			echo "<hr>";
  			echo"<div >";
  				
- 				echo"<div id='inforimg'>";
- 					echo "<a style='color:".$colorletra."'  class='inform'>".$infobreve."</a><br>";
+ 				echo"<div id='inform'>";
+ 					echo "<p style='color:".$colorletra."'  class='inform'>".$infobreve."</p><br>";
  					
  					echo "</div>";
  					
  					echo "<div id='bajo1'>";
- 					echo "<img class='sepi' src='../imagenes/separador2.png'>";
+ 					
  					echo "<br>";
- 					echo"<table id='bajo31'><tr>";
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>Lugar</a></td>";
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>Contacto</a></td>";
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>Fecha Inicio</a></td>";
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>Fecha Término</a></td></tr><tr>";
+ 					echo"<table id='bajo31'>";
+ 					echo "<tr>
+                            <td>
+                                <img src='../imagenes/icon-inicio.png' id='ti'>
+                                <a style='color:".$colorletra."' class='texto17'>Fecha Inicio</a>
+                            </td>";
+ 					echo "  <td>
+                                <a style='color:".$colorletra."' class='texto17'> ".$fecharea." / </a>";
+ 					echo "      <a style='color:".$colorletra."' class='texto17'> ".$horarea."</a>
+                            </td>
+                         </tr>";
+ 					
+ 					 echo "<tr>
+                            <td>
+                                <img src='../imagenes/icon-termino.png'id='ti'>
+                                <a style='color:".$colorletra."' class='texto17'>Fecha Término</a>
+                            </td>";
+ 					echo "  <td>
+                                <a style='color:".$colorletra."' class='texto17'>".$fechater." / </a>";
+ 					echo "      <a style='color:".$colorletra."' class='texto17'> ".$horater."</a>
+                            </td></tr>";
+ 					
  					
  					if ($lugar!="") {
- 						echo "<td><a style='color:".$colorletra."' class='texto1'>".$lugar."</a></td>";
+                        echo "<tr>
+                                <td>
+                                    <img src='../imagenes/icon-lugar.png'id='ti'>
+                                    <a style='color:".$colorletra."' class='texto17'>Lugar</a>
+                                </td>";
+ 						echo "  <td>
+                                    <a style='color:".$colorletra."' class='texto17'>".$lugar."</a>
+                                </td>
+                              </tr>";
  					}
  					if($contacto!=""){
- 						echo "<td><a style='color:".$colorletra."' class='texto1'>".$contacto."</a></td>";
+                        echo "<tr>
+                                <td>
+                                    <img src='../imagenes/icon-contacto.png'id='ti'>
+                                    <a style='color:".$colorletra."' class='texto17'>Contacto</a>
+                                    </td>";
+ 						echo "      <td>
+                                        <a style='color:".$colorletra."' class='texto17'>".$contacto."</a>
+                                    </td>
+                              </tr>";
  					}
- 					echo "<td><a style='color:".$colorletra."' class='texto1'> ".$fecharea." / </a>";
- 					echo "<a style='color:".$colorletra."' class='texto1'> ".$horarea."</a></td>";
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>".$fechater." / </a>";
- 					echo "<a style='color:".$colorletra."' class='texto1'> ".$horater."</a></td>";
- 					echo "</tr></table>";
- 					echo"</div>";
+                   
+ 					echo "
+                    
+                    </table>";
+ 					echo "</div>";
  						echo "<div id='qr'>";
  						echo "<img id='qrimg' src='".$qr."'";
  						echo "</div>";
  					
  					
- 				
+ 			
  			echo "</div>";
- 		echo"</div>";
+ 		echo"</div>";echo "</div>";
 
  	
  }//terminaif images
@@ -212,28 +273,67 @@ if ($img=="imgPublicaciones/") {
  				echo"<div id='infor'>";
  					echo "<br><a style='color:".$colorletra."'  class='infor'>".$infobreve."</a><br>";
  					echo "</div>";
- 					echo "<img class='sep' src='../imagenes/separador2.png'";
+ 					echo "<hr>";
  					echo "<br>";
+ 					echo"<div id='inform'>";
+ 					echo "<p style='color:".$colorletra."'  class='inform'>".$infobreve."</p><br>";
+ 					
+ 					echo "</div>";
+ 					
  					echo "<div id='bajo1'>";
- 					echo"<table id='bajo3'><tr>";
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>Lugar</a></td>";
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>Contacto</a></td>";
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>Fecha Inicio</a></td>";
- 				
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>Fecha Término</a></td></tr><tr>";
+ 					
+ 					echo "<br>";
+ 					echo"<table id='bajo31'>";
+ 					echo "<tr>
+                            <td>
+                                <img src='../imagenes/icon-inicio.png' id='ti'>
+                                <a style='color:".$colorletra."' class='texto17'>Fecha Inicio</a>
+                            </td>";
+ 					echo "  <td>
+                                <a style='color:".$colorletra."' class='texto17'> ".$fecharea." / </a>";
+ 					echo "      <a style='color:".$colorletra."' class='texto17'> ".$horarea."</a>
+                            </td>
+                         </tr>";
+ 					
+ 					 echo "<tr>
+                            <td>
+                                <img src='../imagenes/icon-termino.png'id='ti'>
+                                <a style='color:".$colorletra."' class='texto17'>Fecha Término</a>
+                            </td>";
+ 					echo "  <td>
+                                <a style='color:".$colorletra."' class='texto17'>".$fechater." / </a>";
+ 					echo "      <a style='color:".$colorletra."' class='texto17'> ".$horater."</a>
+                            </td></tr>";
+ 					
  					
  					if ($lugar!="") {
- 						echo "<td><a style='color:".$colorletra."' class='texto1'>".$lugar."</a></td>";
+                        echo "<tr>
+                                <td>
+                                    <img src='../imagenes/icon-lugar.png'id='ti'>
+                                    <a style='color:".$colorletra."' class='texto17'>Lugar</a>
+                                </td>";
+ 						echo "  <td>
+                                    <a style='color:".$colorletra."' class='texto17'>".$lugar."</a>
+                                </td>
+                              </tr>";
  					}
  					if($contacto!=""){
- 						echo "<td><a style='color:".$colorletra."' class='texto1'> ".$contacto."</a></td>";
+                        echo "<tr>
+                                <td>
+                                    <img src='../imagenes/icon-contacto.png'id='ti'>
+                                    <a style='color:".$colorletra."' class='texto17'>Contacto</a>
+                                    </td>";
+ 						echo "      <td>
+                                        <a style='color:".$colorletra."' class='texto17'>".$contacto."</a>
+                                    </td>
+                              </tr>";
  					}
- 					echo "<td><a style='color:".$colorletra."' class='texto1'> ".$fecharea." / </a>";
- 					echo "<a style='color:".$colorletra."' class='texto1'> ".$horarea."</a></td>";
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>".$fechater." / </a>";
- 					echo "<a style='color:".$colorletra."' class='texto1'> ".$horater."</a></td>";
- 					echo "</tr></table>";
- 					echo"</div>";
+                   
+ 					echo "
+                    
+                    </table>";
+ 					
+ 				echo "</div>";
  						echo "<div id='qr'>";
  						
  						echo "<img id='qrimg' src='".$qr."'";
@@ -242,42 +342,74 @@ if ($img=="imgPublicaciones/") {
  					
  				
  			echo "</div>";
- 		echo"</div>";
+ 		echo"</div>";echo "</div>";
 }
 else{
 	$numavi2=$numavi2+1;
-			echo"<div id='anuncio'style='background:".$color."'>";
+			echo"<div id='anuncio1'style='background:".$color."'>";
  			echo"<img id='imagen' src=".$img."  >";
  			echo"<h1 style='color:".$colorletra."'id='titulo' class='texto10'>".$nombre."</h1>";
- 			echo "<img class='sepi' src='../imagenes/separador2.png'>";
+ 			echo "<hr>";
  			echo"<div >";
  				
- 				echo"<div id='inforimg'>";
- 					echo "<a style='color:".$colorletra."'  class='infor'>".$infobreve."</a><br>";
+ 				echo"<div id='inform'>";
+ 					echo "<p style='color:".$colorletra."'  class='inform'>".$infobreve."</p><br>";
+ 					
  					echo "</div>";
  					
- 					
  					echo "<div id='bajo1'>";
- 					echo "<img class='sepi' src='../imagenes/separador2.png'>";
- 					echo "<br>";
- 					echo"<table id='bajo31'><tr>";
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>Lugar</a></td>";
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>Contacto</a></td>";
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>Fecha Inicio</a></td>";
  					
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>Fecha Término</a></td></tr><tr>";
+ 					echo "<br>";
+ 					echo"<table id='bajo31'>";
+ 					echo "<tr>
+                            <td>
+                                <img src='../imagenes/icon-inicio.png' id='ti'>
+                                <a style='color:".$colorletra."' class='texto17'>Fecha Inicio</a>
+                            </td>";
+ 					echo "  <td>
+                                <a style='color:".$colorletra."' class='texto17'> ".$fecharea." / </a>";
+ 					echo "      <a style='color:".$colorletra."' class='texto17'> ".$horarea."</a>
+                            </td>
+                         </tr>";
+ 					
+ 					 echo "<tr>
+                            <td>
+                                <img src='../imagenes/icon-termino.png'id='ti'>
+                                <a style='color:".$colorletra."' class='texto17'>Fecha Término</a>
+                            </td>";
+ 					echo "  <td>
+                                <a style='color:".$colorletra."' class='texto17'>".$fechater." / </a>";
+ 					echo "      <a style='color:".$colorletra."' class='texto17'> ".$horater."</a>
+                            </td></tr>";
+ 					
  					
  					if ($lugar!="") {
- 						echo "<td><a style='color:".$colorletra."' class='texto1'>".$lugar."</a></td>";
+                        echo "<tr>
+                                <td>
+                                    <img src='../imagenes/icon-lugar.png'id='ti'>
+                                    <a style='color:".$colorletra."' class='texto17'>Lugar</a>
+                                </td>";
+ 						echo "  <td>
+                                    <a style='color:".$colorletra."' class='texto17'>".$lugar."</a>
+                                </td>
+                              </tr>";
  					}
  					if($contacto!=""){
- 						echo "<td><a style='color:".$colorletra."' class='texto1'> ".$contacto."</a></td>";
+                        echo "<tr>
+                                <td>
+                                    <img src='../imagenes/icon-contacto.png'id='ti'>
+                                    <a style='color:".$colorletra."' class='texto17'>Contacto</a>
+                                    </td>";
+ 						echo "      <td>
+                                        <a style='color:".$colorletra."' class='texto17'>".$contacto."</a>
+                                    </td>
+                              </tr>";
  					}
- 					echo "<td><a style='color:".$colorletra."' class='texto1'> ".$fecharea." / </a>";
- 					echo "<a style='color:".$colorletra."' class='texto1'> ".$horarea."</a></td>";
- 					echo "<td><a style='color:".$colorletra."' class='texto1'>".$fechater." / </a>";
- 					echo "<a style='color:".$colorletra."' class='texto1'> ".$horater."</a></td>";
- 					echo "</tr></table>";
+                   
+ 					echo "
+                    
+                    </table>";
+ 					
  					echo"</div>";
  						echo "<div id='qr'>";
  						
@@ -287,7 +419,7 @@ else{
  					
  				
  			echo "</div>";
- 		echo"</div>";
+ 		echo"</div>";echo "</div>";
 
  	}//termina prio
  }//terminaif images

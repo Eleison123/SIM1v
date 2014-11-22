@@ -25,18 +25,18 @@ if(@$_POST['entrar']){
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <link rel="stylesheet" type="text/css" href="css/logkiosko.css">
-<script type='text/javascript'>
-/*Da un mensaje de error*/
-var mensajeerror = "Boton derecho deshabilitado ¡Gracias!"; 
-if(document.layers) window.captureEvents(Event.MOUSEDOWN); function bloquear(e){
-if (navigator.appName == 'Netscape' && ( e.which == 2 || e.which == 3)) { alert(mensajeerror);return false; }
-if (navigator.appName == 'Microsoft Internet Explorer' && (event.button == 2 || event.button == 3)) {
-alert(mensajeerror);return false; }} window.onmousedown=bloquear; document.onmousedown=bloquear;   
+  <script language="Javascript" type="text/javascript">
+//<![CDATA[
+
+<!-- Begin
+document.oncontextmenu = function(){return false}
+// End -->
+//]]>
 </script>
 
 <body>
-	<div id="contenedor">
-
+	<center><div id="contenedor">
+        <img src="imagenes/logocoa.jpg" id="log">
 	<div id="Log">
 
 		<form method="POST" name="login">
@@ -60,13 +60,13 @@ alert(mensajeerror);return false; }} window.onmousedown=bloquear; document.onmou
 					<br>
 				
 			<br/><div id="botones">
-				<input name="entrar"  class="boton"type="submit" value="Ingresar"/>
+				<input name="entrar"  class="boton"type="submit" value="INGRESAR"/>
 			    
 		</form>
 
 
 	</div>
 
-			</div><img id="logo" src="imagenes/log2.png">
+        </div></div></center>
 
 </body>

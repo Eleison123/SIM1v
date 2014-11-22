@@ -30,7 +30,21 @@ document.oncontextmenu = function(){return false}
 // End -->
 //]]>
 </script>
-
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#rotar').cycle({
+			fx:     'scrollLeft',
+			timeout: 30000,
+			delay:  -3000
+		});
+	});    
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#container').hide();
+	$('#container').fadeIn('slow');
+});
+</script>
 
 <script type="text/javascript">
 ///////////// Recarga avisos prioridad alta,ahora cada 5min ////////////////
@@ -58,19 +72,17 @@ var tiempoap =setInterval(function(){
   <div id="cen" >
 	  <div id="cont">
              <div class="botonera" id="uno" title="Todas las publicaciones">
-			<a href="Kiosco/avisoskiosko.php"><img class="icon" src="../imagenes/icon2.png"></a>
-			<p class="texto">Avisos</p>
+			<a href="Kiosco/avisoskiosko.php"><img class="icon" src="../imagenes/avisosk.png"></a>
+			
 		    </div>
             
             <div class="botonera" id="dos" title="Informácion de ubicaciones">
-            <a href="Kiosco/dondekiosko.php"><img class="icon" src="../imagenes/icon1.png"></a>
-			<p class="texto">Ubicaciones</p>
+            <a href="Kiosco/dondekiosko.php"><img class="icon" src="../imagenes/ubicacionesk.png"></a>
 		    </div>
             
             
             <div class="botonera" id="tres" title="Horarios diversos">
-			<a href="Kiosco/horarioskiosco.php"><img class="icon" src="../imagenes/icon3.png"></a>
-			<p class="texto">Horarios</p>
+			<a href="Kiosco/horarioskiosco.php"><img class="icon" src="../imagenes/horariosk.png"></a>
 		    </div>
             </div>
   </div>
