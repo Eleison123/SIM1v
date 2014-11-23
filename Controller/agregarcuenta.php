@@ -10,7 +10,9 @@ include"../seguridad.php";
             ($_POST['tipo']!="")){ 
             //limpiamos de caracteres especiales
             $nombre= mysql_real_escape_string($_POST['nombre']);
-            $contrasena=sha1($_POST['contrasena']);
+            $contrasena=$_POST['contrasena'];
+            $salt='/$fei$';
+            $contrasena=sha1($salt . $contrasena);
             $tipo= mysql_real_escape_string($_POST['tipo']);
             //$contrasenia= md5($contrasena); MD5 ya no es segura por lo mismo no se implementa.
             $facu= mysql_real_escape_string($_POST['facultad']);

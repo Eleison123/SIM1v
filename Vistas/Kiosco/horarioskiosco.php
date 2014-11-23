@@ -4,7 +4,7 @@
 <script language="Javascript" type="text/javascript">
 //<![CDATA[
 <!-- Begin
-document.oncontextmenu = function(){return false}
+//document.oncontextmenu = function(){return false}
 // End -->
 //]]>
 </script>
@@ -21,7 +21,7 @@ document.oncontextmenu = function(){return false}
     
   <div id="cen" >
 
-             <div class="botonera"  id="HES" name="HES" title="Todas las publicaciones">
+             <center></center><div class="botonera"  id="HES" name="HES" title="Todas las publicaciones">
             <img class="icon" src="../../imagenes/icon3.png">
             <a class="texto">Horarios Escolar</a>
             </div>
@@ -40,11 +40,11 @@ document.oncontextmenu = function(){return false}
             <div class="botonera" id="uno" title="Atrás">
             <a href="../principalkiosko.php"><img class="icon" src="../../imagenes/icon6.png"></a>
             <a class="texto">Regresar</a>
-            </div>  
+            </div></center>
   </div>
 
 <body>
-    <div id="botoness">
+    <center><div id="botoness">
 <div id="atrassss">
     <div id="tituu">
         <h1><a class="text1z">Horarios</a></h1>
@@ -54,7 +54,8 @@ document.oncontextmenu = function(){return false}
 <p class="texto">Atras</p>
     </div>
 </div>
-<div id="HES2">
+<center>
+    <div id="HES2">
 <div class="marcax">
 <div class="cuadro">
 <img class="icon" src="../../imagenes/icon3.png">
@@ -86,12 +87,12 @@ document.oncontextmenu = function(){return false}
 </div>
 </div>
 </div>
-</div>
+    </div></center>
 <!--inicia Horario escolar -->
 <div id="horarioes1"></div>
     <?php echo"<div id='horarioes'>";
         require_once("../../conexiones/conexion.php");
-            session_start();
+            @session_start();
                         $fac=$_SESSION['facultad'] ;            
                             //Preguntamos los nombres de las carreras segun su idfacultad
                          $mysqlfacu="SELECT nombre, idcarrera,idfacultad FROM carrera WHERE idfacultad = '".$fac."'; ";

@@ -7,6 +7,7 @@
 <meta charset="utf-8">
 <!-- CSS -->
 <link rel="stylesheet" href="../css/css1a.css">
+<link rel="shortcut icon" href="../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
 <script src="../js/jquery-1.4.2.min.js"></script> 
 <script type="text/javascript">
@@ -17,7 +18,7 @@
         });
 </script>
 
-<title>Sistema Interactivo de Mensajes</title>
+<title>Bienvenido SIM</title>
 </head>
 <!--         Termina Cabeza         -->
 <div id="portada">
@@ -46,12 +47,11 @@
 
 <body>
     <div id="cuerpo">
-        <figure id="bienvenido">
-            <img src="../imagenes/bienvenido.png">
-        </figure>
+
+          <br>
       
-<a class="text1">Sea bienvenido al modulo de administración del  Sistema Interactivo de Mesajes, actualmente
-estando en su versión 1 "<strong>Coatlicue</strong>", con la capacidad de gestionar lo mostrado en el módulo de visualización. </a>
+      
+<a class="text1">Sea bienvenido al módulo de administración del Sistema Interactivo de Mensajes, actualmente estando en su versión 1  "<strong>Coatlicue</strong>", con la capacidad de gestionar lo mostrado en el módulo de visualización. </a>
             <a class="text1">En el módulo de administración usted podrá gestionar:</a><br><br>
             <table>
             <tr><td><a class="text1">Horarios de clases.</a></td></tr>
@@ -67,9 +67,9 @@ estando en su versión 1 "<strong>Coatlicue</strong>", con la capacidad de gesti
             <tr><td><a class="text1">Facultades.</a></td></tr>
             <tr><td><a class="text1">Publicaciones.</a></td></tr>
             </table>
-            <br><br>
-            <img src="../imagenes/versiones.png">
-           <br><br>
+            <br>
+            <img src="../imagenes/versiones.png" id="bienvenido">
+           <br>
          
                 <h3><a class="text1">Versión 1 Coatlicue</a></h3><br><br>
             <table>

@@ -58,7 +58,7 @@ $(document).ready(function(){
     $('.cuadroes').click(function(){
         var id= $(this).attr("value");
         $('#horarioes1').show();
-        $('#horarioes1').load('modificar/genera-he.php?id='+id);
+        $('#horarioes1').load('../Editar/genera-he.php?id='+id);
         $('#horarioes').hide();
     });
 });

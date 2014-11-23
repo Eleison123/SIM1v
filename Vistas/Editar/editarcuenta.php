@@ -6,20 +6,18 @@ if (@$_POST['guardar']) {
 
    
         if(isset($_POST['nombre'])and
-           
             ($_POST['facultad'])and
             ($_POST['id'])and
             ($_POST['tipo']!="")){ 
-
             $nombre1= $_POST['nombre'];
             $contrasena1= $_POST['contrasena'];
             $tipo1= $_POST['tipo'];
-           
             $facu1= $_POST['facultad'];
             $id1= $_POST['id'];
 
 if($contrasena1!=""){
-    $contrasena1=sha1($contrasena1);
+   $salt='/$fei$';
+    $contrasena1=sha1($salt . $contrasena1);
      $sqlf="UPDATE cuenta SET
 usuario = '".$nombre1."', 
 contrasena = '".$contrasena1."', 
@@ -124,7 +122,7 @@ document.oncontextmenu = function(){return false}
       <input type="text" name="nombre" <?php echo"value='"; echo $nombre; echo "'";?>><br>
 
       <label class="text1">Contraseña:</label><br>
-      <input type="password" name="contrasena" ><br>
+      <input type="password" name="contrasena" maxlength="15"><br>
 
       <label class="text1">Tipo</label><br>
       <select name="tipo"> 

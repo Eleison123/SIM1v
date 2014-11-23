@@ -123,10 +123,10 @@ $(document).ready(function(){
         <option>Otro</option>
  </select><br><br>
 
- <label for="fecharea1p" class="text1">Fecha Realización:</label>
+ <label for="fecharea1p" class="text1">Fecha Inicio:</label>
  <input type="date" id="fecharea1p" name="fecharea1p" class="infecha"required>
 
- <label for="horarea1p" class="text1">Hora Realización:</label>
+ <label for="horarea1p" class="text1">Hora Inicio:</label>
  <input type="time" id="horarea1p" name="horarea1p" class="inhora" required><br><br>
 
  <label for="fechater1p" class="text1">Fecha Término:</label>
@@ -192,10 +192,10 @@ $(document).ready(function(){
 
  <label class="text1">Color de la Publicación:</label><br>
  <div id="divcolor">
- <input type="radio" id="radio" name="color" value="#CC3C2D" ><a class="text1" style="color:#CC3C2D">Rojo</a><br>
+ <input type="radio" id="radio" name="color" value="#FF8888" ><a class="text1" style="color:#FF8888">Rojo</a><br>
  <input type="radio" id="radio" name="color" value="#19B495"><a class="text1" style="color:#19B495">Verde</a><br>
  <input type="radio" id="radio" name="color" value="#0099CC"><a class="text1" style="color:#0099CC" checked="checked">Azul</a><br>
- <input type="radio" id="radio" name="color" value="#E67E22"><a class="text1" style="color:#E67E22">Naranja</a><br>
+ <input type="radio" id="radio" name="color" value="#fac15e"><a class="text1" style="color:#fac15e">Naranja</a><br>
 
  </div>
 
