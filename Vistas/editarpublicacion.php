@@ -253,17 +253,10 @@ $(document).ready(function(){
     <div id="men">
 <nav id="menu">
     <ul>
-        <li><a href="pagprin.php" >INICIO</a></li>
-        <li><a href="Entidades/publicacion.php" id="qwerty">PUBLICACIÓN</a></li>
-        <li><a href="Entidades/horario.php">HORARIO</a></li>
-        <li><a href="Entidades/cuenta.php">CUENTA</a></li>
-        <li><a href="Entidades/facultad.php">FACULTAD</a></li>
-        <li><a href="Entidades/eeducativa.php">E.EDUCATIVA</a></li>
-        <li><a href="Entidades/registro.php">REGISTRO</a></li>
-        <li><a href="Entidades/carrera.php">CARRERA</a></li>  
-        <li><a href="Entidades/catedratico.php">CATEDRÁTICO</a></li>   
-        <li><a href="Entidades/ubicaciones.php">UBICACIONES</a></li>   
-        <li><a href="Entidades/salir.php">SALIR</a></li>
+        <li><a href="pagprin.php" >INICIO</a><a>/</a>
+        <a href="Entidades/publicacion.php">PUBLICACIÓN/</a><a>/</a>
+        <a>EDITAR PUBLICACIÓN</a></li>
+        
     </ul>
 </nav>
 </div>
@@ -285,13 +278,13 @@ $(document).ready(function(){
  <a class="text3">Aquí deberas proporcionar los datos que contiene tu publicación</a><br><br>
 
 
- <label class="text1">Nombre:</label>
+ <label class="text1">Nombre:</label><br>
  <input type="text" id="nombre1p" name="nombre" <?php echo"value='"; echo $nombre; echo "'";?>maxlength="50">
  <div id="contador"></div>
  <br>
 
 
- <label for for="autor1p" class="text1">Categoría:</label>
+ <label for for="autor1p" class="text1">Categoría:</label><br>
  <select name="autor1p" class="op" required>
     <?php
     if ($categoria=="Beca") {
@@ -368,30 +361,35 @@ $(document).ready(function(){
         ?>
  </select><br><br>
 
- <label for="fecharea1p" class="text1">Fecha Realización:</label>
- <input type="date" id="fecharea1p" name="fecharea1p" <?php echo"value='"; echo $fecharea; echo"'"; ?> class="infecha">
+ <label for="fecharea1p" class="text1">Fecha Inicio:</label><br>
+ <input type="date" id="fecharea1p" name="fecharea1p" <?php echo"value='"; echo $fecharea; echo"'"; ?> class="infecha"><br>
 
- <label for="horarea1p" class="text1">Hora:</label>
+ <label for="horarea1p" class="text1">Hora Inicio:</label><br>
  <input type="time" id="horarea1p" name="horarea1p" <?php echo "value='"; echo $horarea; echo "'"; ?> class="inhora"><br><br>
 
- <label for="fechater1p" class="text1">Fecha Término:</label>
- <input type="date" id="fechater1p" name="fechater1p" <?php echo "value='"; echo $fechater; echo "'"; ?> class="infecha">
+ <label for="fechater1p" class="text1">Fecha Término:</label><br>
+ <input type="date" id="fechater1p" name="fechater1p" <?php echo "value='"; echo $fechater; echo "'"; ?> class="infecha"><br>
  
- <label for="horater1p" class="text1">Hora:</label>
+ <label for="horater1p" class="text1">Hora Término:</label><br>
  <input type="time" id="horater1p" name="horater1p" <?php echo "value='"; echo $hoarter; echo "'"; ?> class="inhora"><br><br>
 
- <label for="url1p" class="text1">URL:</label>
+ <label for="url1p" class="text1">URL:</label><br>
  <input type="url" id="url1p" name="url1p" <?php echo "value='"; echo $url; echo "'"; ?>><br><br>
 
- <label for="lugar1p" class="text1">Lugar de Realización:</label>
+ <label for="lugar1p" class="text1">Lugar:</label><br>
  <input type="text" id="lugar1p" name="lugar1p" <?php echo "value='"; echo $lugar; echo "'"; ?>><br><br>
 
- <label class="text1">Contacto:</label>
+ <label class="text1">Contacto:</label><br>
  <input type="text" id="contacto1p"  name="contacto1p" <?php echo "value='"; echo $contacto; echo "'"; ?>><br><br>
 
- <label class="text1">Imagen de la Publicación </label>
+ <label class="text1">Imagen de la Publicación:</label><br>
  <input type="file"  id="imagess" name="imagess" value=<?php echo "'"; echo $img; echo "'"; ?>><br><br>
- <div id="image"><img id="image" src=<?php echo"'"; echo $img; echo "'";  ?>></div><br>
+ <div id="image"><img id="image" src=<?php 
+    if ($img = "imagenes/"){
+            echo '../imagenes/noimage.jpg';}
+    else{
+       echo"'"; echo $img; echo "'"; 
+    }?>></div><br>
 
 <label  class="text1">Información Breve de la Publicación:</label><br>
  <textarea type="text" id="infob1p"  name="infob1p" maxlength="250"><?php  echo $infobreve;  ?></textarea><div id="contador1"></div><br>
@@ -399,19 +397,19 @@ $(document).ready(function(){
  <label for="info1p" class="text1">Información de la Publicación:</label><br>
  <textarea type="text" id="info1p" name="info1p" maxlength="1000"><?php echo $info; ?></textarea><div id="contador2"></div><br>
 
- <label for="info1p" class="text1">Código QR:</label>
- <a class="text1"> Aquí usted podrá proporcionar el tamaño del código QR así como su resolución.</a>
+ <label for="info1p" class="text1">Código QR:</label><br>
+ <a class="text1"> Aquí usted podrá proporcionar el tamaño del código QR así como su resolución.</a><br>
 
  <?php
  echo  '
         &nbsp;<input name="data" id="data" type="hidden" value="'.(isset($_REQUEST['data'])?htmlspecialchars($_REQUEST['data']):'PHP QR Code :)').'" />&nbsp;
-        <a class="text1"> Resolución:&nbsp;</a>
+        <a class="text1">Resolución:&nbsp;</a>
         <select name="level">
             <option value="L"'.(($errorCorrectionLevel=='L')?' selected':'').'>L - smallest</option>
             <option value="M"'.(($errorCorrectionLevel=='M')?' selected':'').'>M</option>
             <option value="Q"'.(($errorCorrectionLevel=='Q')?' selected':'').'>Q</option>
             <option value="H"'.(($errorCorrectionLevel=='H')?' selected':'').'>H - best</option>
-        </select>&nbsp;
+        </select>&nbsp;<br>
         <a class="text1">Tamaño:&nbsp;</a>
         <select name="size">';
         
@@ -440,19 +438,14 @@ $(document).ready(function(){
   <input type="radio" id="radio" name="colorletra" value="white" selected><a class="text1">Blanco</a>
 <input type="radio" id="radio" name="colorletra" <?php echo "value='"; echo $colorletra; echo "'"; ?> checked="checked"><a class="text1"> Selección Pasada</a><br><br>
 
-
-
-
- 
-
- <label class="text1">Día de Publicación</label>
+ <label class="text1">Día de Publicación</label><br>
  <input type="date" name="diapub" <?php echo "value='"; echo $diapublicacion; echo "'"; ?> class="infecha"><br><br>
 
- <label class="text1">Hora Publicación</label>
+ <label class="text1">Hora Publicación</label><br>
  <input type="time" name="horapub" <?php echo "value='"; echo $horapublicacion; echo "'"; ?> class="inhora"><br><br>
 
 
-       <label for="prioridad1p" class="text1">Prioridad:</label></td>
+       <label for="prioridad1p" class="text1">Prioridad:</label><br>
                 <select name="prioridad1p" class="op" >
                     <?php 
                     if ($prioridad=="1") {
@@ -493,14 +486,14 @@ $(document).ready(function(){
                 }
                 ?>
         </select><br><br>  
-<a class="text2">Vigencia</a><br>
-<label><a class="text1">Fecha término de Vigencia</a></label>
+<a class="text2">Vigencia:</a><br>
+<label><a class="text1">Fecha de Vigencia</a></label><br>
 <input type="date" class="infecha" name="fechvig" <?php echo "value='"; echo $fechavig; echo "'"; ?> required/>
 
         
  
 </fieldset>
-        <input type="submit" value="Guardar" id="btnguardar" name="guardar">
+        <input type="submit" value="GUARDAR" id="btnguardar" name="guardar">
  
 </form>
 </div>
