@@ -71,9 +71,8 @@
             <img src="../imagenes/versiones.png" id="bienvenido">
            <br>
          
-                <h3><a class="text1">Versión 1 Coatlicue</a></h3><br><br>
+                <h4><a class="text1">Coatlicue</a></h4><br><br>
             <table>
-            
             <tr><td><a class="text1"><strong>Desarrollado por:</strong> L.I.Román Omar Santiaguillo Arcos.</a></tr></td>
             <tr><td><a class="text1"><strong>Dirección:</strong> M.C.C.Gerardo Contreras Vega.</a></tr></td>
             <tr><td><a class="text1"><strong>Coodirector:</strong> E.I.S. Blanca Rosa Pensado.</a></tr></td>

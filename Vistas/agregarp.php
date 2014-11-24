@@ -74,17 +74,9 @@ $(document).ready(function(){
     <div id="men">
 <nav id="menu">
     <ul>
-        <li><a href="pagprin.php" >INICIO</a></li>
-        <li><a href="Entidades/publicacion.php" id="qwerty">PUBLICACIÓN</a></li>
-        <li><a href="Entidades/horario.php">HORARIO</a></li>
-        <li><a href="Entidades/cuenta.php">CUENTA</a></li>
-        <li><a href="Entidades/facultad.php">FACULTAD</a></li>
-        <li><a href="Entidades/eeducativa.php">E.EDUCATIVA</a></li>
-        <li><a href="Entidades/registro.php">REGISTRO</a></li>
-        <li><a href="Entidades/carrera.php">CARRERA</a></li>  
-        <li><a href="Entidades/catedratico.php">CATEDRÁTICO</a></li>   
-        <li><a href="Entidades/ubicaciones.php">UBICACIONES</a></li>   
-        <li><a href="Entidades/salir.php">SALIR</a></li> 
+        <li><a href="pagprin.php" >INICIO</a><a>/</a>
+        <a href="Entidades/publicacion.php">PUBLICACIÓN</a><a>/</a>
+        <a>AGREGAR PUBLICACIÓN</a></li>   
     </ul>
 </nav>
 </div>
