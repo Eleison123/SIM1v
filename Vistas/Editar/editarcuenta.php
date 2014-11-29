@@ -70,6 +70,7 @@ $resulid=mysql_query($mysqlid) or die(mysql_error());
 <meta charset="utf-8">
 <!-- CSS -->
 <link rel="stylesheet" href="../../css/css1a.css">
+       <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
 <script language="Javascript" type="text/javascript">
 //<![CDATA[
@@ -94,16 +95,10 @@ document.oncontextmenu = function(){return false}
 <nav id="menu">
     <ul>
         <li><a href="../pagprin.php">INICIO</a></li>
-        <li><a href="../Entidades/publicacion.php">PUBLICACIÓN</a></li>
-        <li><a href="../Entidades/horario.php">HORARIO</a></li>
-        <li><a href="../Entidades/cuenta.php" id="qwerty">CUENTA</a></li>
-        <li><a href="../Entidades/facultad.php">FACULTAD</a></li>
-        <li><a href="../Entidades/eeducativa.php">E.EDUCATIVA</a></li>
-        <li><a href="../Entidades/registro.php">REGISTRO</a></li>
-        <li><a href="../Entidades/carrera.php">CARRERA</a></li>  
-        <li><a href="../Entidades/catedratico.php">CATEDRÁTICO</a></li>   
-        <li><a href="../Entidades/ubicaciones.php">UBICACIONES</a></li>   
-        <li><a href="../Entidades/salir.php">SALIR</a></li>  
+        <li><a>/</a></li>
+        <li><a href="../Entidades/cuenta.php">CUENTA</a></li>
+        <li><a>/</a></li>
+        <li><a>EDITAR CUENTA</a></li>
     </ul>
 </nav>
 </div>
@@ -115,39 +110,39 @@ document.oncontextmenu = function(){return false}
 </figure>
 
 <form method="post" >
-    <fieldset>
+    <fieldset><legend><a class="text1">Datos de la Cuenta</a></legend>
         <input  hidden type="text" name="id" <?php echo"value='"; echo $administrador; echo "'"; ?>>
 
       <label class="text1">Nombre:</label><br>
       <input type="text" name="nombre" <?php echo"value='"; echo $nombre; echo "'";?>><br>
 
       <label class="text1">Contraseña:</label><br>
-      <input type="password" name="contrasena" maxlength="15"><br>
+      <input type="password" name="contrasena" maxlength="10"><br>
+<!--
+            <label class="text1">Tipo</label><br>
+            <select name="tipo"> 
 
-      <label class="text1">Tipo</label><br>
-      <select name="tipo"> 
+            <?php
+            if ($tipo=="1") {
+                 echo"<option selected value='".$tipo."'>Privilegios: Agregar,Editar, Eliminar y Hacer Reportes</option>";
+                echo "<option value='2'>Privilegios: Agregar, Editar, Eliminar</option>";
+                echo"<option value='3'>Privilegios: Agregar y Editar</option>";
+            }
+             if ($tipo=="2") {
 
-        <?php
-        if ($tipo=="1") {
-             echo"<option selected value='".$tipo."'>Privilegios: Agregar,Editar, Eliminar y Hacer Reportes</option>";
-            echo "<option value='2'>Privilegios: Agregar, Editar, Eliminar</option>";
-            echo"<option value='3'>Privilegios: Agregar y Editar</option>";
-        }
-         if ($tipo=="2") {
-             
-            echo "<option value='1'>Privilegios: Agregar,Editar, Eliminar y Hacer Reportes</option>";
-            echo"<option selected value='".$tipo."'>Privilegios: Agregar, Editar, Eliminar</option>";
-            echo"<option value='3'> 3</option>";
-        }
-         if ($tipo=="3") {
-             
-            echo "<option value='1'>Privilegios: Agregar,Editar, Eliminar y Hacer Reportes</option>";
-            echo"<option value='2'>Privilegios: Agregar, Editar, Eliminar</option>";
-            echo"<option selected value='".$tipo."'>Privilegios: Agregar y Editar</option>";
-        }
-       
-      ?>
-      </select><br>
+                echo "<option value='1'>Privilegios: Agregar,Editar, Eliminar y Hacer Reportes</option>";
+                echo"<option selected value='".$tipo."'>Privilegios: Agregar, Editar, Eliminar</option>";
+                echo"<option value='3'> 3</option>";
+            }
+             if ($tipo=="3") {
+
+                echo "<option value='1'>Privilegios: Agregar,Editar, Eliminar y Hacer Reportes</option>";
+                echo"<option value='2'>Privilegios: Agregar, Editar, Eliminar</option>";
+                echo"<option selected value='".$tipo."'>Privilegios: Agregar y Editar</option>";
+            }
+
+            ?>
+            </select><br>-->
 <label class="text1">Facultad:</label><br>
 <?php
 echo"<select name='facultad'>";
@@ -165,7 +160,7 @@ echo"</select>";
         
  
 </fieldset>
-        <input type="submit" value="Guardar" id="btnguardar" name="guardar">
+        <input type="submit" value="GUARDAR" id="btnguardar" name="guardar">
       </div>
  
 </form>

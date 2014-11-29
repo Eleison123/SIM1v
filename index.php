@@ -11,10 +11,25 @@ require_once("Controller/logincuenta.php");
    
 <title>Bienvenido a SIM</title>
 </head>
-<body>
-	<form method="POST" name="login" >
+    <div>
+        <left>
+            <a href="loginkiosko2.php"><div class="iconos" id="KE">
+                <label id="KE1">Visualización Estatico
+                </label></a>
+            </div>
+        </left>
+        <right>
+            <a href="loginkiosko.php"><div class="iconos" id="KD">
+                <center><label id="KD1">Visualización Dinamico
+                    </label></a></center>
+            </div>
+        </right>
+    </div>
+<body >
+    
+	<form method="POST" name="login" class="loger">
         <img src="imagenes/logocoa.jpg" id="logocoa">
-	<div id="recuadro">
+	<div id="recuadro" >
 	
 		<label for="usuario">CUENTA:</label>
 	    <input type="text" placeholder="NOMBRE CUENTA" id="usuario" name="usuario">

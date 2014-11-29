@@ -20,6 +20,26 @@ include"../../Vistas/seguridad.php";
             $facu = filter_var($facu, FILTER_SANITIZE_SPECIAL_CHARS);
             $apmater = filter_var($apmater, FILTER_SANITIZE_SPECIAL_CHARS);
             // Iniciamos inserción
+            $sqlpre = "SELECT * FROM catedratico";
+            $cosapregunta=mysql_query($sqlpre) or die(mysqli_error());
+            $coinciden=0;
+            $cadena2=$nombre.$appaterno.$apmater;
+            $cadena2=ereg_replace("[]+","", $cadena2);
+            while($row=mysql_fetch_array($cosapregunta)){
+                    $cadena=$row['nombre'].$row['apellidopaterno'].$row['apellidomaterno'];
+                                $cadena=ereg_replace("[]+","", $cadena);
+                                if($cadena==$cadena2){
+                                $coinciden=1;
+                            }
+                        }
+                    
+            
+            if($coinciden==1){
+                        echo "<script>alert('Ya existe mi Catedrático');
+                            window.location ='../Entidades/catedratico.php';</script>";
+
+            }else{
+            
             $sqluser ="INSERT INTO catedratico (nombre, apellidomaterno, apellidopaterno, correo, idfacultad) VALUES ('".$nombre."','".$apmater."','".$appaterno."','".$correo."','".$facu."')";
             $cosa= mysql_query($sqluser) or die(mysqli_error());
             mysql_close();
@@ -30,13 +50,13 @@ include"../../Vistas/seguridad.php";
         $correo="";
         $facu="";
         $sqluser="";
-
+            
         if ($cosa) {
             echo "<script>alert('Mi Catedrático ha sido agregado satisfactoriamente');
                 window.location = '../Entidades/catedratico.php';</script>";
         }else{echo "<script>alert('Mi Catedrático no ha sido agregado');</script>";}
          
-    
+            }
 
         }
 

@@ -8,37 +8,34 @@ include"seguridadkiosko2.php";
 <!-- Metas -->
 <meta charset="utf-8"> 
 <meta name=viewport content="width=device-width, initial-scale=1">
-	
 <!-- CSS -->
-	<link rel="stylesheet" href="css/estilo2.css">
-	<link rel="stylesheet" type="text/css" href="Bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="Bootstrap/css/bootstrap-responsive.css">
+	<link rel="stylesheet" href="../css/estilo2.css">
 <!-- JS -->
-
-<script src="js/jquery-1.11.0.min.js"></script>
+<script src="../js/jquery-1.11.0.min.js"></script>
+<script src="../JS comprimido/jquery.cycle.all.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function(){
-	$('#body1').load("anuncio1kiosko.php");
+	$('#body1').load("Kiosco/anuncio1kiosko.php");
 });
 </script>
 
 <script type="text/javascript">
 ///////////// Recarga avisos prioridad alta,ahora cada 5min ////////////////
 var tiempoa =setInterval(function(){
-	$('#body1').load("anuncio1kiosko.php");
+	$('#body1').load("Kiosco/anuncio1kiosko.php");
 },300000);
 
 </script>
 <script type="text/javascript">
 $(document).ready(function(){
-	$('#body2').load("anuncio2kiosko.php");
+	$('#body2').load("Kiosco/anuncio2kiosko.php");
 
 });</script>
 <script type="text/javascript">
 ////////////// Recarga avisos prioridad baja,media cada 5 min ////////////7 
 var tiempoap =setInterval(function(){
-	$('#body2').load("anuncio2kiosko.php");
+	$('#body2').load("Kiosco/anuncio2kiosko.php");
 },300000);
 
 </script>

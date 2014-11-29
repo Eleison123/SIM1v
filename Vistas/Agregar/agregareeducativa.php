@@ -9,6 +9,7 @@
 <meta charset="utf-8">
 <!-- CSS -->
 <link rel="stylesheet" href="../../css/css1a.css">
+    <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
 <script language="Javascript" type="text/javascript">
 //<![CDATA[
@@ -17,7 +18,7 @@ document.oncontextmenu = function(){return false}
 // End -->
 //]]>
 </script>
-<title>Kiosco administrador</title>
+<title>Experiencia Educativa</title>
 </head>
 <div id="portada">
     <img id="imgportada" src="../../imagenes/header.jpg">
@@ -27,17 +28,11 @@ document.oncontextmenu = function(){return false}
     <div id="men">
 <nav id="menu">
     <ul>
-        <li><a href="../pagprin.php">Inicio</a></li>
-        <li><a href="../Entidades/publicacion.php">Publicación</a></li>
-        <li><a href="../Entidades/horario.php">Horarios</a></li>
-        <li><a href="../Entidades/cuenta.php">Cuenta</a></li>
-        <li><a href="../Entidades/facultad.php">Facultad</a></li>
-        <li><a href="../Entidades/eeducativa.php" id="qwerty">E.Educativa</a></li>
-        <li><a href="../Entidades/registro.php">Registro</a></li>
-        <li><a href="../Entidades/carrera.php">Carrera</a></li>  
-        <li><a href="../Entidades/catedratico.php">Catedrático</a></li>
-        <li><a href="../Entidades/catedratico.php">Ubicaciones</a></li>   
-        <li><a href="../Entidades/salir.php">Salir</a></li>   
+        <li><a href="../pagprin.php">INICIO</a></li>
+        <li><a>/</a></li>
+        <li><a href="../Entidades/eeducativa.php">E.EDUCATIVA</a></li>
+        <li><a>/</a></li>
+        <li><a>AGREGAR E.EDUCATIVA</a></li>
     </ul>
 </nav>
 </div>
@@ -55,11 +50,11 @@ document.oncontextmenu = function(){return false}
         
       <form method="POST">
         <fieldset><legend><a class="text1">Datos de Materia</a></legend>
-            <label><a class="text1">NRC:</a></label>
-            <input type="text" name="nrc" pleaceholder="NRC Vigente"><br><br>
-            <label><a class="text1">NRC 98:</a></label>
-            <input type="text" name="nrc98" pleaceholder="NRC Vigente"><br><br>
-            <label><a class="text1">Nombre:</a></label>
+            <label><a class="text1">NRC:</a></label><br>
+            <input type="text" name="nrc" pleaceholder="NRC Vigente" maxlength="5"><br><br>
+            <label><a class="text1">NRC 98:</a></label><br>
+            <input type="text" name="nrc98" pleaceholder="NRC Vigente" maxlength="5"><br><br>
+            <label><a class="text1">Nombre:</a></label><br>
             <input type="text" name="nombre" placeholder="Nombre de la Materia">  <br> <br>    
 
                         <?php 
@@ -73,7 +68,7 @@ document.oncontextmenu = function(){return false}
                             $fac = $fil[0];
                         
                             ?>
-   <label><a class="text1">Catedratico:</a></label>                         
+   <label><a class="text1">Catedratico:</a></label> <br>                        
 <select name="catedratico" id="catedratico" placeholder="catedratico">
     <?php
     require_once("../../conexiones/conexion.php");
@@ -92,7 +87,7 @@ document.oncontextmenu = function(){return false}
 echo "</select>";
 ?>
 </select><br><br>
-<label><a class="text1">Carrera:</a></label>
+<label><a class="text1">Carrera:</a></label><br>
 
   <?php  
    echo "<select name='carrera'>";
@@ -108,7 +103,7 @@ echo "</select>";
 
 ?>
 </fieldset>
-<input type="submit"  value="Guardar" id="btnguardar" name="guardar"> <input type="reset" id="btnreset">
+<input type="submit"  value="GUARDAR" id="btnguardar" name="guardar"> <input type="reset" id="btnreset" value="RESET">
        
     </div>
     </form></div>

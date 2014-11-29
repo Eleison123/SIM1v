@@ -48,6 +48,7 @@ $resulid=mysql_query($mysqlid) or die(mysql_error());
 <meta charset="utf-8">
 <!-- CSS -->
 <link rel="stylesheet" href="../../css/css1a.css">
+       <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
 <script language="Javascript" type="text/javascript">
 //<![CDATA[

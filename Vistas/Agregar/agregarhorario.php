@@ -6,6 +6,7 @@
 <meta charset="utf-8">
 <!-- CSS -->
 <link rel="stylesheet" href="../../css/css1a.css">
+<link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
 <script src="../../js/jquery-1.4.2.min.js"></script> 
 <script language="Javascript" type="text/javascript">
@@ -34,17 +35,11 @@ document.oncontextmenu = function(){return false}
     <div id="men">
 <nav id="menu">
             <ul>
-        <li><a href="../pagprin.php" >INICIO</a></li>
-        <li><a href="../Entidades/publicacion.php">PUBLICACIÓN</a></li>
-        <li><a href="../Entidades/horario.php" id="qwerty">HORARIO</a></li>
-        <li><a href="../Entidades/cuenta.php">CUENTA</a></li>
-        <li><a href="../Entidades/facultad.php">FACULTAD</a></li>
-        <li><a href="../Entidades/eeducativa.php">E.EDUCATIVA</a></li>
-        <li><a href="../Entidades/registro.php">REGISTRO</a></li>
-        <li><a href="../Entidades/carrera.php">CARRERA</a></li>  
-        <li><a href="../Entidades/catedratico.php">CATEDRÁTICO</a></li>   
-        <li><a href="../Entidades/ubicaciones.php">UBICACIONES</a></li>   
-        <li><a href="../Entidades/salir.php">SALIR</a></li>  
+                <li><a href="../pagprin.php" >INICIO</a></li>
+                <li><a>/</a></li>
+                <li><a href="../Entidades/horario.php">HORARIO</a></li>
+                <li><a>/</a></li>
+                <li><a>AGREGRAR HORARIO</a></li>
     </ul>
 </nav>
 </div>
@@ -83,6 +78,7 @@ document.oncontextmenu = function(){return false}
     ?>
 <select name="catedratico" id="catedratico" placeholder="catedratico">
     <option selected value="">Seleccionar Catedrático</option>
+    
     <?php
     //Preguntamos los nombres de las materias segun su idfacultad
  $mysql="SELECT idcatedratico, nombre, apellidomaterno, apellidopaterno FROM catedratico WHERE idfacultad='".$fac."';";

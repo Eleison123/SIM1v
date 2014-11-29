@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="../../css/css1a.css">
 <!-- JS -->
 <script src="../../js/jquery-1.4.2.min.js"></script> 
+    <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <script language="Javascript" type="text/javascript">
  Begin
 document.oncontextmenu = function(){return false}
@@ -42,16 +43,16 @@ $(document).ready(function(event){
 <nav id="menu">
     <ul>
         <li><a href="../pagprin.php" >INICIO</a></li>
-        <li><a href="Entidades/publicacion.php">PUBLICACIÓN</a></li>
-        <li><a href="Entidades/horario.php" id="qwerty">HORARIO</a></li>
-        <li><a href="Entidades/cuenta.php">CUENTA</a></li>
-        <li><a href="Entidades/facultad.php">FACULTAD</a></li>
-        <li><a href="Entidades/eeducativa.php">E.EDUCATIVA</a></li>
-        <li><a href="Entidades/registro.php">REGISTRO</a></li>
-        <li><a href="Entidades/carrera.php">CARRERA</a></li>  
-        <li><a href="Entidades/catedratico.php">CATEDRÁTICO</a></li>   
-        <li><a href="Entidades/ubicaciones.php">UBICACIONES</a></li>   
-        <li><a href="Entidades/salir.php">SALIR</a></li> 
+        <li><a href="publicacion.php">PUBLICACIÓN</a></li>
+        <li><a href="horario.php" id="qwerty">HORARIO</a></li>
+        <li><a href="cuenta.php">CUENTA</a></li>
+        <li><a href="facultad.php">FACULTAD</a></li>
+        <li><a href="eeducativa.php">E.EDUCATIVA</a></li>
+        <li><a href="registro.php">REGISTRO</a></li>
+        <li><a href="carrera.php">CARRERA</a></li>  
+        <li><a href="catedratico.php">CATEDRÁTICO</a></li>   
+        <li><a href="ubicaciones.php">UBICACIONES</a></li>   
+        <li><a href="salir.php">SALIR</a></li> 
     </ul>
 </nav>
 </div>

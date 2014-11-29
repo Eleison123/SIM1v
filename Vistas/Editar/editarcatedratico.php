@@ -10,7 +10,25 @@ if (@$_POST['guardar']) {
              $apellidomaterno1= $_POST['apellidomaterno'];
               $correo1= $_POST['correo'];
             $id1= $_POST['id'];
+$sqlpre = "SELECT * FROM catedratico";
+            $cosapregunta=mysql_query($sqlpre) or die(mysqli_error());
+            $coinciden=0;
+            $cadena2=$nombre1.$appaterno1.$apmater.$correo1;
+            $cadena2=ereg_replace("[]+","", $cadena2);
+            while($row=mysql_fetch_array($cosapregunta)){
+                    $cadena=$row['nombre'].$row['apellidopaterno'].$row['apellidomaterno'].$row['correo'];
+                                $cadena=ereg_replace("[]+","", $cadena);
+                                if($cadena==$cadena2){
+                                $coinciden=1;
+                            }
+                        }
+                    
+            
+            if($coinciden==1){
+                        echo "<script>alert('Ya existe mi Catedrático');
+                            window.location ='../Entidades/catedratico.php';</script>";
 
+            }else{
 
      $sqlf="UPDATE catedratico SET
 nombre = '".$nombre1."', 
@@ -22,7 +40,7 @@ $resultadof = mysql_query($sqlf) or die(mysql_error());
 mysql_close();
 echo "<script>alert('Mi Catedrático ha sido editado exitosamente');
                 window.location = '../Entidades/catedratico.php';</script>";
-
+            }
 
 }//termina si estan vacio
 else{
@@ -51,6 +69,7 @@ $resulid=mysql_query($mysqlid) or die(mysql_error());
 <meta charset="utf-8">
 <!-- CSS -->
 <link rel="stylesheet" href="../../css/css1a.css">
+    <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
 <script language="Javascript" type="text/javascript">
  Begin
@@ -71,16 +90,10 @@ document.oncontextmenu = function(){return false}
 <nav id="menu">
     <ul>
         <li><a href="../pagprin.php">INICIO</a></li>
-        <li><a href="../Entidades/publicacion.php">PUBLICACIÓN</a></li>
-        <li><a href="../Entidades/horario.php">HORARIO</a></li>
-        <li><a href="../Entidades/cuenta.php">CUENTA</a></li>
-        <li><a href="../Entidades/facultad.php">FACULTAD</a></li>
-        <li><a href="../Entidades/eeducativa.php">E.EDUCATIVA</a></li>
-        <li><a href="../Entidades/registro.php">REGISTRO</a></li>
-        <li><a href="../Entidades/carrera.php">CARRERA</a></li>  
-        <li><a href="../Entidades/catedratico.php" id="qwerty">CATEDRÁTICO</a></li>
-        <li><a href="../Entidades/ubicaciones.php">UBICACIONES</a></li>   
-        <li><a href="../Entidades/salir.php">SALIR</a></li>   
+        <li><a>/</a></li> 
+        <li><a href="../Entidades/catedratico.php" >CATEDRÁTICO</a></li>
+        <li><a>/</a></li>
+        <li><a>EDITAR CATEDRÁTICO</a></li>
     </ul>
 </nav>
 </div>
@@ -109,7 +122,7 @@ document.oncontextmenu = function(){return false}
         
  
 </fieldset>
-        <input type="submit" value="Guardar" id="btnguardar" name="guardar">
+        <input type="submit" value="GUARDAR" id="btnguardar" name="guardar">
  
 </form>
 </div>

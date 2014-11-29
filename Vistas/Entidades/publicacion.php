@@ -6,8 +6,9 @@
 <meta charset="utf-8">
 <!-- CSS -->
 <link rel="stylesheet" href="../../css/css1a.css">
+<link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
-<script src="../js/jquery-1.4.2.min.js"></script> 
+<script src="../../js/jquery-1.4.2.min.js"></script> 
 <script language="Javascript" type="text/javascript">
  Begin
 document.oncontextmenu = function(){return false}
