@@ -1,97 +1,43 @@
 
 /* CSS Document */
 body{
-	background-image: url("../imagenes/textura-back.jpg");
-	padding-left: 35%;
-	padding-top: 10%;
+	background-image: url(../imagenes/textura-backinicio.jpg);
+    padding: 0px;
+    margin: 0px;
 }
-.iconos {
-transition:All 1s ease;
--webkit-transition:All 1s ease;
--moz-transition:All 1s ease;
--o-transition:All 1s ease;
-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
--webkit-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
--moz-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
--o-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
--ms-transform: rotate(4deg) scale(1) skew(1deg) translate(10px);
-}
-.iconos:hover{
-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
--webkit-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
--moz-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
--o-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
--ms-transform: rotate(0deg) scale(0.67) skew(1deg) translate(0px);
-}
-#KE1{
-    float: left;
-padding: 35%;
-}
-#KD1{
-    float: left;
-padding: 25%;
-}
-#KE{
-    cursor: pointer;
-    left: 10%;
-    width: 120px;
-    height: 120px;
-    position: absolute;
+#forma{
+    width: 270px;
+    height: 170px;
+    margin-left: 37%;
+    margin-top: 16%;
+    position: fixed;
     background: #ed9600;
-    text-align: center;
-     -webkit-border-radius: 1000px;
--moz-border-radius: 1000px;
-border-radius: 1000px;
+    -webkit-box-shadow: 3px 3px 54px 4px rgba(0,0,0,0.75);
+-moz-box-shadow: 3px 3px 54px 4px rgba(0,0,0,0.75);
+box-shadow: 3px 3px 54px 4px rgba(0,0,0,0.75);
     
-}
-#KE:hover{
-    cursor: pointer;
-    background: green;
-    -webkit-border-radius: 1000px;
--moz-border-radius: 1000px;
-border-radius: 1000px;
-}
-#KD{
-    cursor: pointer;
-    right: 10%;
-    width: 120px;
-    height: 120px;
-    position: absolute;
-    background: #ed9600;
-    text-align: center;
-     -webkit-border-radius: 1000px;
--moz-border-radius: 1000px;
-border-radius: 1000px;
     
-}
-#KD:hover{
-    cursor: pointer;
-    background: green;
-    -webkit-border-radius: 1000px;
--moz-border-radius: 1000px;
-border-radius: 1000px;
 }
 #logocoa{
-    width: 270px;
+    width: 770px;
+    height: 442px;
+    top:40px;
+        margin:0px;
+    margin-left: 18%;
    -webkit-border-top-left-radius: 10px;
--webkit-border-top-right-radius: 10px;
--moz-border-radius-topleft: 10px;
--moz-border-radius-topright: 10px;
-border-top-left-radius: 10px;
-border-top-right-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: absolute;
 }
+
 #recuadro{
 	width:250px;
 	height:150px;
 	padding:10px;
 	background: #ed9600;
-	-webkit-border-bottom-right-radius: 10px;
--webkit-border-bottom-left-radius: 10px;
--moz-border-radius-bottomright: 10px;
--moz-border-radius-bottomleft: 10px;
-border-bottom-right-radius: 10px;
-border-bottom-left-radius: 10px;
-    
 	float: left;
 }
 
@@ -99,48 +45,49 @@ border-bottom-left-radius: 10px;
 	margin: 0px;
 	margin-top: 5px;
 }
+
 #botones{
 	position: relative;
 	width: 270px;
+    overflow: hidden;
 	height: auto;
 	margin: 0px;
 	margin-top: 40px;
-	border-radius: 4px;
-	padding: 5px;
-    
+background: #28AD56;  
+}
+#botones:hover{
+color:#28AD56;  
+    background: white;
 }
 label{
 	color:#FFF;
 	font-weight:bold;
   font-size: 15px;
   display: block;
+    margin-top: 8px;
     font-family: VERDANA;
 
 }
 
 #usuario{
-    border-radius: 5px;
     width: 100%;
 }
 #contrasena{
-    border-radius: 5px;
     width: 100%;
 }
+.boton:hover{
+    color:#28AD56;  
+    background: white;
+}
 .boton{
-	width:95px;
+	width: 270px;
 	height:50px;
 	border:none;
-	color:#39414A;
+	color:white;
 	padding:4px;
-	margin-left: 25px;
 	cursor:pointer;
 	font-weight: bold;
     font-family: VERDANA;
-    background: white;
-    -webkit-border-bottom-right-radius: 10px;
--webkit-border-bottom-left-radius: 10px;
--moz-border-radius-bottomright: 10px;
--moz-border-radius-bottomleft: 10px;
-border-bottom-right-radius: 10px;
-border-bottom-left-radius: 10px;
+    background: #28AD56;
+   
 }

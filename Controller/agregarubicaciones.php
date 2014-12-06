@@ -4,10 +4,9 @@ include "../../Vistas/seguridad.php";
     //si presiona guardar
     if (@$_POST['guardar']) {
     // metemos la conexión
-    require_once("../../conexiones/conexion.php");
+    require_once("../../Conexiones/conexion.php");
         if(isset(
-            $_POST['nombre'])and
-            ($_POST['descripcion']!="")){ 
+            $_POST['nombre'])){ 
             // limpiamos caracteres especiales
             $nombre= mysql_real_escape_string($_POST['nombre']);
             $descripcion= mysql_real_escape_string($_POST['descripcion']);

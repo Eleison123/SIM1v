@@ -31,27 +31,27 @@ document.oncontextmenu = function(){return false}
 		    </div>
             <div class="botonera" id="empleo" title="Todas las publicaciones">
 			<img class="icon" src="../../imagenes/icon2.png">
-			<p class="texto">Empleo</p>
+			<p class="texto">Empleos</p>
 		    </div>
             <div class="botonera" id="certificacion" title="Todas las publicaciones">
 			<img class="icon" src="../../imagenes/icon2.png">
-			<p class="texto">Certificacion</p>
+			<p class="texto">Certificaciones</p>
 		    </div>
 		    <div class="botonera" id="seminario" title="Todas las publicaciones">
 			<img class="icon" src="../../imagenes/icon2.png">
-			<p class="texto">Seminario</p>
+			<p class="texto">Seminarios</p>
 		    </div>
 		     <div class="botonera" id="junta" title="Todas las publicaciones">
 			<img class="icon" src="../../imagenes/icon2.png">
-			<p class="texto">Junta</p>
+			<p class="texto">Juntas</p>
 		    </div>
 		     <div class="botonera" id="aviso" title="Todas las publicaciones">
 			<img class="icon" src="../../imagenes/icon2.png">
-			<p class="texto">Aviso</p>
+			<p class="texto">Avisos</p>
 		    </div>
 		     <div class="botonera" id="otro" title="Todas las publicaciones">
 			<img class="icon" src="../../imagenes/icon2.png">
-			<p class="texto">Otro</p>
+			<p class="texto">Otros</p>
 		    </div>
             <div class="botonera" id="uno" title="Atrás">
 			<a href="../principalkiosko.php">

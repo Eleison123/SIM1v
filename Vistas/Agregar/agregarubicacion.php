@@ -69,7 +69,7 @@ document.oncontextmenu = function(){return false}
             echo "<br><br>";
             ?>
             </fieldset>
-        <input  type="submit"  value="GUARDAR" id="btnguardar" name="guardar" > <input type="reset" id="btnreset" value="RESET">
+        <input  type="submit"  value="GUARDAR" id="btnguardar" name="guardar" >
         </form>
     </div>
     </div>

@@ -44,16 +44,16 @@ document.oncontextmenu = function(){return false}
 <nav id="menu">
     <ul>
         <li><a href="../pagprin.php" >INICIO</a></li>
-        <li><a href="Entidades/publicacion.php">PUBLICACIÓN</a></li>
-        <li><a href="Entidades/horario.php">HORARIO</a></li>
-        <li><a href="Entidades/cuenta.php">CUENTA</a></li>
-        <li><a href="Entidades/facultad.php">FACULTAD</a></li>
-        <li><a href="Entidades/eeducativa.php">E.EDUCATIVA</a></li>
-        <li><a href="Entidades/registro.php">REGISTRO</a></li>
-        <li><a href="Entidades/carrera.php">CARRERA</a></li>  
-        <li><a href="Entidades/catedratico.php">CATEDRÁTICO</a></li>   
-        <li><a href="Entidades/ubicaciones.php" id="qwerty">UBICACIONES</a></li>   
-        <li><a href="Entidades/salir.php">SALIR</a></li>  
+        <li><a href="publicacion.php">PUBLICACIÓN</a></li>
+        <li><a href="horario.php">HORARIO</a></li>
+        <li><a href="cuenta.php">CUENTA</a></li>
+        <li><a href="facultad.php">FACULTAD</a></li>
+        <li><a href="eeducativa.php">E.EDUCATIVA</a></li>
+        <li><a href="registro.php">REGISTRO</a></li>
+        <li><a href="carrera.php">CARRERA</a></li>  
+        <li><a href="catedratico.php">CATEDRÁTICO</a></li>   
+        <li><a href="ubicaciones.php" id="qwerty">UBICACIONES</a></li>   
+        <li><a href="salir.php">SALIR</a></li>  
     </ul>
 </nav>
 </div>
@@ -146,7 +146,7 @@ document.oncontextmenu = function(){return false}
 
     if ($total_paginas > 1) {
         if ($pagina != 1)
-            echo '<a class="textlink" href="'.'?pagina='.($pagina-1).'"><img src="../imagenes/izq.gif" border="0"></a>';
+            echo '<a class="textlink" href="'.'?pagina='.($pagina-1).'"><img src="../../imagenes/izq.gif" border="0"></a>';
         for ($i=1;$i<=$total_paginas;$i++) {
             if ($pagina == $i)
                 //si muestro el �ndice de la p�gina actual, no coloco enlace
@@ -157,7 +157,7 @@ document.oncontextmenu = function(){return false}
                 echo '  <a class="textlink" href="'.'?pagina='.$i.'">'.$i.'</a>  ';
         }
         if ($pagina != $total_paginas)
-            echo '<a class="textlink"><a class="textlink" href="'.'?pagina='.($pagina+1).'"><img src="../imagenes/der.gif" border="0"></a></a>';
+            echo '<a class="textlink"><a class="textlink" href="'.'?pagina='.($pagina+1).'"><img src="../../imagenes/der.gif" border="0"></a></a>';
     }
     echo '</p>';}
                             echo "</div>";  

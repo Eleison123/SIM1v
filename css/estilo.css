@@ -40,19 +40,16 @@ width: 100%;
 
 #cabecera{ 
 position:relative;
-	background:#285099;
 	padding-left:155px;
 	height: 40px;
 		}
 #cen{
 	font-family: VERDANA;
-				height: 150px;
+				height: 120px;
 	         width:100%;
 			overflow:hidden;
 			background:#474c5a;
-			-webkit-box-shadow: inset 0px 0px 151px -31px rgba(0,0,0,0.75);
-			-moz-box-shadow: inset 0px 0px 151px -31px rgba(0,0,0,0.75);
-			box-shadow: inset 0px 0px 151px -31px rgba(0,0,0,0.75);
+			
 		}
 		
 #cont{
@@ -75,11 +72,11 @@ header{
 {
 	padding:5px;
 	width: auto;
-	height:150px;
+	height:70px;
 	float:left;
 	position:center;
 	margin-left:10%;
-    margin-top: 5%;
+    margin-top: 1.5%;
 }
 #uno
 { 

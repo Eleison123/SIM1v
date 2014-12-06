@@ -72,17 +72,11 @@ document.oncontextmenu = function(){return false}
     <div id="men">
 <nav id="menu">
     <ul>
-        <li><a href="../pagprin.php">Inicio</a></li>
-        <li><a href="../Entidades/publicacion.php">Publicación</a></li>
-        <li><a href="../Entidades/horario.php">Horarios</a></li>
-        <li><a href="../Entidades/cuenta.php">Cuenta</a></li>
-        <li><a href="../Entidades/facultad.php">Facultad</a></li>
-        <li><a href="../Entidades/eeducativa.php">E.Educativa</a></li>
-        <li><a href="../Entidades/registro.php">Registro</a></li>
-        <li><a href="../Entidades/carrera.php">Carrera</a></li>  
-        <li><a href="../Entidades/catedratico.php">Catedrático</a></li>
-        <li><a href="../Entidades/catedratico.php">Ubicaciones</a></li>   
-        <li><a href="../Entidades/salir.php">Salir</a></li>  
+        <li><a href="../pagprin.php">INICIO</a></li>
+        <li><a>/</a></li>
+        <li><a href="../Entidades/carrera.php">CARRERA</a></li>  
+        <li><a>/</a></li>
+        <li><a>EDITAR CARRERA</a></li>
     </ul>
 </nav>
 </div>
@@ -106,7 +100,7 @@ document.oncontextmenu = function(){return false}
         
  
 </fieldset>
-        <input type="submit" value="Guardar" id="btnguardar" name="guardar">
+        <input type="submit" value="GUARDAR" id="btnguardar" name="guardar">
  
 </form>
 </body></div>
