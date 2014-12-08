@@ -35,19 +35,21 @@ document.oncontextmenu = function(){return false}
 </script>
 
 <body>
-	<center><div id="contenedor">
-        <img src="imagenes/logocoa.jpg" id="log">
+	 <img src="imagenes/coatli2.png" id="logg">
+    <center><div id="contenedor">
 	<div id="Log">
 
 		<form method="POST" name="login">
 			
-				<a for="facultad"><h1>Facultad:</h1></a><br>
+				<center><a for="facultad">
+                    <h1>Facultad</h1></a>
+                </center>
 			    
 			   		<?php
 			   		echo "<select id='fac'name='facultad'>";
 			   		require_once("conexiones/conexion.php");
 						    //Preguntamos los nombres de las materias segun su idfacultad
-						 $mysql="select idfacultad, nombre from facultad ";
+						 $mysql="SELECT idfacultad, nombre from facultad ";
 						$resul=mysql_query($mysql) or die(mysql_error());
 						while($row=mysql_fetch_array($resul)){
 						    echo "<option value='".$row['idfacultad']."'>";
@@ -59,14 +61,14 @@ document.oncontextmenu = function(){return false}
 					?>
 					<br>
 				
-			<br/><div id="botones">
-				<input name="entrar"  class="boton"type="submit" value="INGRESAR"/>
+			<br/><center><div class="botones">
+            <center><input name="entrar"  class="boton" type="submit" value="INGRESAR"/></center>
 			    
 		</form>
 
 
-	</div>
+            </div></center>
 
-        </div></div></center>
+			</div></center>
 
 </body>

@@ -32,13 +32,16 @@ document.oncontextmenu = function(){return false}
 //]]>
 </script>
 <body>
+    
+    <img src="imagenes/coatli2.png" id="logg">
     <center><div id="contenedor">
-        <img src="imagenes/logocoa.jpg" id="log">
 	<div id="Log">
 
 		<form method="POST" name="login">
 			
-				<center><a for="facultad"><h1>Facultad</h1></a></center>
+				<center><a for="facultad">
+                    <h1>Facultad</h1></a>
+                </center>
 			    
 			   		<?php
 			   		echo "<select id='fac'name='facultad'>";
@@ -56,8 +59,8 @@ document.oncontextmenu = function(){return false}
 					?>
 					<br>
 				
-			<br/><center><div id="botones">
-            <center><input name="entrar"  class="boton"type="submit" value="INGRESAR"/></center>
+			<br/><center><div class="botones">
+            <center><input name="entrar"  class="boton" type="submit" value="INGRESAR"/></center>
 			    
 		</form>
 

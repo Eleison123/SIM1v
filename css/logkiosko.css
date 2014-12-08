@@ -1,71 +1,74 @@
 body{
     font-family: VERDANA;
-	background-image: url("../imagenes/textura-back.jpg");
+	background-image: url("../imagenes/textura-backinicio.jpg");
 }
 
 #Log{
+    font-family: VERDANA;
 	width: 250px;
 	height: 250px;
-        background: #ed9600;
-	padding: 10px;
+    background: #ed9600;
 	 position: absolute;
-    -webkit-border-bottom-right-radius: 10px;
--webkit-border-bottom-left-radius: 10px;
--moz-border-radius-bottomright: 10px;
--moz-border-radius-bottomleft: 10px;
-border-bottom-right-radius: 10px;
-border-bottom-left-radius: 10px;
-    -webkit-box-shadow: 2px 6px 28px 0px rgba(50, 50, 50, 0.75);
--moz-box-shadow:    2px 6px 28px 0px rgba(50, 50, 50, 0.75);
-box-shadow:         2px 6px 28px 0px rgba(50, 50, 50, 0.75);
-  
+    -webkit-box-shadow: 2px 6px 28px 0px rgba(50, 50, 50, 1);
+-moz-box-shadow:    2px 6px 28px 0px rgba(50, 50, 50, 1);
+box-shadow:         2px 6px 28px 0px rgba(50, 50, 50, 1);
 }
-#log{
-    position: auto;
-    width: 270px;
-   
-    -webkit-border-top-left-radius: 10px;
--webkit-border-top-right-radius: 10px;
--moz-border-radius-topleft: 10px;
--moz-border-radius-topright: 10px;
-border-top-left-radius: 10px;
-border-top-right-radius: 10px;
+
+#logg{
+    position: fixed;
+    top:0px;
+    width: 675px;
+    height: 500px;
+margin-left: 25%;
 }
-#tit{
-	opacity: .6;
-	color: #FFF;
-}
+
 #Log a{
 	opacity: .5;
 	color: #FFF;
 	
 }
 #fac{
-	width: 250px;
+	width: 230px;
 	height: 50px;
-	
+    margin: 10px;
+	font-family: VERDANA;
 }
-#logo{
- width: 250px;
- height: 350px;
- border-radius: 10px;
- margin-left: 0px;
- margin-left: 500px;
-}
-#contenedor{
-width: 250px;
-	height: 300px;
-	margin-left: 15%;
-	margin-right: 15%;
-	margin-top: 15%;
 
+#contenedor{
+    width: 250px;
+	height: 300px;
+    position: absolute;
+margin-left: 40%;
+    top:25%;
 }
 input{
-	border-radius: 5px;
 	border: none;
-	width: 180px;
+	width: 150px;
 	height: 50px;
 	color: #0066CC;
 	background: #FFF;
 	font-weight: bold;
+}
+.botones{
+position: relative;
+	width: 250px;
+    overflow: hidden;
+	height: auto;
+	margin-top: 40px;
+background: #28AD56;  }
+.boton:hover{
+    color:#28AD56;  
+    background: white;
+}
+.boton{
+	width: 270px;
+	height:50px;
+	border:none;
+	color:white;
+	padding:4px;
+	cursor:pointer;
+	font-weight: bold;
+    font-family: VERDANA;
+    background: #28AD56;
+   
 }

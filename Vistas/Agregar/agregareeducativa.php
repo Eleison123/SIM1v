@@ -55,7 +55,7 @@ document.oncontextmenu = function(){return false}
             <label><a class="text1">NRC 98:</a></label><br>
             <input type="text" name="nrc98" pleaceholder="NRC Vigente" maxlength="5"><br><br>
             <label><a class="text1">Nombre:</a></label><br>
-            <input type="text" name="nombre" placeholder="Nombre de la Materia">  <br> <br>    
+            <input type="text" name="nombre" placeholder="Nombre de la Experiencia Educativa ">  <br> <br>    
 
                         <?php 
                          require_once("../../conexiones/conexion.php");
@@ -103,7 +103,7 @@ echo "</select>";
 
 ?>
 </fieldset>
-<input type="submit"  value="GUARDAR" id="btnguardar" name="guardar"> <input type="reset" id="btnreset" value="RESET">
+<input type="submit"  value="GUARDAR" id="btnguardar" name="guardar">
        
     </div>
     </form></div>

@@ -67,7 +67,7 @@ $(document).ready(function(event){
  <?php
  
    echo "<div id='agregar'><form  method='post' action='../Agregar/agregareeducativa.php'><img src='../../imagenes/add.gif' class='icon'>
-                        <input type='submit' value='Agregar Materia'  name='agregar' class='conf'>
+                        <input type='submit' value='Agregar Experiencia Educativa'  name='agregar' class='conf'>
                         </form></div>";
  echo"
 

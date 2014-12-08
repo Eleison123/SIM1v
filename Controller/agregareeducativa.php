@@ -5,11 +5,8 @@ include"../../Vistas/seguridad.php";
     if (@$_POST['guardar']) {
         //le metemos la conexión
     require_once("../../conexiones/conexion.php");
-        if(isset($_POST['nrc'])and
-            ($_POST['catedratico'])and
-            ($_POST['carrera'])and
-            ($_POST['nrc98'])and
-            ($_POST['nombre']!="")){ 
+        if(isset(
+            $_POST['nombre'])){ 
             //Limpiamos caracteres especiales
             $nombre= mysql_real_escape_string($_POST['nombre']);
             $carrera= mysql_real_escape_string($_POST['carrera']);
@@ -31,7 +28,7 @@ include"../../Vistas/seguridad.php";
 
             if ($nrc==$nrcf) {
                 echo "<script>alert('Mi experiencia educativa ya existe.');
-                window.location = '../../Entidades/eeducativa.php';</script>";
+                window.location = '../Entidades/eeducativa.php';</script>";
                 # code...
             }else{
                 //Obtenemos idfac del administrador

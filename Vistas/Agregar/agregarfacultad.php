@@ -33,7 +33,7 @@ document.oncontextmenu = function(){return false}
         <li><a>/</a></li>
         <li><a href="../Entidades/facultad.php">FACULTAD</a></li>
        <li><a>/</a></li>
-        <li><a>AGREGAR FACULTAD</a></li>
+        <li><a id ="qwerty">AGREGAR FACULTAD</a></li>
     </ul>
 </nav>
 </div>
@@ -56,7 +56,7 @@ document.oncontextmenu = function(){return false}
             <input type="text" name="nombre"><br>
             <label><a class="text1">Sede:</a></label><br>
             <input type="text"name="sede"><br></fieldset>
-        <input  type="submit"  value="GUARDAR" id="btnguardar" name="guardar" > <input type="reset" id="btnreset" value="RESET">
+        <input  type="submit"  value="GUARDAR" id="btnguardar" name="guardar" >
         </form>
     </div>
     </div>
