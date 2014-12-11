@@ -15,8 +15,9 @@
     <meta charset="utf-8">
 <!-- CSS -->
     <link rel="stylesheet" href="../../css/horarioscss.css">
+        <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
- <title>Sistema Interactivo de Mensajes 1v Coatlicue</title>
+ <title>Sistema Interactivo de Mensajes</title>
     </head> 
     
   <div id="cen" >
@@ -26,20 +27,20 @@
             <a class="texto">Horarios Escolar</a>
             </div>
             <div class="botonera" id="HI"  title="Todas las publicaciones">
-            <img class="icon" src="../../imagenes/icon3.png">
+            <img class="icon" src="../../imagenes/iconos_55.png">
             <a class="texto">Horarios Intersemestral</a>
             </div>
             <div class="botonera" id="HEX" title="Todas las publicaciones">
-            <img class="icon" src="../../imagenes/icon3.png">
+            <img class="icon" src="../../imagenes/iconos_55.png">
             <a class="texto">Horarios Exámen</a>
             </div>
             <div class="botonera" id="HT" title="Todas las publicaciones">
-            <img class="icon" src="../../imagenes/icon3.png">
+            <img class="icon" src="../../imagenes/iconos_55.png">
             <a class="texto">Horarios Tutorias</a>
             </div>  
             <div class="botonera" id="uno" title="Atrás">
-            <a href="../principalkiosko.php"><img class="icon" src="../../imagenes/icon6.png"></a>
-            <a class="texto">Regresar</a>
+            <a href="../principalkiosko.php"><img class="iconos" src="../../imagenes/iconos_21.png"></a>
+            
             </div></center>
   </div>
 
@@ -50,15 +51,15 @@
         <h1><a class="text1z">Horarios</a></h1>
     </div>
     <div id="back">
-<a href="../principalkiosko.php"><img class="icon" src="../../imagenes/icon6.png"></a>
-<p class="texto">Atras</p>
+<a href="../principalkiosko.php"><img class="iconos" src="../../imagenes/iconos_21.png"></a>
+
     </div>
 </div>
 <center>
     <div id="HES2">
 <div class="marcax">
 <div class="cuadro">
-<img class="icon" src="../../imagenes/icon3.png">
+<img class="icon" src="../../imagenes/iconos_55.png">
 <a class="texto">Horarios Escolar</a>
 </div>
 </div>
@@ -66,7 +67,7 @@
 <div id="HI2">
 <div class="marcax">
 <div class="cuadro">
-<img class="icon" src="../../imagenes/icon3.png">
+<img class="icon" src="../../imagenes/iconos_55.png">
 <a class="texto">Horarios Intersemestral</a>
 </div>
 </div>
@@ -74,7 +75,7 @@
 <div id="HEX2">
 <div class="marcax">
 <div class="cuadro">
-<img class="icon" src="../../imagenes/icon3.png">
+<img class="icon" src="../../imagenes/iconos_55.png">
 <a class="texto">Horarios Exámenes</a>
 </div>
 </div>
@@ -82,7 +83,7 @@
 <div id="HT2">
 <div class="marcax">
 <div class="cuadro">
-<img class="icon" src="../../imagenes/icon3.png">
+<img class="icon" src="../../imagenes/iconos_55.png">
 <a class="texto">Horarios Tutorías</a>
 </div>
 </div>

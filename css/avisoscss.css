@@ -36,21 +36,25 @@ position:relative;
 #contenido{
 	position:relative;
 }
+.iconos{
+width: 80px;
+    height: 100px;
+}
 .botonera
 {
 	padding:5px;
-	width: auto;
+	width: 100px;
 	height:100px;
 	float:left;
 	position:center;
-	margin-left:5%;
+	margin-left:2%;
 	cursor: pointer;
 }
 img.icon{
 	display: block;
-	margin:1px auto;
-	width:100px;
-	-webkit-border-radius: 50%;
+    margin: 0px;
+	width:130px;
+    height: 100px;
 	-webkit-box-shadow: 0px 0px 0px 30px rgba(255,255,255,0);
 	
 }
@@ -86,7 +90,7 @@ font-family:Arial, Helvetica, Verdana;
  background: #39414A;
 }
 .marca{
-	margin-top: 10%;
+	margin-top: 15%;
 	width: 270px;
 	height: 170px;
 	float: left;
@@ -98,11 +102,11 @@ font-family:Arial, Helvetica, Verdana;
 border-radius: 15px;
 }
 .marcax{
-	margin-top: 10%;
-	width: 15%;
+	margin-top: 15%;
+	width: 14%;
 	height: 20%;
 	float: left;
-	padding: 5px;
+	padding: 1%;
 	margin-left: 7%;
 	background: #FFF;
 	-webkit-border-radius: 15px;
@@ -111,7 +115,7 @@ border-radius: 15px;
 }
 
 .marcas{
-	margin: 10%;
+	margin: 15%;
 	width: auto;
 	height: auto;
 	float: left;
@@ -133,21 +137,22 @@ text-align: center;
 cursor: pointer;
 }
 .cuadro{
-	width: 89%;
-height: 85%;
-padding: 15px;
-
-
+	width: 80%;
+height: 75%;
+margin: 2px;
+    padding: 15px;
 			-webkit-box-shadow: inset 0px 0px 151px -31px rgba(0,0,0,0.75);
 			-moz-box-shadow: inset 0px 0px 151px -31px rgba(0,0,0,0.75);
 			box-shadow: inset 0px 0px 151px -31px rgba(0,0,0,0.75);
--webkit-border-radius: 15px;
--moz-border-radius: 15px;
-border-radius: 15px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
 text-align: center;
 cursor: pointer;
+    background:  #474c5a;
 }
 .cuadrobeca{
+    
 width: 240px;
 height: 140px;
 padding: 15px;
@@ -236,6 +241,9 @@ p.xxxx{
 	font-weight: bold;
 	color: blue;
 }
+#contenedorsillo{
+margin-top: 5%;
+}
 #contenedor{
 
 width: auto;
@@ -318,7 +326,7 @@ tr{
 #back{
 	float: right;
 	top: 1.2%;
-	margin-left: 95%;
+	margin-left: 94%;
 	text-decoration: none;
 	position: absolute;
 }

@@ -12,6 +12,7 @@ include"../seguridadkiosko.php";
 	
 <!-- CSS -->
 	<link rel="stylesheet" href="../../css/avisoscss.css">
+          <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
 <script language="Javascript" type="text/javascript">
 //<![CDATA[
@@ -20,43 +21,43 @@ document.oncontextmenu = function(){return false}
 // End -->
 //]]>
 </script>
- <title>Sistema Interactivo de Mensajes 1v Coatlicue</title>
+ <title>Sistema Interactivo de Mensajes </title>
 	</head>	
 	
   <div id="cen" >
 
              <div class="botonera"  id="becas" title="Todas las publicaciones">
-			<img class="icon" src="../../imagenes/icon2.png">
-			<p class="texto">Becas</p>
+			<img class="iconos" src="../../imagenes/iconos_03.png">
+			
 		    </div>
             <div class="botonera" id="empleo" title="Todas las publicaciones">
-			<img class="icon" src="../../imagenes/icon2.png">
-			<p class="texto">Empleos</p>
+			<img class="iconos" src="../../imagenes/iconos_05.png">
+			
 		    </div>
             <div class="botonera" id="certificacion" title="Todas las publicaciones">
-			<img class="icon" src="../../imagenes/icon2.png">
-			<p class="texto">Certificaciones</p>
+			<img class="iconos" src="../../imagenes/iconos_07.png">
+			
 		    </div>
 		    <div class="botonera" id="seminario" title="Todas las publicaciones">
-			<img class="icon" src="../../imagenes/icon2.png">
-			<p class="texto">Seminarios</p>
+			<img class="iconos" src="../../imagenes/iconos_09.png">
+			
 		    </div>
 		     <div class="botonera" id="junta" title="Todas las publicaciones">
-			<img class="icon" src="../../imagenes/icon2.png">
-			<p class="texto">Juntas</p>
+			<img class="iconos" src="../../imagenes/iconos_11.png">
+			
 		    </div>
 		     <div class="botonera" id="aviso" title="Todas las publicaciones">
-			<img class="icon" src="../../imagenes/icon2.png">
-			<p class="texto">Avisos</p>
+			<img class="iconos" src="../../imagenes/iconos_13.png">
+			
 		    </div>
 		     <div class="botonera" id="otro" title="Todas las publicaciones">
-			<img class="icon" src="../../imagenes/icon2.png">
-			<p class="texto">Otros</p>
+			<img class="iconos" src="../../imagenes/iconos_15.png">
+		
 		    </div>
             <div class="botonera" id="uno" title="Atrás">
 			<a href="../principalkiosko.php">
-        <img class="icon" src="../../imagenes/icon6.png"></a>
-			<p class="texto">Regresar</p>
+        <img class="iconos" src="../../imagenes/iconos_21.png"></a>
+			
 		    </div>
             
            
@@ -73,32 +74,32 @@ document.oncontextmenu = function(){return false}
     </div>
     <div id="back">
 <a href="../principalkiosko.php">
-  <img class="iconss" src="../../imagenes/icon6.png"></a>
-<p class="texto">Atras</p>
+  <img class="iconos" src="../../imagenes/iconos_21.png"></a>
+
     </div>
 </div>
 
 <div id="becas3">
-<div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/megafono.png">
-      <p class="texto">Becas</p></div></div></div>
+<div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/iconos_03.png">
+     </div></div></div>
 
-<div id="empleo3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/megafono.png">
-      <p class="texto">Empleo</p></div></div></div>
+<div id="empleo3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/iconos_05.png">
+     </div></div></div>
 
-<div id="certificacion3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/megafono.png">
-      <p class="texto">Certificacion</p></div></div></div>
+<div id="certificacion3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/iconos_07.png">
+      </div></div></div>
 
-<div id="seminario3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/megafono.png">
-      <p class="texto">Seminario</p></div></div></div>
+<div id="seminario3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/iconos_09.png">
+      </div></div></div>
 
-<div id="junta3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/megafono.png">
-      <p class="texto">Junta</p></div></div></div>
+<div id="junta3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/iconos_11.png">
+      </div></div></div>
 
-<div id="aviso3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/megafono.png">
-      <p class="texto">Aviso</p></div></div></div>
+<div id="aviso3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/iconos_13.png">
+      </div></div></div>
 
-<div id="otro3"><div class="marcax"><div class="cuadro"> <img class="icon" src="../../imagenes/megafono.png">
-      <p class="texto">Otro</p></div></div></div>
+<div id="otro3"><div class="marcax"><div class="cuadro"> <img class="icon" src="../../imagenes/iconos_15.png">
+      </div></div></div>
 
 
 </div>
@@ -271,7 +272,7 @@ document.oncontextmenu = function(){return false}
                           echo "<div class='marcas'> <img src='../../imagenes/noavisos.png'></div>'";
                         }?>
 </div>
-
+      
 
   </body>
   </html>

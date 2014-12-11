@@ -11,7 +11,7 @@ position:relative;
 		}
 #cen{
 	
-	font-family:Arial, Helvetica, Verdana; 
+	font-family: Verdana; 
 	position: fixed;
 				height: 200px;
 	         width:100%;
@@ -72,7 +72,7 @@ p.textox{
 }
 body{
 margin:0px; 
-font-family:Arial, Helvetica, sans-serif; 
+font-family: Helvetica, sans-serif; 
  background: #39414A;
 }
 .marca{
@@ -112,16 +112,16 @@ text-align: center;
 cursor: pointer;
 }
 .cuadro{
-	width: 90%;
+	width: 80%;
 height: 85%;
 padding: 15px;
 background: #474c5a;
 			-webkit-box-shadow: inset 0px 0px 151px -31px rgba(0,0,0,0.75);
 			-moz-box-shadow: inset 0px 0px 151px -31px rgba(0,0,0,0.75);
 			box-shadow: inset 0px 0px 151px -31px rgba(0,0,0,0.75);
--webkit-border-radius: 15px;
--moz-border-radius: 15px;
-border-radius: 15px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
 text-align: center;
 cursor: pointer;
 }
@@ -278,15 +278,15 @@ text-align: center;
 }
 .marcax{
 	margin-top: 15%;
-	width: 15%;
+	width: 200px;
 	height: 99%;
 	float: left;
 	padding: 5px;
 	margin-left: 7%;
 	background: #FFF;
-	-webkit-border-radius: 15px;
--moz-border-radius: 15px;
-border-radius: 15px;
+	-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
 }
 #atrassss{
 	width: 100%;

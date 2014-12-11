@@ -23,6 +23,7 @@ if(@$_POST['entrar']){
 <!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml">
 <link rel="stylesheet" type="text/css" href="css/logkiosko.css">
+      <link rel="shortcut icon" href="imagenes/favicon.ico" type="image/png" />
   <script language="Javascript" type="text/javascript">
 //<![CDATA[
 

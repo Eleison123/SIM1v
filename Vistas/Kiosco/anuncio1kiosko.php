@@ -433,9 +433,9 @@ else{
 
 }//termina While
 if ($numavi2==0) {
-	echo"<div id='anuncio'style='background:white'>
+	echo"<div id='anuncio'>
  		<figure>
- 		<img id='noav' src='../imagenes/Aviso.png'>
+ 		<img id='noav' src='../imagenes/kioscouv.png'>
  		</figure>
  		</div>
  		</div>  </div>  </div>";

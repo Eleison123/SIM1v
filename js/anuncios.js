@@ -1,5 +1,5 @@
 
-/////////////////77
+/////////////////Ocultamiento
 $(document).ready(function(){
 	$('#beca2').hide();
 	$('#empleo2').hide();
@@ -19,7 +19,7 @@ $(document).ready(function(){
 
 });
 
-//////////////////////7
+//////////////////////Mostrar becas 1
 $(document).ready(function(){
 $('#becas').click(function(){
 	$('#beca1').hide();
@@ -39,7 +39,7 @@ $('#becas').click(function(){
 	
 });
 });
-///////////////////
+///////////////////Mostrar becas 2
 $(document).ready(function(){
 $('#becas3').click(function(){
 	$('#beca1').hide();
@@ -65,7 +65,7 @@ $(document).ready(function(){
     $('.cuadrobeca').click(function(){
         var id= $(this).attr("value");
         $('#beca1').fadeIn();
-        $('#beca1').load('modificar/genera-aviso-otro.php?id='+id);
+        $('#beca1').load('../Editar/genera-aviso-otro.php?id='+id);
         $('#beca2').hide();
     });
 });
@@ -115,7 +115,7 @@ $(document).ready(function(){
     $('.cuadroempleo').click(function(){
         var id= $(this).attr("value");
         $('#empleo1').fadeIn();
-        $('#empleo1').load('modificar/genera-aviso-otro.php?id='+id);
+        $('#empleo1').load('../Editar/genera-aviso-otro.php?id='+id);
         $('#empleo2').hide();
     });
 });
@@ -165,7 +165,7 @@ $(document).ready(function(){
     $('.cuadrocertificacion').click(function(){
         var id= $(this).attr("value");
         $('#certificacion1').fadeIn();
-        $('#certificacion1').load('modificar/genera-aviso-otro.php?id='+id);
+        $('#certificacion1').load('../Editar/genera-aviso-otro.php?id='+id);
         $('#certificacion2').hide();
     });
 });
@@ -220,7 +220,7 @@ $(document).ready(function(){
     $('.cuadroseminario').click(function(){
         var id= $(this).attr("value");
         $('#seminario1').fadeIn();
-        $('#seminario1').load('modificar/genera-aviso-otro.php?id='+id);
+        $('#seminario1').load('../Editar/genera-aviso-otro.php?id='+id);
         $('#seminario2').hide();
     });
 });
@@ -269,7 +269,7 @@ $(document).ready(function(){
     $('.cuadrojunta').click(function(){
         var id= $(this).attr("value");
         $('#junta1').fadeIn();
-        $('#junta1').load('modificar/genera-aviso-otro.php?id='+id);
+        $('#junta1').load('../Editar/genera-aviso-otro.php?id='+id);
         $('#junta2').hide();
     });
 });
@@ -319,7 +319,7 @@ $(document).ready(function(){
     $('.cuadroaviso').click(function(){
         var id= $(this).attr("value");
         $('#aviso1').show();
-        $('#aviso1').load('modificar/genera-aviso-otro.php?id='+id);
+        $('#aviso1').load('../Editar/genera-aviso-otro.php?id='+id);
         $('#aviso2').hide();
     });
 });
@@ -369,7 +369,7 @@ $(document).ready(function(){
     $('.cuadrootro').click(function(){
         var id= $(this).attr("value");
         $('#otro1').show();
-        $('#otro1').load('modificar/genera-aviso-otro.php?id='+id);
+        $('#otro1').load('../Editar/genera-aviso-otro.php?id='+id);
         $('#otro2').hide();
     });
 });
