@@ -51,11 +51,15 @@ document.oncontextmenu = function(){return false}
       <form method="POST">
         <fieldset><legend><a class="text1">Datos de Materia</a></legend>
             <label><a class="text1">NRC:</a></label><br>
-            <input type="text" name="nrc" pleaceholder="NRC Vigente" maxlength="5"><br><br>
-            <label><a class="text1">NRC 98:</a></label><br>
-            <input type="text" name="nrc98" pleaceholder="NRC Vigente" maxlength="5"><br><br>
+            <input type="text" name="nrc" placeholder="NRC Vigente" maxlength="5"><br>
+            <label><a class="text1">NRC ANT:</a></label><br>
+            <input type="text" name="nrc98" placeholder="NRC Anterior" maxlength="5"><br>
+            <label><a class="text1">Bloque:</a></label><br>
+            <input type="text" name="bloque" placeholder="Ejemplo: B7" maxlength="2"><br>
+            <label><a class="text1">Sección:</a></label><br>
+            <input type="text" name="seccion" placeholder="Ejemplo: S1" maxlength="2"><br>
             <label><a class="text1">Nombre:</a></label><br>
-            <input type="text" name="nombre" placeholder="Nombre de la Experiencia Educativa ">  <br> <br>    
+            <input type="text" name="nombre" placeholder="Nombre de la Experiencia Educativa ">  <br>     
 
                         <?php 
                          require_once("../../conexiones/conexion.php");
@@ -68,25 +72,7 @@ document.oncontextmenu = function(){return false}
                             $fac = $fil[0];
                         
                             ?>
-   <label><a class="text1">Catedratico:</a></label> <br>                        
-<select name="catedratico" id="catedratico" placeholder="catedratico">
-    <?php
-    require_once("../../conexiones/conexion.php");
-    //Preguntamos los nombres de las materias segun su idfacultad
-     $mysql="SELECT idcatedratico, nombre, apellidomaterno, apellidopaterno FROM catedratico WHERE idfacultad='".$fac."';";
-    $resul=mysql_query($mysql) or die(mysql_error());
-    while($row=mysql_fetch_array($resul)){
-    echo "<option value='".$row['idcatedratico']."'>";
-    echo $row['nombre'];
-    echo " ";
-    echo $row['apellidomaterno'];
-    echo " ";
-    echo  $row['apellidopaterno'] ;
-    echo "</option>";
-}
-echo "</select>";
-?>
-</select><br><br>
+   
 <label><a class="text1">Carrera:</a></label><br>
 
   <?php  

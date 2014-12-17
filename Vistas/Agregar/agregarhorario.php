@@ -58,13 +58,13 @@ document.oncontextmenu = function(){return false}
 <label class="text1">TIPO:</label><br>
             <select id="tipo" name="tipo">
             <option selected value="">Seleccionar tipo</option>
-            <option value="Lunes">Escolar</option>
-            <option value="Martes">Ordinario</option>
-            <option value="Miercoles">Extraordinario</option>
-            <option value="Jueves">Título</option>
-            <option value="Viernes">Tutoría</option>
+            <option value="1">Escolar</option>
+            <option value="2">Ordinario</option>
+            <option value="3">Extraordinario</option>
+            <option value="4">Título</option>
+            <option value="5">Tutoría</option>
             </select></br>
- 
+
  <label for="" class="text1" id="catel1h">CATEDRÁTICO:</label><br>
 <?php 
  
