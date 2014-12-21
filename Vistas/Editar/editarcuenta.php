@@ -7,11 +7,10 @@ if (@$_POST['guardar']) {
    
         if(isset($_POST['nombre'])and
             ($_POST['facultad'])and
-            ($_POST['id'])and
-            ($_POST['tipo']!="")){ 
+            ($_POST['id']!="")){ 
             $nombre1= $_POST['nombre'];
             $contrasena1= $_POST['contrasena'];
-            $tipo1= $_POST['tipo'];
+            $tipo1= 1;
             $facu1= $_POST['facultad'];
             $id1= $_POST['id'];
 

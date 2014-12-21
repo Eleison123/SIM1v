@@ -93,13 +93,12 @@ $(document).ready(function(event){
                            echo "<table>";
                          echo"<tr>";
                             echo"
-                            <th>NRC</th>
-                            <th>NRC 98</th>
+                            
                             <th>Nombre</th>
-                            <th>Catedrático</th>
+                            <th>Carrera</th>
                             <th></th>
                             <th></th>
-                            <th></th>
+                            
                             
                             </tr>";
                             //Preguntamos los nombres de las carreras segun su idfacultad
@@ -123,24 +122,17 @@ $(document).ready(function(event){
                         $total_paginas=ceil($num_total_registros / $tamano_pag);
                         ///realizamos consulta
                         require_once('../../conexiones/conexion.php');
-                        $consultas="SELECT idexperienciaeducativa,nrc,nrc98,nombre,idcatedratico FROM experienciaeducativa ORDER BY nombre DESC LIMIT ".$inicio.",".$tamano_pag;
+                        $consultas="SELECT idexperienciaeducativa,nombre, idCarrera FROM experienciaeducativa ORDER BY nombre DESC LIMIT ".$inicio.",".$tamano_pag;
                         $rs=mysql_query($consultas)or die(mysql_error());
 
                         while($row1=mysql_fetch_array($rs)){
                                    echo "<tr>";
-                                   echo "<td><a class='text10'>".$row1['nrc']."</a></td>";
-                                   echo "<td><a class='text10'>".$row1['nrc98']."</a></td>";
                                         echo "<td><a class='text10'>".$row1['nombre']."</a></td>";
-                                $cat="SELECT nombre, apellidomaterno,apellidopaterno FROM catedratico WHERE idcatedratico =".$row1['idcatedratico']." "; 
-                                $cate=mysql_query($cat)or die(mysql_error());
-                                $c = mysql_fetch_array($cate, MYSQL_BOTH);
-                                $nom = $c['nombre']; $am = $c['apellidomaterno']; $ap = $c['apellidopaterno'];
-                                echo "<td><a class='text10'>".$c['nombre']."</a>";
-                                echo "<a class='text10'> ".$c['apellidopaterno']." </a>";
-                                echo "<a class='text10'>".$c['apellidomaterno']."</a></td>";
-                                       
-
-                   
+                                        $car = $row1['idCarrera'];
+                                        $consultacarrera = "SELECT Nombre FROM carrera WHERE idCarrera = $car";
+                                        $cc = mysql_query($consultacarrera) or die (mysql_error());
+                                         $ccc = mysql_fetch_array($cc, MYSQL_BOTH);
+                                         echo "<td><a class'text10'>".$ccc['Nombre']."</a></td>";
 
                         echo "<td>
 

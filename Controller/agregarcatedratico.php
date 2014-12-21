@@ -24,15 +24,19 @@ include"../../Vistas/seguridad.php";
             $cosapregunta=mysql_query($sqlpre) or die(mysqli_error());
             $coinciden=0;
             $cadena2=$nombre.$appaterno.$apmater;
-            $cadena2=ereg_replace("[]+","", $cadena2);
+            // var_dump($cadena2);
+            if($cosapregunta!=""){
+            // $cadena2=ereg_replace("[]+","", $cadena2);
             while($row=mysql_fetch_array($cosapregunta)){
-                    $cadena=$row['nombre'].$row['apellidopaterno'].$row['apellidomaterno'];
-                                $cadena=ereg_replace("[]+","", $cadena);
+                // var_dump($row['nombre']);
+                    $cadena=$row['Nombre'].$row['Apellidopaterno'].$row['Apellidomaterno'];
+                                // $cadena=ereg_replace("[]+","", $cadena);
+                    // var_dump($cadena);
                                 if($cadena==$cadena2){
                                 $coinciden=1;
-                            }
+                                }
                         }
-                    
+                    }
             
             if($coinciden==1){
                         echo "<script>alert('Ya existe mi Catedrático');
@@ -40,7 +44,7 @@ include"../../Vistas/seguridad.php";
 
             }else{
             
-            $sqluser ="INSERT INTO catedratico (nombre, apellidomaterno, apellidopaterno, correo, idfacultad) VALUES ('".$nombre."','".$apmater."','".$appaterno."','".$correo."','".$facu."')";
+            $sqluser ="INSERT INTO catedratico (Nombre, Apellidomaterno, Apellidopaterno, Correo, idFacultad) VALUES ('".$nombre."','".$apmater."','".$appaterno."','".$correo."','".$facu."')";
             $cosa= mysql_query($sqluser) or die(mysqli_error());
             mysql_close();
         // Lipiamos Variables //

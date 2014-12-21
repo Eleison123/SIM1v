@@ -13,11 +13,11 @@ if (@$_POST['guardar']) {
 $sqlpre = "SELECT * FROM catedratico";
             $cosapregunta=mysql_query($sqlpre) or die(mysqli_error());
             $coinciden=0;
-            $cadena2=$nombre1.$appaterno1.$apmater.$correo1;
-            $cadena2=ereg_replace("[]+","", $cadena2);
+            $cadena2=$nombre1.$apellidopaterno1.$apellidomaterno1.$correo1;
+            // $cadena2=ereg_replace("[]+","", $cadena2);
             while($row=mysql_fetch_array($cosapregunta)){
-                    $cadena=$row['nombre'].$row['apellidopaterno'].$row['apellidomaterno'].$row['correo'];
-                                $cadena=ereg_replace("[]+","", $cadena);
+                    $cadena=$row['Nombre'].$row['Apellidopaterno'].$row['Apellidomaterno'].$row['Correo'];
+                                // $cadena=ereg_replace("[]+","", $cadena);
                                 if($cadena==$cadena2){
                                 $coinciden=1;
                             }
@@ -31,11 +31,11 @@ $sqlpre = "SELECT * FROM catedratico";
             }else{
 
      $sqlf="UPDATE catedratico SET
-nombre = '".$nombre1."', 
-apellidomaterno = '".$apellidomaterno1."', 
-apellidopaterno = '".$apellidopaterno1."', 
-correo = '".$correo1."'
- WHERE idcatedratico='".$id1."'";
+        Nombre = '".$nombre1."', 
+        Apellidomaterno = '".$apellidomaterno1."', 
+        Apellidopaterno = '".$apellidopaterno1."', 
+        Correo = '".$correo1."'
+        WHERE idcatedratico='".$id1."'";
 $resultadof = mysql_query($sqlf) or die(mysql_error());
 mysql_close();
 echo "<script>alert('Mi Catedrático ha sido editado exitosamente');
@@ -49,14 +49,14 @@ else{
 }
 else{
 $hes=$_POST['idcar'];
-$mysqlid="SELECT idcatedratico, nombre, apellidomaterno, apellidopaterno, correo FROM catedratico WHERE idcatedratico=".$hes."";
+$mysqlid="SELECT idCatedratico, Nombre, Apellidomaterno, Apellidopaterno, Correo FROM catedratico WHERE idCatedratico=".$hes."";
 $resulid=mysql_query($mysqlid) or die(mysql_error());
  $fil = mysql_fetch_array($resulid, MYSQL_BOTH);
-     $catedratico = $fil['idcatedratico'];
-     $apellidomaterno = $fil['apellidomaterno'];
-     $nombre = $fil['nombre'];
-     $correo = $fil['correo'];
-     $apellidopaterno = $fil['apellidopaterno'];
+     $catedratico = $fil['idCatedratico'];
+     $apellidomaterno = $fil['Apellidomaterno'];
+     $nombre = $fil['Nombre'];
+     $correo = $fil['Correo'];
+     $apellidopaterno = $fil['Apellidopaterno'];
   
 
  }

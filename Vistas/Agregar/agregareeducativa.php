@@ -50,14 +50,14 @@ document.oncontextmenu = function(){return false}
         
       <form method="POST">
         <fieldset><legend><a class="text1">Datos de Materia</a></legend>
-            <label><a class="text1">NRC:</a></label><br>
+            <!-- <label><a class="text1">NRC:</a></label><br>
             <input type="text" name="nrc" placeholder="NRC Vigente" maxlength="5"><br>
             <label><a class="text1">NRC ANT:</a></label><br>
             <input type="text" name="nrc98" placeholder="NRC Anterior" maxlength="5"><br>
             <label><a class="text1">Bloque:</a></label><br>
             <input type="text" name="bloque" placeholder="Ejemplo: B7" maxlength="2"><br>
-            <label><a class="text1">Sección:</a></label><br>
-            <input type="text" name="seccion" placeholder="Ejemplo: S1" maxlength="2"><br>
+            <label><a class="text1">Sección:</a></label><br> -->
+            <!-- <input type="text" name="seccion" placeholder="Ejemplo: S1" maxlength="2"><br> -->
             <label><a class="text1">Nombre:</a></label><br>
             <input type="text" name="nombre" placeholder="Nombre de la Experiencia Educativa ">  <br>     
 

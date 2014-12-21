@@ -7,9 +7,8 @@ include"../Vistas/seguridad.php";
         $idfcar = $_POST['idcate'];
        
         
-        	$res1=mysql_query("delete from horario where idcatedratico=".$idfcar."")or die(mysql_error());
-        	$res0=mysql_query("delete from experienciaeducativa where idcatedratico=".$idfcar."")or die(mysql_error());
-            $res=mysql_query("delete from catedratico where idcatedratico=".$idfcar."")or die(mysql_error());
+        	$res1=mysql_query("DELETE FROM horario WHERE idCatedratico=".$idfcar."")or die(mysql_error());
+            $res=mysql_query("DELETE FROM catedratico WHERE idCatedratico=".$idfcar."")or die(mysql_error());
             mysql_close();
         	if ($res) {
                  echo "<script>alert('Mi Catedrático ha sido eliminado exitosmente');

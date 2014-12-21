@@ -10,26 +10,21 @@ include"../../Vistas/seguridad.php";
             //Limpiamos caracteres especiales
             $nombre= mysql_real_escape_string($_POST['nombre']);
             $carrera= mysql_real_escape_string($_POST['carrera']);
-            $nrc= mysql_real_escape_string($_POST['nrc']);
-            $nrc98= mysql_real_escape_string($_POST['nrc98']);
-            $catedratico= mysql_real_escape_string($_POST['catedratico']);
             //Limpiamos etiquetas
             $nombre = filter_var($nombre, FILTER_SANITIZE_SPECIAL_CHARS);
             $carrera = filter_var($carrera, FILTER_SANITIZE_SPECIAL_CHARS);
-            $nrc = filter_var($nrc, FILTER_SANITIZE_SPECIAL_CHARS);
-            $nrc98 = filter_var($nrc98, FILTER_SANITIZE_SPECIAL_CHARS);
-            $catedratico = filter_var($catedratico, FILTER_SANITIZE_SPECIAL_CHARS);
 
             //preguntamos valores de la BD
-            $sql = "SELECT nrc FROM experienciaeducativa WHERE nrc ='".$nrc."'";   
+            $sql = "SELECT Nombre FROM experienciaeducativa WHERE Nombre ='".$nombre."'";   
             $resultado1 = mysql_query($sql) or die(mysql_error());
             $fila = mysql_fetch_array($resultado1, MYSQL_BOTH);
-            $nrcf= $fila[0];
-
-            if ($nrc==$nrcf) {
+            $nrcf= $fila[0]['Nombre'];
+            $ca = $fila[0]['idCarrera'];
+            if ($nombre==$nrcf) {
+                if($ca==$carrera){
                 echo "<script>alert('Mi experiencia educativa ya existe.');
                 window.location = '../Entidades/eeducativa.php';</script>";
-                # code...
+                }
             }else{
                 //Obtenemos idfac del administrador
                 @session_start();
@@ -38,10 +33,10 @@ include"../../Vistas/seguridad.php";
                 $resultado2 = mysql_query($sql) or die(mysql_error());
                 $fil = mysql_fetch_array($resultado2, MYSQL_BOTH);
                 $fac = $fil[0];
-                $sqluser ="INSERT INTO experienciaeducativa(nrc, nrc98,nombre, idcatedratico, idfacultad, idcarrera) VALUES ('".$nrc."','".$nrc98."','".$nombre."','".$catedratico."','".$fac."','".$carrera."')";
+                $sqluser ="INSERT INTO experienciaeducativa(Nombre, idFacultad, idCarrera) VALUES ('".$nombre."','".$fac."','".$carrera."')";
                 mysql_query($sqluser) or die(mysql_error());
                 mysql_close();
-        ////////////// Limpiamos Variables   ////////////////7
+        ////////////// Limpiamos Variables   ////////////////
             $nombre= "";
             $carrera= "";
             $nrc= "";
