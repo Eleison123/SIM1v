@@ -1,6 +1,6 @@
 <?php
 require_once("../../Conexiones/conexion.php");
-    $consulta = "SELECT idExperienciaEducativa, Nombre FROM experienciaeducativa WHERE idcatedratico = ".$_GET['id']."";
+    $consulta = "SELECT idExperienciaEducativa, Nombre FROM experienciaeducativa WHERE idCarrera = ".$_GET['id']."";
 
     $query = mysql_query($consulta);
   
