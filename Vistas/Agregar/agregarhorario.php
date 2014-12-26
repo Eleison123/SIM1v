@@ -9,55 +9,7 @@
 <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
 <script type="text/javascript" src="../../js/jquery-1.10.2.js"></script>
-<script language="Javascript" type="text/javascript">
-//<![CDATA[
-<!-- Begin
-document.oncontextmenu = function(){return false}
-// End -->
-//]]>
-</script>
- <script language="JavaScript" type="text/JavaScript">
-    $(document).ready(function(){
-        $("#carrera").change(function(event){
-            var id = $("#carrera").find(':selected').val();
-            $("#materia").load('../Editar/genera-select-materia.php?id='+id);
-        });
-    });
-
-    $(document).ready(function(){
-        $("#tipo").change(function(event){
-            var id = $("#tipo").find(':selected').val();
-           
-            if(id == '5'){
-                $('#nrc').prop('disabled',true);
-                $('#nrcant').prop('disabled',true);
-                $('#blo').prop('disabled',true);
-                $('#sec').prop('disabled',true);
-                $('#nrc1').prop('disabled',true);
-                $('#nrcant1').prop('disabled',true);
-                $('#blo1').prop('disabled',true);
-                $('#sec1').prop('disabled',true);
-                $('#carrera').prop('disabled',true);
-                $('#materia').prop('disabled',true);
-                $('#secre').prop('disabled',true);
-            }
-            else{
-                 $('#nrc').prop('disabled',false);
-                $('#nrcant').prop('disabled',false);
-                $('#blo').prop('disabled',false);
-                $('#sec').prop('disabled',false);
-                 $('#nrc1').prop('disabled',false);
-                $('#nrcant1').prop('disabled',false);
-                $('#blo1').prop('disabled',false);
-                $('#sec1').prop('disabled',false);
-                 $('#carrera').prop('disabled',false);
-                  $('#materia').prop('disabled',false);
-                    $('#secre').prop('disabled',false);
-            }
-        });
-    });
-</script>
-
+<script type="text/javascript" src="../../js/agregarhorario.js"></script>
 <title>Agregar Horario</title>
 </head>
 <div id="portada">
@@ -150,9 +102,11 @@ while($row=mysql_fetch_array($resul)){
    
     echo "<select name='carrera' id='carrera' placeholder='Carrera'>";
     //Preguntamos los nombres de las materias segun su idfacultad
+    echo "<option selected value=''>Seleccionar Carrera</option>";
  $mysql="SELECT idcarrera, nombre FROM carrera WHERE idfacultad='".$fac."';";
 $resul=mysql_query($mysql) or die(mysql_error());
 while($row=mysql_fetch_array($resul)){
+
     echo "<option value='".$row['idcarrera']."'>";
     echo $row['nombre'];
     echo "</option>";
@@ -166,15 +120,7 @@ echo "</select>";
 
 <select name="materia" id="materia" placeholder="Materia">
     <option selected value="">Seleccionar Experiencia Educativa</option>
-   <!--  <?php 
-        $mysqlee = "SELECT idExperienciaEducativa, nombre FROM experienciaeducativa WHERE idFacultad = '".$fac."';";
-        $resee = mysql_query($mysqlee) or die (mysql_error());
-        while ($row = mysql_fetch_array($resee)){
-            echo "<option value='".$row['idExperienciaEducativa']."'>";
-            echo $row['nombre'];
-            echo "</option>";
-        }
-    ?> -->
+  
 </select><br>
 
 
@@ -188,7 +134,8 @@ echo "</select>";
             <option value="Jueves">Jueves</option>
             <option value="Viernes">Viernes</option>
             </select></br>
-             
+    <label class="text1">FECHA:</label><br>
+    <input type="date" id="dfecha" name="dfecha"><br>
  <label for="horarea1h" class="text1" id="horareal1h">HORA INICIO:</label><br>
  <input type="time" id="fecharea1h" name="horaini" class="inhora"required><br>
  
@@ -220,8 +167,7 @@ echo "</select>";
 <label><a class="text1">FECHA VIGENCIA:</a></label><br>
 <input type="date" class="infecha" name="fechavig" required/>
 </fieldset>
-        <input type="submit" value="GUARDAR" id="btnguardar" name="guardar">
-    <input type="reset" id="btnreset" value="RESET">
+        <center><input type="submit" value="GUARDAR" id="btnguardar" name="guardar"></center>
   </form>
 </div>
     </div>

@@ -16,7 +16,7 @@ a{
 body{
 font-family: Verdana; 
 margin: auto;
-background-image: url("../imagenes/textura-back.jpg");
+background:#34495e;
 
 font-size: middle;
 }
@@ -231,7 +231,7 @@ margin: auto;
 margin-top: 0px;
 }
 .text1{
-  color:#FFF;
+  color:#ecf0f1;
   opacity:.9;
  font-family: Verdana;
  font-size: middle;
@@ -281,22 +281,27 @@ width: auto;
   width:95px;
   height:50px;
   border:none;
-  background-color:#FFF;
-  color:#06F;
+  background-color:#27ae60;
+  color:#ecf0f1;
   padding:4px;
   margin:20px;
-  margin-left:310px;
   cursor:pointer;
+  -webkit-box-shadow: 0px 2px 30px 0px rgba(50, 50, 50, 1);
+-moz-box-shadow:    0px 2px 30px 0px rgba(50, 50, 50, 1);
+box-shadow:         0px 2px 30px 0px rgba(50, 50, 50, 1);
 }
 #btnreset{
 width:95px;
   height:50px;
   border:none;
-  background-color:#FFF;
-  color:#06F;
+  background-color:#27ae60;
+  color:#ecf0f1;
   padding:4px;
   margin:20px;
   cursor:pointer;
+  -webkit-box-shadow: 0px 2px 30px 0px rgba(50, 50, 50, 1);
+-moz-box-shadow:    0px 2px 30px 0px rgba(50, 50, 50, 1);
+box-shadow:         0px 2px 30px 0px rgba(50, 50, 50, 1);
  
 }
 #formulario1p{
