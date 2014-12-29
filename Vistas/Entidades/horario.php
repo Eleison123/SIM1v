@@ -8,11 +8,7 @@
 <link rel="stylesheet" href="../../css/css1a.css">
 <!-- JS -->
 <script src="../../js/jquery-1.4.2.min.js"></script> 
-    <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
-<script language="Javascript" type="text/javascript">
- Begin
-document.oncontextmenu = function(){return false}
-</script>
+<link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <script type="text/javascript">
 $(document).ready(function(){
  
@@ -95,7 +91,7 @@ $(document).ready(function(event){
                          echo"<tr>";
                             echo"
                             <th>NRC</th>
-                            <th>NRC98</th>
+                            <th>NRC ANT</th>
                             <th>Experiencia</th>
                             <th>Catedrático</th>
                             <th></th>
@@ -124,20 +120,20 @@ $(document).ready(function(event){
                         $total_paginas=ceil($num_total_registros / $tamano_pag);
                         ///realizamos consulta
                         require_once('../../conexiones/conexion.php');
-                        $consultas="SELECT idHorario, idExperienciaEducativa, idcatedratico, idcarrera FROM horario WHERE idfacultad=".$fac." ORDER BY idcarrera DESC LIMIT ".$inicio.",".$tamano_pag;
+                        $consultas="SELECT * FROM horario WHERE idfacultad=".$fac." ORDER BY idcarrera DESC LIMIT ".$inicio.",".$tamano_pag;
                         $rs=mysql_query($consultas)or die(mysql_error());
 
                         while($row1=mysql_fetch_array($rs)){
                                    echo "<tr>";
-                                    $mysqlm="SELECT nombre,nrc,nrc98 FROM experienciaeducativa WHERE idExperienciaEducativa = '".$row1['idExperienciaEducativa']."'";
-                                    $mysqlc="SELECT nombre,apellidomaterno,apellidopaterno FROM catedratico WHERE idcatedratico='".$row1['idcatedratico']."'";
+                                    $mysqlm="SELECT nombre FROM experienciaeducativa WHERE idExperienciaEducativa = '".$row1['idExperienciaEducativa']."'";
+                                    $mysqlc="SELECT nombre,apellidomaterno,apellidopaterno FROM catedratico WHERE idCatedratico='".$row1['idCatedratico']."'";
                                     $resul1=mysql_query($mysqlm) or die(mysql_error());
                                     $resul2=mysql_query($mysqlc) or die(mysql_error());
                                     while ($m=mysql_fetch_array($resul1)) {
 
-                                    echo "<td><a class='text10'>".$m['nrc']."</a></td>";
+                                    echo "<td><a class='text10'>".$row1['NRC']."</a></td>";
 
-                                    echo "<td><a class='text10'>".$m['nrc98']."</a></td>";
+                                    echo "<td><a class='text10'>".$row1['NRCANT']."</a></td>";
 
                                     echo "<td><a class='text10'>".$m['nombre']."</a></td>";
 

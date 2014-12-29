@@ -9,10 +9,6 @@
     <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
 <script src="../../js/jquery-1.4.2.min.js"></script> 
-<script language="Javascript" type="text/javascript">
- Begin
-document.oncontextmenu = function(){return false}
-</script>
 <script type="text/javascript">
 $(document).ready(function(){
  
@@ -78,13 +74,13 @@ $(document).ready(function(event){
         <div id='menureg'>
         <div id='ag'>
             <form  method='post' action='../regvisitas.php'>
-                        <input type='submit'  value='Imprimir por Visitas'  name='agregar' class='conf'>
+                        <input  id='IV' type='submit'  value='Imprimir por Visitas'  name='agregar' >
                         
             </form>
         </div>
         <div id='ag'>
             <form  method='post' action='../regfechas.php'>
-                        <input type='submit'  value='Imprimir por Fechas' name='agregar' class='conf'>
+                        <input id='IF' type='submit'  value='Imprimir por Fechas' name='agregar' >
                         
             </form>
         </div>
@@ -105,7 +101,7 @@ $(document).ready(function(event){
 		echo "</tr><br><br>";
 		$nombre=$filu[0];
         require_once("../../conexiones/conexion.php");
-		$sqlr="SELECT publicacion.nombre, registro.idregistro, registro.horareg, registro.diareg, registro.idcuenta, registro.idfacultad FROM registro INNER JOIN publicacion ON registro.idfacultad = '".$fac."' and registro.idregistro = publicacion.idregistro ORDER BY registro.diareg";
+		$sqlr="SELECT publicacion.nombre, registro.idRegistro, registro.horareg, registro.diareg, registro.idcuenta, registro.idfacultad FROM registro INNER JOIN publicacion ON registro.idfacultad = '".$fac."' and registro.idregistro = publicacion.idregistro ORDER BY registro.diareg";
 		$resul=mysql_query($sqlr) or die(mysql_error());
 		 
 
