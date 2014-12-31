@@ -2,27 +2,10 @@
 <!DOCTYPE html>
 <html leng="es">
 <head>
-<!-- Metas -->
 <meta charset="utf-8">
-<!-- CSS -->
 <link rel="stylesheet" href="../../css/css1a.css">
-    <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
-<!-- JS -->
+<link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <script src="../../js/jquery-1.4.2.min.js"></script> 
-<script type="text/javascript">
-$(document).ready(function(){
- 
-    $('#cuerpo').hide();
-    $('#cuerpo').fadeIn('slow');
-});
-</script>
-<script type="text/javascript">
-$(document).ready(function(event){
-    $('#agregar').click(function{
-       window.location = 'agregarp.php';
-    });
-});
-</script>
 <title>Registro</title>
 </head>
 <div id="portada">
@@ -167,3 +150,10 @@ echo '<p class="textlink">';
     <img src="../../imagenes/footer.jpg" id="footer">
 </div></footer>
 </html>
+<script type="text/javascript">
+$(document).ready(function(event){
+    $('#agregar').click(function{
+       window.location = 'agregarp.php';
+    });
+});
+</script>

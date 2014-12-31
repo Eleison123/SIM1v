@@ -6,29 +6,9 @@
 <meta charset="utf-8">
 <!-- CSS -->
 <link rel="stylesheet" href="../../css/css1a.css">
-    <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
+<link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
-<script src="../../js/jquery-1.4.2.min.js"></script> 
-<script language="Javascript" type="text/javascript">
- Begin
-document.oncontextmenu = function(){return false}
-</script>
-<script type="text/javascript">
-$(document).ready(function(){
- 
-    $('#cuerpo').hide();
-    $('#cuerpo').fadeIn('slow');
-});
-</script>
-<script type="text/javascript">
-$(document).ready(function(event){
-    $('#agregar').click(function{
-       window.location = '../Agregar/agregarfacultad.php';
-    });
-});
-</script>
-    
-    
+<script src="../../js/jquery-1.4.2.min.js"></script>  
 <title>Facultad</title>
 </head>
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
@@ -130,7 +110,7 @@ $(document).ready(function(event){
                         while($row1=mysql_fetch_array($rs)){
                                    echo "<tr>";
                                    
-                                        echo "<td><a class='text10'>".$row1['nombre']."</a></td>";
+                                        echo "<td><a class='text20'>".$row1['nombre']."</a></td>";
                                        
                                        
 
@@ -140,13 +120,13 @@ $(document).ready(function(event){
 
  <form  method='post' action='../Editar/editarfacultad.php'>
     <input type='hidden' name='idfac' value=".$row1['idfacultad'].">
-    <input type='submit' value='Editar'  name='Editar' class='conf'><img src='../../imagenes/editar.png' class='icon'>
+    <input type='submit' value='Editar'  id='edit' name='Editar' class='conf'><img src='../../imagenes/editar.png' class='icon'>
      </form>
 </td>";
                         echo "<td>
     <form  method='post' action='../../Controller/eliminarfacultad.php'>
     <input type='hidden' name='idfacultad' value=".$row1['idfacultad'].">
-    <input class='conf' type='submit' name='Eliminar' value='Eliminar' alingn='center'>
+    <input class='conf' type='submit' id='delete' name='Eliminar' value='Eliminar' alingn='center'>
     <img src='../../imagenes/borrar.png' class='icon'>
     
      </form>
@@ -184,3 +164,10 @@ $(document).ready(function(event){
     <img src="../../imagenes/footer.jpg" id="footer">
 </div></footer>
 </html>
+<script type="text/javascript">
+$(document).ready(function(event){
+    $('#agregar').click(function{
+       window.location = '../Agregar/agregarfacultad.php';
+    });
+});
+</script>

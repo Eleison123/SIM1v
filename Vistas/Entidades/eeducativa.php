@@ -2,33 +2,10 @@
 <!DOCTYPE html>
 <html leng="es">
 <head>
-<!-- Metas -->
 <meta charset="utf-8">
-<!-- CSS -->
 <link rel="stylesheet" href="../../css/css1a.css">
-    <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
-<!-- JS -->
+<link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <script src="../../js/jquery-1.4.2.min.js"></script> 
-<script type='text/javascript'>
- Begin
-document.oncontextmenu = function(){return false} 
-</script>
-<script type="text/javascript">
-$(document).ready(function(){
- 
-    $('#cuerpo').hide();
-    $('#cuerpo').fadeIn('slow');
-});
-</script>
-<script type="text/javascript">
-$(document).ready(function(event){
-    $('#agregar').click(function{
-       window.location = '../Agregar/agregareeducativa.php';
-    });
-});
-</script>
-    
-    
 <title>Experiencia Educativa</title>
 </head>
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
@@ -107,7 +84,7 @@ $(document).ready(function(event){
                         $num_total_registros=mysql_num_rows($resulf);
                        if ($num_total_registros > 0) {
     //Limito la busqueda
-    $tamano_pag = 10;
+    $tamano_pag = 15;
         $pagina = false;
                         //examino pagina a mostrar e inicio
         if (isset($_GET["pagina"]))
@@ -127,24 +104,24 @@ $(document).ready(function(event){
 
                         while($row1=mysql_fetch_array($rs)){
                                    echo "<tr>";
-                                        echo "<td><a class='text10'>".$row1['nombre']."</a></td>";
+                                        echo "<td><a class='text20'>".$row1['nombre']."</a></td>";
                                         $car = $row1['idCarrera'];
                                         $consultacarrera = "SELECT Nombre FROM carrera WHERE idCarrera = $car";
                                         $cc = mysql_query($consultacarrera) or die (mysql_error());
                                          $ccc = mysql_fetch_array($cc, MYSQL_BOTH);
-                                         echo "<td><a class'text10'>".$ccc['Nombre']."</a></td>";
+                                         echo "<td><a class='text20'>".$ccc['Nombre']."</a></td>";
 
                         echo "<td>
 
  <form  method='post' action='../Editar/editarmateria.php'>
     <input type='hidden' name='idm' value=".$row1['idexperienciaeducativa'].">
-    <input type='submit' value='Editar'  name='Editar' class='conf'><img src='../../imagenes/editar.png' class='icon'>
+    <input type='submit' id='edit' value='Editar'  name='Editar' class='conf'><img src='../../imagenes/editar.png' class='icon'>
      </form>
 </td>";
                         echo "<td>
     <form  method='post' action='../../Controller/eliminarmateria.php'>
     <input type='hidden' name='idmateria' value=".$row1['idexperienciaeducativa'].">
-    <input class='conf' type='submit' name='Eliminar' value='Eliminar' alingn='center'>
+    <input class='conf' type='submit' id='delete' name='Eliminar' value='Eliminar' alingn='center'>
     <img src='../../imagenes/borrar.png' class='icon'>
     
      </form>
@@ -187,3 +164,10 @@ $(document).ready(function(event){
     <img src="../../imagenes/footer.jpg" id="footer">
 </div></footer>
 </html>
+<script type="text/javascript">
+$(document).ready(function(event){
+    $('#agregar').click(function{
+       window.location = '../Agregar/agregareeducativa.php';
+    });
+});
+</script>

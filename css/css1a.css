@@ -17,7 +17,6 @@ body{
 font-family: Verdana; 
 margin: auto;
 background:#34495e;
-
 font-size: middle;
 }
 #final{
@@ -472,6 +471,20 @@ color: black;
     font-size: middle;
     font-family: Verdana;
   }
+  .text20{
+    font-size: 10px;
+    font-family: VERDANA;
+  }
+  #delete{
+    font-size: 10px;
+    font-family: VERDANA;
+    font-weight: bold;
+  }
+  #edit{
+    font-size: 10px;
+    font-family: VERDANA;
+    font-weight: bold;
+  }
   tr{
     color: black;
     font-size: middle;
@@ -508,15 +521,13 @@ color: black;
     padding: 5px;
     width: auto;
     height: 20px;
-
-  border:none;
-  background-color:#ecf0f1;
-  cursor:pointer;
-  -webkit-box-shadow: 0px 2px 30px 0px rgba(50, 50, 50, 1);
--moz-box-shadow:    0px 2px 30px 0px rgba(50, 50, 50, 1);
-box-shadow:         0px 2px 30px 0px rgba(50, 50, 50, 1);
+    border:none;
+    background-color:#ecf0f1;
+    cursor:pointer;
+    -webkit-box-shadow: 0px 2px 30px 0px rgba(50, 50, 50, 1);
+    -moz-box-shadow:    0px 2px 30px 0px rgba(50, 50, 50, 1);
+    box-shadow:         0px 2px 30px 0px rgba(50, 50, 50, 1);
   }
-
   #ag{
 display: inline-block;
 margin: 3px;

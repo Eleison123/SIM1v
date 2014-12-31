@@ -2,33 +2,10 @@
 <!DOCTYPE html>
 <html leng="es">
 <head>
-<!-- Metas -->
 <meta charset="utf-8">
-<!-- CSS -->
 <link rel="stylesheet" href="../../css/css1a.css">
-    <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
-<!-- JS -->
-<script src="../../js/jquery-1.4.2.min.js"></script> 
-<script language="Javascript" type="text/javascript">
- Begin
-document.oncontextmenu = function(){return false}
-</script>
-<script type="text/javascript">
-$(document).ready(function(){
- 
-    $('#cuerpo').hide();
-    $('#cuerpo').fadeIn('slow');
-});
-</script>
-<script type="text/javascript">
-$(document).ready(function(event){
-    $('#agregar').click(function{
-       window.location = '../Agregar/agregarcate.php';
-    });
-});
-</script>
-    
-    
+<link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
+<script src="../../js/jquery-1.4.2.min.js"></script>  
 <title>Catedrático</title>
 </head>
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
@@ -94,7 +71,7 @@ $(document).ready(function(event){
                            echo "<table>";
                          echo"<tr>";
                             echo"
-                            <th>Nombre</th>
+                            <th><left>Nombre Completo</left></th>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -107,7 +84,7 @@ $(document).ready(function(event){
                         $num_total_registros=mysql_num_rows($resulf);
                        if ($num_total_registros > 0) {
     //Limito la busqueda
-    $tamano_pag = 10;
+    $tamano_pag = 15;
         $pagina = false;
                         //examino pagina a mostrar e inicio
         if (isset($_GET['pagina']))  
@@ -128,9 +105,9 @@ $(document).ready(function(event){
                         while($row1=mysql_fetch_array($rs)){
                                    echo "<tr>";
                                    
-                                        echo "<td><a class='text10'>".$row1['nombre']." </a>";
-                                        echo "<a class='text10'>".$row1['apellidopaterno']." </a>";
-                                        echo "<a class='text10'>".$row1['apellidomaterno']."</a></td>";
+                                        echo "<td><a class='text20'>".$row1['nombre']." </a>";
+                                        echo "<a class='text20'>".$row1['apellidopaterno']." </a>";
+                                        echo "<a class='text20'>".$row1['apellidomaterno']."</a></td>";
                                
                                        
 
@@ -140,13 +117,13 @@ $(document).ready(function(event){
 
  <form  method='post' action='../Editar/editarcatedratico.php'>
     <input type='hidden' name='idcar' value=".$row1['idcatedratico'].">
-    <input type='submit' value='Editar'  name='Editar' class='conf'><img src='../../imagenes/editar.png' class='icon'>
+    <input type='submit' value='Editar'  id='edit' name='Editar' class='conf'><img src='../../imagenes/editar.png' class='icon'>
      </form>
 </td>";
                         echo "<td>
     <form  method='post' action='../../Controller/eliminarcatedratico.php'>
     <input type='hidden' name='idcate' value=".$row1['idcatedratico'].">
-    <input class='conf' type='submit' name='Eliminar' value='Eliminar' alingn='center'>
+    <input class='conf' type='submit' id='delete' name='Eliminar' value='Eliminar' alingn='center'>
     <img src='../../imagenes/borrar.png' class='icon'>
     
      </form>
@@ -190,3 +167,10 @@ $(document).ready(function(event){
     <img src="../../imagenes/footer.jpg" id="footer">
 </div></footer>
 </html>
+<script type="text/javascript">
+$(document).ready(function(event){
+    $('#agregar').click(function{
+       window.location = '../Agregar/agregarcate.php';
+    });
+});
+</script>

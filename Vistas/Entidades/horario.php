@@ -2,29 +2,10 @@
 <!DOCTYPE html>
 <html leng="es">
 <head>
-<!-- Metas -->
 <meta charset="utf-8">
-<!-- CSS -->
 <link rel="stylesheet" href="../../css/css1a.css">
-<!-- JS -->
 <script src="../../js/jquery-1.4.2.min.js"></script> 
-<link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
-<script type="text/javascript">
-$(document).ready(function(){
- 
-    $('#cuerpo').hide();
-    $('#cuerpo').fadeIn('slow');
-});
-</script>
-<script type="text/javascript">
-$(document).ready(function(event){
-    $('#agregar').click(function{
-       window.location = '../Agregar/agregarhorario.php';
-    });
-});
-</script>
-    
-    
+<link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" /> 
 <title>Horario</title>
 </head>
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
@@ -94,6 +75,7 @@ $(document).ready(function(event){
                             <th>NRC ANT</th>
                             <th>Experiencia</th>
                             <th>Catedrático</th>
+                            <th>Tipo</th>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -131,36 +113,42 @@ $(document).ready(function(event){
                                     $resul2=mysql_query($mysqlc) or die(mysql_error());
                                     while ($m=mysql_fetch_array($resul1)) {
 
-                                    echo "<td><a class='text10'>".$row1['NRC']."</a></td>";
+                                    echo "<td><a class='text20'>".$row1['NRC']."</a></td>";
 
-                                    echo "<td><a class='text10'>".$row1['NRCANT']."</a></td>";
+                                    echo "<td><a class='text20'>".$row1['NRCANT']."</a></td>";
 
-                                    echo "<td><a class='text10'>".$m['nombre']."</a></td>";
+                                    echo "<td><a class='text20'>".$m['nombre']."</a></td>";
 
                                     while ($c=mysql_fetch_array($resul2)) {
-                                        echo "<td><a class='text10'>".$c['nombre']."</a>";
-                                        echo "<a class='text10'> ".$c['apellidopaterno']." </a>";
-                                        echo "<a class='text10'>".$c['apellidomaterno']."</a></td>";
-
-                     
-
+                                        echo "<td><a class='text20'>".$c['nombre']."</a>";
+                                        echo "<a class='text20'> ".$c['apellidopaterno']." </a>";
+                                        echo "<a class='text20'>".$c['apellidomaterno']."</a></td>";
+                                    }
+                                    echo "<td>";
+                                    if ($row1['tipo']==1){ echo "<a class='text20'>Escolar</a></td>";}
+                                    if ($row1['tipo']==2){ echo "<a class='text20'>Ordinario</a></td>";}
+                                    if ($row1['tipo']==3){ echo "<a class='text20'>Extraordinario</a></td>";}
+                                    if ($row1['tipo']==4){ echo "<a class='text20'>Título</a></td>";}
+                                    if ($row1['tipo']==5){ echo "<a class='text20'>Tutoria</a></td>";}
+                                   
                         echo "<td>
 
  <form  method='post' action='../Editar/editarhorario.php'>
     <input type='hidden' name='idhes' value=".$row1['idHorario'].">
-    <input type='submit' value='Editar'  name='Editar' class='conf'><img src='../../imagenes/editar.png' class='icon'>
+    <input type='submit' value='Editar'  id='edit' name='Editar' class='conf'><img src='../../imagenes/editar.png' class='icon'>
      </form>";
                         echo "<td>
     <form  method='post' action='../../Controller/eliminarhorario.php'>
     <input type='hidden' name='idhes' value=".$row1['idHorario'].">
-    <input class='conf' type='submit' name='Eliminar' value='Eliminar' alingn='center'>
+    <input class='conf' type='submit' id='delete' name='Eliminar' value='Eliminar' alingn='center'>
     <img src='../../imagenes/borrar.png' class='icon'>
      </form>";
                                 
                               
                                
                                 echo"</tr>";
-            }}}echo "</legend>";
+            
+        }}echo "</legend>";
         echo "</table></div></div>";
             echo '<p class="textlink">';
 
@@ -193,3 +181,10 @@ $(document).ready(function(event){
 </div>
 </footer>
 </html>
+<script type="text/javascript">
+$(document).ready(function(event){
+    $('#agregar').click(function{
+       window.location = '../Agregar/agregarhorario.php';
+    });
+});
+</script>

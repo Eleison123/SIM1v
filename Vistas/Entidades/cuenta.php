@@ -2,33 +2,10 @@
 <!DOCTYPE html>
 <html leng="es">
 <head>
-<!-- Metas -->
 <meta charset="utf-8">
-<!-- CSS -->
 <link rel="stylesheet" href="../../css/css1a.css">
-    <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
-<!-- JS -->
-<script language="Javascript" type="text/javascript">
- Begin
-document.oncontextmenu = function(){return false}
-</script>
+<link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <script src="../../js/jquery-1.4.2.min.js"></script> 
-<script type="text/javascript">
-$(document).ready(function(){
- 
-    $('#cuerpo').hide();
-    $('#cuerpo').fadeIn('slow');
-});
-</script>
-<script type="text/javascript">
-$(document).ready(function(event){
-    $('#agregar').click(function{
-       window.location = 'agregarp.php';
-    });
-});
-</script>
-    
-    
 <title>Cuenta</title>
 </head>
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
@@ -97,7 +74,7 @@ $(document).ready(function(event){
                          echo"<tr>";
                             echo"
                             <th>Usuario</th>
-                            <th>Privilegios</th>
+                            
                            <th></th>
                             <th></th><th></th><th></th><th>
                             
@@ -129,31 +106,21 @@ $(document).ready(function(event){
                         while($row1=mysql_fetch_array($rs)){
                                    echo "<tr>";
                                    
-                                        echo "<td><a class='text10'>".$row1['usuario']."</a></td>";
-                                        if ($row1['tipo']==1) {
-                                            echo "<td><a class='text10'>Agregar,Editar, Eliminar</a></td>";
-                                        }
+                                        echo "<td><a class='tex20'>".$row1['usuario']."</a></td>";
                                         
-                                        if ($row1['tipo']==2) {
-                                            echo "<td><a class='text10'>Agregar,Editar</a></td>";
-                                        }
-                                         if ($row1['tipo']==3) {
-                                            echo "<td><a class='text10'>Agregar</a></td>";
-                                        }
-
                
 
                         echo "<td>
 
  <form  method='post' action='../Editar/editarcuenta.php'>
     <input type='hidden' name='idad' value=".$row1['idcuenta'].">
-    <input type='submit' value='Editar'  name='Editar' class='conf'><img src='../../imagenes/editar.png' class='icon'>
+    <input type='submit' value='Editar'  id='edit' name='Editar' class='conf'><img src='../../imagenes/editar.png' class='icon'>
      </form>
 </td>";
                         echo "<td>
     <form  method='post' action='../../Controller/eliminarusuario.php'>
     <input type='hidden' name='iduser' value=".$row1['idcuenta'].">
-    <input class='conf' type='submit' name='Eliminar' value='Eliminar' alingn='center'>
+    <input class='conf' type='submit' id='delete' name='Eliminar' value='Eliminar' alingn='center'>
     <img src='../../imagenes/borrar.png' class='icon'>
     
      </form>
@@ -197,3 +164,10 @@ $(document).ready(function(event){
 </div>
     </footer>
 </html>
+<script type="text/javascript">
+$(document).ready(function(event){
+    $('#agregar').click(function{
+       window.location = 'agregarp.php';
+    });
+});
+</script>

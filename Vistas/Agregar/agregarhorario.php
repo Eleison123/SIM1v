@@ -2,12 +2,9 @@
 <!DOCTYPE html>
 <html leng="es">
 <head>
-<!-- Metas -->
 <meta charset="utf-8">
-<!-- CSS -->
 <link rel="stylesheet" href="../../css/css1a.css">
 <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
-<!-- JS -->
 <script type="text/javascript" src="../../js/jquery-1.10.2.js"></script>
 <script type="text/javascript" src="../../js/agregarhorario.js"></script>
 <title>Agregar Horario</title>
@@ -16,7 +13,6 @@
     <img id="imgportada" src="../../imagenes/header.jpg">
 </div>
 <center><div id="cabeza">
-    
     <div id="men">
 <nav id="menu">
             <ul>
@@ -28,9 +24,7 @@
     </ul>
 </nav>
 </div>
-
 </div></center>
-
 <body>
 <div id="cuerpo"><br><br>
 <figure>

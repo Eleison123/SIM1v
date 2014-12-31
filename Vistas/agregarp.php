@@ -6,63 +6,17 @@
 <meta charset="utf-8">
 <!-- CSS -->
 <link rel="stylesheet" href="../css/css1a.css">
+<link rel="stylesheet" href="../css/jquery-ui.css">
 <link rel="shortcut icon" href="../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
-<script language="Javascript" type="text/javascript">
-//<![CDATA[
-
-<!-- Begin
-document.oncontextmenu = function(){return false}
-// End -->
-//]]>
-</script>
 <title>Agregar Publicación</title>
-<script src="../js/jquery-1.4.2.min.js"></script> 
-<script type="text/javascript">
-$(document).ready(function(){
-
-    var max_chars = 50;
-
-    $('#max').html(max_chars);
-
-    $('#nombre1p').keyup(function() {
-        var chars = $(this).val().length;
-        var diff = max_chars - chars;
-        $('#contador').html(diff);   
-    });
-});
-
-</script>
-<script type="text/javascript">
-$(document).ready(function(){
-
-    var max_chars = 250;
-
-    $('#maxii').html(max_chars);
-
-    $('#infob1p').keyup(function() {
-        var chars = $(this).val().length;
-        var diff = max_chars - chars;
-        $('#contador1').html(diff);   
-    });
-});
-
-</script>
-<script type="text/javascript">
-$(document).ready(function(){
-
-    var max_chars = 500;
-
-    $('#maxi').html(max_chars);
-
-    $('#info1p').keyup(function() {
-        var chars = $(this).val().length;
-        var diff = max_chars - chars;
-        $('#contador2').html(diff);   
-    });
-});
-
-</script>
+<script src="../js/jquery-1.10.2.min.js"></script> 
+<script src="../js/jquery-ui.js"></script>
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
 </head>
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 <!--                                        Inicia Menu                                                                                -->
@@ -117,13 +71,13 @@ $(document).ready(function(){
  </select><br><br>
 
  <label for="fecharea1p" class="text1">Fecha Inicio:</label>
- <input type="date" id="fecharea1p" name="fecharea1p" class="infecha"required>
+ <input type="text" id="datepicker" name="fecharea1p" class="infecha"required>
 
  <label for="horarea1p" class="text1">Hora Inicio:</label>
  <input type="time" id="horarea1p" name="horarea1p" class="inhora" required><br><br>
 
- <label for="fechater1p" class="text1">Fecha Término:</label>
- <input type="date" id="fechater1p" name="fechater1p" class="infecha" required>
+ <label  class="text1">Fecha Término:</label>
+ <input type="text" id="datepicker" name="fechater1p" class="infecha" required>
  
  <label for="horater1p" class="text1">Hora Término:</label>
  <input type="time" id="horater1p" name="horater1p" class="inhora" required><br><br>
@@ -185,19 +139,20 @@ $(document).ready(function(){
 
  <label class="text1">Color de la Publicación:</label><br>
  <div id="divcolor">
- <input type="radio" id="radio" name="color" value="#FF8888" ><a class="text1" style="color:#FF8888">Rojo</a><br>
- <input type="radio" id="radio" name="color" value="#19B495"><a class="text1" style="color:#19B495">Verde</a><br>
- <input type="radio" id="radio" name="color" value="#0099CC"><a class="text1" style="color:#0099CC" checked="checked">Azul</a><br>
- <input type="radio" id="radio" name="color" value="#fac15e"><a class="text1" style="color:#fac15e">Naranja</a><br>
+ <input type="radio" id="radio" name="color" value="#e74c3c" ><a class="text1" style="color:#e74c3c">Alizarin</a><br>
+ <input type="radio" id="radio" name="color" value="#1abc9c"><a class="text1" style="color:#1abc9c">Turquoise</a><br>
+ <input type="radio" id="radio" name="color" value="#34495e"><a class="text1" style="color:#34495e" checked="checked">Wet Asphalt</a><br>
+ <input type="radio" id="radio" name="color" value="#f39c12"><a class="text1" style="color:#f39c12">Naranja</a><br>
+ <input type="radio" id="radio" name="color" value="#9b59b6"><a class="text1" style="color:#9b59b6">Amatista</a><br>
+ <input type="radio" id="radio" name="color" value="#3498db"><a class="text1" style="color:#3498db">Peter River</a><br>
+ <input type="radio" id="radio" name="color" value="#2ecc71"><a class="text1" style="color:#2ecc71">Esmeralda</a><br>
 
  </div>
 
- <label class="text1">Color Tipografía de la Publicación:</label><br>
- <input type="radio" id="radio" name="colorletra" value="black"><a class="text1">Negro</a><br>
-  <input type="radio" id="radio" name="colorletra" value="white"  checked="checked"><a class="text1">Blanco</a><br><br>
+  <input type="hidden" id="radio" name="colorletra" value="white"  checked="checked"><br>
 
- <label class="text1">Día de Publicación</label>
- <input type="date" name="diapub" class="infecha"><br><br>
+ <p class="text1">Día de Publicación:
+ <input type="text" size="8" id="datepicker" name="diapub" class="infecha"></p><br><br>
 
  <label class="text1">Hora de Publicación</label>
  <input type="time" name="horapub" class="inhora"><br><br>
@@ -214,7 +169,7 @@ $(document).ready(function(){
 
 </fieldset><br><br>
  <!--////////////////////////////////////   Termina configuracion diseño publicacion   //////////////////////////////-->
- <input  type="submit"  value="Guardar" id="btnguardar" name="guardar" > 
+ <center><input  type="submit"  value="Guardar" id="btnguardar" name="guardar" > </center>
 </form>
 
 <!--//////////////////////////////////////  Termina Formulario  ////////////////////////////////////////////-->
@@ -227,3 +182,41 @@ $(document).ready(function(){
 </div>
 </footer>
 </html>
+<script type="text/javascript">
+$(document).ready(function(){
+    var max_chars = 50;
+    $('#max').html(max_chars);
+    $('#nombre1p').keyup(function() {
+        var chars = $(this).val().length;
+        var diff = max_chars - chars;
+        $('#contador').html(diff);   
+    });
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+    var max_chars = 250;
+    $('#maxii').html(max_chars);
+    $('#infob1p').keyup(function() {
+        var chars = $(this).val().length;
+        var diff = max_chars - chars;
+        $('#contador1').html(diff);   
+    });
+});
+
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+    var max_chars = 500;
+
+    $('#maxi').html(max_chars);
+
+    $('#info1p').keyup(function() {
+        var chars = $(this).val().length;
+        var diff = max_chars - chars;
+        $('#contador2').html(diff);   
+    });
+});
+
+</script>
