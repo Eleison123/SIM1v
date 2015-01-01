@@ -7,6 +7,10 @@
 <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <script type="text/javascript" src="../../js/jquery-1.10.2.js"></script>
 <script type="text/javascript" src="../../js/agregarhorario.js"></script>
+<link rel="stylesheet" href="../../js/jquery-ui-1.11.2/jquery-ui.css">
+<script src="../../js/jquery-1.10.2.js"></script> 
+<script src="../../js/jquery-ui-1.11.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="../../js/jquery-ui-1.11.2/jquery-ui.theme.css">
 <title>Agregar Horario</title>
 </head>
 <div id="portada">
@@ -129,7 +133,7 @@ echo "</select>";
             <option value="Viernes">Viernes</option>
             </select></br>
     <label class="text1">FECHA:</label><br>
-    <input type="date" id="dfecha" name="dfecha"><br>
+    <input type="text" id="datepicker" maxlength="10" name="dfecha"><br>
  <label for="horarea1h" class="text1" id="horareal1h">HORA INICIO:</label><br>
  <input type="time" id="fecharea1h" name="horaini" class="inhora"required><br>
  
@@ -155,11 +159,11 @@ echo "</select>";
 <fieldset><legend><a class="text2">Vigencia</a></legend>
     <a class="text1">*La vigencia ayuda a que el sistema no muestre horarios pasados.</a><br><br>
     <label><a class="text1">FECHA DE PUBLICACIÓN:</a></label><br>
-    <input type="date" class="infecha" name="fechapub"><br>
+    <input type="text" maxlength="10" id="datepicker2" class="infecha" name="fechapub"><br>
     <label><a class="text1">HORA PUBLICACIÓN:</a></label><br>
     <input type="time" class="inhora" name="horapub"><br>
 <label><a class="text1">FECHA VIGENCIA:</a></label><br>
-<input type="date" class="infecha" name="fechavig" required/>
+<input type="text" maxlength="10" id="datepicker4" class="infecha" name="fechavig" required/>
 </fieldset>
         <center><input type="submit" value="GUARDAR" id="btnguardar" name="guardar"></center>
   </form>
@@ -170,3 +174,23 @@ echo "</select>";
     <img src="../../imagenes/footer.jpg" id="footer">
 </div>
 </html>
+<script>
+  $(function() {
+    $("#datepicker").datepicker();
+  });
+  $(function() {
+    $("#datepicker1").datepicker();
+  });
+  $(function() {
+    $("#datepicker2").datepicker();
+  });
+  $(function() {
+    $("#datepicker3").datepicker();
+  });
+  $(function() {
+    $("#datepicker4").datepicker();
+  });
+  $(function() {
+    $( document ).tooltip();
+  });
+  </script>

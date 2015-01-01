@@ -5,16 +5,33 @@
 <!-- Metas -->
 <meta charset="utf-8">
 <!-- CSS -->
-<link rel="stylesheet" href="../css/css1a.css">
-<link rel="stylesheet" href="../css/jquery-ui.css">
-<link rel="shortcut icon" href="../imagenes/favicon.ico" type="image/png" />
-<!-- JS -->
 <title>Agregar Publicación</title>
-<script src="../js/jquery-1.10.2.min.js"></script> 
-<script src="../js/jquery-ui.js"></script>
+<link rel="shortcut icon" href="../imagenes/favicon.ico" type="image/png" />
+<link rel="stylesheet" href="../css/css1a.css">
+<link rel="stylesheet" href="../js/jquery-ui-1.11.2/jquery-ui.css">
+<script src="../js/jquery-1.10.2.js"></script> 
+<script src="../js/jquery-ui-1.11.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="../js/jquery-ui-1.11.2/jquery-ui.theme.css">
+<style type="text/css">
+</style>
 <script>
   $(function() {
-    $( "#datepicker" ).datepicker();
+    $("#datepicker").datepicker();
+  });
+  $(function() {
+    $("#datepicker1").datepicker();
+  });
+  $(function() {
+    $("#datepicker2").datepicker();
+  });
+  $(function() {
+    $("#datepicker3").datepicker();
+  });
+  $(function() {
+    $("#datepicker4").datepicker();
+  });
+  $(function() {
+    $( document ).tooltip();
   });
   </script>
 </head>
@@ -56,10 +73,10 @@
  <a class="text3">Aquí deberas proporcionar los datos que contiene tu publicación</a><br><br>
 
  <label for="nombre1p" class="text1">Nombre:</label>
- <input type="text" id="nombre1p" placeholder="Nombre de la publicacion" name="nombre1p" maxlength="50"><div id="contador"></div></br>
+ <input type="text" id="nombre1p" title="Nombre de la publicación" name="nombre1p" maxlength="50"><div id="contador"></div></br>
 
  <label for for="autor1p" class="text1">Categoría:</label>
- <select name="autor1p" class="op" required>
+ <select name="autor1p" id="categoria" required>
         <option value=""  selected >--Elige Categoria--</option>
         <option>Beca</option>
         <option>Empleo</option>
@@ -71,34 +88,34 @@
  </select><br><br>
 
  <label for="fecharea1p" class="text1">Fecha Inicio:</label>
- <input type="text" id="datepicker" name="fecharea1p" class="infecha"required>
+ <input type="text" maxlength="10" id="datepicker" name="fecharea1p" required>
 
  <label for="horarea1p" class="text1">Hora Inicio:</label>
  <input type="time" id="horarea1p" name="horarea1p" class="inhora" required><br><br>
 
  <label  class="text1">Fecha Término:</label>
- <input type="text" id="datepicker" name="fechater1p" class="infecha" required>
+ <input type="text" maxlength="10" id="datepicker2" name="fechater1p"  required>
  
  <label for="horater1p" class="text1">Hora Término:</label>
  <input type="time" id="horater1p" name="horater1p" class="inhora" required><br><br>
 
  <label for="url1p" class="text1">URL:</label><br>
- <input type="url" id="url1p" name="url1p" ><br><br>
+ <input type="url" id="url1p" name="url1p" title="Ejemplo: http://www.ejemplo.com"><br><br>
 
  <label for="lugar1p" class="text1">Lugar de Realización:</label><br>
- <input type="text" id="lugar1p" placeholder="Lugar de realizacion de la publicacion" name="lugar1p"><br><br>
+ <input type="text" id="lugar1p" title="Lugar de realizacion de la publicacion" name="lugar1p"><br><br>
 
  <label class="text1">Contacto:</label><br>
- <input type="text" id="contacto1p" placeholder="¿Como contactar la publicacion?(no url)" name="contacto1p"><br><br>
+ <input type="text" id="contacto1p" title="¿Como contactar la publicacion?(no url)" name="contacto1p"><br><br>
 
  <label class="text1">Imagen de la Publicación </label><br>
  <input type="file" value="Subir" id="btnsubir" name="imagen"><br><br>
 
 <label  class="text1">Información Breve de la Publicación:</label><br>
- <textarea type="text" id="infob1p" placeholder="Informacion que aparecera en el kiosko" name="infob1p" maxlength="250" ></textarea><div id="contador1"></div><br>
+ <textarea type="text" id="infob1p" title="Informacion que aparecera en el kiosko" name="infob1p" maxlength="250" ></textarea><div id="contador1"></div><br>
 
  <label for="info1p" class="text1">Información de la Publicación:</label><br>
- <textarea type="text" id="info1p" placeholder="Informacion completa de la publicación" name="info1p" maxlength="500"></textarea><div id="contador2"></div><br>
+ <textarea type="text" id="info1p" title="Informacion completa de la publicación" name="info1p" maxlength="500"></textarea><div id="contador2"></div><br>
 
  <label for="info1p" class="text1">Código QR:</label><br>
  <a class="text1"> Aquí usted podrá proporcionar el tamaño del código QR así como su resolución.</a><br>
@@ -107,14 +124,14 @@
  echo  '
         &nbsp;<input name="data" id="data" type="hidden" value="'.(isset($_REQUEST['data'])?htmlspecialchars($_REQUEST['data']):'PHP QR Code :)').'"/>&nbsp;
         <a class="text1">Resolución:&nbsp;</a>
-        <select name="level" type="hidden">
+        <select name="level"  id="resolucion" type="hidden">
             <option value="L"'.(($errorCorrectionLevel=='L')?' selected':'').'>L - smallest</option>
             <option value="M"'.(($errorCorrectionLevel=='M')?' selected':'').'>M</option>
             <option value="Q"'.(($errorCorrectionLevel=='Q')?' selected':'').'>Q</option>
             <option value="H"'.(($errorCorrectionLevel=='H')?' selected':'').'selected>H - best</option>
         </select>&nbsp;
         <br><a class="text1">Tamaño:&nbsp;</a>
-        <select name="size" type="hidden">';
+        <select name="size" id="tamano" type="hidden">';
         
     for($i=1;$i<=10;$i++)
         echo '<option value="'.$i.'"'.(($matrixPointSize==$i)?' selected':'').'selected>'.$i.'</option>';
@@ -152,7 +169,7 @@
   <input type="hidden" id="radio" name="colorletra" value="white"  checked="checked"><br>
 
  <p class="text1">Día de Publicación:
- <input type="text" size="8" id="datepicker" name="diapub" class="infecha"></p><br><br>
+ <input type="text" maxlength="10" id="datepicker3" name="diapub" /></p><br><br>
 
  <label class="text1">Hora de Publicación</label>
  <input type="time" name="horapub" class="inhora"><br><br>
@@ -161,7 +178,7 @@
 <a class="text2">Vigencia</a><br>
     <a class="text1">La vigencia ayuda a que el sistema no muestre publicaciones pasadas.</a><br><br>
 <label><a class="text1">Fecha término de Vigencia</a></label>
-<input type="date" class="infecha" name="fechvig"required/>
+<input type="text" maxlength="10" id="datepicker4" name="fechvig"required/>
 
 
 
@@ -192,8 +209,6 @@ $(document).ready(function(){
         $('#contador').html(diff);   
     });
 });
-</script>
-<script type="text/javascript">
 $(document).ready(function(){
     var max_chars = 250;
     $('#maxii').html(max_chars);
@@ -203,9 +218,6 @@ $(document).ready(function(){
         $('#contador1').html(diff);   
     });
 });
-
-</script>
-<script type="text/javascript">
 $(document).ready(function(){
 
     var max_chars = 500;

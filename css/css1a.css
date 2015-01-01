@@ -271,7 +271,9 @@ input{
 }
 
 select{
-  width: 300px;
+  width: 150px;
+  height: 20px;
+  padding: 0px;
 }
 #radio{
 width: auto;

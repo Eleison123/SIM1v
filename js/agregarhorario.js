@@ -40,10 +40,10 @@
             }
             if (id == '1'){
                 $('#dia1h').prop('disabled',false);
-                $('#dfecha').prop('disabled',true);
+                $('#datepicker').prop('disabled',true);
             }else{
                 $('#dia1h').prop('disabled',true);
-                $('#dfecha').prop('disabled',false);
+                $('#datepicker').prop('disabled',false);
             }
         });
     });

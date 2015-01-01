@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-12-2014 a las 23:33:21
+-- Tiempo de generación: 01-01-2015 a las 22:31:13
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.11
 
@@ -414,7 +414,7 @@ CREATE TABLE IF NOT EXISTS `horario` (
   `idubicacion` int(11) NOT NULL,
   `idExperienciaEducativa` int(11) NOT NULL,
   `NRC` varchar(5) DEFAULT NULL,
-  `NRC ANT` varchar(5) DEFAULT NULL,
+  `NRCANT` varchar(5) DEFAULT NULL,
   `Seccion` varchar(2) DEFAULT NULL,
   `Bloque` varchar(2) DEFAULT NULL,
   `Secretaria` varchar(45) DEFAULT NULL,
@@ -423,7 +423,15 @@ CREATE TABLE IF NOT EXISTS `horario` (
   KEY `fk_horario_Catedratico1_idx` (`idCatedratico`),
   KEY `fk_horario_ubicacion1_idx` (`idubicacion`),
   KEY `fk_horario_experienciaeducativa1_idx` (`idExperienciaEducativa`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `horario`
+--
+
+INSERT INTO `horario` (`idHorario`, `dia`, `diapub`, `fechavig`, `horafin`, `horain`, `horapub`, `tipo`, `idCarrera`, `idFacultad`, `idCatedratico`, `idubicacion`, `idExperienciaEducativa`, `NRC`, `NRCANT`, `Seccion`, `Bloque`, `Secretaria`) VALUES
+(1, NULL, '2014-12-22', '2015-01-30', '15:00:00', '13:00:00', '13:00:00', '2', 1, 1, 70, 1, 50, '42722', NULL, 'S2', 'B7', 'Catalina Valdes'),
+(2, NULL, '2014-12-02', '2015-01-29', '15:00:00', '13:00:00', '01:00:00', '1', 1, 1, 16, 1, 2, '12321', '12313', '12', '12', 'iou');
 
 -- --------------------------------------------------------
 
@@ -453,8 +461,12 @@ CREATE TABLE IF NOT EXISTS `publicacion` (
   `URL` longtext,
   `Visitas` int(11) DEFAULT NULL,
   `idFacultad` int(11) NOT NULL,
-  PRIMARY KEY (`idPublicacion`,`idFacultad`),
-  KEY `fk_publicacion_Facultad1_idx` (`idFacultad`)
+  `fechater` date DEFAULT NULL,
+  `idRegistro` int(11) NOT NULL,
+  `idCuenta` int(11) NOT NULL,
+  PRIMARY KEY (`idPublicacion`,`idFacultad`,`idRegistro`,`idCuenta`),
+  KEY `fk_publicacion_Facultad1_idx` (`idFacultad`),
+  KEY `fk_publicacion_registro1_idx` (`idRegistro`,`idCuenta`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -467,12 +479,10 @@ CREATE TABLE IF NOT EXISTS `registro` (
   `idRegistro` int(11) NOT NULL AUTO_INCREMENT,
   `diareg` date DEFAULT NULL,
   `horareg` time DEFAULT NULL,
-  `idPublicacion` int(11) NOT NULL,
-  `idFacultad` int(11) NOT NULL,
   `idCuenta` int(11) NOT NULL,
-  PRIMARY KEY (`idRegistro`,`idPublicacion`,`idFacultad`,`idCuenta`),
-  KEY `fk_registro_publicacion1_idx` (`idPublicacion`,`idFacultad`),
-  KEY `fk_registro_Cuenta1_idx` (`idCuenta`)
+  `idFacultad` int(11) NOT NULL,
+  PRIMARY KEY (`idRegistro`,`idCuenta`,`idFacultad`),
+  KEY `fk_registro_Cuenta1_idx` (`idFacultad`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -489,14 +499,81 @@ CREATE TABLE IF NOT EXISTS `ubicacion` (
   `QR` mediumtext,
   PRIMARY KEY (`idubicacion`,`idFacultad`),
   KEY `fk_ubicacion_Facultad1_idx` (`idFacultad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=70 ;
 
 --
 -- Volcado de datos para la tabla `ubicacion`
 --
 
 INSERT INTO `ubicacion` (`idubicacion`, `nombre`, `descripcion`, `idFacultad`, `QR`) VALUES
-(1, 'CC1', '', 1, NULL);
+(1, 'CC1', '', 1, NULL),
+(2, 'CC2', '', 1, NULL),
+(3, 'CC3', '', 1, NULL),
+(4, 'CC4', '', 1, NULL),
+(5, '102', '', 1, NULL),
+(6, '103', '', 1, NULL),
+(7, '104', '', 1, NULL),
+(8, '105', '', 1, NULL),
+(9, '106', '', 1, NULL),
+(10, '107', '', 1, NULL),
+(11, '108', '', 1, NULL),
+(12, '111', '', 1, NULL),
+(13, '112', '', 1, NULL),
+(14, '113', '', 1, NULL),
+(15, 'Auditorio', '', 1, NULL),
+(16, 'Audiovisual', '', 1, NULL),
+(17, 'Biblioteca', '', 1, NULL),
+(19, 'DirecciÃ³n FEI', '', 1, NULL),
+(20, '219', '', 1, NULL),
+(21, 'Jefatura de Carrera', '', 1, NULL),
+(22, 'Secretaria Academica', '', 1, NULL),
+(23, 'Jefatura EconomÃ­a', '', 1, NULL),
+(24, 'LINAE', '', 1, NULL),
+(25, 'DirecciÃ³n EconomÃ­a', '', 1, NULL),
+(26, 'CubÃ­culos AcadÃ©micos I', '', 1, NULL),
+(27, 'EspecializaciÃ³n de MÃ©todos ExtadÃ­sticos', '', 1, NULL),
+(28, 'Centro de Copiado', '', 1, NULL),
+(29, '101', '', 1, NULL),
+(30, 'CubÃ­culo 1', '', 1, NULL),
+(31, 'CubÃ­culo 2', '', 1, NULL),
+(32, 'CubÃ­culo 3', '', 1, NULL),
+(33, 'CubÃ­culo 4', '', 1, NULL),
+(34, 'CubÃ­culo 5', '', 1, NULL),
+(35, 'CubÃ­culo 6', '', 1, NULL),
+(36, 'CubÃ­culo 7', '', 1, NULL),
+(37, 'CubÃ­culo 8', '', 1, NULL),
+(38, 'CubÃ­culo 30', '', 1, NULL),
+(39, 'CubÃ­culo 31', '', 1, NULL),
+(40, 'CubÃ­culo 32', '', 1, NULL),
+(41, 'CubÃ­culo 33', '', 1, NULL),
+(42, 'CubÃ­culo 34', '', 1, NULL),
+(43, 'CubÃ­culo 35', '', 1, NULL),
+(44, 'CubÃ­culo 36', '', 1, NULL),
+(45, 'CubÃ­culo 37', '', 1, NULL),
+(46, 'CubÃ­culo 38', '', 1, NULL),
+(47, 'CubÃ­culo 39', '', 1, NULL),
+(48, 'CubÃ­culo 40', '', 1, NULL),
+(49, 'CubÃ­culo 41', '', 1, NULL),
+(50, 'SalÃ³n 4', '', 1, NULL),
+(51, 'SalÃ³n 5', '', 1, NULL),
+(52, 'SalÃ³n 6', '', 1, NULL),
+(53, 'SalÃ³n de Murales', '', 1, NULL),
+(54, 'M.S.I.U.', '', 1, NULL),
+(55, 'Laboratorio Redes', '', 1, NULL),
+(56, 'Sala de Maestros', '', 1, NULL),
+(57, 'Jefatura de Carrera GeografÃ­a', '', 1, NULL),
+(58, '201', '', 1, NULL),
+(59, '202', '', 1, NULL),
+(60, '203', '', 1, NULL),
+(61, '207', '', 1, NULL),
+(62, '208', '', 1, NULL),
+(63, '211', '', 1, NULL),
+(64, '212', '', 1, NULL),
+(65, '213', '', 1, NULL),
+(66, 'Laboratorio de EstadÃ­stica', '', 1, NULL),
+(67, 'Jefatura de Centro de Computo', '', 1, NULL),
+(68, '114', '', 1, NULL),
+(69, 'M.I.S.', '', 1, NULL);
 
 --
 -- Restricciones para tablas volcadas
@@ -539,14 +616,14 @@ ALTER TABLE `horario`
 -- Filtros para la tabla `publicacion`
 --
 ALTER TABLE `publicacion`
-  ADD CONSTRAINT `fk_publicacion_Facultad1` FOREIGN KEY (`idFacultad`) REFERENCES `facultad` (`idFacultad`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_publicacion_Facultad1` FOREIGN KEY (`idFacultad`) REFERENCES `facultad` (`idFacultad`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_publicacion_registro1` FOREIGN KEY (`idRegistro`, `idCuenta`) REFERENCES `registro` (`idRegistro`, `idCuenta`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `registro`
 --
 ALTER TABLE `registro`
-  ADD CONSTRAINT `fk_registro_Cuenta1` FOREIGN KEY (`idCuenta`) REFERENCES `cuenta` (`idCuenta`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_registro_publicacion1` FOREIGN KEY (`idPublicacion`, `idFacultad`) REFERENCES `publicacion` (`idPublicacion`, `idFacultad`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_registro_Cuenta1` FOREIGN KEY (`idFacultad`) REFERENCES `cuenta` (`idFacultad`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `ubicacion`

@@ -7,6 +7,10 @@
 <!-- CSS -->
 <link rel="stylesheet" href="../../css/css1a.css">
      <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
+     <link rel="stylesheet" href="../../js/jquery-ui-1.11.2/jquery-ui.css">
+<script src="../../js/jquery-1.10.2.js"></script> 
+<script src="../../js/jquery-ui-1.11.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="../../js/jquery-ui-1.11.2/jquery-ui.theme.css">
 <!-- JS -->
 <script language="Javascript" type="text/javascript">
 Begin
@@ -45,9 +49,9 @@ document.oncontextmenu = function(){return false}
         <form method="post">
             <fieldset>
             <label><strong><a class="text1">Nombre:</a></strong></label><br>
-            <input type="text" name="nombre" required><br><br>
+            <input type="text" name="nombre" title="Nombre del lugar a agregar" required><br><br>
             <label><strong><a class="text1">Descripción:</a></strong></label><br>
-            <textarea name="descripcion"></textarea>
+            <textarea title="Pequeña descripción del lugar a agregar" name="descripcion"></textarea>
         
             <?php
             require_once("../../conexiones/conexion.php");
@@ -69,7 +73,7 @@ document.oncontextmenu = function(){return false}
             echo "<br><br>";
             ?>
             </fieldset>
-        <input  type="submit"  value="GUARDAR" id="btnguardar" name="guardar" >
+        <center><input  type="submit"  value="GUARDAR" id="btnguardar" name="guardar" ></center>
         </form>
     </div>
     </div>
@@ -78,3 +82,7 @@ document.oncontextmenu = function(){return false}
     <img src="../../imagenes/footer.jpg" id="footer">
 </div>
 </html>
+<script type="text/javascript">  $(function() {
+    $( document ).tooltip();
+  });
+  </script>
