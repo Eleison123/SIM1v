@@ -13,7 +13,7 @@ if(@$_POST['entrar']){
 	if(($facultad == $id)){
 		session_start();
 		$_SESSION['facultad'] = $facultad;
-		header("location:Vistas/principalkiosko.php");
+		header("location:Vistas/principalkiosco.php");
 	}else{
 		echo "No existe el usuario";
 
@@ -22,7 +22,7 @@ if(@$_POST['entrar']){
 ?>
 <!DOCTYPE html >
 <html xmlns="http://www.w3.org/1999/xhtml">
-<link rel="stylesheet" type="text/css" href="css/logkiosko.css">
+<link rel="stylesheet" type="text/css" href="css/logkiosco.css">
       <link rel="shortcut icon" href="imagenes/favicon.ico" type="image/png" />
   <script language="Javascript" type="text/javascript">
 //<![CDATA[

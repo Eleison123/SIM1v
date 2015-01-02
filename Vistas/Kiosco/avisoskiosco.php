@@ -55,7 +55,7 @@ document.oncontextmenu = function(){return false}
 		
 		    </div>
             <div class="botonera" id="uno" title="Atrás">
-			<a href="../principalkiosko.php">
+			<a href="../principalkiosco.php">
         <img class="iconos" src="../../imagenes/iconos_21.png"></a>
 			
 		    </div>
@@ -73,7 +73,7 @@ document.oncontextmenu = function(){return false}
         <h1><a class="text111">Avisos</a></h1>
     </div>
     <div id="back">
-<a href="../principalkiosko.php">
+<a href="../principalkiosco.php">
   <img class="iconos" src="../../imagenes/iconos_21.png"></a>
 
     </div>

@@ -10,21 +10,18 @@ include"seguridadkiosko.php";
 	<meta charset="utf-8"> 
 	<meta name="viewport" content=" user-scalable=no">
 <!-- CSS -->
-	<link rel="stylesheet" href="../css/estilo.css">
+	<link rel="stylesheet" href="../css/anuncio1.css">
 <!-- JS -->
-
 <script src="../js/jquery-1.11.0.min.js"></script>
 <script src="../JS comprimido/jquery.cycle.all.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function(){
-	$('#body1').load("Kiosco/anuncio1kiosko.php");
+	$('#body1').load("Kiosco/anuncio1kiosco.php");
 });
 </script>
-
 <script language="Javascript" type="text/javascript">
 //<![CDATA[
-
 <!-- Begin
 document.oncontextmenu = function(){return false}
 // End -->
@@ -49,19 +46,19 @@ $(document).ready(function(){
 <script type="text/javascript">
 ///////////// Recarga avisos prioridad alta,ahora cada 5min ////////////////
 var tiempoa =setInterval(function(){
-	$('#body1').load("Kisco/anuncio1kiosko.php");
+	$('#body1').load("Kisco/anuncio1kiosco.php");
 },300000);
 
 </script>
 <script type="text/javascript">
 $(document).ready(function(){
-	$('#body2').load("Kiosco/anuncio2kiosko.php");
+	$('#body2').load("Kiosco/anuncio2kiosco.php");
 
 });</script>
 <script type="text/javascript">
 ////////////// Recarga avisos prioridad baja,media cada 5 min ////////////7 
 var tiempoap =setInterval(function(){
-	$('#body2').load("Kiosco/anuncio2kiosko.php");
+	$('#body2').load("Kiosco/anuncio2kiosco.php");
 },300000);
 
 </script>
@@ -72,12 +69,12 @@ var tiempoap =setInterval(function(){
   <div id="cen" >
 	  <div id="cont">
              <div class="botonera" id="uno" title="Todas las publicaciones">
-			<a href="Kiosco/avisoskiosko.php"><img class="icon" src="../imagenes/avisosk.png"></a>
+			<a href="Kiosco/avisoskiosco.php"><img class="icon" src="../imagenes/avisosk.png"></a>
 			
 		    </div>
             
             <div class="botonera" id="dos" title="Informácion de ubicaciones">
-            <a href="Kiosco/dondekiosko.php"><img class="icon" src="../imagenes/ubicacionesk.png"></a>
+            <a href="Kiosco/dondekiosco.php"><img class="icon" src="../imagenes/ubicacionesk.png"></a>
 		    </div>
             
             

@@ -4,7 +4,7 @@
 <script language="Javascript" type="text/javascript">
 //<![CDATA[
 <!-- Begin
-//document.oncontextmenu = function(){return false}
+document.oncontextmenu = function(){return false}
 // End -->
 //]]>
 </script>
@@ -14,8 +14,8 @@
 <!-- Metas -->
     <meta charset="utf-8">
 <!-- CSS -->
-    <link rel="stylesheet" href="../../css/horarioscss.css">
-        <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
+<link rel="stylesheet" href="../../css/horarioscss.css">
+<link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
  <title>Sistema Interactivo de Mensajes</title>
     </head> 
@@ -23,7 +23,7 @@
   <div id="cen" >
 
              <center></center><div class="botonera"  id="HES" name="HES" title="Todas las publicaciones">
-            <img class="icon" src="../../imagenes/icon3.png">
+            <img class="icon" src="../../imagenes/iconos_55.png">
             <a class="texto">Horarios Escolar</a>
             </div>
             <div class="botonera" id="HI"  title="Todas las publicaciones">
@@ -39,7 +39,7 @@
             <a class="texto">Horarios Tutorias</a>
             </div>  
             <div class="botonera" id="uno" title="Atrás">
-            <a href="../principalkiosko.php"><img class="iconos" src="../../imagenes/iconos_21.png"></a>
+            <a href="../principalkiosco.php"><img class="iconos" src="../../imagenes/iconos_21.png"></a>
             
             </div></center>
   </div>
@@ -51,7 +51,7 @@
         <h1><a class="text1z">Horarios</a></h1>
     </div>
     <div id="back">
-<a href="../principalkiosko.php"><img class="iconos" src="../../imagenes/iconos_21.png"></a>
+<a href="../principalkiosco.php"><img class="iconos" src="../../imagenes/iconos_21.png"></a>
 
     </div>
 </div>

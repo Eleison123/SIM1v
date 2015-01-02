@@ -152,7 +152,7 @@ $(document).ready(function(){
         var id= $(this).attr("value");
         $('#horarioex1').show();
         
-        $('#horarioex1').load('modificar/genera-hex.php?id='+id);
+        $('#horarioex1').load('../Editar/genera-hex.php?id='+id);
         $('#horarioex').hide();
     });
 });

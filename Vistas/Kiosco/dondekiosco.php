@@ -10,14 +10,17 @@ include "../seguridadkiosko.php";
 	<meta charset="utf-8"> 
 	
 <!-- CSS -->
-	<link rel="stylesheet" href="../../css/estilo.css">
+	<link rel="stylesheet" href="../../css/anuncio1.css">
         <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
     <script src="../../js/runtime.js"></script>
     <script src="../../js/croquis.js"></script>
-  <script language="Javascript" type="text/javascript">
-Begin
+<script language="Javascript" type="text/javascript">
+//<![CDATA[
+<!-- Begin
 document.oncontextmenu = function(){return false}
+// End -->
+//]]>
 </script>
   </head>
  <title>Kiosko FEI</title>
@@ -26,7 +29,7 @@ document.oncontextmenu = function(){return false}
     <div id="tituu">
 <h1><a id="ubicate">Ubicaciones</a><h1></div>
             <div class="botonera" id="regs" title="Atrás" >
-			<a href="../principalkiosko.php"><img class="icon" src="../../imagenes/iconos_21.png"></a>
+			<a href="../principalkiosco.php"><img class="icon" src="../../imagenes/iconos_21.png"></a>
 			
 		    </div>
   </div>
@@ -35,12 +38,7 @@ document.oncontextmenu = function(){return false}
     <div id="swiffycontainer" >
     </div>
 </div>
-<script>
-$(document).ready(function(){
-	$('#swiffycontainer').hide();
-	$('#swiffycontainer').fadeIn('slow');
-});
-</script>
+
     <script>
       
       var stage = new swiffy.Stage(document.getElementById('swiffycontainer'),

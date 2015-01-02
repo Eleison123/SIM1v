@@ -12,8 +12,7 @@
 <script src="../js/jquery-1.10.2.js"></script> 
 <script src="../js/jquery-ui-1.11.2/jquery-ui.js"></script>
 <link rel="stylesheet" href="../js/jquery-ui-1.11.2/jquery-ui.theme.css">
-<style type="text/css">
-</style>
+
 <script>
   $(function() {
     $("#datepicker").datepicker();

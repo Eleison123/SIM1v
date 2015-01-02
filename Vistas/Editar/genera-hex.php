@@ -1,10 +1,10 @@
 <?php
 
  
-require_once("../conexiones/conexion.php");
+require_once("../../conexiones/conexion.php");
  
 
-    $consulta = "SELECT idhorarioexamen,fechaor,horaor,fechaex, horaex, fechati, horati, idmateria, idcatedratico,lugaror,lugarex,lugarti,idcatedratico, actaor, actaex,actati,fechavig FROM horarioexamenes WHERE idcarrera = ".$_GET['id']." ORDER BY idmateria";
+    $consulta = "SELECT * FROM horario WHERE idCarrera = ".$_GET['id']." AND tipo = '2' OR tipo = '3' OR tipo = '4' ORDER BY idExperienciaEducativa";
     $query = mysql_query($consulta)or die(mysql_error());
   echo "<div class='marcas'>";
  $var=0;
@@ -91,7 +91,7 @@ $var=$var+1;
     }}
 if ($var==0) {
   
-  echo "<img src='imagenes/noexamenes.png'>";
+  echo "<img src='../../imagenes/nohorarios.png'>";
  
 }
  echo "</div>";

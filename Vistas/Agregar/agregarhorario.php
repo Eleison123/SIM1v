@@ -132,8 +132,10 @@ echo "</select>";
             <option value="Jueves">Jueves</option>
             <option value="Viernes">Viernes</option>
             </select></br>
+
     <label class="text1">FECHA:</label><br>
     <input type="text" id="datepicker" maxlength="10" name="dfecha"><br>
+    
  <label for="horarea1h" class="text1" id="horareal1h">HORA INICIO:</label><br>
  <input type="time" id="fecharea1h" name="horaini" class="inhora"required><br>
  

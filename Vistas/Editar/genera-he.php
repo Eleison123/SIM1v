@@ -1,6 +1,6 @@
 <?php
 require_once("../../conexiones/conexion.php");
-    $consulta = "SELECT * FROM horario WHERE idCarrera = ".$_GET['id']." AND tipo = 'Escolar' ORDER BY idExperienciaEducativa";
+    $consulta = "SELECT * FROM horario WHERE idCarrera = ".$_GET['id']." AND tipo = '1' ORDER BY idExperienciaEducativa";
 
 
     $query = mysql_query($consulta)or die(mysql_error());

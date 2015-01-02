@@ -23,7 +23,7 @@ $respus=mysql_query($sqlpu) or die(mysql_error());
 $total=mysql_num_rows($respus);
 if ($total==0) {
 	
-echo"<div id='anuncio'style='background:white'>
+echo"<div id='sinanuncio'>
  		<figure>
  		<img id='noav' src='../imagenes/Aviso.png'>
  		</figure>
