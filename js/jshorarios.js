@@ -104,7 +104,7 @@ $(document).ready(function(){
     $('.cuadrointer').click(function(){
         var id= $(this).attr("value");
         $('#horariointer1').show();
-        $('#horariointer1').load('modificar/genera-hinter.php?id='+id);
+        $('#horariointer1').load('../Editar/genera-hinter.php?id='+id);
         $('#horariointer').hide();
     });
 });
@@ -177,7 +177,7 @@ $(document).ready(function(){
 
          $('#horariotu1').fadeIn();
         
-        $('#horariotu1').load('modificar/genera-htu.php');
+        $('#horariotu1').load('../Editar/genera-htu.php');
        
     });
 });
@@ -202,7 +202,7 @@ $(document).ready(function(){
          $('#horariotu1').fadeIn();
          $('#cen').show('slow');
         
-        $('#horariotu1').load('modificar/genera-htu.php');
+        $('#horariotu1').load('../Editar/genera-htu.php');
        
     });
 });

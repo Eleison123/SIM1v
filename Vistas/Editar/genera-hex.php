@@ -24,7 +24,7 @@ if($fechareg>$fila['fechavig']){
  
 
         ////////////////// materia  ////////////////
-        $consultama="SELECT nombre FROM materia WHERE idmateria = ".$fila['idmateria']."";
+        $consultama="SELECT nombre FROM ExperienciaEducativa WHERE idExperienciaEducativa = ".$fila['idmateria']."";
         $resultadoma = mysql_query($consultama);
         $filam = mysql_fetch_array($resultadoma, MYSQL_BOTH);
         echo"<td><p class='xxx'>".$filam['nombre']."</p></td>";
@@ -79,7 +79,7 @@ if($fechareg>$fila['fechavig']){
         echo"<td><p class='xxx'>".$fila['lugarti']."</p></td>";
         echo"<td><p class='xxx'>".$fila['actati']."</p></td>";
         echo "</tr>";
-        /////////////////////////////7
+        /////////////////////////////
 
         
         

@@ -1,10 +1,6 @@
 <?php
-
- 
-require_once("../conexiones/conexion.php");
- 
-
-    $consulta = "SELECT idhorariointersemestral,idcarrera, periodo, idmateria, idcatedratico, idfecha, lugar,fechavig FROM horariointersemestral WHERE idcarrera = ".$_GET['id']." ";
+require_once("../../conexiones/conexion.php");
+    $consulta = "SELECT * FROM horario WHERE idcarrera = ".$_GET['id']." AND tipo = '6'  ORDER BY idExperienciaEducativa";
     $query = mysql_query($consulta)or die(mysql_error());
     echo "<div class='marcas'>";
      $var=0;
@@ -13,9 +9,9 @@ require_once("../conexiones/conexion.php");
     
        $fechareg = date("Y-m-d");
 if($fechareg>$fila['fechavig']){
-       @require_once("../conexiones/conexion.php");
-       $fila['idhorariointersemestral'];
-          $res=mysql_query("DELETE from horariointersemestral where idhorariointersemestral=".$fila['idhorariointersemestral'].";")or die(mysql_error());
+       @require_once("../../conexiones/conexion.php");
+     
+          $res=mysql_query("DELETE from horario where idHorario=".$fila['idHorario'].";")or die(mysql_error());
           mysql_close();
         }else{
  
@@ -33,7 +29,7 @@ if($fechareg>$fila['fechavig']){
        
         echo"<td><p class='xxx'>".$fila['periodo']."</p></td>";
         ////////////////// materia  ////////////////
-        $consultama="SELECT nombre FROM materia WHERE idmateria = ".$fila['idmateria']."";
+        $consultama="SELECT nombre FROM ExperienciaEducativa WHERE idExperienciaEducativa = ".$fila['idExperienciaEducativa']."";
         $resultadoma = mysql_query($consultama);
         $filam = mysql_fetch_array($resultadoma, MYSQL_BOTH);
         echo"<td><p class='xxx'>".$filam['nombre']."</p></td>";
@@ -64,7 +60,7 @@ if($fechareg>$fila['fechavig']){
 echo"</table>";
  if ($var==0) {
 
-  echo "<img src='imagenes/nointersemestrales.png'>";
+  echo "<img src='../../imagenes/nohorarios.png'>";
  
 }
  echo "</div>";

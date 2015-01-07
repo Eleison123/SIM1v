@@ -46,6 +46,7 @@
             <option value="3" id="hex3">Extraordinario</option>
             <option value="4" id="ht4">Título</option>
             <option value="5" id="ht5">Tutoría</option>
+            <option value="6" id="ht5">Intersemestral</option>
             </select></br>
 <label class="text1" id="nrc">NRC:</label><br>
 <input type="text" id="nrc1"name="nrc" placeholder="Ejemplo: NTG34" maxlength="5"><br>
