@@ -7,8 +7,6 @@ if (@$_POST['agregar']) {
 }
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,14 +16,6 @@ if (@$_POST['agregar']) {
 <link rel="stylesheet" href="css/css1a.css">
 <!-- JS -->
 <script src="js/jquery-1.4.2.min.js"></script> 
-<script type='text/javascript'>
-/*Da un mensaje de error*/
-var mensajeerror = "Boton derecho deshabilitado ¡Gracias!"; 
-if(document.layers) window.captureEvents(Event.MOUSEDOWN); function bloquear(e){
-if (navigator.appName == 'Netscape' && ( e.which == 2 || e.which == 3)) { alert(mensajeerror);return false; }
-if (navigator.appName == 'Microsoft Internet Explorer' && (event.button == 2 || event.button == 3)) {
-alert(mensajeerror);return false; }} window.onmousedown=bloquear; document.onmousedown=bloquear;   
-</script>
 <script type="text/javascript">
 $(document).ready(function(){
  

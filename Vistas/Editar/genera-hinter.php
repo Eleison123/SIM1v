@@ -18,7 +18,6 @@ if($fechareg>$fila['fechavig']){
   echo "<table class='CSSTableGenerator'>";
   
         echo "<tr> ";
-  echo "<th><p class='xxxx'>Periodo</p></th>";
   echo "<th><p class='xxxx'>Experiencia</p></th>";
   echo "<th><p class='xxxx'>Catedrático</p></th>";
   echo "<th><p class='xxxx'>Día</p></th>";
@@ -27,7 +26,6 @@ if($fechareg>$fila['fechavig']){
   echo "</tr>";
         echo "<tr> ";
        
-        echo"<td><p class='xxx'>".$fila['periodo']."</p></td>";
         ////////////////// materia  ////////////////
         $consultama="SELECT nombre FROM ExperienciaEducativa WHERE idExperienciaEducativa = ".$fila['idExperienciaEducativa']."";
         $resultadoma = mysql_query($consultama);
@@ -35,7 +33,7 @@ if($fechareg>$fila['fechavig']){
         echo"<td><p class='xxx'>".$filam['nombre']."</p></td>";
         //////////////////////////////////////////
         /////////// catedratico  //////////////7
-        $consultaca="SELECT nombre, apellidomaterno, apellidopaterno FROM catedratico WHERE idcatedratico=".$fila['idcatedratico']." ";
+        $consultaca="SELECT nombre, apellidomaterno, apellidopaterno FROM catedratico WHERE idCatedratico=".$fila['idCatedratico']." ";
         $resultadoca = mysql_query($consultaca);
         $filaca = mysql_fetch_array($resultadoca, MYSQL_BOTH);
         echo"<td><p class='xxx'>".$filaca['nombre']." ";
@@ -43,12 +41,9 @@ if($fechareg>$fila['fechavig']){
         echo "".$filaca['apellidopaterno']."";
         echo " ";
         echo "".$filaca['apellidomaterno']."</p></td>";
-        $consultafech ="SELECT dia, horain,horafin FROM fecha WHERE idfecha=".$fila['idfecha']."";
-        $resultadofech= mysql_query($consultafech);
-        $filafech=mysql_fetch_array($resultadofech,MYSQL_BOTH);
-        echo"<td><p class='xxx'>".$filafech['dia']." </p></td>";
-        echo"<td><p class='xxx'>".$filafech['horain']." </p></td>";
-        echo"<td><p class='xxx'>".$filafech['horafin']." </p></td>";
+        echo"<td><p class='xxx'>".$fila['dia']." </p></td>";
+        echo"<td><p class='xxx'>".$fila['horain']." </p></td>";
+        echo"<td><p class='xxx'>".$fila['horafin']." </p></td>";
         echo "</tr>";
         
         

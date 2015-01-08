@@ -9,10 +9,6 @@
 <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
 <script src="../../js/jquery-1.4.2.min.js"></script> 
-<script language="Javascript" type="text/javascript">
- Begin
-document.oncontextmenu = function(){return false}
-</script>
 <script type="text/javascript">
 $(document).ready(function(){
  
@@ -99,8 +95,9 @@ $(document).ready(function(event){
                          echo"<tr>";
                             echo"
                             <th>Publicaciones Disponibles</th>
-                            <th></a></th><th></th><th></th>
-                            
+                            <th></th>
+                            <th></th>
+                            <th></th>
                             </tr>";
                             //Preguntamos los nombres de las carreras segun su idfacultad
                          $mysqlfacu="SELECT * FROM publicacion WHERE idfacultad=".$fac.";";
@@ -127,53 +124,44 @@ $(document).ready(function(event){
                         $rs=mysql_query($consultas)or die(mysql_error());
 
                         while($row1=mysql_fetch_array($rs)){
-                                   echo "<tr>";
-    
-                                   
-                                 
+                        echo "<tr>";
                         echo "<td><a class='text10'>".$row1['nombre']."</a></td>";
-
-                       
-
                         echo "<td>
-
- <form  method='post' action='../editarpublicacion.php'>
-    <input type='hidden' name='idpub' value=".$row1['idpublicacion'].">
-    <input type='submit' value='Editar'  name='Editar' class='conf'><img src='../../imagenes/editar.png' class='icon'>
-     </form>
-</td>";
+                                 <form  method='post' action='../editarpublicacion.php'>
+                                    <input type='hidden' name='idpub' value=".$row1['idpublicacion'].">
+                                    <input type='submit' value='Editar'  name='Editar' class='conf'>
+                                    <img src='../../imagenes/editar.png' class='icon'>
+                                 </form>
+                                </td>";
                         echo "<td>
-    <form  method='post' action='../../Controller/eliminarpublicacion.php'>
-    <input type='hidden' name='idpubli' value=".$row1['idpublicacion'].">
-    <input class='conf' type='submit' name='Eliminar' value='Eliminar' alingn='center'>
-    <img src='../../imagenes/borrar.png' class='icon'>
-    
-     </form>
-</td>";
+                                <form  method='post' action='../../Controller/eliminarpublicacion.php'>
+                                <input type='hidden' name='idpubli' value=".$row1['idpublicacion'].">
+                                <input class='conf' type='submit' name='Eliminar' value='Eliminar' alingn='center'>
+                                <img src='../../imagenes/borrar.png' class='icon'>
+                                </form>
+                            </td>";
                                 
-                              
-                               
                                 echo"</tr>";
-            }echo "</legend>";
-        echo "</table></div></div>";
+            }                 
+            echo "</table></div></div>";
             echo '<p class="textlink">';
 
-    if ($total_paginas > 1) {
-        if ($pagina != 1)
-            echo '<a class="textlink" href="'.'?pagina='.($pagina-1).'"><img src="../../imagenes/izq.gif" border="0"></a>';
-        for ($i=1;$i<=$total_paginas;$i++) {
-            if ($pagina == $i)
-                //si muestro el �ndice de la p�gina actual, no coloco enlace
-                echo "<a class='textlink'>".$pagina."</a>";
-            else
-                //si el �ndice no corresponde con la p�gina mostrada actualmente,
-                //coloco el enlace para ir a esa p�gina
-                echo '  <a class="textlink" href="'.'?pagina='.$i.'">'.$i.'</a>  ';
-        }
-        if ($pagina != $total_paginas)
-            echo '<a class="textlink"><a class="textlink" href="'.'?pagina='.($pagina+1).'"><img src="../../imagenes/der.gif" border="0"></a></a>';
-    }
-    echo '</p>';}
+                if ($total_paginas > 1) {
+                    if ($pagina != 1)
+                        echo '<a class="textlink" href="'.'?pagina='.($pagina-1).'"><img src="../../imagenes/izq.gif" border="0"></a>';
+                    for ($i=1;$i<=$total_paginas;$i++) {
+                        if ($pagina == $i)
+                            //si muestro el �ndice de la p�gina actual, no coloco enlace
+                            echo "<a class='textlink'>".$pagina."</a>";
+                        else
+                            //si el �ndice no corresponde con la p�gina mostrada actualmente,
+                            //coloco el enlace para ir a esa p�gina
+                            echo '  <a class="textlink" href="'.'?pagina='.$i.'">'.$i.'</a>  ';
+                    }
+                    if ($pagina != $total_paginas)
+                        echo '<a class="textlink"><a class="textlink" href="'.'?pagina='.($pagina+1).'"><img src="../../imagenes/der.gif" border="0"></a></a>';
+                }
+    echo '</p>'; }
                             echo "</div>";  
 echo ""; ?>
 </div><br><br>

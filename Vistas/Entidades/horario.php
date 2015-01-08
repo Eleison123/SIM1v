@@ -129,7 +129,8 @@
                                     if ($row1['tipo']==2){ echo "<a class='text20'>Ordinario</a></td>";}
                                     if ($row1['tipo']==3){ echo "<a class='text20'>Extraordinario</a></td>";}
                                     if ($row1['tipo']==4){ echo "<a class='text20'>Título</a></td>";}
-                                    if ($row1['tipo']==5){ echo "<a class='text20'>Tutoria</a></td>";}
+                                    if ($row1['tipo']==5){ echo "<a class='text20'>Tutoría</a></td>";}
+                                    if ($row1['tipo']==6){ echo "<a class='text20'>Intersemestral</a></td>";}
                                    
                         echo "<td>
 
