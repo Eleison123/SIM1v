@@ -1,14 +1,10 @@
-<?php include"seguridad.php"; ?>
+<?php include "seguridad.php"; ?>
 <!DOCTYPE html>
 <html leng="es">
-<!--         Cabeza         -->
 <head>
-<!-- Metas -->
 <meta charset="utf-8">
-<!-- CSS -->
 <link rel="stylesheet" href="../css/css1a.css">
 <link rel="shortcut icon" href="../imagenes/favicon.ico" type="image/png" />
-<!-- JS -->
 <script src="../js/jquery-1.4.2.min.js"></script> 
 <script type="text/javascript">
         $(document).ready(function(){
@@ -17,10 +13,8 @@
             $('#cuerpo').fadeIn('slow');
         });
 </script>
-
 <title>Bienvenido SIM</title>
 </head>
-<!--         Termina Cabeza         -->
 <div id="portada">
     <img id="imgportada" src="../imagenes/header.jpg">
 </div>
@@ -47,11 +41,8 @@
 
 <body>
     <div id="cuerpo">
-
           <br>
-      
-      
-<a class="text1">Sea bienvenido al módulo de administración del Sistema Interactivo de Mensajes, actualmente estando en su versión 1  "<strong>Coatlicue</strong>", con la capacidad de gestionar lo mostrado en el módulo de visualización. </a>
+<a class="text1">Sea bienvenido al módulo de administración del Sistema Interactivo de Mensajes, actualmente en su versión 1  "<strong>Coatlicue</strong>", con la capacidad de gestionar lo mostrado en el módulo de visualización. </a>
             <a class="text1">En el módulo de administración usted podrá gestionar:</a><br><br>
             <table>
             <tr><td><a class="text1">Horarios de clases.</a></td></tr>
@@ -70,7 +61,6 @@
             <br>
             <img src="../imagenes/versiones.png" id="bienvenido">
            <br>
-         
                 <h4><a class="text1">Coatlicue</a></h4><br><br>
             <table>
             <tr><td><a class="text1"><strong>Desarrollado por:</strong> L.I.Román Omar Santiaguillo Arcos.</a></tr></td>

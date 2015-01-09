@@ -136,6 +136,8 @@ echo "</select>";
 
     <label class="text1">FECHA:</label><br>
     <input type="text" id="datepicker" maxlength="10" name="dfecha"><br>
+    <label class="text1">ENTREGA ACTA:</label><br>
+    <input type="text" id="datepicker5" maxlength="10" name="acta"><br>
     
  <label for="horarea1h" class="text1" id="horareal1h">HORA INICIO:</label><br>
  <input type="time" id="fecharea1h" name="horaini" class="inhora"required><br>
@@ -194,6 +196,10 @@ echo "</select>";
     $("#datepicker4").datepicker();
   });
   $(function() {
+    $("#datepicker5").datepicker();
+  });
+  $(function() {
     $( document ).tooltip();
   });
+
   </script>

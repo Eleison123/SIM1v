@@ -6,10 +6,14 @@ require_once("../../conexiones/conexion.php");
     $queryor = mysql_query($consultaor)  or die(mysql_error());
     $queryex = mysql_query($consultaex)  or die(mysql_error());
     $queryti = mysql_query($consultati)  or die(mysql_error());
+
+    $queryor1 = mysql_num_rows(mysql_query($consultaor));
+    $queryex1 = mysql_num_rows(mysql_query($consultaex));
+    $queryti1 = mysql_num_rows(mysql_query($consultati));
     echo "<div class='marcas'>";
     $var=0;
 //////////////TODOS//////////////////////////////////////////////////////////////////////////////////////////////////////////
-if($queryor!=""){if($queryex!=""){if($queryti!=""){ 
+if($queryor1!=""){if($queryex1!=""){if($queryti1!=""){ 
     while ($filaor = mysql_fetch_array($queryor)) { 
     while ($filaex = mysql_fetch_array($queryex)) {
     while ($filati = mysql_fetch_array($queryti)) {
@@ -149,7 +153,7 @@ if($queryor!=""){if($queryex!=""){if($queryti!=""){
             $var=$var+1;
                 }}}}} }}}
 ////////////ORDINARIO Y EXTRA/////////////////////////////////////////////////////////////////////////////////////////////////////////
-if($queryor!=""){if($queryex!=""){if($queryti==""){ 
+if($queryor1!=""){if($queryex1!=""){if($queryti1==""){ 
     while ($filaor = mysql_fetch_array($queryor)) { 
     while ($filaex = mysql_fetch_array($queryex)) {
     while ($filati = mysql_fetch_array($queryti)) {
@@ -271,7 +275,7 @@ if($queryor!=""){if($queryex!=""){if($queryti==""){
             $var=$var+1;
                 }} }}} }}}
 ////////ORDINARIO Y TITULO/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-if($queryor!=""){if($queryex==""){if($queryti!=""){ 
+if($queryor1!=""){if($queryti1!=""){if($queryex1==""){ 
     while ($filaor = mysql_fetch_array($queryor)) { 
     while ($filati = mysql_fetch_array($queryti)) {
         $fechareg = date("Y-m-d");
@@ -388,7 +392,7 @@ if($queryor!=""){if($queryex==""){if($queryti!=""){
             $var=$var+1;
                 }} }}} }
 /////////EXTRA Y TITULO////////////////////////////////////////////////////////////////////////////////////////////////////////////
-if($queryor==""){if($queryex!=""){if($queryti!=""){ 
+if($queryti1!=""){if($queryex1!=""){if($queryor1==""){ 
     while ($filaex = mysql_fetch_array($queryex)) {
     while ($filati = mysql_fetch_array($queryti)) {
         $fechareg = date("Y-m-d");
@@ -503,7 +507,7 @@ if($queryor==""){if($queryex!=""){if($queryti!=""){
             echo "<br>";
             $var=$var+1;
                 }} }}} }
-if($queryor==""){if($queryex==""){if($queryti!=""){ 
+if($queryti1!=""){if($queryex1==""){if($queryor1==""){ 
     while ($filati = mysql_fetch_array($queryti)) {
         $fechareg = date("Y-m-d");
         if($fechareg>$filati['fechavig']){
@@ -593,7 +597,7 @@ if($queryor==""){if($queryex==""){if($queryti!=""){
             echo "<br>";
             $var=$var+1;
                 }} }}
-if($queryor==""){if($queryex!=""){if($queryti==""){ 
+if($queryex1!=""){if($queryor1==""){if($queryti1==""){ 
     while ($filaex = mysql_fetch_array($queryex)) {
         $fechareg = date("Y-m-d");
         if($fechareg>$filaex['fechavig']){
@@ -684,7 +688,7 @@ if($queryor==""){if($queryex!=""){if($queryti==""){
             $var=$var+1;
                 }}}}
 /////////ORDINARIO////////////////////////////////////////////////////////////////////////////////////////////////////////////
-if($queryor!=""){if($queryex==""){if($queryti==""){ 
+if($queryor1!=""){if($queryti1==""){if($queryex1==""){ 
     while ($filaor = mysql_fetch_array($queryor)) { 
         $fechareg = date("Y-m-d");
         if($fechareg>$filaor['fechavig']){
@@ -723,10 +727,10 @@ if($queryor!=""){if($queryex==""){if($queryti==""){
                 echo "<tr>";
                 echo"<td><p class='xxx'>".$filaor['dia']."</p></td>";
                 echo"<td><p class='xxx'>".$filaor['horain']."</p></td>";
-                $consultaubi="SELECT * FROM ubicacion WHERE idubicacion=".$filaor['idubicaicon']." ";
+                $consultaubi="SELECT * FROM ubicacion WHERE idubicacion=".$filaor['idubicacion']." ";
                 $resultadoca = mysql_query($consultaubi);
                 $filaubica = mysql_fetch_array($resultadoca, MYSQL_BOTH);
-                echo"<td><p class='xxx'>".$flaubica['nombre']."</p></td>";
+                echo"<td><p class='xxx'>".$filaubica['nombre']."</p></td>";
                 echo"<td><p class='xxx'>".$filaor['acta']."</p></td>";
                 echo "</tr>";
              }else{
@@ -777,9 +781,7 @@ if($queryor!=""){if($queryex==""){if($queryti==""){
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         if ($var==0) {
-              
               echo "<img src='../../imagenes/nohorarios.png'>";
-             
             }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         echo "</div>";
