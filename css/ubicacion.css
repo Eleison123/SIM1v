@@ -14,7 +14,6 @@
 	overflow: hidden;
 	background: #2980b9;
 }
-
 html{
 height: 100%;
 width: 100%;
@@ -26,10 +25,9 @@ width: 100%;
 }
 #ubicate{
 	font-family: VERDANA;
-	font-size: 5em;
-	margin:5%;
-	color: white;
-
+	font-size: 3em;
+	/*margin:5%;*/
+	color: #ecf0f1;
 }
 .texto2{
 	font-size: medium;
@@ -54,10 +52,9 @@ position:relative;
 		}
 #cen{
 	font-family: VERDANA;
-				height: 120px;
-	         width:100%;
-			overflow:hidden;
-			background:#474c5a;
+	height: 120px;
+	width:100%;
+	background:#474c5a;
 			
 		}
 		
@@ -84,7 +81,7 @@ header{
 	height:70px;
 	float:left;
 	position:center;
-	margin-left:15%;
+	margin-left:10%;
     margin-top: 1.5%;
 }
 #uno
@@ -114,6 +111,7 @@ border:none;
 }
 img.icon{
 	display: block;	
+	height: 120px;
 	-webkit-box-shadow: 0px 0px 0px 30px rgba(255,255,255,0);
 }
 .icons{
@@ -334,11 +332,9 @@ border-radius: 5px;
 }
 #regs{
 	position: absolute;
-	top: 2%;
-	margin-left: 92%;
-	
+top: 0px;
+	margin-left: 90%;
 	text-decoration: none;
-	
 }
 p{
 	text-decoration: none;

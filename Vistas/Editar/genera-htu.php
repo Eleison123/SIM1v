@@ -4,7 +4,7 @@ require_once("../../conexiones/conexion.php");
 $fac=$_SESSION['facultad'] ; 
     $consulta = "SELECT * FROM horario WHERE idFacultad = ".$fac." AND tipo = '5'  ORDER BY idcatedratico";
     $query = mysql_query($consulta)or die(mysql_error());
-  echo "<div class='marcas'>"; $var=0;
+   $var=0;
     while ($fila = mysql_fetch_array($query)) {
         $horareg= date("H:i:s");
         $fechareg = date("Y-m-d");
@@ -13,6 +13,7 @@ $fac=$_SESSION['facultad'] ;
         $res=mysql_query("DELETE from horario where idHorario=".$fila['idHorario']."")or die(mysql_error());
           mysql_close();
         }else{
+          echo "<div class='marcas'>";
   echo "<table class='CSSTableGenerator'>";
   echo "<tr> ";
   echo "<th><p class='xxxx'>Catedrático</p></td>";
@@ -45,7 +46,7 @@ echo"</table>";
     }}
 if ($var==0) {
   
-  echo "<img src='../../imagenes/nohorarios.png'>";
+  echo "<div class='marcascall'><img src='../../imagenes/nohorarios.png'></div>";
    
    mysql_close();
 }

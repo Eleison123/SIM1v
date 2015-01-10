@@ -4,8 +4,7 @@ require_once("../../conexiones/conexion.php");
 
 
     $query = mysql_query($consulta)or die(mysql_error());
-      echo "<div class='marcas'>";
-  echo "<table class='CSSTableGenerator'>";
+    
   
  $var=0;
     while ($fila = mysql_fetch_array($query)) {
@@ -16,7 +15,8 @@ if($fechareg>$fila['fechavig']){
           $res=mysql_query("DELETE FROM horario WHERE idHorario=".$fila['idHorario'].";")or die(mysql_error());
           mysql_close();
         }else{
-
+  echo "<center><div class='marcas'>";
+  echo "<table class='CSSTableGenerator'>";
       echo "<tr> ";
   echo "<th><p class='xxxx'>Experiencia</p></th>";
   echo "<th><p class='xxxx'>Catedrático</p></th>";
@@ -55,11 +55,12 @@ if($fechareg>$fila['fechavig']){
 
     }}
   echo"</table>";
+  echo "</div></center>";
 if ($var==0) {
   
-  echo "<img src='../../imagenes/nohorarios.png'>";
+  echo "<div class='marcascall'><img  src='../../imagenes/nohorarios.png'></div>";
 
 }
-echo "</div>";
+
 
 ?>

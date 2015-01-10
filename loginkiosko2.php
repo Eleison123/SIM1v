@@ -25,6 +25,7 @@ if(@$_POST['entrar']){
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <link rel="stylesheet" type="text/css" href="css/logkiosko.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <script language="Javascript" type="text/javascript">
 //<![CDATA[
 

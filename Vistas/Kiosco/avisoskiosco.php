@@ -25,9 +25,8 @@ document.oncontextmenu = function(){return false}
 	</head>	
 	
   <div id="cen" >
-
              <div class="botonera"  id="becas" title="Todas las publicaciones">
-			<img class="iconos" src="../../imagenes/iconos_03.png">
+			<center><img class="iconos" src="../../imagenes/iconos_03.png"></center>
 			
 		    </div>
             <div class="botonera" id="empleo" title="Todas las publicaciones">
@@ -58,13 +57,7 @@ document.oncontextmenu = function(){return false}
 			<a href="../principalkiosco.php">
         <img class="iconos" src="../../imagenes/iconos_21.png"></a>
 			
-		    </div>
-            
-           
-            
-            
-           
-           
+		    </div>   
   </div>
   <body>
     <div id="botoncitos">
@@ -80,25 +73,25 @@ document.oncontextmenu = function(){return false}
 </div>
 
 <div id="becas3">
-<div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/iconos_03.png">
+<div class="marcax"><div class="cuadro"><center><img class="icon" src="../../imagenes/iconos_03.png"></center>
      </div></div></div>
 
-<div id="empleo3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/iconos_05.png">
+<div id="empleo3"><div class="marcax"><div class="cuadro"><center><img class="icon" src="../../imagenes/iconos_05.png"></center>
      </div></div></div>
 
-<div id="certificacion3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/iconos_07.png">
+<div id="certificacion3"><div class="marcax"><div class="cuadro"><center><img class="iconcer" src="../../imagenes/iconos_07.png"></center>
       </div></div></div>
 
-<div id="seminario3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/iconos_09.png">
+<div id="seminario3"><div class="marcax"><div class="cuadro"><center><img class="icon" src="../../imagenes/iconos_09.png"></center>
       </div></div></div>
 
-<div id="junta3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/iconos_11.png">
+<div id="junta3"><div class="marcax"><div class="cuadro"><center><img class="icon" src="../../imagenes/iconos_11.png"></center>
       </div></div></div>
 
-<div id="aviso3"><div class="marcax"><div class="cuadro"><img class="icon" src="../../imagenes/iconos_13.png">
+<div id="aviso3"><div class="marcax"><div class="cuadro"><center><img class="icon" src="../../imagenes/iconos_13.png"></center>
       </div></div></div>
 
-<div id="otro3"><div class="marcax"><div class="cuadro"> <img class="icon" src="../../imagenes/iconos_15.png">
+<div id="otro3"><div class="marcax"><div class="cuadro"> <center><img class="icon" src="../../imagenes/iconos_15.png"></center>
       </div></div></div>
 
 
@@ -126,7 +119,7 @@ document.oncontextmenu = function(){return false}
                             }}
                         } 
                         if ($var==0) {
-                          echo "<div class='marcas'> <img src='../../imagenes/noavisos.png'></div>'";
+                          echo "<div class='nomarcas'> <img src='../../imagenes/noavisos.png'></div>'";
                         }
                         ?>
   </div>
@@ -151,7 +144,7 @@ document.oncontextmenu = function(){return false}
                             }}
                         } 
                          if ($var==0) {
-                          echo "<div class='marcas'> <img src='../../imagenes/noavisos.png'></div>'";
+                          echo "<div class='nomarcas'> <img src='../../imagenes/noavisos.png'></div>'";
                         }
                         ?>
 </div>
@@ -175,7 +168,7 @@ document.oncontextmenu = function(){return false}
                             echo "<div class='cuadrocertificacion' value='".$row1['idpublicacion']."' > <p class='textox'> ".$row1['nombre']." </p></div></div>";
                             }}
                         } if ($var==0) {
-                          echo "<div class='marcas'> <img src='../../imagenes/noavisos.png'></div>'";
+                          echo "<div class='nomarcas'> <img src='../../imagenes/noavisos.png'></div>'";
                         } ?>
 </div>
 <div id="seminario1" name="seminario1"></div>
@@ -198,7 +191,7 @@ document.oncontextmenu = function(){return false}
                             echo "<div class='cuadroseminario' value='".$row1['idpublicacion']."'><p class='textox'>".$row1['nombre']."</p></div></div>";
                             }}
                         }  if ($var==0) {
-                          echo "<div class='marcas'> <img src='../../imagenes/noavisos.png'></div>'";
+                          echo "<div class='nomarcas'> <img src='../../imagenes/noavisos.png'></div>'";
                         }?>
 </div>
 <div id="junta1" name="junta1"></div>
@@ -221,7 +214,7 @@ document.oncontextmenu = function(){return false}
                             echo "<div class='cuadrojunta' value='".$row1['idpublicacion']."' > <p class='textox'> ".$row1['nombre']." </p></div></div>";
                             }}
                         } if ($var==0) {
-                          echo "<div class='marcas'> <img src='../../imagenes/noavisos.png'></div>'";
+                          echo "<div class='nomarcas'> <img src='../../imagenes/noavisos.png'></div>'";
                         }?>
 </div>
 <div id="aviso1" name="aviso1"></div>
@@ -245,7 +238,7 @@ document.oncontextmenu = function(){return false}
                             }}
                         } 
                         if ($var==0) {
-                          echo "<div class='marcas'> <img src='../../imagenes/noavisos.png'></div>'";
+                          echo "<div class='nomarcas'> <img src='../../imagenes/noavisos.png'></div>'";
                         }
                         ?>
 </div>
@@ -269,7 +262,7 @@ document.oncontextmenu = function(){return false}
                             echo "<div class='cuadrootro' value='".$row1['idpublicacion']."'> <p class='textox'> ".$row1['nombre']." </p></div></div>";
                             }}
                         } if ($var==0) {
-                          echo "<div class='marcas'> <img src='../../imagenes/noavisos.png'></div>'";
+                          echo "<div class='nomarcas'> <center><img src='../../imagenes/noavisos.png'></center></div>";
                         }?>
 </div>
       

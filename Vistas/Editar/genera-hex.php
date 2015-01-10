@@ -10,10 +10,11 @@ require_once("../../conexiones/conexion.php");
     $queryor1 = mysql_num_rows(mysql_query($consultaor));
     $queryex1 = mysql_num_rows(mysql_query($consultaex));
     $queryti1 = mysql_num_rows(mysql_query($consultati));
-    echo "<div class='marcas'>";
+    
     $var=0;
 //////////////TODOS//////////////////////////////////////////////////////////////////////////////////////////////////////////
 if($queryor1!=""){if($queryex1!=""){if($queryti1!=""){ 
+    echo "<div class='marcas'>";
     while ($filaor = mysql_fetch_array($queryor)) { 
     while ($filaex = mysql_fetch_array($queryex)) {
     while ($filati = mysql_fetch_array($queryti)) {
@@ -154,6 +155,7 @@ if($queryor1!=""){if($queryex1!=""){if($queryti1!=""){
                 }}}}} }}}
 ////////////ORDINARIO Y EXTRA/////////////////////////////////////////////////////////////////////////////////////////////////////////
 if($queryor1!=""){if($queryex1!=""){if($queryti1==""){ 
+    echo "<div class='marcas'>";
     while ($filaor = mysql_fetch_array($queryor)) { 
     while ($filaex = mysql_fetch_array($queryex)) {
     while ($filati = mysql_fetch_array($queryti)) {
@@ -276,6 +278,7 @@ if($queryor1!=""){if($queryex1!=""){if($queryti1==""){
                 }} }}} }}}
 ////////ORDINARIO Y TITULO/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 if($queryor1!=""){if($queryti1!=""){if($queryex1==""){ 
+    echo "<div class='marcas'>";
     while ($filaor = mysql_fetch_array($queryor)) { 
     while ($filati = mysql_fetch_array($queryti)) {
         $fechareg = date("Y-m-d");
@@ -393,6 +396,7 @@ if($queryor1!=""){if($queryti1!=""){if($queryex1==""){
                 }} }}} }
 /////////EXTRA Y TITULO////////////////////////////////////////////////////////////////////////////////////////////////////////////
 if($queryti1!=""){if($queryex1!=""){if($queryor1==""){ 
+    echo "<div class='marcas'>";
     while ($filaex = mysql_fetch_array($queryex)) {
     while ($filati = mysql_fetch_array($queryti)) {
         $fechareg = date("Y-m-d");
@@ -508,6 +512,7 @@ if($queryti1!=""){if($queryex1!=""){if($queryor1==""){
             $var=$var+1;
                 }} }}} }
 if($queryti1!=""){if($queryex1==""){if($queryor1==""){ 
+    echo "<div class='marcas'>";
     while ($filati = mysql_fetch_array($queryti)) {
         $fechareg = date("Y-m-d");
         if($fechareg>$filati['fechavig']){
@@ -598,6 +603,7 @@ if($queryti1!=""){if($queryex1==""){if($queryor1==""){
             $var=$var+1;
                 }} }}
 if($queryex1!=""){if($queryor1==""){if($queryti1==""){ 
+    echo "<div class='marcas'>";
     while ($filaex = mysql_fetch_array($queryex)) {
         $fechareg = date("Y-m-d");
         if($fechareg>$filaex['fechavig']){
@@ -689,6 +695,7 @@ if($queryex1!=""){if($queryor1==""){if($queryti1==""){
                 }}}}
 /////////ORDINARIO////////////////////////////////////////////////////////////////////////////////////////////////////////////
 if($queryor1!=""){if($queryti1==""){if($queryex1==""){ 
+    echo "<div class='marcas'>";
     while ($filaor = mysql_fetch_array($queryor)) { 
         $fechareg = date("Y-m-d");
         if($fechareg>$filaor['fechavig']){
@@ -776,14 +783,15 @@ if($queryor1!=""){if($queryti1==""){if($queryex1==""){
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             echo"</table>";
             echo "<br>";
+            echo "</div>";
             $var=$var+1;
                 }}}}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         if ($var==0) {
-              echo "<img src='../../imagenes/nohorarios.png'>";
+              echo "<div class='marcascall'><img src='../../imagenes/nohorarios.png'></div>";
             }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        echo "</div>";
+        
 
 ?>

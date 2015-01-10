@@ -22,7 +22,7 @@ document.oncontextmenu = function(){return false}
     
   <div id="cen" >
 
-             <center></center><div class="botonera"  id="HES" name="HES" title="Todas las publicaciones">
+             <div class="botonera"  id="HES" name="HES" title="Todas las publicaciones">
             <img class="icon" src="../../imagenes/iconos_55.png">
             <a class="texto">Horarios Escolar</a>
             </div>

@@ -2,7 +2,7 @@
 require_once("../../conexiones/conexion.php");
     $consulta = "SELECT * FROM horario WHERE idcarrera = ".$_GET['id']." AND tipo = '6'  ORDER BY idExperienciaEducativa";
     $query = mysql_query($consulta)or die(mysql_error());
-    echo "<div class='marcas'>";
+    
      $var=0;
  while ($fila = mysql_fetch_array($query)) {
     
@@ -14,7 +14,7 @@ if($fechareg>$fila['fechavig']){
           $res=mysql_query("DELETE from horario where idHorario=".$fila['idHorario'].";")or die(mysql_error());
           mysql_close();
         }else{
- 
+ echo "<div class='marcas'>";
   echo "<table class='CSSTableGenerator'>";
   
         echo "<tr> ";
@@ -55,7 +55,7 @@ if($fechareg>$fila['fechavig']){
 echo"</table>";
  if ($var==0) {
 
-  echo "<img src='../../imagenes/nohorarios.png'>";
+  echo "<div class='marcascall'><img src='../../imagenes/nohorarios.png'></div>";
  
 }
  echo "</div>";

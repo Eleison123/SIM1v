@@ -1,7 +1,6 @@
 <?php
 include "../seguridadkiosko.php";
 ?>
-
 <!DOCTYPE HTML>
 <div id="pantalla">
 <html leng="es">
@@ -10,7 +9,7 @@ include "../seguridadkiosko.php";
 	<meta charset="utf-8"> 
 	
 <!-- CSS -->
-	<link rel="stylesheet" href="../../css/anuncio1.css">
+	<link rel="stylesheet" href="../../css/ubicacion.css">
         <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
     <script src="../../js/runtime.js"></script>
@@ -23,15 +22,12 @@ document.oncontextmenu = function(){return false}
 //]]>
 </script>
   </head>
- <title>Kiosko FEI</title>
+ <title>Kiosco FEI</title>
 	</head>	
   <div id="cen" >
     <div id="tituu">
 <h1><a id="ubicate">Ubicaciones</a><h1></div>
-            <div class="botonera" id="regs" title="Atrás" >
-			<a href="../principalkiosco.php"><img class="icon" src="../../imagenes/iconos_21.png"></a>
-			
-		    </div>
+    <div id="regs" title="Atrás" ><a href="../principalkiosco.php"><img class="icon" src="../../imagenes/iconos_21.png"></a></div>
   </div>
   <body style="margin: 0; overflow: hidden">
   	<div >
