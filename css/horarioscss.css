@@ -294,7 +294,7 @@ text-align: center;
 	height: 99%;
 	float: left;
 	padding: 5px;
-	margin-left: 5%;
+	margin-left: 9%;
 	background: #FFF;
 	-webkit-border-radius: 5px;
 -moz-border-radius: 5px;
@@ -312,7 +312,7 @@ border-radius: 5px;
 }
 #back{
 	float: right;
-	top: 2%;
+	top: 0%;
 	margin-left: 95%;
 text-decoration: none;
 	position: absolute;
@@ -322,10 +322,11 @@ text-decoration: none;
 }
 .text1z{
 	color: white;
-	font-size: 5em;
+	font-size: 3em;
 	font-family: VERDANA;
 }
 #tituu{
 	width: auto;
 	height: auto;
+	float: left;
 }
