@@ -13,29 +13,27 @@ position:relative;
 	
 	font-family: Verdana; 
 	position: fixed;
-				height: 200px;
-	         width:100%;
-			overflow:hidden;
-			background: #474c5a;
-			-webkit-box-shadow: inset 0px 0px 151px -31px rgba(0,0,0,0.75);
-			-moz-box-shadow: inset 0px 0px 151px -31px rgba(0,0,0,0.75);
-			box-shadow: inset 0px 0px 151px -31px rgba(0,0,0,0.75);
-		}
-		#botoness{
-			width: 100%;
-			height: 200px;
-		}
+	height: 200px;
+	width:100%;
+	overflow:hidden;
+	background: #474c5a;
+	-webkit-box-shadow: inset 0px 0px 151px -31px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 0px 0px 151px -31px rgba(0,0,0,0.75);
+	box-shadow: inset 0px 0px 151px -31px rgba(0,0,0,0.75);
+	}
+#botoness{
+	width: 100%;
+	height: 200px;
+	}
 #cont{
-		height:auto;
-		
-		width:auto;
-		position:relative;
+	height:auto;
+	width:auto;
+	position:relative;
 	}
 #contenido{
 	position:relative;
-}
-.botonera
-{
+	}
+.botonera{
 	padding:5px;
 	width: auto;
 	height:90px;

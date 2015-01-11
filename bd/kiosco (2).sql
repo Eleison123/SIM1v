@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-01-2015 a las 22:31:13
+-- Tiempo de generación: 09-01-2015 a las 23:59:57
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.11
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `carrera` (
   `idCarrera` int(11) NOT NULL AUTO_INCREMENT,
-  `Nombre` varchar(45) DEFAULT NULL,
+  `Nombre` varchar(70) DEFAULT NULL,
   `idFacultad` int(11) NOT NULL,
   `Mision` longtext,
   `Vision` longtext,
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `carrera` (
 
 INSERT INTO `carrera` (`idCarrera`, `Nombre`, `idFacultad`, `Mision`, `Vision`, `Objetivo`) VALUES
 (1, 'Licenciatura en InformÃ¡tica', 1, NULL, NULL, NULL),
-(4, 'Licenciatura en Ciencias y TÃ©cnicas EstadÃ­s', 1, NULL, NULL, NULL),
+(4, 'Licenciatura en Ciencias y TÃ©cnicas EstadÃ­stica', 1, NULL, NULL, NULL),
 (5, 'Licenciatura en IngenierÃ­a de Software', 1, NULL, NULL, NULL),
 (6, 'Licenciatura en Redes y Servicios de CÃ³mputo', 1, NULL, NULL, NULL),
 (7, 'Licenciatura en TecnologÃ­as Computacionales', 1, NULL, NULL, NULL);
@@ -304,7 +304,6 @@ INSERT INTO `experienciaeducativa` (`idExperienciaEducativa`, `Nombre`, `idCarre
 (120, 'PROGRAMACION DE SISTEMAS', 6, 1),
 (121, 'ARQUITECTURA DE DISPOSITIVOS DE RED', 6, 1),
 (122, 'SISTEMAS OPERATIVOS APLICADOS', 6, 1),
-(123, 'SISTEMAS OPERATIVOS APLICADOS', 6, 1),
 (124, 'MANTENIMIENTO DE EQUIPO DE COMPUTO&#9;', 6, 1),
 (125, 'DESARROLLO DE SISTEMAS WEB', 6, 1),
 (126, 'HABILIDADES DE COMUNICACION', 6, 1),
@@ -391,7 +390,7 @@ CREATE TABLE IF NOT EXISTS `facultad` (
 --
 
 INSERT INTO `facultad` (`idFacultad`, `Nombre`, `Sede`, `Descripcion`) VALUES
-(1, 'Facultad de Estadística e Informatica', 'Xalapa', NULL);
+(1, 'Facultad de EstadÃ­stica e InformÃ¡tica', 'Xalapa', NULL);
 
 -- --------------------------------------------------------
 
@@ -401,9 +400,9 @@ INSERT INTO `facultad` (`idFacultad`, `Nombre`, `Sede`, `Descripcion`) VALUES
 
 CREATE TABLE IF NOT EXISTS `horario` (
   `idHorario` int(11) NOT NULL AUTO_INCREMENT,
-  `dia` date DEFAULT NULL,
-  `diapub` date DEFAULT NULL,
-  `fechavig` date DEFAULT NULL,
+  `dia` varchar(10) DEFAULT NULL,
+  `diapub` varchar(10) DEFAULT NULL,
+  `fechavig` varchar(10) DEFAULT NULL,
   `horafin` time DEFAULT NULL,
   `horain` time DEFAULT NULL,
   `horapub` time DEFAULT NULL,
@@ -418,20 +417,22 @@ CREATE TABLE IF NOT EXISTS `horario` (
   `Seccion` varchar(2) DEFAULT NULL,
   `Bloque` varchar(2) DEFAULT NULL,
   `Secretaria` varchar(45) DEFAULT NULL,
+  `acta` varchar(10) NOT NULL,
   PRIMARY KEY (`idHorario`,`idCarrera`,`idFacultad`,`idCatedratico`,`idubicacion`,`idExperienciaEducativa`),
   KEY `fk_horario_Carrera1_idx` (`idCarrera`,`idFacultad`),
   KEY `fk_horario_Catedratico1_idx` (`idCatedratico`),
   KEY `fk_horario_ubicacion1_idx` (`idubicacion`),
   KEY `fk_horario_experienciaeducativa1_idx` (`idExperienciaEducativa`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- Volcado de datos para la tabla `horario`
 --
 
-INSERT INTO `horario` (`idHorario`, `dia`, `diapub`, `fechavig`, `horafin`, `horain`, `horapub`, `tipo`, `idCarrera`, `idFacultad`, `idCatedratico`, `idubicacion`, `idExperienciaEducativa`, `NRC`, `NRCANT`, `Seccion`, `Bloque`, `Secretaria`) VALUES
-(1, NULL, '2014-12-22', '2015-01-30', '15:00:00', '13:00:00', '13:00:00', '2', 1, 1, 70, 1, 50, '42722', NULL, 'S2', 'B7', 'Catalina Valdes'),
-(2, NULL, '2014-12-02', '2015-01-29', '15:00:00', '13:00:00', '01:00:00', '1', 1, 1, 16, 1, 2, '12321', '12313', '12', '12', 'iou');
+INSERT INTO `horario` (`idHorario`, `dia`, `diapub`, `fechavig`, `horafin`, `horain`, `horapub`, `tipo`, `idCarrera`, `idFacultad`, `idCatedratico`, `idubicacion`, `idExperienciaEducativa`, `NRC`, `NRCANT`, `Seccion`, `Bloque`, `Secretaria`, `acta`) VALUES
+(11, 'Martes', '09/15/2014', '29-05-2015', '14:00:00', '13:00:00', '13:00:00', '1', 1, 1, 8, 13, 49, '12345', '--', 'S2', 'B7', '---', ''),
+(12, '01/04/2015', '01-12-2014', '30-04-2015', '13:00:00', '12:00:00', '13:00:00', '6', 1, 1, 1, 19, 49, '12345', '--', 'S2', 'B7', '---', ''),
+(13, '01/12/2015', '01-01-2015', '31-01-2015', '15:00:00', '13:00:00', '13:00:00', '2', 1, 1, 1, 14, 48, '12345', '--', 'S2', 'B7', '---', '');
 
 -- --------------------------------------------------------
 
