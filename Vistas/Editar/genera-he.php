@@ -1,20 +1,15 @@
 <?php
 require_once("../../conexiones/conexion.php");
+ @session_start();
+$fac=$_SESSION['facultad'] ; 
     $consulta = "SELECT * FROM horario WHERE idCarrera = ".$_GET['id']." AND tipo = '1' ORDER BY idExperienciaEducativa";
-
-
     $query = mysql_query($consulta)or die(mysql_error());
     
   
  $var=0;
     while ($fila = mysql_fetch_array($query)) {
-$fechareg = date("Y-m-d");
-if($fechareg>$fila['fechavig']){
-       @require_once("../../conexiones/conexion.php");
-      
-          $res=mysql_query("DELETE FROM horario WHERE idHorario=".$fila['idHorario'].";")or die(mysql_error());
-          mysql_close();
-        }else{
+
+   
   echo "<center><div class='marcas'>";
   echo "<table class='CSSTableGenerator'>";
       echo "<tr> ";
@@ -53,7 +48,7 @@ if($fechareg>$fila['fechavig']){
 
  $var=$var+1;
 
-    }}
+    }
   echo"</table>";
   echo "</div></center>";
 if ($var==0) {

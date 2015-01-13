@@ -13,7 +13,7 @@ include "../../Vistas/seguridad.php";
                 ($_POST['fechavig'])and
                 ($_POST['lugar'])and
                 ($_POST['tipo']!="")){ 
-
+var_dump($_POST);
     // Filtramos caracteres especiales
         if($_POST['materia']!=""){$materia = mysql_real_escape_string($_POST['materia']);}
         if($_POST['catedratico']!=""){$catedratico = mysql_real_escape_string($_POST['catedratico']);}
@@ -30,7 +30,7 @@ include "../../Vistas/seguridad.php";
         if($_POST['nrc']!=""){$nrc = mysql_real_escape_string($_POST['nrc']);}
         if($_POST['nrcant']!=""){$nrcant = mysql_real_escape_string($_POST['nrcant']);}
         if($_POST['fechapub']!=""){$diapub = mysql_real_escape_string($_POST['fechapub']);}
-        if($_POST['secretaria']!=""){$secretaria = mysql_real_escape_string($_POST['secretaria']);}
+        
         if($_POST['horapub']!=""){$horapub = mysql_real_escape_string($_POST['horapub']);}
         if($_POST['tipo']!=""){$tipo = mysql_real_escape_string($_POST['tipo']);}
     // Convertimos etiquetas
@@ -42,7 +42,10 @@ include "../../Vistas/seguridad.php";
          //
          //if($_POST['tipo']=='1'){if($_POST['dia']!=""){$dia = filter_var($dia, FILTER_SANITIZE_SPECIAL_CHARS);}}
          //
-         if($_POST['tipo']!='1'){$dfecha = $_POST['dfecha'];}
+         if($_POST['tipo']!='1'){$dfecha = $_POST['dfecha'];
+                                if($_POST['secretaria']!=""){$secretaria = mysql_real_escape_string($_POST['secretaria']);}
+                                if($_POST['secretaria']!=""){$secretaria = filter_var($secretaria, FILTER_SANITIZE_SPECIAL_CHARS);}
+                            }
          $dia = $_POST['dia'];
 
          if($_POST['lugar']!=""){$lugar = filter_var($lugar, FILTER_SANITIZE_SPECIAL_CHARS);}
@@ -52,7 +55,7 @@ include "../../Vistas/seguridad.php";
          if($_POST['nrc']!=""){$nrc = filter_var($nrc, FILTER_SANITIZE_SPECIAL_CHARS);}
          if($_POST['nrcant']!=""){$nrcant = filter_var($nrcant, FILTER_SANITIZE_SPECIAL_CHARS);}
          if($_POST['fechapub']!=""){$diapub=filter_var($diapub,FILTER_SANITIZE_SPECIAL_CHARS);}
-         if($_POST['secretaria']!=""){$secretaria = filter_var($secretaria, FILTER_SANITIZE_SPECIAL_CHARS);}
+         
 
                 @session_start();
                 $nombreadmin = $_SESSION['nombreUsuario'];
@@ -63,9 +66,9 @@ include "../../Vistas/seguridad.php";
                 $nombreUsuario = $fila[1];
                 $facuser = $fila[2];
                 $horareg= date("H:i:s");
-                $fechareg = date("d-m-Y");
-                 $fechvig = date("d-m-Y",strtotime($fechvig));
-                 $diapub = date("d-m-Y",strtotime($diapub));
+                $fechareg = date("m-d-Y");
+                 // $fechvig = date("d-m-Y",strtotime($fechvig));
+                 // $diapub = date("d-m-Y",strtotime($diapub));
                  if ($horaini<$horafin) {   
                      if ($fechvig>$fechareg) {
                     //Hacer Registro

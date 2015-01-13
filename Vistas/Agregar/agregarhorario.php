@@ -158,8 +158,8 @@ echo "</select>";
                   }  
             ?>
         </select><br>
-        <label class="text1">Secretaria:</label><br>
-        <input type="text" name="secretaria" id="secre" placeholder="Ejemplo: Catalina"><br><br>
+        <label class="text1">SECRETARIA:</label><br>
+        <input type="text" name="secretaria" id="secre" placeholder="Ejemplo: Catalina"><br>
 </fieldset><br><br>
 <fieldset><legend><a class="text2">Vigencia</a></legend>
     <a class="text1">*La vigencia ayuda a que el sistema no muestre horarios pasados.</a><br><br>

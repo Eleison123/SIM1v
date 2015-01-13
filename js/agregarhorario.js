@@ -41,9 +41,12 @@
             if (id == '1'){
                 $('#dia1h').prop('disabled',false);
                 $('#datepicker').prop('disabled',true);
+                $('#secre').prop('disabled',true);
+                $('#datepicker5').prop('disabled',true);
             }else{
                 $('#dia1h').prop('disabled',true);
                 $('#datepicker').prop('disabled',false);
+                $('#datepicker5').prop('disabled',false);
             }
         });
     });

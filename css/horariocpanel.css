@@ -565,12 +565,13 @@ width: 150px;
   border: solid 5px #969696;
 }
 .marca{
-  margin-top: 5%;
+  margin-top: 1%;
+  margin-bottom: 1%;
   width: 170px;
-  height: 70px;
+  height: 120px;
   float: left;
   padding: 5px;
-  margin-left: 3%;
+  margin-left: 1%;
   background: #FFF;
   -webkit-border-radius: 15px;
 -moz-border-radius: 15px;
@@ -578,7 +579,7 @@ border-radius: 15px;
 }
 .cuadrocar{
 width: 140px;
-height: 40px;
+height: 90px;
 padding: 15px;
 background: #0674AF;
 -webkit-border-radius: 15px;
@@ -586,4 +587,10 @@ background: #0674AF;
 border-radius: 15px;
 text-align: center;
 cursor: pointer;
+}
+#horario{
+  height: 400px;
+}
+.textox{
+  color:#FFF;
 }

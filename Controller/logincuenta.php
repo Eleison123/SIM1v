@@ -12,16 +12,18 @@ if(@$_POST['entrar']){
     $salt='/$fei$';
     //$contrasenia=sha1($contrasenia);
 	$contrasenia=sha1($salt . $contrasenia);
-	$sql = "SELECT Usuario, Contrasena FROM Cuenta WHERE Usuario='".$usuario."' and Contrasena='".$contrasenia."';";	
+	$sql = "SELECT Usuario, Contrasena, idFacultad FROM Cuenta WHERE Usuario='".$usuario."' and Contrasena='".$contrasenia."';";	
 	$resultado = mysql_query($sql)or die (mysql_error());
 	mysql_close();
 	$fila = mysql_fetch_array($resultado, MYSQL_BOTH);
 	$nombreUsuario = $fila[0];
 	$passUsuario = $fila[1];
+	$facultad = $fila[2];
 	if(($usuario == $nombreUsuario) && ($contrasenia == $passUsuario)){
 		session_start();
 		$_SESSION['nombreUsuario'] = $usuario;
 		$_SESSION['passUsuario'] = $contrasenia;
+		$_SESSION['facultad'] = $facultad; 
 		header("location:Vistas/pagprin.php");
 	}else{
 		echo "<script>alert('Usuario y/o Contraseña incorrectos')</script>";
