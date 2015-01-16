@@ -2,12 +2,12 @@
 <script src="../../js/jquery-1.4.2.min.js"></script> 
 <script src="../../js/jshorarios.js"></script>
 <script language="Javascript" type="text/javascript">
-//<![CDATA[
-<!-- Begin
-document.oncontextmenu = function(){return false}
-// End -->
-//]]>
-</script>
+// //<![CDATA[
+// <!-- Begin
+// document.oncontextmenu = function(){return false}
+// // End -->
+// //]]>
+// </script>
 <!DOCTYPE HTML>
 <html lang="es">
     <head>
@@ -144,7 +144,6 @@ echo "<div id='horariointer'>";
                         }
                         echo "</div>"; ?>
 
-<div id="experiencias">
 
         <?php
         $mysqlm="SELECT idCarrera FROM carrera WHERE idfacultad = '".$fac."'; ";
@@ -155,12 +154,12 @@ echo "<div id='horariointer'>";
                 $fac=$_SESSION['facultad'] ; 
                 $consulta = "SELECT * FROM experienciaeducativa WHERE idCarrera = '".$m['idCarrera']."'  ";
                 $query = mysql_query($consulta)or die(mysql_error());
-                echo "<div id='materia".$m['idCarrera']."'>";    
+                echo "<div id='materia".$m['idCarrera']."' class='experiencias'>";    
                   while ($fila = mysql_fetch_array($query)) { 
                         if($fila!=""){
-                         echo "<div class='marca'>";
-                         echo "<div id='materias' value='".$fila['idExperienciaEducativa']."' >
-                               <p class='textox'>".$fila['Nombre']." </p>
+                         echo "<div class='marcaex'>";
+                         echo "<div class='materias' value='".$fila['idExperienciaEducativa']."'>
+                               <p class='textox'>".$fila['Nombre']."</p>
                                </div>
                                </div>";
                                             
@@ -171,6 +170,6 @@ echo "<div id='horariointer'>";
         }
        
         ?>
-    </div> </div>
+    </div> 
     </body>
 </html>

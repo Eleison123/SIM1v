@@ -5,6 +5,7 @@ $fac=$_SESSION['facultad'] ;
 $consulta = "SELECT * FROM horario WHERE idExperienciaEducativa = ".$_GET['id']." AND tipo = '1' ";
 $query = mysql_query($consulta)or die(mysql_error());    
 $var=0;
+if($query!=""){  
 echo "<center><div class='marcascall'>";
   while ($fila = mysql_fetch_array($query)) { 
         if($fila!=""){
@@ -41,6 +42,7 @@ echo "<center><div class='marcascall'>";
         }
        
       }
+  }
         if($var==0){
           echo "<img  src='../../imagenes/nohorarios.png'>";
         }
