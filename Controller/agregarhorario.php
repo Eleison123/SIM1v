@@ -13,7 +13,7 @@ include "../../Vistas/seguridad.php";
                 ($_POST['fechavig'])and
                 ($_POST['lugar'])and
                 ($_POST['tipo']!="")){ 
-var_dump($_POST);
+
     // Filtramos caracteres especiales
         if($_POST['materia']!=""){$materia = mysql_real_escape_string($_POST['materia']);}
         if($_POST['catedratico']!=""){$catedratico = mysql_real_escape_string($_POST['catedratico']);}

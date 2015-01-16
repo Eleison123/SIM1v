@@ -89,6 +89,7 @@ document.oncontextmenu = function(){return false}
 </div>
 </div>
     </div></center>
+
 <!--inicia Horario escolar -->
 <div id="horarioes1"></div>
     <?php echo"<div id='horarioes'>";
@@ -142,5 +143,34 @@ echo "<div id='horariointer'>";
                            
                         }
                         echo "</div>"; ?>
+
+<div id="experiencias">
+
+        <?php
+        $mysqlm="SELECT idCarrera FROM carrera WHERE idfacultad = '".$fac."'; ";
+        $resulm=mysql_query($mysqlm) or die(mysql_error());
+        while ($m=mysql_fetch_array($resulm)) {
+             require_once("../../conexiones/conexion.php");
+                @session_start();
+                $fac=$_SESSION['facultad'] ; 
+                $consulta = "SELECT * FROM experienciaeducativa WHERE idCarrera = '".$m['idCarrera']."'  ";
+                $query = mysql_query($consulta)or die(mysql_error());
+                echo "<div id='materia".$m['idCarrera']."'>";    
+                  while ($fila = mysql_fetch_array($query)) { 
+                        if($fila!=""){
+                         echo "<div class='marca'>";
+                         echo "<div id='materias' value='".$fila['idExperienciaEducativa']."' >
+                               <p class='textox'>".$fila['Nombre']." </p>
+                               </div>
+                               </div>";
+                                            
+                        }
+                      
+                      }
+ echo "</div>";
+        }
+       
+        ?>
+    </div> </div>
     </body>
 </html>

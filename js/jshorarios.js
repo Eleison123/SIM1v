@@ -10,6 +10,7 @@ $(document).ready(function(){
     $('#htu').hide();
     $('#hint').hide();
     $('#cen').hide();
+    $('#experiencias').hide();
 
 });
 //si da Click en ----HES que aparesca
@@ -28,7 +29,7 @@ $(document).ready(function(){
     $('#horariotu1').hide();
     $('#horarioex1').hide();
     $('#horariointer1').hide();
-        $('#horarioes').fadeIn();
+    $('#horarioes').fadeIn();
     });
 });
 ////////////////2
@@ -52,14 +53,24 @@ $(document).ready(function(){
         $('#botoness').hide();
     });
 });
-//////////////////////////////////  Si preciono su carrera  ///////////////77
+//////////////////////////////////  Si preciono su carrera  ///////////////
 
 $(document).ready(function(){
     $('.cuadroes').click(function(){
         var id= $(this).attr("value");
+        $('#materia'+id).show();
+        alert("materia"+id);
+        $('#materia'+id).show();
+        $('#horarioes').hide();
+    });
+});
+//////////////////7
+$(document).ready(function(){
+    $('#materias').click(function(){
+        var id= $(this).attr("value");
         $('#horarioes1').show();
         $('#horarioes1').load('../Editar/genera-he.php?id='+id);
-        $('#horarioes').hide();
+        $('#materia').hide();
     });
 });
 /////////////////////////////////// si da click en HEX que aparesca//////////////////7777
