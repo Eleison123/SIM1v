@@ -1,30 +1,25 @@
 <?php
 require_once("../../conexiones/conexion.php");
-    $consulta = "SELECT * FROM horario WHERE idcarrera = ".$_GET['id']." AND tipo = '6'  ORDER BY idExperienciaEducativa";
+    $consulta = "SELECT * FROM horario WHERE idExperienciaEducativa = ".$_GET['id']." AND tipo = '6'  ORDER BY idExperienciaEducativa";
     $query = mysql_query($consulta)or die(mysql_error());
-    
-     $var=0;
- while ($fila = mysql_fetch_array($query)) {
-    
-    
+    $var=0;
+    while ($fila = mysql_fetch_array($query)) {
        $fechareg = date("Y-m-d");
-if($fechareg>$fila['fechavig']){
-       @require_once("../../conexiones/conexion.php");
-     
+        if($fechareg>$fila['fechavig']){
+          @require_once("../../conexiones/conexion.php");
           $res=mysql_query("DELETE from horario where idHorario=".$fila['idHorario'].";")or die(mysql_error());
           mysql_close();
         }else{
- echo "<div class='marcas'>";
-  echo "<table class='CSSTableGenerator'>";
-  
-        echo "<tr> ";
-  echo "<th><p class='xxxx'>Experiencia</p></th>";
-  echo "<th><p class='xxxx'>Catedrático</p></th>";
-  echo "<th><p class='xxxx'>Día</p></th>";
-  echo "<th><p class='xxxx'>Hora Inicial</p></th>";
-  echo "<th><p class='xxxx'>Hora Final</p></th>";
-  echo "</tr>";
-        echo "<tr> ";
+          echo "<div class='marcas'>";
+          echo "<table class='CSSTableGenerator'>";
+          echo "<tr> ";
+          echo "<th><p class='xxxx'>Experiencia</p></th>";
+          echo "<th><p class='xxxx'>Catedrático</p></th>";
+          echo "<th><p class='xxxx'>Día</p></th>";
+          echo "<th><p class='xxxx'>Hora Inicial</p></th>";
+          echo "<th><p class='xxxx'>Hora Final</p></th>";
+          echo "</tr>";
+          echo "<tr> ";
        
         ////////////////// materia  ////////////////
         $consultama="SELECT nombre FROM ExperienciaEducativa WHERE idExperienciaEducativa = ".$fila['idExperienciaEducativa']."";

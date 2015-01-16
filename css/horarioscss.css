@@ -85,6 +85,18 @@ font-family: Helvetica, sans-serif;
 -moz-border-radius: 15px;
 border-radius: 15px;
 }
+.marcaex{
+	margin-top: 15%;
+	width: 270px;
+	height: 170px;
+	float: left;
+	padding: 5px;
+	margin-left: 2%;
+	background: #FFF;
+	-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+}
 
 .marcas{
 	margin-top: 20%;
@@ -140,6 +152,28 @@ width: 240px;
 height: 140px;
 padding: 15px;
 background: #27ae60;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+text-align: center;
+cursor: pointer;
+}
+.materiasinter{
+width: 240px;
+height: 140px;
+padding: 15px;
+background: #16a085;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+text-align: center;
+cursor: pointer;
+}
+.materiasexa{
+width: 240px;
+height: 140px;
+padding: 15px;
+background: #1abc9c;
 -webkit-border-radius: 15px;
 -moz-border-radius: 15px;
 border-radius: 15px;

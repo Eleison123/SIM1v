@@ -1,8 +1,8 @@
 <?php
 require_once("../../conexiones/conexion.php");
-    $consultaor = "SELECT * FROM horario WHERE idCarrera = ".$_GET['id']." AND tipo = '2'  ORDER BY idExperienciaEducativa";
-    $consultaex = "SELECT * FROM horario WHERE idCarrera = ".$_GET['id']." AND tipo = '3'  ORDER BY idExperienciaEducativa";
-    $consultati = "SELECT * FROM horario WHERE idCarrera = ".$_GET['id']." AND tipo = '4'  ORDER BY idExperienciaEducativa";
+    $consultaor = "SELECT * FROM horario WHERE idExperienciaEducativa = ".$_GET['id']." AND tipo = '2'  ORDER BY idExperienciaEducativa";
+    $consultaex = "SELECT * FROM horario WHERE idExperienciaEducativa = ".$_GET['id']." AND tipo = '3'  ORDER BY idExperienciaEducativa";
+    $consultati = "SELECT * FROM horario WHERE idExperienciaEducativa = ".$_GET['id']." AND tipo = '4'  ORDER BY idExperienciaEducativa";
     $queryor = mysql_query($consultaor)  or die(mysql_error());
     $queryex = mysql_query($consultaex)  or die(mysql_error());
     $queryti = mysql_query($consultati)  or die(mysql_error());

@@ -28,6 +28,7 @@ $(document).ready(function(){
     $('#horarioex1').hide();
     $('#horariointer1').hide();
     $('#horarioes').fadeIn();
+    $('.experiencias').hide();
     });
 });
 ////////////////2
@@ -48,6 +49,7 @@ $(document).ready(function(){
     $('#horarioes').fadeIn();
     $('#cen').show('slow');
     $('#botoness').hide();
+    $('.experiencias').hide();
     });
 });
 //////////////////////////////////  Si preciono su carrera  ///////////////
@@ -82,6 +84,7 @@ $(document).ready(function(){
     $('#horarioex1').hide();
     $('#horariointer1').hide();
     $('#horariointer').fadeIn();
+    $('.experiencias').hide();
 
     });
 });
@@ -101,6 +104,7 @@ $(document).ready(function(){
         $('#horariointer').fadeIn();
         $('#cen').show('slow');
         $('#botoness').hide();
+        $('.experiencias').hide();
 
     });
 });
@@ -109,11 +113,20 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('.cuadrointer').click(function(){
         var id= $(this).attr("value");
-        $('#horariointer1').show();
-        $('#horariointer1').load('../Editar/genera-hinter.php?id='+id);
+        $('#materiainter'+id).show();
         $('#horariointer').hide();
     });
 });
+/////////////////////////////////////
+$(document).ready(function(){
+    $('.materiasinter').click(function(){
+        var id= $(this).attr("value");
+        $('#horariointer1').show();
+        $('#horariointer1').load('../Editar/genera-hinter.php?id='+id);
+        $('.experiencias').hide();
+    });
+});
+////////////////////////////////////
 //si da click en HEX que aparesca
 $(document).ready(function(){
     $('#HEX').click(function(){
@@ -130,6 +143,7 @@ $(document).ready(function(){
     $('#horarioex1').hide();
     $('#horariointer1').hide();
         $('#horarioex').fadeIn();
+        $('.experiencias').hide();
     });
 });
 //////////////////2
@@ -150,16 +164,24 @@ $(document).ready(function(){
         $('#horarioex').fadeIn();
         $('#cen').show('slow');
         $('#botoness').hide();
+        $('.experiencias').hide();
     });
 });
 /////////////////////////////////7
 $(document).ready(function(){
     $('.cuadroex').click(function(){
         var id= $(this).attr("value");
-        $('#horarioex1').show();
-        
-        $('#horarioex1').load('../Editar/genera-hex.php?id='+id);
+        $('#materiaexa'+id).show();
         $('#horarioex').hide();
+    });
+});
+
+$(document).ready(function(){
+    $('.materiasexa').click(function(){
+        var id= $(this).attr("value");
+        $('#horarioex1').show();
+        $('#horarioex1').load('../Editar/genera-hex.php?id='+id);
+        $('.experiencias').hide();
     });
 });
 
@@ -179,6 +201,7 @@ $(document).ready(function(){
     $('#horariotu1').hide();
     $('#horarioex1').hide();
     $('#horariointer1').hide();
+    $('.experiencias').hide();
     
 
          $('#horariotu1').fadeIn();
@@ -204,6 +227,7 @@ $(document).ready(function(){
     $('#horarioex1').hide();
     $('#horariointer1').hide();
     $('#botoness').hide();
+    $('.experiencias').hide();
 
          $('#horariotu1').fadeIn();
          $('#cen').show('slow');
