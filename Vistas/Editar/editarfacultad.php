@@ -13,8 +13,8 @@ if (@$_POST['guardar']) {
             //$contrasenia= md5($contrasena);
             $id1= $_POST['id'];
      $sqlf="UPDATE facultad SET
-nombre = '".$nombre1."', 
-sede = '".$sede1."'
+Nombre = '".$nombre1."', 
+Sede = '".$sede1."'
  WHERE idfacultad='".$id1."'";
 $resultadof = mysql_query($sqlf) or die(mysql_error());
 
@@ -30,12 +30,12 @@ else{
 }
 else{
 $hes=$_POST['idfac'];
-$mysqlid="SELECT idfacultad, nombre, sede  FROM facultad WHERE idfacultad=".$hes."";
+$mysqlid="SELECT *FROM facultad WHERE idfacultad=".$hes."";
 $resulid=mysql_query($mysqlid) or die(mysql_error());
  $fil = mysql_fetch_array($resulid, MYSQL_BOTH);
-     $facultad = $fil['idfacultad'];
-     $sede = $fil['sede'];
-     $nombre = $fil['nombre'];
+     $facultad = $fil['idFacultad'];
+     $sede = $fil['Sede'];
+     $nombre = $fil['Nombre'];
   
 
  }

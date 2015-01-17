@@ -52,7 +52,7 @@ document.oncontextmenu = function(){return false}
             <input type="text" name="nombre"><br><br>
             <label class="text1">Contraseña:</label><br>
             <input type="password"name="contrasena"maxlength="10"><br><br>
-            
+            <input type="hidden" name="tipo"maxlength="10" value="1">
         <!--
 <label class="text1">Tipo:</label><br>
             <input id="tipo" type="radio" name="tipo" value="1"><a class="text1">Privilegios: Agregar,Editar, Eliminar y Hacer Reportes </a><br>

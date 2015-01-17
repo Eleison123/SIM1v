@@ -39,7 +39,7 @@ $resultadof = mysql_query($sqlf) or die(mysql_error());
 
 if ($resultadof) {
    echo "<script>alert('Mi usuario ha sido modificado exitosamente');
-            window.location = '../usuario.php';</script>";
+            window.location = '../Entidades/Cuenta.php';</script>";
 }
 
 }

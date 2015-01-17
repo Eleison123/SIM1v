@@ -98,14 +98,10 @@ $resulid=mysql_query($mysqlid) or die(mysql_error());
 <link rel="stylesheet" href="../../css/css1a.css">
        <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
-<script language="Javascript" type="text/javascript">
-//<![CDATA[
-
-<!-- Begin
-document.oncontextmenu = function(){return false}
-// End -->
-//]]>
-</script>
+<link rel="stylesheet" href="../../js/jquery-ui-1.11.2/jquery-ui.css">
+<script src="../../js/jquery-1.10.2.js"></script> 
+<script src="../../js/jquery-ui-1.11.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="../../js/jquery-ui-1.11.2/jquery-ui.theme.css">
         
 <title>Editar Horario</title>
 </head>
@@ -279,7 +275,7 @@ echo "</select><br>";
     <a class="text1">La vigencia ayuda a que el sistema no muestre horarios pasados.</a><br><br>
 <label><a class="text1">Fecha termino de Vigencia</a></label>
 
-<input type="date" class="infecha" name="fechvig" <?php echo"value='"; echo $vig; echo"'"; ?> > 
+<input type="text" id="datepicker" class="infecha" name="fechvig" <?php echo"value='"; echo $vig; echo"'"; ?> > 
 </fieldset>
         <input type="submit" value="GUARDAR" id="btnguardar" name="guardar">
  
@@ -290,3 +286,23 @@ echo "</select><br>";
 </div>
 
 </html>
+<script>
+  $(function() {
+    $("#datepicker").datepicker();
+  });
+  $(function() {
+    $("#datepicker1").datepicker();
+  });
+  $(function() {
+    $("#datepicker2").datepicker();
+  });
+  $(function() {
+    $("#datepicker3").datepicker();
+  });
+  $(function() {
+    $("#datepicker4").datepicker();
+  });
+  $(function() {
+    $( document ).tooltip();
+  });
+  </script>

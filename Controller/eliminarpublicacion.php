@@ -1,8 +1,8 @@
 <meta charset="utf-8">
 <?php
-include "seguridad.php";
+include "../Vistas/seguridad.php";
 
-        require_once("conexiones/conexion.php");
+        require_once("../conexiones/conexion.php");
         $idpub = $_POST['idpubli'];
       
            
@@ -10,7 +10,7 @@ include "seguridad.php";
         	mysql_close();
         	if ($res) {
                echo "<script>alert('Mi publicación a sido eliminada exitosamente');
-     window.location = '../publicacion.php';</script>";
+     window.location = '../Vistas/Entidades/publicacion.php';</script>";
                 
 
             }else{

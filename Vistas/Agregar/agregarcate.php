@@ -82,7 +82,7 @@ echo "</select>";
 ?>
 <br>
         </fieldset>
-        <input  type="submit"  value="GUARDAR" id="btnguardar" name="guardar" > <input type="reset" id="btnreset" value="RESET">
+        <center><input  type="submit"  value="GUARDAR" id="btnguardar" name="guardar" > </center>
         </form>
     </div>
     </div>

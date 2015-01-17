@@ -1,5 +1,5 @@
 <?php
-include"../seguridad.php";
+include"../Vistas/seguridad.php";
         require_once("../conexiones/conexion.php");
         $idmateria = $_POST['idmateria'];
        
@@ -9,7 +9,7 @@ include"../seguridad.php";
             mysql_close();
         	if ($res) {
                 echo "<script>alert('Mi Experiencia Educativa ha sido eliminada exitosamente');
-                window.location = 'eeducativa.php';</script>";
+                window.location = '../Vistas/Entidades/eeducativa.php';</script>";
                
             
 

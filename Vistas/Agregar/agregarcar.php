@@ -66,7 +66,7 @@ document.oncontextmenu = function(){return false}
                 echo "<a class='text1'>*La carrera se guardara en la Facultad correspondiente del administrador.</a>";
             echo "<br><br>";
             ?>
-        <strong><input  type="submit"  value="GUARDAR" id="btnguardar" name="guardar" > <input type="reset" id="btnreset" value="RESET"></strong>
+        <center><strong><input  type="submit"  value="GUARDAR" id="btnguardar" name="guardar" ></strong></center>
         </form>
     </div>
     </div>
