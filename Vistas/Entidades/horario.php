@@ -64,19 +64,111 @@ $(document).ready(function(event){
         require_once("../../conexiones/conexion.php");
             @session_start();
                         $fac=$_SESSION['facultad'] ;            
-                            //Preguntamos los nombres de las carreras segun su idfacultad
-                         $mysqlfacu="SELECT nombre, idcarrera,idfacultad FROM carrera WHERE idfacultad = '".$fac."'; ";
+                        //Preguntamos los nombres de las carreras segun su idfacultad
+                        $mysqlfacu="SELECT nombre, idcarrera,idfacultad FROM carrera WHERE idfacultad = '".$fac."'; ";
                         $resulf=mysql_query($mysqlfacu)or die(mysql_error());
                         while($row1=mysql_fetch_array($resulf)){
                            echo "<div class='marca'>";
-                            echo "<div class='cuadrocar' value='".$row1['idcarrera']."' > <p class='textox'> ".$row1['nombre']." </p></div></div>";
+                           echo "<div class='cuadrocar' value='".$row1['idcarrera']."' > <p class='textox'> ".$row1['nombre']." </p></div></div>";
                             
                         }
                         ?>
 
 
 </body><br><br><br></div>
-<div id="escogido"></div>
+
+<?php 
+///////////////////////
+
+$sqlcollage="SELECT Nombre,idCarrera,idFacultad FROM carrera WHERE idFacultad = '".$fac."';";
+$resulcollage=mysql_query($sqlcollage)or die(mysql_error());
+while ($collage=mysql_fetch_array($resulcollage)) {
+    ///////////////////
+     echo "<div id='materias".$collage['idCarrera']."' class='experiencias'>";    
+     echo "<div class='regreso'>Regresar</div><br><br><br>";
+    //Preguntamos los nombres de las materias segun su idfacultad
+     require_once("../../conexiones/conexion.php");
+                @session_start();
+                       
+                          echo "<div id='contenedor_carrera'>";
+                           echo "<table>";
+                         echo"<tr>";
+                            echo"
+                            
+                            <th>Nombre</th>
+                            <th>Carrera</th>
+                            <th></th>
+                            <th></th>
+                            
+                            
+                            </tr>";
+                            //Preguntamos los nombres de las carreras segun su idfacultad
+                         $mysqlfacu="SELECT * FROM experienciaeducativa WHERE idCarrera = ".$collage['idCarrera'].";";
+                        $resulf=mysql_query($mysqlfacu) or die(mysql_error());
+                        $num_total_registros=mysql_num_rows($resulf);
+                       // if ($num_total_registros > 0) {
+                       //      //Limito la busqueda
+                       //      $tamano_pag = 15;
+                       //      $pagina = false;
+                       //      //examino pagina a mostrar e inicio
+                       //  if (isset($_GET["pagina"]))
+                       //  $pagina=$_GET['pagina'];
+                       //  if (!$pagina) {
+                       //      $inicio=0;
+                       //      $pagina=1;
+                       //  }else{
+                       //      $inicio=($pagina - 1) * $tamano_pag;
+                       //  }
+                       //  ///// Calculo todas las paginas
+                       //  $total_paginas=ceil($num_total_registros / $tamano_pag);
+                        ///realizamos consulta
+                        require_once('../../conexiones/conexion.php');
+                        $consultas="SELECT idexperienciaeducativa,nombre, idCarrera FROM experienciaeducativa WHERE  idCarrera = ".$collage['idCarrera'].";";
+                         // ORDER BY nombre DESC LIMIT ".$inicio.",".$tamano_pag;
+                        $rs=mysql_query($consultas)or die(mysql_error());
+
+                        while($row1=mysql_fetch_array($rs)){
+                                   echo "<tr>";
+                                        echo "<td><a class='text20'>".$row1['nombre']."</a></td>";
+                                        $car = $row1['idCarrera'];
+                                        $consultacarrera = "SELECT Nombre FROM carrera WHERE idCarrera = $car";
+                                        $cc = mysql_query($consultacarrera) or die (mysql_error());
+                                         $ccc = mysql_fetch_array($cc, MYSQL_BOTH);
+                                         echo "<td><a class='text20'>".$ccc['Nombre']."</a></td>";
+                                
+                              
+                               echo "<td><div class='ver' value='".$row1['idexperienciaeducativa']."'>Ver</div></td>";
+                                echo"</tr>";
+            }echo "</legend>";
+        echo "</table></div>";
+            echo '<p class="textlink">';
+
+    // if ($total_paginas > 1) {
+    //     if ($pagina != 1)
+    //         echo '<a class="textlink" href="'.'?pagina='.($pagina-1).'"><img src="../../imagenes/izq.gif" border="0"></a>';
+    //     for ($i=1;$i<=$total_paginas;$i++) {
+    //         if ($pagina == $i)
+    //             //si muestro el �ndice de la p�gina actual, no coloco enlace
+    //             echo "<a class='textlink'>".$pagina."</a>";
+    //         else
+    //             //si el �ndice no corresponde con la p�gina mostrada actualmente,
+    //             //coloco el enlace para ir a esa p�gina
+    //             echo '  <a class="textlink" href="'.'?pagina='.$i.'">'.$i.'</a>  ';
+    //     }
+    //     if ($pagina != $total_paginas)
+    //         echo '<a class="textlink"><a class="textlink" href="'.'?pagina='.($pagina+1).'"><img src="../../imagenes/der.gif" border="0"></a></a>';
+    // }
+    echo '</p>';
+// }
+                            echo "</div>";
+    //////////////////////
+}
+
+
+///////////////////////
+
+?>
+<div id="hora"></div>
 
 <hr></div>
 <footer>
@@ -86,12 +178,35 @@ $(document).ready(function(event){
 </footer>
 </html>
 
+
 <script type="text/javascript">
+$(document).ready(function(){
+$('.experiencias').hide();
+});
 $(document).ready(function(){
     $('.cuadrocar').click(function(){
         var id= $(this).attr("value");
-        $('#escogido').show();
-        $('#escogido').load('../Editar/generaescolar.php?id='+id);
+        $('#materias'+id).show();
+        $('.ver').show();
         $('#horario').hide();
     });
-});</script>
+});
+$(document).ready(function(){
+    $('.regreso').click(function(){
+        $('.experiencias').hide();
+         $('.ver').hide();
+         $('#hora').hide();
+        $('#horario').show();
+    });
+});
+
+$(document).ready(function(){
+    $('.ver').click(function(){
+        var id= $(this).attr("value");
+        $('#hora').show();
+        $('#hora').load('../Editar/generaescolar.php?id='+id);
+        $('.experiencias').hide();
+    });
+});
+
+</script>

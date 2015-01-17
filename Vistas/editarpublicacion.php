@@ -30,7 +30,7 @@ mkdir($PNG_TEMP_DIR);
             if ($_POST['fecharea1p']>$_POST['fechater1p']) {
                 echo "<script>alert('Fecha de realización es despues de la Fecha de termino')</script>";
           }
-           
+         
             //Asignar los datos obtenidos a variables
             $id1 = $_POST['id'];
             $nombre1 = $_POST['nombre'];
@@ -152,30 +152,28 @@ fechavig ='".$fechavig."'
 
     require_once("../conexiones/conexion.php");
 $hes=$_POST['idpub'];
-            $mysqlid="SELECT idpublicacion,nombre,categoria,fecharea,horarea,fechater,horater,url,
-            lugar,contacto,img,infobreve,info,qr,color,colorletra,diapublicacion,horapublicacion,
-            prioridad,fechavig FROM publicacion WHERE idpublicacion=".$hes."";
+            $mysqlid="SELECT * FROM publicacion WHERE idpublicacion=".$hes."";
 $resulid=mysql_query($mysqlid) or die(mysql_error());
  $fil = mysql_fetch_array($resulid, MYSQL_BOTH);
-     $id = $fil['idpublicacion'];
-     $nombre = $fil['nombre'];
+     $id = $fil['idPublicacion'];
+     $nombre = $fil['Nombre'];
      $categoria = $fil['categoria'];
      $fecharea = $fil['fecharea'];
      $horarea = $fil['horarea'];
      $fechater = $fil['fechater'];
      $hoarter = $fil['horater'];
-     $url = $fil['url'];
-     $lugar = $fil['lugar'];
-     $contacto = $fil['contacto'];
+     $url = $fil['URL'];
+     $lugar = $fil['Lugar'];
+     $contacto = $fil['Contacto'];
      $img = $fil['img'];
-     $infobreve = $fil['infobreve'];
-     $info = $fil['info'];
-     $qr = $fil['qr'];
-     $color = $fil['color'];
-     $colorletra = $fil['colorletra'];
+     $infobreve = $fil['Infobreve'];
+     $info = $fil['Info'];
+     $qr = $fil['QR'];
+     $color = $fil['Color'];
+     $colorletra = $fil['Colorletra'];
      $diapublicacion = $fil['diapublicacion'];
      $horapublicacion = $fil['horapublicacion'];
-     $prioridad = $fil['prioridad'];  
+     $prioridad = $fil['Prioridad'];  
      $fechavig=$fil['fechavig'];
 
  }
@@ -190,11 +188,10 @@ $resulid=mysql_query($mysqlid) or die(mysql_error());
 <link rel="stylesheet" href="../css/css1a.css">
 <link rel="shortcut icon" href="../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
-<script src="../js/jquery-1.4.2.min.js"></script> 
-<script language="Javascript" type="text/javascript">
- Begin
-document.oncontextmenu = function(){return false}
-</script>
+<link rel="stylesheet" href="../js/jquery-ui-1.11.2/jquery-ui.css">
+<script src="../js/jquery-1.10.2.js"></script> 
+<script src="../js/jquery-ui-1.11.2/jquery-ui.js"></script>
+<link rel="stylesheet" href="../js/jquery-ui-1.11.2/jquery-ui.theme.css">
 <script type="text/javascript">
 $(document).ready(function(){
 
@@ -363,13 +360,13 @@ $(document).ready(function(){
  </select><br><br>
 
  <label for="fecharea1p" class="text1">Fecha Inicio:</label><br>
- <input type="date" id="fecharea1p" name="fecharea1p" <?php echo"value='"; echo $fecharea; echo"'"; ?> class="infecha"><br>
+ <input type="text" id="datepicker" name="fecharea1p" <?php echo"value='"; echo $fecharea; echo"'"; ?> class="infecha"><br>
 
  <label for="horarea1p" class="text1">Hora Inicio:</label><br>
  <input type="time" id="horarea1p" name="horarea1p" <?php echo "value='"; echo $horarea; echo "'"; ?> class="inhora"><br><br>
 
  <label for="fechater1p" class="text1">Fecha Término:</label><br>
- <input type="date" id="fechater1p" name="fechater1p" <?php echo "value='"; echo $fechater; echo "'"; ?> class="infecha"><br>
+ <input type="text" id="datepicker1" name="fechater1p" <?php echo "value='"; echo $fechater; echo "'"; ?> class="infecha"><br>
  
  <label for="horater1p" class="text1">Hora Término:</label><br>
  <input type="time" id="horater1p" name="horater1p" <?php echo "value='"; echo $hoarter; echo "'"; ?> class="inhora"><br><br>
@@ -428,10 +425,14 @@ $(document).ready(function(){
 <label class="text1">Color de la Publicación:</label><br>
  <div id="divcolor">
  <input type="radio" id="radio" name="color" <?php echo "value='"; echo $color; echo "'"; ?> checked="checked"><a class="text1" style="color:black">Selección Anterior</a><br>
-  <input type="radio" id="radio" name="color" value="#CC3C2D" ><a class="text1" style="color:#CC3C2D">Rojo</a><br>
- <input type="radio" id="radio" name="color" value="#19B495"><a class="text1" style="color:#19B495">Verde</a><br>
- <input type="radio" id="radio" name="color" value="#0099CC"><a class="text1" style="color:#0099CC" >Azul</a><br>
- <input type="radio" id="radio" name="color" value="#E67E22"><a class="text1" style="color:#E67E22">Naranja</a><br>
+  <input type="radio" id="radio" name="color" value="#e74c3c" ><a class="text1" style="color:#e74c3c">Alizarin</a><br>
+ <input type="radio" id="radio" name="color" value="#1abc9c"><a class="text1" style="color:#1abc9c">Turquoise</a><br>
+ <input type="radio" id="radio" name="color" value="#34495e"><a class="text1" style="color:#34495e" checked="checked">Wet Asphalt</a><br>
+ <input type="radio" id="radio" name="color" value="#f39c12"><a class="text1" style="color:#f39c12">Naranja</a><br>
+ <input type="radio" id="radio" name="color" value="#9b59b6"><a class="text1" style="color:#9b59b6">Amatista</a><br>
+ <input type="radio" id="radio" name="color" value="#3498db"><a class="text1" style="color:#3498db">Peter River</a><br>
+ <input type="radio" id="radio" name="color" value="#2ecc71"><a class="text1" style="color:#2ecc71">Esmeralda</a><br>
+
  </div>
 
  <label class="text1">Color Tipografía de la Publicación:</label><br>
@@ -440,7 +441,7 @@ $(document).ready(function(){
 <input type="radio" id="radio" name="colorletra" <?php echo "value='"; echo $colorletra; echo "'"; ?> checked="checked"><a class="text1"> Selección Pasada</a><br><br>
 
  <label class="text1">Día de Publicación</label><br>
- <input type="date" name="diapub" <?php echo "value='"; echo $diapublicacion; echo "'"; ?> class="infecha"><br><br>
+ <input type="text" id="datepicker4" name="diapub" <?php echo "value='"; echo $diapublicacion; echo "'"; ?> class="infecha"><br><br>
 
  <label class="text1">Hora Publicación</label><br>
  <input type="time" name="horapub" <?php echo "value='"; echo $horapublicacion; echo "'"; ?> class="inhora"><br><br>
@@ -489,7 +490,7 @@ $(document).ready(function(){
         </select><br><br>  
 <a class="text2">Vigencia:</a><br>
 <label><a class="text1">Fecha de Vigencia</a></label><br>
-<input type="date" class="infecha" name="fechvig" <?php echo "value='"; echo $fechavig; echo "'"; ?> required/>
+<input type="text" id="datepicker3" class="infecha" name="fechvig" <?php echo "value='"; echo $fechavig; echo "'"; ?> required/>
 
         
  
@@ -505,3 +506,27 @@ $(document).ready(function(){
 </div>
 </footer>
 </html>
+
+<script>
+  $(function() {
+    $("#datepicker").datepicker();
+  });
+  $(function() {
+    $("#datepicker1").datepicker();
+  });
+  $(function() {
+    $("#datepicker2").datepicker();
+  });
+  $(function() {
+    $("#datepicker3").datepicker();
+  });
+  $(function() {
+    $("#datepicker4").datepicker();
+  });
+  $(function() {
+    $("#datepicker5").datepicker();
+  });
+  $(function() {
+    $( document ).tooltip();
+  });
+  </script>

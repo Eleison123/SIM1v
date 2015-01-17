@@ -108,7 +108,7 @@
 while($row=mysql_fetch_array($resul)){
 	echo "<td><a class='text10'>".$row['nombre']."</a></td>";
 	
-    echo "<td><a class='text10'>".$row['idregistro']."</a></td>";
+    echo "<td><a class='text10'>".$row['idRegistro']."</a></td>";
  
     echo "<td><a class='text10'>".$row['horareg']."</a></td>";
    

@@ -1,8 +1,8 @@
 <meta charset="utf-8">
 <?php
-include "../seguridad.php";
+include "seguridad.php";
 
-        require_once("../conexiones/conexion.php");
+        require_once("conexiones/conexion.php");
         $idpub = $_POST['idpubli'];
       
            

@@ -3,7 +3,7 @@
 <html leng="es">
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" href="../../css/css1a.css">
+<link rel="stylesheet" href="../../css/horariocpanel.css">
 <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
 <script src="../../js/jquery-1.4.2.min.js"></script> 
 <title>Experiencia Educativa</title>
@@ -49,19 +49,33 @@
  echo"
 
 <br><br>";
+?>
+
+<?php echo"<div id='horario'>";
+        require_once("../../conexiones/conexion.php");
+            @session_start();
+                        $fac=$_SESSION['facultad'] ;            
+                            //Preguntamos los nombres de las carreras segun su idfacultad
+                         $mysqlfacu="SELECT nombre, idCarrera,idfacultad FROM carrera WHERE idfacultad = '".$fac."'; ";
+                        $resulf=mysql_query($mysqlfacu)or die(mysql_error());
+                        while($row1=mysql_fetch_array($resulf)){
+                           echo "<div class='marca'>";
+                            echo "<div class='cuadrocar' value='".$row1['idCarrera']."' > <p class='textox'> ".$row1['nombre']." </p></div></div>";
+                            
+                        }
+                        ?>
 
 
-    echo "<div>";
- @session_start();
- require_once("../../conexiones/conexion.php");
- //Preguntamos quien es el administrador para obtener la "idfacultad"
-    $nombreadmin = $_SESSION['nombreUsuario'];
-    $sql = "SELECT idfacultad FROM Cuenta WHERE usuario='".$nombreadmin."';";    
-    $resultado = mysql_query($sql) or die(mysql_error());
-    $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
-    $fac = $fil[0];
-   
-    
+</body><br><br><br></div>
+
+
+<?php
+$sqlcollage="SELECT Nombre,idCarrera,idFacultad FROM carrera WHERE idFacultad = '".$fac."';";
+$resulcollage=mysql_query($sqlcollage)or die(mysql_error());
+while ($collage=mysql_fetch_array($resulcollage)) {
+    ///////////////////
+     echo "<div id='materias".$collage['idCarrera']."' class='experiencias'>";    
+     echo "<div class='regreso'>Regresar</div><br><br><br>";
     //Preguntamos los nombres de las materias segun su idfacultad
      require_once("../../conexiones/conexion.php");
                 @session_start();
@@ -79,27 +93,28 @@
                             
                             </tr>";
                             //Preguntamos los nombres de las carreras segun su idfacultad
-                         $mysqlfacu="SELECT * FROM experienciaeducativa WHERE idfacultad=".$fac.";";
+                         $mysqlfacu="SELECT * FROM experienciaeducativa WHERE idCarrera = ".$collage['idCarrera'].";";
                         $resulf=mysql_query($mysqlfacu) or die(mysql_error());
                         $num_total_registros=mysql_num_rows($resulf);
-                       if ($num_total_registros > 0) {
-    //Limito la busqueda
-    $tamano_pag = 15;
-        $pagina = false;
-                        //examino pagina a mostrar e inicio
-        if (isset($_GET["pagina"]))
-                        $pagina=$_GET['pagina'];
-                        if (!$pagina) {
-                            $inicio=0;
-                            $pagina=1;
-                        }else{
-                            $inicio=($pagina - 1) * $tamano_pag;
-                        }
-                        ///// Calculo todas las paginas
-                        $total_paginas=ceil($num_total_registros / $tamano_pag);
+                       // if ($num_total_registros > 0) {
+                       //      //Limito la busqueda
+                       //      $tamano_pag = 15;
+                       //      $pagina = false;
+                       //      //examino pagina a mostrar e inicio
+                       //  if (isset($_GET["pagina"]))
+                       //  $pagina=$_GET['pagina'];
+                       //  if (!$pagina) {
+                       //      $inicio=0;
+                       //      $pagina=1;
+                       //  }else{
+                       //      $inicio=($pagina - 1) * $tamano_pag;
+                       //  }
+                       //  ///// Calculo todas las paginas
+                       //  $total_paginas=ceil($num_total_registros / $tamano_pag);
                         ///realizamos consulta
                         require_once('../../conexiones/conexion.php');
-                        $consultas="SELECT idexperienciaeducativa,nombre, idCarrera FROM experienciaeducativa ORDER BY nombre DESC LIMIT ".$inicio.",".$tamano_pag;
+                        $consultas="SELECT idexperienciaeducativa,nombre, idCarrera FROM experienciaeducativa WHERE  idCarrera = ".$collage['idCarrera'].";";
+                         // ORDER BY nombre DESC LIMIT ".$inicio.",".$tamano_pag;
                         $rs=mysql_query($consultas)or die(mysql_error());
 
                         while($row1=mysql_fetch_array($rs)){
@@ -131,43 +146,57 @@
                                
                                 echo"</tr>";
             }echo "</legend>";
-        echo "</table></div></div>";
+        echo "</table></div>";
             echo '<p class="textlink">';
 
-    if ($total_paginas > 1) {
-        if ($pagina != 1)
-            echo '<a class="textlink" href="'.'?pagina='.($pagina-1).'"><img src="../../imagenes/izq.gif" border="0"></a>';
-        for ($i=1;$i<=$total_paginas;$i++) {
-            if ($pagina == $i)
-                //si muestro el �ndice de la p�gina actual, no coloco enlace
-                echo "<a class='textlink'>".$pagina."</a>";
-            else
-                //si el �ndice no corresponde con la p�gina mostrada actualmente,
-                //coloco el enlace para ir a esa p�gina
-                echo '  <a class="textlink" href="'.'?pagina='.$i.'">'.$i.'</a>  ';
-        }
-        if ($pagina != $total_paginas)
-            echo '<a class="textlink"><a class="textlink" href="'.'?pagina='.($pagina+1).'"><img src="../../imagenes/der.gif" border="0"></a></a>';
-    }
-    echo '</p>';}
-                            echo "</div>";  
-
-        
-       
+    // if ($total_paginas > 1) {
+    //     if ($pagina != 1)
+    //         echo '<a class="textlink" href="'.'?pagina='.($pagina-1).'"><img src="../../imagenes/izq.gif" border="0"></a>';
+    //     for ($i=1;$i<=$total_paginas;$i++) {
+    //         if ($pagina == $i)
+    //             //si muestro el �ndice de la p�gina actual, no coloco enlace
+    //             echo "<a class='textlink'>".$pagina."</a>";
+    //         else
+    //             //si el �ndice no corresponde con la p�gina mostrada actualmente,
+    //             //coloco el enlace para ir a esa p�gina
+    //             echo '  <a class="textlink" href="'.'?pagina='.$i.'">'.$i.'</a>  ';
+    //     }
+    //     if ($pagina != $total_paginas)
+    //         echo '<a class="textlink"><a class="textlink" href="'.'?pagina='.($pagina+1).'"><img src="../../imagenes/der.gif" border="0"></a></a>';
+    // }
+    echo '</p>';
+// }
+                            echo "</div>";
+    //////////////////////
+}
 
 ?>
+<div id="escogido"></div>
 
-</div>
-</body><br><br><br><br>
+<hr></div>
 <footer>
 <div id="final">
     <img src="../../imagenes/footer.jpg" id="footer">
-</div></footer>
+</div>
+</footer>
 </html>
+
 <script type="text/javascript">
-$(document).ready(function(event){
-    $('#agregar').click(function{
-       window.location = '../Agregar/agregareeducativa.php';
+$(document).ready(function(){
+$('.experiencias').hide();
+});
+$(document).ready(function(){
+    $('.cuadrocar').click(function(){
+        var id= $(this).attr("value");
+        $('#materias'+id).show();
+        $('#horario').hide();
     });
 });
+$(document).ready(function(){
+    $('.regreso').click(function(){
+        $('.experiencias').hide();
+        $('#horario').show();
+    });
+});
+
 </script>

@@ -125,8 +125,8 @@ $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR
                 $reglast_id = mysql_insert_id();
     
 
-$sql="INSERT INTO publicacion(nombre,categoria,fecharea,horarea,fechater,horater,url,lugar,contacto,img,infobreve,info,qr,color,colorletra,diapublicacion,horapublicacion,prioridad,visitas,idregistro,idfacultad,fechavig) 
-VALUES('".$nombre."','".$categoria."','".$fecharea."','".$horarea."','".$fechater."','".$horater."','".$url."','".$lugar."','".$contacto."','".$destino."','".$infob."','".$info."','".$qr."','".$color."','".$colorletra."','".$diapu."','".$horapu."','".$prioridad."',0,'".$reglast_id."','".$facuser."','".$fechavig."')";
+$sql="INSERT INTO publicacion(nombre,categoria,fecharea,horarea,fechater,horater,url,lugar,contacto,img,infobreve,info,qr,color,colorletra,diapublicacion,horapublicacion,prioridad,visitas,idregistro,idfacultad,fechavig,idCuenta) 
+VALUES('".$nombre."','".$categoria."','".$fecharea."','".$horarea."','".$fechater."','".$horater."','".$url."','".$lugar."','".$contacto."','".$destino."','".$infob."','".$info."','".$qr."','".$color."','".$colorletra."','".$diapu."','".$horapu."','".$prioridad."',0,'".$reglast_id."','".$facuser."','".$fechavig."','".$idad."')";
 
 
 $resultado = mysql_query($sql) or die(mysql_error());

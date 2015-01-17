@@ -62,19 +62,13 @@ $(document).ready(function(event){
 
  
  <?php
-   echo "<div id='agregar'>
-   <form  method='post' action='../agregarp.php'>
-   <img src='../../imagenes/add.gif' class='icon'>
-                        <input type='submit' value='Agregar Publicación'  name='agregar' class='conf'>
-                        
-    </form>
-    </div>";
- 
- echo"
-
-<br><br>";
-
-
+    echo "<div id='agregar'>
+        <form  method='post' action='../agregarp.php'>
+        <img src='../../imagenes/add.gif' class='icon'>
+        <input type='submit' value='Agregar Publicación'  name='agregar' class='conf'>                
+        </form>
+        </div>";
+    echo "<br><br>";
     echo "<div>";
  @session_start();
  require_once("../../conexiones/conexion.php");
@@ -90,9 +84,9 @@ $(document).ready(function(event){
      require_once("../../conexiones/conexion.php");
                 @session_start();
                       
-                          echo "<div id='contenedor_carrera'>";
-                           echo "<table>";
-                         echo"<tr>";
+                        echo "<div id='contenedor_carrera'>";
+                        echo "<table>";
+                        echo"<tr>";
                             echo"
                             <th>Publicaciones Disponibles</th>
                             <th></th>
@@ -162,9 +156,8 @@ $(document).ready(function(event){
                         echo '<a class="textlink"><a class="textlink" href="'.'?pagina='.($pagina+1).'"><img src="../../imagenes/der.gif" border="0"></a></a>';
                 }
     echo '</p>'; }
-                            echo "</div>";  
-echo ""; ?>
-</div><br><br>
+                              ?>
+<br><br></div>
 </body>
 <footer>
 <div id="final">

@@ -581,7 +581,7 @@ border-radius: 15px;
 width: 140px;
 height: 90px;
 padding: 15px;
-background: #0674AF;
+background: #27ae60;
 -webkit-border-radius: 15px;
 -moz-border-radius: 15px;
 border-radius: 15px;
@@ -593,4 +593,17 @@ cursor: pointer;
 }
 .textox{
   color:#FFF;
+}
+.regreso{
+
+  float: right;
+    padding: 5px;
+    width: auto;
+    height: 20px;
+    border:none;
+    background-color:#ecf0f1;
+    cursor:pointer;
+    -webkit-box-shadow: 0px 2px 30px 0px rgba(50, 50, 50, 1);
+    -moz-box-shadow:    0px 2px 30px 0px rgba(50, 50, 50, 1);
+    box-shadow:         0px 2px 30px 0px rgba(50, 50, 50, 1);
 }
