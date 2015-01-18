@@ -21,11 +21,11 @@ $(document).ready(function(){
 });
 </script>
 <script language="Javascript" type="text/javascript">
-//<![CDATA[
-<!-- Begin
-document.oncontextmenu = function(){return false}
-// End -->
-//]]>
+// //<![CDATA[
+// <!-- Begin
+// document.oncontextmenu = function(){return false}
+// // End -->
+// //]]>
 </script>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -48,19 +48,16 @@ $(document).ready(function(){
 var tiempoa =setInterval(function(){
 	$('#body1').load("Kisco/anuncio1kiosco.php");
 },300000);
-
 </script>
 <script type="text/javascript">
 $(document).ready(function(){
 	$('#body2').load("Kiosco/anuncio2kiosco.php");
-
 });</script>
 <script type="text/javascript">
 ////////////// Recarga avisos prioridad baja,media cada 5 min ////////////7 
 var tiempoap =setInterval(function(){
 	$('#body2').load("Kiosco/anuncio2kiosco.php");
 },300000);
-
 </script>
 
  <title>Sistema Interactivo de Mensajes</title>

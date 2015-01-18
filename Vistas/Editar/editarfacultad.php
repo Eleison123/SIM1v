@@ -106,7 +106,7 @@ document.oncontextmenu = function(){return false}
         
  
 </fieldset>
-        <input type="submit" value="Guardar" id="btnguardar" name="guardar">
+        <center><input type="submit" value="Guardar" id="btnguardar" name="guardar"></center>
  
 </form>
 </div>

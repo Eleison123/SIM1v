@@ -38,7 +38,7 @@ $(document).ready(function(){
 						$idpub=$respu['idpublicacion'];
 						$prioridad = $respu['prioridad'];
 						$horareg= date("H:i:s");
-    					$fechareg = date("Y-m-d");
+    					$fechareg = date("m-d-Y");
     					$diapublicacion = $respu['diapublicacion'];
 						$horapublicaicon = $respu['horapublicacion'];
 						$fechater = $respu['fechavig'];

@@ -46,7 +46,7 @@
    echo "<div id='agregar'>
    <form  method='post' action='../Agregar/agregarcuenta.php'>
    <img src='../../imagenes/add.gif' class='icon'>
-                        <input type='submit' value='Agregar Usuario'  name='agregar' class='conf'>
+                        <input type='submit' value='Agregar Cuenta'  name='agregar' class='conf'>
                         </form></div>";
  
  echo"

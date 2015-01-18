@@ -73,18 +73,26 @@ $mysqlid="SELECT * FROM horario WHERE idHorario=".$hes."";
 $resulid=mysql_query($mysqlid) or die(mysql_error());
  $fil = mysql_fetch_array($resulid, MYSQL_BOTH);
 
-    
+     $id = $fil['idHorario'];
+     $facultad = $fil['idFacultad'];
+     $ubicacion = $fil['idubicacion'];
+     $NRC = $fil['NRC'];
+     $NRCANT = $fil['NRCANT'];
+     $seccion = $fil['Seccion'];
+     $bloque = $fil['Bloque'];
+     $secretaria = $fil['Secretaria'];
+     $acta = $fil['acta'];    
      $materia = $fil['idExperienciaEducativa'];
      $catedratico = $fil['idCatedratico'];
      $carrera = $fil['idCarrera'];
      $diapub = $fil['diapub'];
-     $horapub=$fil['horapub'];
+     $horapub = $fil['horapub'];
      $lugar = $fil['idubicacion'];
-     $horaini=$fil['horain'];
-     $horafin=$fil['horafin'];
-     $tipo= $fil['tipo'];
-     $dia=$fil['dia'];
-     $vig= $fil['fechavig'];
+     $horaini = $fil['horain'];
+     $horafin = $fil['horafin'];
+     $tipo = $fil['tipo'];
+     $dia = $fil['dia'];
+     $vig = $fil['fechavig'];
 
  }
 
@@ -92,78 +100,99 @@ $resulid=mysql_query($mysqlid) or die(mysql_error());
 <!DOCTYPE html>
 <html leng="es">
 <head>
-<!-- Metas -->
 <meta charset="utf-8">
-<!-- CSS -->
 <link rel="stylesheet" href="../../css/css1a.css">
-       <link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
-<!-- JS -->
+<link rel="shortcut icon" href="../../imagenes/favicon.ico" type="image/png" />
+<script type="text/javascript" src="../../js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="../../js/agregarhorario.js"></script>
 <link rel="stylesheet" href="../../js/jquery-ui-1.11.2/jquery-ui.css">
 <script src="../../js/jquery-1.10.2.js"></script> 
 <script src="../../js/jquery-ui-1.11.2/jquery-ui.js"></script>
 <link rel="stylesheet" href="../../js/jquery-ui-1.11.2/jquery-ui.theme.css">
-        
 <title>Editar Horario</title>
 </head>
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-<!--                                        Inicia Menu                                                                                -->
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 <div id="portada">
     <img id="imgportada" src="../../imagenes/header.jpg">
 </div>
 <center><div id="cabeza">
-    
     <div id="men">
 <nav id="menu">
-    <ul>
-         <li><a href="../pagprin.php" >INICIO</a></li>
-        <li><a href="../Entidades/publicacion.php">PUBLICACIÓN</a></li>
-        <li><a href="../Entidades/horario.php" id="qwerty">HORARIO</a></li>
-        <li><a href="../Entidades/cuenta.php">CUENTA</a></li>
-        <li><a href="../Entidades/facultad.php">FACULTAD</a></li>
-        <li><a href="../Entidades/eeducativa.php">E.EDUCATIVA</a></li>
-        <li><a href="../Entidades/registro.php">REGISTRO</a></li>
-        <li><a href="../Entidades/carrera.php">CARRERA</a></li>  
-        <li><a href="../Entidades/catedratico.php">CATEDRÁTICO</a></li>   
-        <li><a href="../Entidades/ubicaciones.php">UBICACIONES</a></li>   
-        <li><a href="../Entidades/salir.php">SALIR</a></li>  
+            <ul>
+                <li><a href="../pagprin.php" >INICIO</a></li>
+                <li><a>/</a></li>
+                <li><a href="../Entidades/horario.php">HORARIO</a></li>
+                <li><a>/</a></li>
+                <li><a>AGREGRAR HORARIO</a></li>
     </ul>
 </nav>
 </div>
-
 </div></center>
-
 <body>
-    <div id="cuerpo">
-<figure><br><br>
-<img src="../../imagenes/horario.png"><br><br>
-</figure>
-
-
-<form method="post" >
-    <fieldset><legend><a class="text2">DATOS DEL HORARIO</a></legend>
- <input type="text"   hidden name="id" <?php echo "value='"; echo $hes; echo"'";?> >
- <input type="text"  hidden name="fecha" <?php echo "value='"; echo $fecha; echo"'";?> >
- 
-<label for="" class="text1" id="catel1h">Catedratico:</label><br>
+<div id="cuerpo"><br><br>
+<figure>
+<img src="../../imagenes/horario.png">
+</figure><br><br>
+ <fieldset>
+ <legend class="text2">Datos del Horario</legend>
+ <div id="formularioh">
+ <form method="post">
+<label class="text1">TIPO:</label><br>
 <?php 
- 
- @require_once("../../Conexiones/conexion.php");
+    if($tipo==1){$tipox="Escolar";}
+    if($tipo==2){$tipox="Ordinario";}
+    if($tipo==3){$tipox="Extraordinario";}
+    if($tipo==4){$tipox="Título";}
+    if($tipo==5){$tipox="Tutoría";}
+    if($tipo==6){$tipox="Intersemestral";}
+?>
+            <select id="tipo" name="tipo">
+                <?php echo "<option selected value='".$tipo."'>".$tipox."</option>";?>
+            <!-- <option selected value="">Seleccionar tipo</option> -->
+            <option value="1" id="he1">Escolar</option>
+            <option value="2" id="ho2">Ordinario</option>
+            <option value="3" id="hex3">Extraordinario</option>
+            <option value="4" id="ht4">Título</option>
+            <option value="5" id="ht5">Tutoría</option>
+            <option value="6" id="ht5">Intersemestral</option>
+            </select></br>
+<label class="text1" id="nrc">NRC:</label><br>
+<input type="text" id="nrc1"name="nrc" value='<?php echo $NRC; ?>' placeholder="Ejemplo: NTG34" maxlength="5"><br>
+<label class="text1" id="nrcant">NRC ANTERIOR:</label><br>
+<input type="text" id="nrcant1" name="nrcant" value='<?php echo $NRCANT; ?>' placeholder="Ejemplo: NTG86" maxlength="5"><br>
+<label class="text1" id="sec">SECCIÓN:</label><br>
+<input type="text" id="sec1" name="seccion" value='<?php echo $seccion; ?>' placeholder="Ejemplo: S4" maxlength="2"><br>
+<label class="text1" id="blo">BLOQUE:</label><br>
+<input type="text" id="blo1" name="bloque" placeholder="Ejemplo: B4" value='<?php echo $bloque; ?>' maxlength="2"><br>
+
+
+ <label for="" class="text1" id="catel1h">CATEDRÁTICO:</label><br>
+<?php 
+ require_once("../../conexiones/conexion.php");
  //Preguntamos quien es el administrador para obtener la "idfacultad"
     $nombreadmin = $_SESSION['nombreUsuario'];
     $sql = "SELECT idfacultad FROM cuenta WHERE usuario='".$nombreadmin."';";    
     $resultado = mysql_query($sql) or die(mysql_error());
     $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
     $fac = $fil[0];
+    $nombreadmin = $_SESSION['nombreUsuario'];
+    $sqlcate = "SELECT * FROM catedratico WHERE idCatedratico ='".$catedratico."';";    
+    $resultadocate = mysql_query($sqlcate) or die(mysql_error());
+    $filcate = mysql_fetch_array($resultadocate, MYSQL_BOTH);
+    $nombrecate = $filcate['Nombre'];
+    $apcate1 = $filcate['Apellidopaterno'];
+    $apcate2 = $filcate['Apellidomaterno'];
+    $nombrescate = $nombrecate." ".$apcate1." ".$apcate2;
+
     ?>
 <select name="catedratico" id="catedratico" placeholder="catedratico">
+    <option selected value='<?php echo $catedratico; ?>' ><?php echo $nombrescate ?></option>
+
+    
     <?php
     //Preguntamos los nombres de las materias segun su idfacultad
  $mysql="SELECT idcatedratico, nombre, apellidomaterno, apellidopaterno FROM catedratico WHERE idfacultad='".$fac."';";
 $resul=mysql_query($mysql) or die(mysql_error());
 while($row=mysql_fetch_array($resul)){
-    if ($row['idcatedratico']!=$catedratico) {
-        # code...
     echo "<option value='".$row['idcatedratico']."'>";
     echo $row['nombre'];
     echo " ";
@@ -171,120 +200,117 @@ while($row=mysql_fetch_array($resul)){
     echo " ";
     echo  $row['apellidopaterno'] ;
     echo "</option>";
-    }else {
-    echo "<option selected value='".$catedratico."'>";
-    echo $row['nombre'];
-    echo " ";
-    echo $row['apellidomaterno'];
-    echo " ";
-    echo  $row['apellidopaterno'] ;
-    echo "</option>";
-    }
-    
 }
 
 ?>
 </select><br>
-<?php
-@require_once("../../Conexiones/conexion.php");
- //Preguntamos quien es el administrador para obtener la "idfacultad"
-    $nombreadmin = $_SESSION['nombreUsuario'];
-    $sql = "SELECT nombre FROM experienciaeducativa WHERE idExperienciaEducativa='".$materia."';";    
-    $resultado = mysql_query($sql) or die(mysql_error());
-    $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
-    $fam = $fil[0];
-    ?>
-<label for="nrc1h" class="text1" id="nrcl1h">Experiencia Educativa:</label><br>
- 
-<select name="materia" id="materia" placeholder="Materia">
-    <option selected <?php echo"value='"; echo $materia; echo "'"; echo ">"; echo $fam;?></option>
-</select><br>
-
-
-
-
-<label class="text1">Carrera:</label><br>
+<label class="text1">CARRERA:</label><br>
 <?php 
  @session_start();
  require_once("../../conexiones/conexion.php");
  //Preguntamos quien es el administrador para obtener la "idfacultad"
     $nombreadmin = $_SESSION['nombreUsuario'];
-    $sql = "SELECT idfacultad from cuenta where usuario='".$nombreadmin."';";    
+    $sql = "SELECT idfacultad FROM cuenta WHERE usuario='".$nombreadmin."';";    
     $resultado = mysql_query($sql) or die(mysql_error());
     $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
     $fac = $fil[0];
-   
+
+   $sqlcar = "SELECT * FROM carrera WHERE idCarrera ='".$carrera."';";    
+    $resultadocar = mysql_query($sqlcar) or die(mysql_error());
+    $filcar = mysql_fetch_array($resultadocar, MYSQL_BOTH);
+    $nombrecar = $filcar['Nombre'];
     echo "<select name='carrera' id='carrera' placeholder='Carrera'>";
     //Preguntamos los nombres de las materias segun su idfacultad
+    echo "<option selected value='".$carrera."'>".$nombrecar."</option>";
  $mysql="SELECT idcarrera, nombre FROM carrera WHERE idfacultad='".$fac."';";
 $resul=mysql_query($mysql) or die(mysql_error());
 while($row=mysql_fetch_array($resul)){
-    if ($row['idcarrera']!=$carrera) {
+
     echo "<option value='".$row['idcarrera']."'>";
     echo $row['nombre'];
     echo "</option>";
-    }else{
-        echo "<option selected value='".$carrera."'>";
-        echo $row['nombre'];
-    echo "</option>";
-    
 }
-}
-echo "</select><br>";
+echo "</select>";
+
 ?>
+<br>
 
+ <label for="nrc1h" class="text1" id="nrcl1h">EXPERIENCIA EDUCATIVA:</label><br>
 
- 
- <label for="horarea1h" class="text1" id="horareal1h">Hora Inicio:</label><br>
- <input type="time" id="fecharea1h" name="horaini"required class="inhora"<?php echo"value='"; echo $horaini; echo "'";?> >
- <br>
- <label for="horareaf1h" class="text1" id="horareafl1h">Hora Termino:</label><br>
- <input type="time" id="horareaf1h" name="horafin" class="inhora"<?php echo"value='"; echo $horafin; echo "'";?>><br>
- 
- 
-        <label for="dia1h" class="text1">Dia:</label><br>
-            <select id="dia1h" name="dia" class="infecha">
-            <option selected  <?php echo "value='"; echo $dia; echo "'";echo ">"; echo $dia;?></option>
-            <?php 
-            if ($dia!="Lunes") {
-                echo "<option value='Lunes'>Lunes</option>";
-            }
-            if ($dia!="Martes") {
-                echo "<option value='Martes'>Martes</option>";
-            }
-            if ($dia!="Miercoles") {
-                echo "<option value='Miercoles'>Miercoles</option>";
-            }
-            if ($dia!="Jueves") {
-                echo "<option value='Jueves'>Jueves</option>";
-            }
-            if ($dia!="Viernes") {
-                echo"<option value='Viernes'>Viernes</option>";
-            }
-            ?>
-            
-            </select><br>
- 
+<select name="materia" id="materia" placeholder="Materia">
+    <?php
+    $sqlee = "SELECT nombre FROM experienciaeducativa WHERE idExperienciaEducativa='".$materia."';";    
+    $resultadoee = mysql_query($sqlee) or die(mysql_error());
+    $filee = mysql_fetch_array($resultadoee, MYSQL_BOTH);
+    $ee = $filee[0];
+    ?>
+    <option selected value='<?php echo $materia?>'><?php echo $ee?></option>
+  
+</select><br>
+
+        <label for="dia1h" class="text1">DÍA:</label><br>
+            <select id="dia1h" name="dia">
+            <option selected value='<?php echo $dia; ?>'><?php echo $dia; ?></option>
+            <option value="Lunes">Lunes</option>
+            <option value="Martes">Martes</option>
+            <option value="Miercoles">Miercoles</option>
+            <option value="Jueves">Jueves</option>
+            <option value="Viernes">Viernes</option>
+            </select></br>
+
+    <label class="text1">FECHA:</label><br>
+    <input type="text" id="datepicker" value='<?php echo $dia; ?>' maxlength="10" name="dfecha"><br>
+    <label class="text1">ENTREGA ACTA:</label><br>
+    <input type="text" id="datepicker5" value='<?php echo $acta; ?>' maxlength="10" name="acta"><br>
     
-        <label for="lugar1p" class="text1">Lugar de Realizacion:</label><br>
-        <input type="text" id="lugar1p" placeholder="Lugar de realizacion de la publicacion" name="lugar"required
-        <?php echo "value='"; echo $lugar; echo "'"; ?>><br><br>
-
-</fieldset>
-<fieldset><legend><a class="text2">Vigencia</a></legend>
-    <a class="text1">La vigencia ayuda a que el sistema no muestre horarios pasados.</a><br><br>
-<label><a class="text1">Fecha termino de Vigencia</a></label>
-
-<input type="text" id="datepicker" class="infecha" name="fechvig" <?php echo"value='"; echo $vig; echo"'"; ?> > 
-</fieldset>
-        <input type="submit" value="GUARDAR" id="btnguardar" name="guardar">
+ <label for="horarea1h" class="text1" id="horareal1h">HORA INICIO:</label><br>
+ <input type="time" id="fecharea1h" name="horaini" value='<?php echo $horaini; ?>'class="inhora"required><br>
  
-</form>
-</body></div>
-<div id="final">
+ <label for="horareaf1h" class="text1" id="horareafl1h">HORA TÉRMINO:</label><br>
+ <input type="time" id="horareaf1h" name="horafin" value='<?php echo $horafin; ?>' class="inhora"></br>
+    
+        <label for="lugar1p" class="text1">LUGAR DE REALIZACIÓN:</label><br>
+        <select id="lugar1p" name="lugar" required>
+            <?php
+            $sqlu = "SELECT nombre FROM ubicacion WHERE idubicacion='".$lugar."';";    
+            $resultadou = mysql_query($sqlu) or die(mysql_error());
+            $filu = mysql_fetch_array($resultadou, MYSQL_BOTH);
+            $u = $filu[0];
+            ?>
+            <option value='<?php echo $lugar; ?>' selected><?php echo $u; ?></option>
+            <?php   
+                $sqlugar= "SELECT idubicacion,nombre FROM ubicacion WHERE idFacultad = '".$fac."';";
+                $result=mysql_query($sqlugar) or die (mysql_error());
+                while ($row2=mysql_fetch_array($result)) {
+                    echo "<option value='".$row2['idubicacion']."'>";
+                    echo $row2['nombre'];
+                    echo "</option>";
+                  }  
+            ?>
+        </select><br>
+        <label class="text1">SECRETARIA:</label><br>
+        <input type="text" name="secretaria" value='<?php echo $secretaria; ?>' id="secre" placeholder="Ejemplo: Catalina"><br>
+</fieldset><br><br>
+<fieldset><legend><a class="text2">Vigencia</a></legend>
+    <a class="text1">*La vigencia ayuda a que el sistema no muestre horarios pasados.</a><br><br>
+
+    <label><a class="text1">FECHA DE PUBLICACIÓN:</a></label><br>
+    <input type="text" maxlength="10" value='<?php echo $diapub; ?>' id="datepicker2" class="infecha" name="fechapub"><br>
+
+    <label><a class="text1">HORA PUBLICACIÓN:</a></label><br>
+    <input type="time" class="inhora" value='<?php echo $horapub; ?>' name="horapub"><br>
+
+<label><a class="text1">FECHA VIGENCIA:</a></label><br>
+<input type="text" maxlength="10" id="datepicker4" value='<?php echo $vig; ?>' class="infecha" name="fechavig" required/>
+</fieldset>
+        <center><input type="submit" value="GUARDAR" id="btnguardar" name="guardar"></center>
+  </form>
+</div>
+    </div>
+</body>
+    <div id="final">
     <img src="../../imagenes/footer.jpg" id="footer">
 </div>
-
 </html>
 <script>
   $(function() {
@@ -303,6 +329,10 @@ echo "</select><br>";
     $("#datepicker4").datepicker();
   });
   $(function() {
+    $("#datepicker5").datepicker();
+  });
+  $(function() {
     $( document ).tooltip();
   });
+
   </script>
