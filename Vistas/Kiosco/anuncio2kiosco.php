@@ -1,8 +1,6 @@
 <?php
 include"../seguridadkiosko.php";
 ?>
-
-
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#rot').cycle({
@@ -26,7 +24,7 @@ $(document).ready(function(){
 			require_once("../../conexiones/conexion.php");
  			@session_start();
  			$fac=$_SESSION['facultad'] ;
- 			$sqlpu="SELECT idpublicacion,nombre,categoria,fecharea,horarea,fechater,horater,url,lugar,contacto,img,infobreve,info,qr,color,colorletra,diapublicacion,horapublicacion,prioridad,visitas,idregistro,idfacultad,fechavig FROM publicacion WHERE idfacultad='".$fac."' order by prioridad";
+ 			$sqlpu="SELECT * FROM publicacion WHERE idfacultad='".$fac."' order by prioridad";
  			$respus=mysql_query($sqlpu) or die(mysql_error());
  			$total=mysql_num_rows($respus);
  			
@@ -35,33 +33,37 @@ $(document).ready(function(){
 					/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 					///          	    Asignamos Variables                                                               ///
 					/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-						$idpub=$respu['idpublicacion'];
-						$prioridad = $respu['prioridad'];
-						$horareg= date("H:i:s");
-    					$fechareg = date("m-d-Y");
-    					$diapublicacion = $respu['diapublicacion'];
-						$horapublicaicon = $respu['horapublicacion'];
-						$fechater = $respu['fechavig'];
+						$idpub=$respu['idPublicacion'];
+    $prioridad = $respu['Prioridad'];
+    $horareg= date("H:i:s");
+    $fechareg = date("d-m-Y");
+    $diap = strtotime($respu['diapublicacion']);
+    $diapubli = date("d-m-Y",$diap);
+    $diapublicacion = $diapubli;
+    $horapublicaicon = $respu['horapublicacion'];
+    $fter = strtotime($respu['fechater']);
+    $fechter = date("d-m-Y",$fter);
+    $fechater = $fechter;
+    $horater=$respu['horater'];
  							if($prioridad>="3"){
  								if($prioridad<="4"){
- 								if($fechareg>$fechater){
-									$prioridaddd=5;
-			$res=mysql_query("UPDATE  publicacion SET prioridad =".$prioridaddd." where idpublicacion=".$idpub."")or die(mysql_error());
-								}
+	 								if($fechareg>$fechater){
+										$prioridaddd=5;
+										$res=mysql_query("UPDATE  publicacion SET prioridad =".$prioridaddd." where idpublicacion=".$idpub."")or die(mysql_error());
+									}
  									if ($fechareg>=$diapublicacion) {
  										$nav=$nav+1;
 										//////////////////Asignamos Variables//////////////////////////////////
-										$nombre = $respu['nombre'];
+										$nombre = $respu['Nombre'];
 										$categoria = $respu['categoria'];
-									
-										$color = $respu['color'];
-										$colorletra = $respu['colorletra'];
-										$qr=$respu['qr'];
+										$color = $respu['Color'];
+										$colorletra = $respu['Colorletra'];
+										$qr=$respu['QR'];
 										/////////////////////////////////////////7
 										echo "<div id='anuncio2' style='background: ".$color."' >";
 										echo "<div id='titulox'>";
 										echo"<h1 style='color:".$colorletra."' id='titulo'class='texto10'>".$nombre."</h1></div>";
-										echo "<hr>";
+										echo "";
 										echo "<a class='texto1' style='color:".$colorletra."'>".$categoria."</a>";
 										echo "<div id='qrbajo'>
 										<img id='qrimg1' src='".$qr."'>
