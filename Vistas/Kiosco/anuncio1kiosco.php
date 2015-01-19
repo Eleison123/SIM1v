@@ -72,7 +72,7 @@
                     $numavi2=$numavi2+1;
                     echo "<div id='anuncio'style='background:".$color."'>";
                     echo "<h1 style='color:".$colorletra."'id='titulo' class='texto10'>".$nombre."</h1>";
-                    echo "<hr>";
+                    echo "";
                         echo "<div >";
                             echo "<div id='infor'>";
                             echo "<br><p style='color:".$colorletra."'  class='infor'>".$infobreve."</p><br>";
@@ -110,7 +110,7 @@
                     echo "<div id='anuncio1'style='background:".$color."'>";
                     echo "<img id='imagen' src=".$img."  >";
                     echo "<h1 style='color:".$colorletra."'  id='titulo' class='texto1'>".$nombre."</h1>";
-                    echo "<hr>";
+                    echo "";
                         echo "<div >";
                             echo "<div id='inform'>";
                             echo "<p style='color:".$colorletra."'  class='inform'>".$infobreve."</p><br>";
@@ -166,7 +166,7 @@
                         echo"<div id='anuncio1'style='background:".$color."'>";
                             // echo"<img id='imagen' src=".$img."  >";
                             echo"<h1 style='color:".$colorletra."'id='titulo' class='texto10'>".$nombre."</h1>";
-                            echo "<hr>";
+                            echo "";
                                 echo"<div >";
                                     echo"<div id='inform'>";
                                     echo "<p style='color:".$colorletra."'  class='inform'>".$infobreve."</p><br>";
@@ -201,7 +201,7 @@
                         echo"<div id='anuncio1'style='background:".$color."'>";
                             echo"<img id='imagen' src=".$img."  >";
                             echo"<h1 style='color:".$colorletra."'id='titulo' class='texto10'>".$nombre."</h1>";
-                            echo "<hr>";
+                            echo "";
                                 echo"<div >";
                                     echo"<div id='inform'>";
                                     echo "<p style='color:".$colorletra."'  class='inform'>".$infobreve."</p><br>";
