@@ -21,10 +21,10 @@ $(document).ready(function(){
 		<div id="rot" class="content2">
 			<?php
   				///////////////////////// Iniciamos prioridades bajas ///////////////////////////////////
-			require_once("../../conexiones/conexion.php");
+			require_once("../../Conexiones/conexion.php");
  			@session_start();
  			$fac=$_SESSION['facultad'] ;
- 			$sqlpu="SELECT * FROM publicacion WHERE idfacultad='".$fac."' order by prioridad";
+ 			$sqlpu="SELECT * FROM publicacion WHERE idFacultad='".$fac."' order by Prioridad";
  			$respus=mysql_query($sqlpu) or die(mysql_error());
  			$total=mysql_num_rows($respus);
  			
@@ -34,22 +34,22 @@ $(document).ready(function(){
 					///          	    Asignamos Variables                                                               ///
 					/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 						$idpub=$respu['idPublicacion'];
-    $prioridad = $respu['Prioridad'];
-    $horareg= date("H:i:s");
-    $fechareg = date("d-m-Y");
-    $diap = strtotime($respu['diapublicacion']);
-    $diapubli = date("d-m-Y",$diap);
-    $diapublicacion = $diapubli;
-    $horapublicaicon = $respu['horapublicacion'];
-    $fter = strtotime($respu['fechater']);
-    $fechter = date("d-m-Y",$fter);
-    $fechater = $fechter;
-    $horater=$respu['horater'];
+					    $prioridad = $respu['Prioridad'];
+					    $horareg= date("H:i:s");
+					    $fechareg = date("d-m-Y");
+					    $diap = strtotime($respu['diapublicacion']);
+					    $diapubli = date("d-m-Y",$diap);
+					    $diapublicacion = $diapubli;
+					    $horapublicaicon = $respu['horapublicacion'];
+					    $fter = strtotime($respu['fechater']);
+					    $fechter = date("d-m-Y",$fter);
+					    $fechater = $fechter;
+					    $horater=$respu['horater'];
  							if($prioridad>="3"){
  								if($prioridad<="4"){
 	 								if($fechareg>$fechater){
 										$prioridaddd=5;
-										$res=mysql_query("UPDATE  publicacion SET prioridad =".$prioridaddd." where idpublicacion=".$idpub."")or die(mysql_error());
+										$res=mysql_query("UPDATE publicacion SET Prioridad =".$prioridaddd." WHERE idPublicacion=".$idpub."")or die(mysql_error());
 									}
  									if ($fechareg>=$diapublicacion) {
  										$nav=$nav+1;

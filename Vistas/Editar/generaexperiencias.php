@@ -2,17 +2,17 @@
 
     echo "<div>";
  @session_start();
- require_once("../../conexiones/conexion.php");
+ require_once("../../Conexiones/conexion.php");
  //Preguntamos quien es el administrador para obtener la "idfacultad"
     $nombreadmin = $_SESSION['nombreUsuario'];
-    $sql = "SELECT idfacultad FROM Cuenta WHERE usuario='".$nombreadmin."';";    
+    $sql = "SELECT idFacultad FROM Cuenta WHERE Usuario='".$nombreadmin."';";    
     $resultado = mysql_query($sql) or die(mysql_error());
     $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
     $fac = $fil[0];
    
     
     //Preguntamos los nombres de las materias segun su idfacultad
-     require_once("../../conexiones/conexion.php");
+     require_once("../../Conexiones/conexion.php");
                 @session_start();
                        
                           echo "<div id='contenedor_carrera'>";
@@ -47,8 +47,8 @@
                         ///// Calculo todas las paginas
                         $total_paginas=ceil($num_total_registros / $tamano_pag);
                         ///realizamos consulta
-                        require_once('../../conexiones/conexion.php');
-                        $consultas="SELECT idexperienciaeducativa,nombre, idCarrera FROM experienciaeducativa WHERE  idcarrera = ".$_GET['id']." ORDER BY nombre DESC LIMIT ".$inicio.",".$tamano_pag;
+                        require_once('../../Conexiones/conexion.php');
+                        $consultas="SELECT idexperienciaeducativa,Nombre, idCarrera FROM experienciaeducativa WHERE  idCarrera = ".$_GET['id']." ORDER BY nombre DESC LIMIT ".$inicio.",".$tamano_pag;
                         $rs=mysql_query($consultas)or die(mysql_error());
 
                         while($row1=mysql_fetch_array($rs)){

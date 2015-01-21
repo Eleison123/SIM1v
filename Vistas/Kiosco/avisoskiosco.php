@@ -100,7 +100,7 @@ document.oncontextmenu = function(){return false}
 <div id="beca1" name="beca1"></div>
 <div id="beca2" name="beca2">
 	<?php
- require_once("../../conexiones/conexion.php");
+ require_once("../../Conexiones/conexion.php");
                 @session_start();
                         $fac=$_SESSION['facultad'] ;
                         
@@ -126,7 +126,7 @@ document.oncontextmenu = function(){return false}
 <div id="empleo1" name="empleo1"></div>
 <div id="empleo2" name="empleo2">
 <?php
- require_once("../../conexiones/conexion.php");
+ require_once("../../Conexiones/conexion.php");
                 @session_start();
                         $fac=$_SESSION['facultad'] ;
                         
@@ -151,7 +151,7 @@ document.oncontextmenu = function(){return false}
 <div id="certificacion1" name="certificacion1"></div>
 <div id="certificacion2" name="certificacion2">
 <?php
- require_once("../../conexiones/conexion.php");
+ require_once("../../Conexiones/conexion.php");
                 @session_start();
                         $fac=$_SESSION['facultad'] ;
                         
@@ -174,7 +174,7 @@ document.oncontextmenu = function(){return false}
 <div id="seminario1" name="seminario1"></div>
 <div id="seminario2" name="seminario2">
 <?php
- require_once("../../conexiones/conexion.php");
+ require_once("../../Conexiones/conexion.php");
                 @session_start();
                         $fac=$_SESSION['facultad'] ;
                         
@@ -197,7 +197,7 @@ document.oncontextmenu = function(){return false}
 <div id="junta1" name="junta1"></div>
 <div id="junta2" name="junta2">
 <?php
- require_once("../../conexiones/conexion.php");
+ require_once("../../Conexiones/conexion.php");
                 @session_start();
                         $fac=$_SESSION['facultad'] ;
                         
@@ -220,7 +220,7 @@ document.oncontextmenu = function(){return false}
 <div id="aviso1" name="aviso1"></div>
 <div id="aviso2" name="aviso2">
 <?php
- require_once("../../conexiones/conexion.php");
+ require_once("../../Conexiones/conexion.php");
                 @session_start();
                         $fac=$_SESSION['facultad'] ;
                         
@@ -245,7 +245,7 @@ document.oncontextmenu = function(){return false}
 <div id="otro1" name="otro1"></div>
 <div id="otro2" name="otro2">
 <?php
- require_once("../../conexiones/conexion.php");
+ require_once("../../Conexiones/conexion.php");
                 @session_start();
                         $fac=$_SESSION['facultad'] ;
                         

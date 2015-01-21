@@ -1,4 +1,4 @@
-<?php include "../seguridad.php"; ?>
+<?php include "seguridad.php"; ?>
 <!DOCTYPE html>
 <html leng="es">
 <head>
@@ -57,7 +57,7 @@
  require_once("../../Conexiones/conexion.php");
  //Preguntamos quien es el administrador para obtener la "idfacultad"
     $nombreadmin = $_SESSION['nombreUsuario'];
-    $sql = "SELECT idfacultad from Cuenta where usuario='".$nombreadmin."';";    
+    $sql = "SELECT idFacultad from cuenta where Usuario='".$nombreadmin."';";    
     $resultado = mysql_query($sql) or die(mysql_error());
     $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
     $fac = $fil[0];
@@ -79,7 +79,7 @@
                             
                             </tr>";
                             //Preguntamos los nombres de las carreras segun su idfacultad
-                         $mysqlfacu="SELECT * FROM catedratico WHERE idfacultad=".$fac.";";
+                         $mysqlfacu="SELECT * FROM catedratico WHERE idFacultad=".$fac.";";
                         $resulf=mysql_query($mysqlfacu) or die(mysql_error());
                         $num_total_registros=mysql_num_rows($resulf);
                        if ($num_total_registros > 0) {
@@ -98,16 +98,16 @@
                         ///// Calculo todas las paginas
                         $total_paginas=ceil($num_total_registros / $tamano_pag);
                         ///realizamos consulta
-                        require_once('../../conexiones/conexion.php');
-                        $consultas="SELECT idcatedratico,nombre,apellidomaterno,apellidopaterno FROM catedratico WHERE idfacultad= ".$fac." ORDER BY nombre DESC LIMIT ".$inicio.",".$tamano_pag;
+                        require_once('../../Conexiones/conexion.php');
+                        $consultas="SELECT idCatedratico,Nombre,Apellidomaterno,Apellidopaterno FROM catedratico WHERE idFacultad= ".$fac." ORDER BY nombre DESC LIMIT ".$inicio.",".$tamano_pag;
                         $rs=mysql_query($consultas)or die(mysql_error());
 
                         while($row1=mysql_fetch_array($rs)){
                                    echo "<tr>";
                                    
-                                        echo "<td><a class='text20'>".$row1['nombre']." </a>";
-                                        echo "<a class='text20'>".$row1['apellidopaterno']." </a>";
-                                        echo "<a class='text20'>".$row1['apellidomaterno']."</a></td>";
+                                        echo "<td><a class='text20'>".$row1['Nombre']." </a>";
+                                        echo "<a class='text20'>".$row1['Apellidopaterno']." </a>";
+                                        echo "<a class='text20'>".$row1['Apellidomaterno']."</a></td>";
                                
                                        
 

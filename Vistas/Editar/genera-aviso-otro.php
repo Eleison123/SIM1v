@@ -1,5 +1,5 @@
 <?php
-require_once("../../conexiones/conexion.php");
+require_once("../../Conexiones/conexion.php");
 
 
  session_start();

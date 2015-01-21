@@ -1,7 +1,7 @@
 <?php
 
  
-require_once("../conexiones/conexion.php");
+require_once("../Conexiones/conexion.php");
  session_start();
 
     $consulta = "SELECT idcarrera, nombre, idfacultad FROM carrera WHERE idfacultad = ".$_SESSION['facultad']." ";

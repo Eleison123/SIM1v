@@ -13,11 +13,11 @@
         <div id="rotar" class="content2">
 <?php
     $numavi2=0;
-    require_once("../../conexiones/conexion.php");
+    require_once("../../Conexiones/conexion.php");
     @session_start();
     $fac=$_SESSION['facultad'] ;
     $prio=0;               
-    $sqlpu="SELECT * FROM publicacion WHERE idfacultad='".$fac."' order by prioridad";
+    $sqlpu="SELECT * FROM publicacion WHERE idFacultad='".$fac."' order by prioridad";
     $respus=mysql_query($sqlpu) or die(mysql_error());
     $total=mysql_num_rows($respus);
     if ($total==0) {

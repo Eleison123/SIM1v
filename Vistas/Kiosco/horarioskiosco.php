@@ -93,7 +93,7 @@
 <!--inicia Horario escolar -->
 <div id="horarioes1"></div>
     <?php echo"<div id='horarioes'>";
-        require_once("../../conexiones/conexion.php");
+        require_once("../../Conexiones/conexion.php");
             @session_start();
                         $fac=$_SESSION['facultad'] ;            
                             //Preguntamos los nombres de las carreras segun su idfacultad
@@ -110,7 +110,7 @@
 <!--Inicia Horario Examenes-->
 <div id="horarioex1"></div>
 <?php echo "<div id='horarioex'>";   
-                    require_once("../../conexiones/conexion.php");
+                    require_once("../../Conexiones/conexion.php");
                 @session_start();
                         $fac=$_SESSION['facultad'] ;
                             //Preguntamos los nombres de las carreras segun su idfacultad
@@ -130,7 +130,7 @@ echo"</div>"; ?>
 <?php
 echo "<div id='horariointer1'></div>";
 echo "<div id='horariointer'>";
-    require_once("../../conexiones/conexion.php");
+    require_once("../../Conexiones/conexion.php");
         @session_start();
                         $fac=$_SESSION['facultad'] ;
                             //Preguntamos los nombres de las carreras segun su idfacultad
@@ -149,7 +149,7 @@ echo "<div id='horariointer'>";
         $mysqlm="SELECT idCarrera FROM carrera WHERE idfacultad = '".$fac."'; ";
         $resulm=mysql_query($mysqlm) or die(mysql_error());
         while ($m=mysql_fetch_array($resulm)) {
-             require_once("../../conexiones/conexion.php");
+             require_once("../../Conexiones/conexion.php");
                 @session_start();
                 $fac=$_SESSION['facultad'] ; 
                 $consulta = "SELECT * FROM experienciaeducativa WHERE idCarrera = '".$m['idCarrera']."'  ";
@@ -174,7 +174,7 @@ echo "<div id='horariointer'>";
         $mysqlm="SELECT idCarrera FROM carrera WHERE idfacultad = '".$fac."'; ";
         $resulm=mysql_query($mysqlm) or die(mysql_error());
         while ($m=mysql_fetch_array($resulm)) {
-             require_once("../../conexiones/conexion.php");
+             require_once("../../Conexiones/conexion.php");
                 @session_start();
                 $fac=$_SESSION['facultad'] ; 
                 $consulta = "SELECT * FROM experienciaeducativa WHERE idCarrera = '".$m['idCarrera']."'  ";
@@ -199,7 +199,7 @@ echo "<div id='horariointer'>";
         $mysqlm="SELECT idCarrera FROM carrera WHERE idfacultad = '".$fac."'; ";
         $resulm=mysql_query($mysqlm) or die(mysql_error());
         while ($m=mysql_fetch_array($resulm)) {
-             require_once("../../conexiones/conexion.php");
+             require_once("../../Conexiones/conexion.php");
                 @session_start();
                 $fac=$_SESSION['facultad'] ; 
                 $consulta = "SELECT * FROM experienciaeducativa WHERE idCarrera = '".$m['idCarrera']."'  ";

@@ -1,4 +1,4 @@
-<?php include "../seguridad.php"; ?>
+<?php include "seguridad.php"; ?>
 <!DOCTYPE html>
 <html leng="es">
     <head>
@@ -51,17 +51,17 @@
  echo"<br><br>";
     echo "<div>";
  @session_start();
- require_once("../../conexiones/conexion.php");
+ require_once("../../Conexiones/conexion.php");
  //Preguntamos quien es el administrador para obtener la "idfacultad"
     $nombreadmin = $_SESSION['nombreUsuario'];
-    $sql = "SELECT idfacultad FROM cuenta WHERE usuario='".$nombreadmin."';";    
+    $sql = "SELECT idfacultad FROM cuenta WHERE Usuario='".$nombreadmin."';";    
     $resultado = mysql_query($sql) or die(mysql_error());
     $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
     $fac = $fil[0];
    
     
     //Preguntamos los nombres de las materias segun su idfacultad
-     require_once("../../conexiones/conexion.php");
+     require_once("../../Conexiones/conexion.php");
                 @session_start();
                        
                           echo "<div id='contenedor_carrera'>";
@@ -78,7 +78,7 @@
                             
                             </tr>";
                             //Preguntamos los nombres de las carreras segun su idfacultad
-                         $mysqlfacu="SELECT * FROM carrera WHERE idfacultad=".$fac.";";
+                         $mysqlfacu="SELECT * FROM carrera WHERE idFacultad=".$fac.";";
                         $resulf=mysql_query($mysqlfacu) or die(mysql_error());
                         $num_total_registros=mysql_num_rows($resulf);
                        if ($num_total_registros > 0) {
@@ -97,13 +97,13 @@
                         ///// Calculo todas las paginas
                         $total_paginas=ceil($num_total_registros / $tamano_pag);
                         ///realizamos consulta
-                        require_once('../../conexiones/conexion.php');
-                        $consultas="SELECT idcarrera,nombre FROM carrera ORDER BY nombre DESC LIMIT ".$inicio.",".$tamano_pag;
+                        require_once('../../Conexiones/conexion.php');
+                        $consultas="SELECT idCarrera,Nombre FROM carrera ORDER BY Nombre DESC LIMIT ".$inicio.",".$tamano_pag;
                         $rs=mysql_query($consultas)or die(mysql_error());
 
                         while($row1=mysql_fetch_array($rs)){
                                    echo "<tr>";
-                                        echo "<td><a class='text20'>".$row1['nombre']."</a></td>";
+                                        echo "<td><a class='text20'>".$row1['Nombre']."</a></td>";
                                             echo "<td>
                                                     <form  method='post' action='../Editar/editarcarrera.php'>
                                                         <input type='hidden' name='idcar' value=".$row1['idcarrera'].">

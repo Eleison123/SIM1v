@@ -1,5 +1,5 @@
 <?php
-require_once("../../conexiones/conexion.php");
+require_once("../../Conexiones/conexion.php");
     $consultaor = "SELECT * FROM horario WHERE idExperienciaEducativa = ".$_GET['id']." AND tipo = '2'  ORDER BY idExperienciaEducativa";
     $consultaex = "SELECT * FROM horario WHERE idExperienciaEducativa = ".$_GET['id']." AND tipo = '3'  ORDER BY idExperienciaEducativa";
     $consultati = "SELECT * FROM horario WHERE idExperienciaEducativa = ".$_GET['id']." AND tipo = '4'  ORDER BY idExperienciaEducativa";
@@ -20,17 +20,17 @@ if($queryor1!=""){if($queryex1!=""){if($queryti1!=""){
     while ($filati = mysql_fetch_array($queryti)) {
         $fechareg = date("Y-m-d");
         if($fechareg>$filaor['fechavig']){
-            @require_once("../conexiones/conexion.php");
+            @require_once("../Conexiones/conexion.php");
             $res=mysql_query("DELETE from horario where idHorario=".$filaor['idHorario'].";")or die(mysql_error());
             mysql_close();
         }
         if($fechareg>$filaex['fechavig']){
-            @require_once("../conexiones/conexion.php");
+            @require_once("../Conexiones/conexion.php");
             $res=mysql_query("DELETE from horario where idHorario=".$filaex['idHorario'].";")or die(mysql_error());
             mysql_close();
         }
         if($fechareg>$filati['fechavig']){
-            @require_once("../conexiones/conexion.php");
+            @require_once("../Conexiones/conexion.php");
             $res=mysql_query("DELETE from horario where idHorario=".$filati['idHorario'].";")or die(mysql_error());
             mysql_close();
         }
@@ -161,17 +161,17 @@ if($queryor1!=""){if($queryex1!=""){if($queryti1==""){
     while ($filati = mysql_fetch_array($queryti)) {
         $fechareg = date("Y-m-d");
         if($fechareg>$filaor['fechavig']){
-            @require_once("../conexiones/conexion.php");
+            @require_once("../Conexiones/conexion.php");
             $res=mysql_query("DELETE from horario where idHorario=".$filaor['idHorario'].";")or die(mysql_error());
             mysql_close();
         }
         if($fechareg>$filaex['fechavig']){
-            @require_once("../conexiones/conexion.php");
+            @require_once("../Conexiones/conexion.php");
             $res=mysql_query("DELETE from horario where idHorario=".$filaex['idHorario'].";")or die(mysql_error());
             mysql_close();
         }
         if($fechareg>$filati['fechavig']){
-            @require_once("../conexiones/conexion.php");
+            @require_once("../Conexiones/conexion.php");
             $res=mysql_query("DELETE from horario where idHorario=".$filati['idHorario'].";")or die(mysql_error());
             mysql_close();
         }
@@ -283,13 +283,13 @@ if($queryor1!=""){if($queryti1!=""){if($queryex1==""){
     while ($filati = mysql_fetch_array($queryti)) {
         $fechareg = date("Y-m-d");
         if($fechareg>$filaor['fechavig']){
-            @require_once("../conexiones/conexion.php");
+            @require_once("../Conexiones/conexion.php");
             $res=mysql_query("DELETE from horario where idHorario=".$filaor['idHorario'].";")or die(mysql_error());
             mysql_close();
         }
 
         if($fechareg>$filati['fechavig']){
-            @require_once("../conexiones/conexion.php");
+            @require_once("../Conexiones/conexion.php");
             $res=mysql_query("DELETE from horario where idHorario=".$filati['idHorario'].";")or die(mysql_error());
             mysql_close();
         }
@@ -401,12 +401,12 @@ if($queryti1!=""){if($queryex1!=""){if($queryor1==""){
     while ($filati = mysql_fetch_array($queryti)) {
         $fechareg = date("Y-m-d");
         if($fechareg>$filaex['fechavig']){
-            @require_once("../conexiones/conexion.php");
+            @require_once("../Conexiones/conexion.php");
             $res=mysql_query("DELETE from horario where idHorario=".$filaex['idHorario'].";")or die(mysql_error());
             mysql_close();
         }
         if($fechareg>$filati['fechavig']){
-            @require_once("../conexiones/conexion.php");
+            @require_once("../Conexiones/conexion.php");
             $res=mysql_query("DELETE from horario where idHorario=".$filati['idHorario'].";")or die(mysql_error());
             mysql_close();
         }
@@ -516,7 +516,7 @@ if($queryti1!=""){if($queryex1==""){if($queryor1==""){
     while ($filati = mysql_fetch_array($queryti)) {
         $fechareg = date("Y-m-d");
         if($fechareg>$filati['fechavig']){
-            @require_once("../conexiones/conexion.php");
+            @require_once("../Conexiones/conexion.php");
             $res=mysql_query("DELETE from horario where idHorario=".$filati['idHorario'].";")or die(mysql_error());
             mysql_close();
         }
@@ -607,7 +607,7 @@ if($queryex1!=""){if($queryor1==""){if($queryti1==""){
     while ($filaex = mysql_fetch_array($queryex)) {
         $fechareg = date("Y-m-d");
         if($fechareg>$filaex['fechavig']){
-            @require_once("../conexiones/conexion.php");
+            @require_once("../Conexiones/conexion.php");
             $res=mysql_query("DELETE from horario where idHorario=".$filaex['idHorario'].";")or die(mysql_error());
             mysql_close();
         }
@@ -699,7 +699,7 @@ if($queryor1!=""){if($queryti1==""){if($queryex1==""){
     while ($filaor = mysql_fetch_array($queryor)) { 
         $fechareg = date("Y-m-d");
         if($fechareg>$filaor['fechavig']){
-            @require_once("../conexiones/conexion.php");
+            @require_once("../Conexiones/conexion.php");
             $res=mysql_query("DELETE from horario where idHorario=".$filaor['idHorario'].";")or die(mysql_error());
             mysql_close();
         }

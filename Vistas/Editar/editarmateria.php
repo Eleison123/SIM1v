@@ -2,8 +2,8 @@
 
 
 <?php
-include"../seguridad.php";
-require_once("../../conexiones/conexion.php");
+include"seguridad.php";
+require_once("../../Conexiones/conexion.php");
 if (@$_POST['guardar']) {
 
 
@@ -108,7 +108,7 @@ document.oncontextmenu = function(){return false}
 <label class="text1">Carrera:</label><br>
 <?php
         @session_start();
- require_once("../../conexiones/conexion.php");
+ require_once("../../Conexiones/conexion.php");
  //Preguntamos quien es el administrador para obtener la "idfacultad"
     $nombreadmin = $_SESSION['nombreUsuario'];
     $sql = "SELECT idfacultad FROM cuenta where usuario='".$nombreadmin."';";    

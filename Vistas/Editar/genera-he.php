@@ -1,5 +1,5 @@
 <?php
-require_once("../../conexiones/conexion.php");
+require_once("../../Conexiones/conexion.php");
 @session_start();
 $fac=$_SESSION['facultad'] ; 
 $consulta = "SELECT * FROM horario WHERE idExperienciaEducativa = ".$_GET['id']." AND tipo = '1' ";

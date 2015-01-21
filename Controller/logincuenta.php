@@ -12,7 +12,7 @@ if(@$_POST['entrar']){
     $salt='/$fei$';
     //$contrasenia=sha1($contrasenia);
 	$contrasenia=sha1($salt . $contrasenia);
-	$sql = "SELECT Usuario, Contrasena, idFacultad FROM Cuenta WHERE Usuario='".$usuario."' and Contrasena='".$contrasenia."';";	
+	$sql = "SELECT Usuario, Contrasena, idFacultad FROM cuenta WHERE Usuario='".$usuario."' and Contrasena='".$contrasenia."';";	
 	$resultado = mysql_query($sql)or die (mysql_error());
 	mysql_close();
 	$fila = mysql_fetch_array($resultado, MYSQL_BOTH);

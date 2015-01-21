@@ -10,10 +10,11 @@
 </script>
 
 <?php
-include"../seguridad.php";
-require_once("../../conexiones/conexion.php");
+include"seguridad.php";
+require_once("../../Conexiones/conexion.php");
  if (@$_POST['guardar']) {
-if(isset($_POST['fechvig'])and
+  
+if(isset($_POST['fechavig'])and
 ($_POST['materia'])and
 ($_POST['catedratico'])and
 ($_POST['carrera'])and
@@ -39,15 +40,33 @@ if(isset($_POST['fechvig'])and
      $lugar1 = filter_var($lugar1, FILTER_SANITIZE_SPECIAL_CHARS);
      $id1= mysql_real_escape_string($_POST['id']);
      $id1 = filter_var($id1, FILTER_SANITIZE_SPECIAL_CHARS);
-     $fecha1 = mysql_real_escape_string($_POST['fecha']);
+     $fecha1 = mysql_real_escape_string($_POST['fechapub']);
      $fecha1 = filter_var($fecha1, FILTER_SANITIZE_SPECIAL_CHARS);
-     $fechavigen = mysql_real_escape_string($_POST['fechvig']);
+     $fechavigen = mysql_real_escape_string($_POST['fechavig']);
      $fechavigen = filter_var($fechavigen, FILTER_SANITIZE_SPECIAL_CHARS);
-
+     $nrcant = mysql_real_escape_string($_POST['nrc']);
+     $nrcant = filter_var($nrcant, FILTER_SANITIZE_SPECIAL_CHARS);
+     $tipo = mysql_real_escape_string($_POST['tipo']);
+     $tipo = filter_var($tipo, FILTER_SANITIZE_SPECIAL_CHARS);
+     $nrc = mysql_real_escape_string($_POST['nrc']);
+     $nrc = filter_var($nrc, FILTER_SANITIZE_SPECIAL_CHARS);
+     $seccion = mysql_real_escape_string($_POST['seccion']);
+     $seccion = filter_var($seccion, FILTER_SANITIZE_SPECIAL_CHARS);
+     $bloque = mysql_real_escape_string($_POST['bloque']);
+     $bloque = filter_var($bloque, FILTER_SANITIZE_SPECIAL_CHARS);
+     $secretaria = mysql_real_escape_string($_POST['secretaria']);
+     $secretaria = filter_var($secretaria, FILTER_SANITIZE_SPECIAL_CHARS);
+     $acta= $_POST['acta'];
 
 
 $sqlq="UPDATE horario SET
 idExperienciaEducativa = '".$materia1."',
+tipo = '".$tipo."',
+Seccion = '".$seccion."',
+NRC = '".$nrc."',
+NRCANT = '".$nrcant."',
+Bloque = '".$bloque."',
+acta = '".$acta."',
 idcatedratico = '".$catedratico1."',
 idcarrera = '".$carrera1."',
 idubicacion = '".$lugar1."',
@@ -58,7 +77,7 @@ fechavig ='".$fechavigen."'
 WHERE idHorario='".$id1."'";
 $resultadoq = mysql_query($sqlq) or die(mysql_error());
 mysql_close();
- echo "<script>alert('Mi horario ha sido editado');
+ echo "<script>alert('Mi horario ha sido editado satisfactoriamente');
             window.location = '../Entidades/horario.php';</script>";
 
 
@@ -136,6 +155,7 @@ $resulid=mysql_query($mysqlid) or die(mysql_error());
  <legend class="text2">Datos del Horario</legend>
  <div id="formularioh">
  <form method="post">
+    <input type="hidden" value='<?php echo $id; ?>' name="id">
 <label class="text1">TIPO:</label><br>
 <?php 
     if($tipo==1){$tipox="Escolar";}
@@ -167,7 +187,7 @@ $resulid=mysql_query($mysqlid) or die(mysql_error());
 
  <label for="" class="text1" id="catel1h">CATEDRÁTICO:</label><br>
 <?php 
- require_once("../../conexiones/conexion.php");
+ require_once("../../Conexiones/conexion.php");
  //Preguntamos quien es el administrador para obtener la "idfacultad"
     $nombreadmin = $_SESSION['nombreUsuario'];
     $sql = "SELECT idfacultad FROM cuenta WHERE usuario='".$nombreadmin."';";    
@@ -207,7 +227,7 @@ while($row=mysql_fetch_array($resul)){
 <label class="text1">CARRERA:</label><br>
 <?php 
  @session_start();
- require_once("../../conexiones/conexion.php");
+ require_once("../../Conexiones/conexion.php");
  //Preguntamos quien es el administrador para obtener la "idfacultad"
     $nombreadmin = $_SESSION['nombreUsuario'];
     $sql = "SELECT idfacultad FROM cuenta WHERE usuario='".$nombreadmin."';";    
@@ -244,7 +264,7 @@ echo "</select>";
     $filee = mysql_fetch_array($resultadoee, MYSQL_BOTH);
     $ee = $filee[0];
     ?>
-    <option selected value='<?php echo $materia?>'><?php echo $ee?></option>
+    <option selected value='<?php echo $materia; ?>'><?php echo $ee?></option>
   
 </select><br>
 
@@ -259,7 +279,7 @@ echo "</select>";
             </select></br>
 
     <label class="text1">FECHA:</label><br>
-    <input type="text" id="datepicker" value='<?php echo $dia; ?>' maxlength="10" name="dfecha"><br>
+    <input type="text" id="datepicker" value='<?php echo $dia; ?>' maxlength="10" name="dia"><br>
     <label class="text1">ENTREGA ACTA:</label><br>
     <input type="text" id="datepicker5" value='<?php echo $acta; ?>' maxlength="10" name="acta"><br>
     

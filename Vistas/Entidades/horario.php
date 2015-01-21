@@ -1,4 +1,4 @@
-<?php include "../seguridad.php"; ?>
+<?php include "seguridad.php"; ?>
 <!DOCTYPE html>
 <html leng="es">
 <head>
@@ -61,7 +61,7 @@ $(document).ready(function(event){
 ?>
 <hr>
 <?php echo"<div id='horario'>";
-        require_once("../../conexiones/conexion.php");
+        require_once("../../Conexiones/conexion.php");
             @session_start();
                         $fac=$_SESSION['facultad'] ;            
                         //Preguntamos los nombres de las carreras segun su idfacultad
@@ -87,7 +87,7 @@ while ($collage=mysql_fetch_array($resulcollage)) {
      echo "<div id='materias".$collage['idCarrera']."' class='experiencias'>";    
      echo "<div class='regreso'>Regresar</div><br><br><br>";
     //Preguntamos los nombres de las materias segun su idfacultad
-     require_once("../../conexiones/conexion.php");
+     require_once("../../Conexiones/conexion.php");
                 @session_start();
                        
                           echo "<div id='contenedor_carrera'>";
@@ -122,7 +122,7 @@ while ($collage=mysql_fetch_array($resulcollage)) {
                        //  ///// Calculo todas las paginas
                        //  $total_paginas=ceil($num_total_registros / $tamano_pag);
                         ///realizamos consulta
-                        require_once('../../conexiones/conexion.php');
+                        require_once('../../Conexiones/conexion.php');
                         $consultas="SELECT idexperienciaeducativa,nombre, idCarrera FROM experienciaeducativa WHERE  idCarrera = ".$collage['idCarrera'].";";
                          // ORDER BY nombre DESC LIMIT ".$inicio.",".$tamano_pag;
                         $rs=mysql_query($consultas)or die(mysql_error());

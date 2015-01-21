@@ -1,12 +1,12 @@
 <?php
-require_once("../../conexiones/conexion.php");
+require_once("../../Conexiones/conexion.php");
     $consulta = "SELECT * FROM horario WHERE idExperienciaEducativa = ".$_GET['id']." AND tipo = '6'  ORDER BY idExperienciaEducativa";
     $query = mysql_query($consulta)or die(mysql_error());
     $var=0;
     while ($fila = mysql_fetch_array($query)) {
        $fechareg = date("Y-m-d");
         if($fechareg>$fila['fechavig']){
-          @require_once("../../conexiones/conexion.php");
+          @require_once("../../Conexiones/conexion.php");
           $res=mysql_query("DELETE from horario where idHorario=".$fila['idHorario'].";")or die(mysql_error());
           mysql_close();
         }else{

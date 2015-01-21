@@ -1,7 +1,7 @@
 
 <?php
-include"../seguridad.php";
-require_once("../../conexiones/conexion.php");
+include"seguridad.php";
+require_once("../../Conexiones/conexion.php");
 if (@$_POST['guardar']) {   
        if(isset($_POST['nombre'])and
          ($_POST['id'])and

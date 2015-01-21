@@ -1,4 +1,4 @@
-<?php include "../seguridad.php"; ?>
+<?php include "seguridad.php"; ?>
 <!DOCTYPE html>
 <html leng="es">
     <head>
@@ -49,17 +49,17 @@
  echo"<br><br>";
     echo "<div>";
  @session_start();
- require_once("../../conexiones/conexion.php");
+ require_once("../../Conexiones/conexion.php");
  //Preguntamos quien es el administrador para obtener la "idfacultad"
     $nombreadmin = $_SESSION['nombreUsuario'];
-    $sql = "SELECT idfacultad FROM cuenta WHERE usuario='".$nombreadmin."';";    
+    $sql = "SELECT idFacultad FROM cuenta WHERE Usuario='".$nombreadmin."';";    
     $resultado = mysql_query($sql) or die(mysql_error());
     $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
     $fac = $fil[0];
    
     
     //Preguntamos los nombres de las ubicaciones segun su idfacultad
-     require_once("../../conexiones/conexion.php");
+     require_once("../../Conexiones/conexion.php");
                 @session_start();
                        
                           echo "<div id='contenedor_carrera'>";
@@ -91,7 +91,7 @@
                         ///// Calculo todas las paginas
                         $total_paginas=ceil($num_total_registros / $tamano_pag);
                         ///realizamos consulta
-                        require_once('../../conexiones/conexion.php');
+                        require_once('../../Conexiones/conexion.php');
                         $consultas="SELECT * FROM ubicacion ORDER BY nombre DESC LIMIT ".$inicio.",".$tamano_pag;
                         $rs=mysql_query($consultas)or die(mysql_error());
 

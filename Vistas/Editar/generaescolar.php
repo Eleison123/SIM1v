@@ -1,6 +1,6 @@
 <?php 
 ///////////////////////
-require_once("../../conexiones/conexion.php");
+require_once("../../Conexiones/conexion.php");
 @session_start();
 $nombreadmin = $_SESSION['nombreUsuario'];
     $sql = "SELECT idfacultad from Cuenta where usuario='".$nombreadmin."';";    
@@ -12,7 +12,7 @@ $nombreadmin = $_SESSION['nombreUsuario'];
     $resulmater=mysql_query($sqlmater) or die (mysql_error());
  echo "<div  class='experiencias'>";    
         echo "<div class='regreso'>Regresar</div><br><br><br>";
-        require_once("../../conexiones/conexion.php");
+        require_once("../../Conexiones/conexion.php");
          @session_start();
         echo "<div id='contenedor_carrera'>";
         echo "<table>";

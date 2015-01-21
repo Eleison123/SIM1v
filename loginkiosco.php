@@ -1,11 +1,11 @@
 <?php
 if(@$_POST['entrar']){
-	require_once("conexiones/conexion.php");
+	require_once("Conexiones/conexion.php");
 	
 	if($_POST['facultad']){
 		$facultad = mysql_real_escape_string($_POST['facultad']);
 	}
-	$sql = "SELECT idfacultad FROM facultad WHERE idfacultad='".$facultad."' ";	
+	$sql = "SELECT idFacultad FROM facultad WHERE idFacultad='".$facultad."' ";	
 	$resultado = mysql_query($sql)or die (mysql_error());
 	
 	$fila = mysql_fetch_array($resultado, MYSQL_BOTH);
@@ -33,6 +33,7 @@ document.oncontextmenu = function(){return false}
 // End -->
 //]]>
 </script>
+<title>Sistema Interactivo de Mensajes</title>
 <body>
     
     <img src="imagenes/coatli2.png" id="logg">
@@ -47,13 +48,13 @@ document.oncontextmenu = function(){return false}
 			    
 			   		<?php
 			   		echo "<select id='fac'name='facultad'>";
-			   		require_once("conexiones/conexion.php");
+			   		require_once("Conexiones/conexion.php");
 						    //Preguntamos los nombres de las materias segun su idfacultad
-						 $mysql="SELECT idfacultad, nombre from facultad ";
+						 $mysql="SELECT idFacultad, Nombre from facultad ";
 						$resul=mysql_query($mysql) or die(mysql_error());
 						while($row=mysql_fetch_array($resul)){
-						    echo "<option value='".$row['idfacultad']."'>";
-						    echo $row['nombre'];
+						    echo "<option value='".$row['idFacultad']."'>";
+						    echo $row['Nombre'];
 						    echo "</option>";
 						}
 						echo"</select>";

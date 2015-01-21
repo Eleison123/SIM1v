@@ -1,5 +1,5 @@
 <?php 
-require_once("../../conexiones/conexion.php");
+require_once("../../Conexiones/conexion.php");
  @session_start();
 $fac=$_SESSION['facultad'] ; 
     $consulta = "SELECT * FROM horario WHERE idFacultad = ".$fac." AND tipo = '5'  ORDER BY idcatedratico";
@@ -9,7 +9,7 @@ $fac=$_SESSION['facultad'] ;
         $horareg= date("H:i:s");
         $fechareg = date("Y-m-d");
         if($fechareg>$fila['dia']){
-        require_once("../conexiones/conexion.php");
+        require_once("../Conexiones/conexion.php");
         $res=mysql_query("DELETE from horario where idHorario=".$fila['idHorario']."")or die(mysql_error());
           mysql_close();
         }else{

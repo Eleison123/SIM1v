@@ -1,4 +1,5 @@
-<?php include "../seguridad.php"; ?>
+<?php include "seguridad.php";
+ ?>
 <!DOCTYPE html>
 <html leng="es">
 <head>
@@ -52,15 +53,16 @@
 ?>
 
 <?php echo"<div id='horario'>";
-        require_once("../../conexiones/conexion.php");
+        require("../../Conexiones/conexion.php");
+// include "./../conexiones/conexion.php";
             @session_start();
                         $fac=$_SESSION['facultad'] ;            
                             //Preguntamos los nombres de las carreras segun su idfacultad
-                         $mysqlfacu="SELECT nombre, idCarrera,idfacultad FROM carrera WHERE idfacultad = '".$fac."'; ";
+                         $mysqlfacu="SELECT Nombre, idCarrera,idFacultad FROM carrera WHERE idFacultad = '".$fac."'; ";
                         $resulf=mysql_query($mysqlfacu)or die(mysql_error());
                         while($row1=mysql_fetch_array($resulf)){
                            echo "<div class='marca'>";
-                            echo "<div class='cuadrocar' value='".$row1['idCarrera']."' > <p class='textox'> ".$row1['nombre']." </p></div></div>";
+                            echo "<div class='cuadrocar' value='".$row1['idCarrera']."' > <p class='textox'> ".$row1['Nombre']." </p></div></div>";
                             
                         }
                         ?>
@@ -77,7 +79,7 @@ while ($collage=mysql_fetch_array($resulcollage)) {
      echo "<div id='materias".$collage['idCarrera']."' class='experiencias'>";    
      echo "<div class='regreso'>Regresar</div><br><br><br>";
     //Preguntamos los nombres de las materias segun su idfacultad
-     require_once("../../conexiones/conexion.php");
+     require_once("../../Conexiones/conexion.php");
                 @session_start();
                        
                           echo "<div id='contenedor_carrera'>";
@@ -112,7 +114,7 @@ while ($collage=mysql_fetch_array($resulcollage)) {
                        //  ///// Calculo todas las paginas
                        //  $total_paginas=ceil($num_total_registros / $tamano_pag);
                         ///realizamos consulta
-                        require_once('../../conexiones/conexion.php');
+                        require_once('../../Conexiones/conexion.php');
                         $consultas="SELECT idexperienciaeducativa,nombre, idCarrera FROM experienciaeducativa WHERE  idCarrera = ".$collage['idCarrera'].";";
                          // ORDER BY nombre DESC LIMIT ".$inicio.",".$tamano_pag;
                         $rs=mysql_query($consultas)or die(mysql_error());
@@ -129,13 +131,13 @@ while ($collage=mysql_fetch_array($resulcollage)) {
                         echo "<td>
 
  <form  method='post' action='../Editar/editarmateria.php'>
-    <input type='hidden' name='idm' value=".$row1['idexperienciaeducativa'].">
+    <input type='hidden' name='idm' value=".$row1['idExperienciaEducativa'].">
     <input type='submit' id='edit' value='Editar'  name='Editar' class='conf'><img src='../../imagenes/editar.png' class='icon'>
      </form>
 </td>";
                         echo "<td>
     <form  method='post' action='../../Controller/eliminarmateria.php'>
-    <input type='hidden' name='idmateria' value=".$row1['idexperienciaeducativa'].">
+    <input type='hidden' name='idmateria' value=".$row1['idExperienciaEducativa'].">
     <input class='conf' type='submit' id='delete' name='Eliminar' value='Eliminar' alingn='center'>
     <img src='../../imagenes/borrar.png' class='icon'>
     

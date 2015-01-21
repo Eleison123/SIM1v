@@ -1,4 +1,4 @@
-<?php include "../seguridad.php"; ?>
+<?php include "seguridad.php"; ?>
 <!DOCTYPE html>
 <html leng="es">
 <head>
@@ -37,18 +37,19 @@
     <img src="../../imagenes/registro.png"><br><br>
 
 	<?php
-		require_once("../../conexiones/conexion.php");
+
+		require_once("../../Conexiones/conexion.php");
 		@session_start();
 		//Preguntamos el id del administrador par sacar la facultad
 		$nombreadmin = $_SESSION['nombreUsuario'];
-		$sqlc = "SELECT idcuenta, usuario, idfacultad FROM cuenta WHERE usuario='".$nombreadmin."';";	
+		$sqlc = "SELECT idCuenta,Usuario,idFacultad FROM cuenta WHERE Usuario='".$nombreadmin."';";	
 		$resultado = mysql_query($sqlc);
 		$filax = mysql_fetch_array($resultado, MYSQL_BOTH);
 		$idad = $filax[0];
 		$nombreUsuario = $filax[1];
 		$fac = $filax[2];
 		//Preguntamos el nombre d ela facultad
-		$sqlf="SELECT nombre FROM facultad WHERE idfacultad='".$fac."'";
+		$sqlf="SELECT Nombre FROM facultad WHERE idFacultad='".$fac."'";
 		$resulf= mysql_query($sqlf);
 		$filu=mysql_fetch_array($resulf,MYSQL_BOTH);
 		$nombre=$filu[0];
@@ -83,8 +84,8 @@
 		echo "<th>Fecha</th>";
 		echo "</tr><br><br>";
 		$nombre=$filu[0];
-        require_once("../../conexiones/conexion.php");
-		$sqlr="SELECT publicacion.nombre, registro.idRegistro, registro.horareg, registro.diareg, registro.idcuenta, registro.idfacultad FROM registro INNER JOIN publicacion ON registro.idfacultad = '".$fac."' and registro.idregistro = publicacion.idregistro ORDER BY registro.diareg";
+        require_once("../../Conexiones/conexion.php");
+		$sqlr="SELECT publicacion.Nombre, registro.idRegistro, registro.horareg, registro.diareg, registro.idCuenta, registro.idFacultad FROM registro INNER JOIN publicacion ON registro.idFacultad = '".$fac."' and registro.idRegistro = publicacion.idRegistro ORDER BY registro.diareg";
 		$resul=mysql_query($sqlr) or die(mysql_error());
 		 
 
@@ -106,7 +107,7 @@
                         $total_paginas=ceil($num_total_registros / $tamano_pag);
 		
 while($row=mysql_fetch_array($resul)){
-	echo "<td><a class='text10'>".$row['nombre']."</a></td>";
+	echo "<td><a class='text10'>".$row['Nombre']."</a></td>";
 	
     echo "<td><a class='text10'>".$row['idRegistro']."</a></td>";
  

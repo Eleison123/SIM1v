@@ -1,5 +1,5 @@
 <?php
-require_once("../conexiones/conexion.php");
+require_once("../Conexiones/conexion.php");
     $consulta = "SELECT idcarrera FROM materia WHERE idmateria = ".$_GET['id']."";
 
     $sqlr=mysql_query($consulta);

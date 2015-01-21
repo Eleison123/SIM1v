@@ -1,4 +1,4 @@
-<?php include "../seguridad.php"; ?>
+<?php include "seguridad.php"; ?>
 <!DOCTYPE html>
 <html leng="es">
 <head>
@@ -57,17 +57,23 @@
 
     echo "<div>";
  @session_start();
- require_once("../../conexiones/conexion.php");
+ require_once("../../Conexiones/conexion.php");
  //Preguntamos quien es el administrador para obtener la "idfacultad"
     $nombreadmin = $_SESSION['nombreUsuario'];
-    $sql = "SELECT idfacultad FROM Cuenta WHERE usuario='".$nombreadmin."';";    
+    $sql = "SELECT idFacultad FROM cuenta WHERE Usuario='".$nombreadmin."';";    
     $resultado = mysql_query($sql) or die(mysql_error());
     $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
     $fac = $fil[0];
    
     
     //Preguntamos los nombres de las materias segun su idfacultad
-     require_once("../../conexiones/conexion.php");
+     require_once("../../Conexiones/conexion.php");
+    //  $host = "localhost";
+    // $bd = "KIOSCO";
+    // $usuario = "udbomar";//Poner usuario
+    // $password = "udb0mar";//Cambiar password
+    // $conexion = mysql_connect($host, $usuario, $password);
+    // mysql_select_db($bd, $conexion);
                 @session_start();
                        
                           echo "<div id='contenedor_carrera'>";
@@ -84,7 +90,7 @@
                             
                             </tr>";
                             //Preguntamos los nombres de las carreras segun su idfacultad
-                         $mysqlfacu="SELECT * FROM facultad WHERE idfacultad=".$fac.";";
+                         $mysqlfacu="SELECT * FROM facultad WHERE idFacultad=".$fac.";";
                         $resulf=mysql_query($mysqlfacu) or die(mysql_error());
                         $num_total_registros=mysql_num_rows($resulf);
                        if ($num_total_registros > 0) {
@@ -103,14 +109,14 @@
                         ///// Calculo todas las paginas
                         $total_paginas=ceil($num_total_registros / $tamano_pag);
                         ///realizamos consulta
-                        require_once('../../conexiones/conexion.php');
-                        $consultas="SELECT idfacultad,nombre FROM facultad  ORDER BY nombre DESC LIMIT ".$inicio.",".$tamano_pag;
+                        require_once('../../Conexiones/conexion.php');
+                        $consultas="SELECT idFacultad,Nombre FROM facultad  ORDER BY Nombre DESC LIMIT ".$inicio.",".$tamano_pag;
                         $rs=mysql_query($consultas)or die(mysql_error());
 
                         while($row1=mysql_fetch_array($rs)){
                                    echo "<tr>";
                                    
-                                        echo "<td><a class='text20'>".$row1['nombre']."</a></td>";
+                                        echo "<td><a class='text20'>".$row1['Nombre']."</a></td>";
                                        
                                        
 
@@ -119,13 +125,13 @@
                         echo "<td>
 
  <form  method='post' action='../Editar/editarfacultad.php'>
-    <input type='hidden' name='idfac' value=".$row1['idfacultad'].">
+    <input type='hidden' name='idfac' value=".$row1['idFacultad'].">
     <input type='submit' value='Editar'  id='edit' name='Editar' class='conf'><img src='../../imagenes/editar.png' class='icon'>
      </form>
 </td>";
                         echo "<td>
     <form  method='post' action='../../Controller/eliminarfacultad.php'>
-    <input type='hidden' name='idfacultad' value=".$row1['idfacultad'].">
+    <input type='hidden' name='idfacultad' value=".$row1['idFacultad'].">
     <input class='conf' type='submit' id='delete' name='Eliminar' value='Eliminar' alingn='center'>
     <img src='../../imagenes/borrar.png' class='icon'>
     
