@@ -4,7 +4,7 @@ include"../../Vistas/seguridad.php";
     // si presiona guardar
     if (@$_POST['guardar']) {
         //le metemos la conexión
-    require_once("../../conexiones/conexion.php");
+    require_once("../../Conexiones/conexion.php");
         if(isset(
             $_POST['nombre'])){ 
             //Limpiamos caracteres especiales
@@ -22,14 +22,13 @@ include"../../Vistas/seguridad.php";
             $ca = $fila[0]['idCarrera'];
             if ($nombre==$nrcf) {
                 if($ca==$carrera){
-                echo "<script>alert('Mi experiencia educativa ya existe.');
-                window.location = '../Entidades/eeducativa.php';</script>";
+                echo "<script>alert('Mi experiencia educativa ya existe.'); window.location = '../Entidades/eeducativa.php';</script>";
                 }
             }else{
                 //Obtenemos idfac del administrador
                 @session_start();
                 $nombreadmin = $_SESSION['nombreUsuario'];
-                $sql = "SELECT idfacultad FROM cuenta WHERE usuario='".$nombreadmin."';";    
+                $sql = "SELECT idFacultad FROM cuenta WHERE Usuario='".$nombreadmin."';";    
                 $resultado2 = mysql_query($sql) or die(mysql_error());
                 $fil = mysql_fetch_array($resultado2, MYSQL_BOTH);
                 $fac = $fil[0];

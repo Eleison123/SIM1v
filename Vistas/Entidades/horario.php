@@ -65,11 +65,11 @@ $(document).ready(function(event){
             @session_start();
                         $fac=$_SESSION['facultad'] ;            
                         //Preguntamos los nombres de las carreras segun su idfacultad
-                        $mysqlfacu="SELECT nombre, idcarrera,idfacultad FROM carrera WHERE idfacultad = '".$fac."'; ";
+                        $mysqlfacu="SELECT Nombre, idCarrera,idFacultad FROM carrera WHERE idFacultad = '".$fac."'; ";
                         $resulf=mysql_query($mysqlfacu)or die(mysql_error());
                         while($row1=mysql_fetch_array($resulf)){
                            echo "<div class='marca'>";
-                           echo "<div class='cuadrocar' value='".$row1['idcarrera']."' > <p class='textox'> ".$row1['nombre']." </p></div></div>";
+                           echo "<div class='cuadrocar' value='".$row1['idCarrera']."' > <p class='textox'> ".$row1['Nombre']." </p></div></div>";
                             
                         }
                         ?>
@@ -123,13 +123,13 @@ while ($collage=mysql_fetch_array($resulcollage)) {
                        //  $total_paginas=ceil($num_total_registros / $tamano_pag);
                         ///realizamos consulta
                         require_once('../../Conexiones/conexion.php');
-                        $consultas="SELECT idexperienciaeducativa,nombre, idCarrera FROM experienciaeducativa WHERE  idCarrera = ".$collage['idCarrera'].";";
+                        $consultas="SELECT idExperienciaEducativa,Nombre, idCarrera FROM experienciaeducativa WHERE  idCarrera = ".$collage['idCarrera'].";";
                          // ORDER BY nombre DESC LIMIT ".$inicio.",".$tamano_pag;
                         $rs=mysql_query($consultas)or die(mysql_error());
 
                         while($row1=mysql_fetch_array($rs)){
                                    echo "<tr>";
-                                        echo "<td><a class='text20'>".$row1['nombre']."</a></td>";
+                                        echo "<td><a class='text20'>".$row1['Nombre']."</a></td>";
                                         $car = $row1['idCarrera'];
                                         $consultacarrera = "SELECT Nombre FROM carrera WHERE idCarrera = $car";
                                         $cc = mysql_query($consultacarrera) or die (mysql_error());
@@ -137,7 +137,7 @@ while ($collage=mysql_fetch_array($resulcollage)) {
                                          echo "<td><a class='text20'>".$ccc['Nombre']."</a></td>";
                                 
                               
-                               echo "<td><div class='ver' value='".$row1['idexperienciaeducativa']."'>Ver</div></td>";
+                               echo "<td><div class='ver' value='".$row1['idExperienciaEducativa']."'>Ver</div></td>";
                                 echo"</tr>";
             }echo "</legend>";
         echo "</table></div>";

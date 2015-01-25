@@ -21,11 +21,11 @@ $(document).ready(function(){
 });
 </script>
 <script language="Javascript" type="text/javascript">
-// //<![CDATA[
-// <!-- Begin
-// document.oncontextmenu = function(){return false}
-// // End -->
-// //]]>
+//<![CDATA[
+<!-- Begin
+document.oncontextmenu = function(){return false}
+// End -->
+//]]>
 </script>
 <script type="text/javascript">
 	$(document).ready(function(){

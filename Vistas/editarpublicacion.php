@@ -1,6 +1,6 @@
 <?php 
 include "seguridad.php"; 
-include "qrlib.php";
+require "qrlib.php";
 
 ?>
 <?php
@@ -12,10 +12,11 @@ $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR
 if (!file_exists($PNG_TEMP_DIR))
 mkdir($PNG_TEMP_DIR);
  $filename = $PNG_TEMP_DIR.'test.png';
+ 
     $errorCorrectionLevel = 'L';
     /////////////////////////////////////// 
     if (@$_POST['guardar']) {
-        require_once("../conexiones/conexion.php");
+        require_once("../Conexiones/conexion.php");
         //Verificar que ningun dato venga vacio.
          if(isset($_POST['nombre'])and
         ($_POST['info1p'])and
@@ -69,7 +70,6 @@ mkdir($PNG_TEMP_DIR);
 
 
     if (isset($data)) { 
-    
         //it's very important!
         if (trim($data) == '')
             die('data cannot be empty! <a href="?">back</a>');
@@ -150,7 +150,7 @@ fechavig ='".$fechavig."'
 }
 }else{
 
-    require_once("../conexiones/conexion.php");
+    require_once("../Conexiones/conexion.php");
 $hes=$_POST['idpub'];
             $mysqlid="SELECT * FROM publicacion WHERE idpublicacion=".$hes."";
 $resulid=mysql_query($mysqlid) or die(mysql_error());

@@ -15,9 +15,7 @@ if (@$_POST['guardar']) {
             $id1= $_POST['id'];
 
 
-     $sqlf="UPDATE carrera SET
-nombre = '".$nombre1."'
- WHERE idcarrera='".$id1."'";
+     $sqlf="UPDATE carrera SET Nombre = '".$nombre1."' WHERE idCarrera='".$id1."' ";
 $resultadof = mysql_query($sqlf) or die(mysql_error());
 
 
@@ -32,12 +30,11 @@ else{
 }
 else{
 $hes=$_POST['idcar'];
-$mysqlid="SELECT idcarrera, nombre FROM carrera WHERE idcarrera=".$hes."";
+$mysqlid="SELECT idCarrera, Nombre FROM carrera WHERE idCarrera='".$hes."'";
 $resulid=mysql_query($mysqlid) or die(mysql_error());
  $fil = mysql_fetch_array($resulid, MYSQL_BOTH);
-     $carrera = $fil['idcarrera'];
-     $nombre = $fil['nombre'];
-  
+     $carrera = $fil['idCarrera'];
+     $nombre = $fil['Nombre'];
 
  }
 
@@ -92,9 +89,9 @@ document.oncontextmenu = function(){return false}
 
 <form method="post" >
     <fieldset>
-        <input type="text" hidden name="id" <?php echo "value='"; echo $carrera; echo "'"; ?>>
+        <input type="text" hidden name="id" value="<?php echo $carrera;?>">
  <label class="text1">Nombre:</label><br>
- <input type="text" name="nombre" <?php echo"value='"; echo $nombre; echo "'"; ?> ><br>
+ <input type="text" name="nombre" value=" <?php echo $nombre;  ?>" ><br>
 
 
         

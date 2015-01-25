@@ -54,7 +54,7 @@
  require_once("../../Conexiones/conexion.php");
  //Preguntamos quien es el administrador para obtener la "idfacultad"
     $nombreadmin = $_SESSION['nombreUsuario'];
-    $sql = "SELECT idfacultad FROM cuenta WHERE Usuario='".$nombreadmin."';";    
+    $sql = "SELECT idFacultad FROM cuenta WHERE Usuario='".$nombreadmin."';";    
     $resultado = mysql_query($sql) or die(mysql_error());
     $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
     $fac = $fil[0];
@@ -106,14 +106,14 @@
                                         echo "<td><a class='text20'>".$row1['Nombre']."</a></td>";
                                             echo "<td>
                                                     <form  method='post' action='../Editar/editarcarrera.php'>
-                                                        <input type='hidden' name='idcar' value=".$row1['idcarrera'].">
+                                                        <input type='hidden' name='idcar' value=".$row1['idCarrera'].">
                                                         <input type='submit' id='edit' value='Editar'  name='Editar' class='conf'>
                                                         <img src='../../imagenes/editar.png' class='icon'>
                                                     </form>
                                                   </td>";
                                             echo "<td>
                                                     <form  method='post' action='../../Controller/eliminarcarrera.php'>
-                                                        <input type='hidden' name='idcarrera' value=".$row1['idcarrera'].">
+                                                        <input type='hidden' name='idcarrera' value=".$row1['idCarrera'].">
                                                         <input class='conf' id='delete' type='submit' name='Eliminar' value='Eliminar' alingn='center'>
                                                         <img src='../../imagenes/borrar.png' class='icon'>
                                                     </form>

@@ -3,7 +3,7 @@
 require_once("../../Conexiones/conexion.php");
 @session_start();
 $nombreadmin = $_SESSION['nombreUsuario'];
-    $sql = "SELECT idfacultad from Cuenta where usuario='".$nombreadmin."';";    
+    $sql = "SELECT idFacultad from cuenta where Usuario='".$nombreadmin."';";    
     $resultado = mysql_query($sql) or die(mysql_error());
     $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
     $fac = $fil[0];

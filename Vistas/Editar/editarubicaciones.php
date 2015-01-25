@@ -4,23 +4,24 @@ require_once("../../Conexiones/conexion.php");
 if (@$_POST['guardar']) {
        if(isset(
             $_POST['nombre'])and
-            ($_POST['descripcion'])and
             ($_POST['id']!="")){ 
 
             $nombre1= mysql_real_escape_string($_POST['nombre']);
             $nombre1 = filter_var($nombre1, FILTER_SANITIZE_SPECIAL_CHARS);
-            $descripcion1= mysql_real_escape_string($_POST['descripcion']);
-            $descripcion1 = filter_var($descripcion1, FILTER_SANITIZE_SPECIAL_CHARS);
-            $id1= $_POST['id'];
-     $sqlf="UPDATE ubicacion SET
-nombre = '".$nombre1."',
-descripcion = '".$descripcion1."'
- WHERE idubicacion='".$id1."'";
-$resultadof = mysql_query($sqlf) or die(mysql_error());
-  echo "<script>alert('Mi Ubicacion ha sido Editada Exitosmente');
-                window.location = '../Entidades/ubicaciones.php';</script>";
+            if($_POST['descripcion']!=""){
+              $descripcion1= mysql_real_escape_string($_POST['descripcion']);
+              $descripcion1 = filter_var($descripcion1, FILTER_SANITIZE_SPECIAL_CHARS);
+              $id1= $_POST['id'];
+              $sqlf="UPDATE ubicacion SET nombre = '".$nombre1."', descripcion = '".$descripcion1."' WHERE idubicacion='".$id1."'";
+              $resultadof = mysql_query($sqlf) or die(mysql_error());
+              echo "<script>alert('Mi Ubicacion ha sido Editada Exitosmente'); window.location = '../Entidades/ubicaciones.php';</script>";
 
-
+            }else{
+              $id1= $_POST['id'];
+              $sqlf="UPDATE ubicacion SET nombre = '".$nombre1."' WHERE idubicacion='".$id1."'";
+              $resultadof = mysql_query($sqlf) or die(mysql_error());
+              echo "<script>alert('Mi Ubicacion ha sido Editada Exitosmente'); window.location = '../Entidades/ubicaciones.php';</script>";
+            } 
 }//termina si estan vacio
 else{
     echo "<script>alert('Faltan de llenar Datos.')</script>";

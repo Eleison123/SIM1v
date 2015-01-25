@@ -18,7 +18,7 @@ $(document).ready(function(){
 <script type="text/javascript">
 $(document).ready(function(event){
     $('#agregar').click(function(){
-       window.location = '../Agregar/agregarp.php';
+       window.location = '../agregarp.php';
     });
 });
 </script>
@@ -61,62 +61,51 @@ $(document).ready(function(event){
 
  
  <?php
-    echo "<div id='agregar'>
-        <form  method='post' action='../agregarp.php'>
-        <img src='../../imagenes/add.gif' class='icon'>
-        <input type='submit' value='Agregar Publicación'  name='agregar' class='conf'>                
-        </form>
-        </div>";
+    echo "<div id='agregar'><form  method='post' action='../agregarp.php'><img src='../../imagenes/add.gif' class='icon'><input type='submit' value='Agregar Publicación'  name='agregar' class='conf'></form></div>";
     echo "<br><br>";
-    echo "<div>";
-    @session_start();
-    require_once("../../Conexiones/conexion.php");
- //Preguntamos quien es el administrador para obtener la "idfacultad"
-    $nombreadmin = $_SESSION['nombreUsuario'];
-    $sql = "SELECT idFacultad FROM cuenta WHERE Usuario='".$nombreadmin."';";    
-    $resultado = mysql_query($sql) or die(mysql_error());
-    $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
-    $fac = $fil[0];
-   
-   
-    //Preguntamos los nombres de las materias segun su idfacultad
-     require_once("../../Conexiones/conexion.php");
-                @session_start();
-                      
-                        echo "<div id='contenedor_carrera'>";
-                        echo "<table>";
-                        echo"<tr>";
-                            echo"
-                            <th>Publicaciones Disponibles</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            </tr>";
-                            //Preguntamos los nombres de las carreras segun su idfacultad
-                         $mysqlfacu="SELECT * FROM publicacion WHERE idFacultad=".$fac.";";
-                        $resulf=mysql_query($mysqlfacu) or die(mysql_error());
-                        $num_total_registros=mysql_num_rows($resulf);
-                       if ($num_total_registros > 0) {
-    //Limito la busqueda
-    $tamano_pag = 10;
+ 
+        @session_start();
+        require_once("../../Conexiones/conexion.php");
+        //Preguntamos quien es el administrador para obtener la "idfacultad"
+        $nombreadmin = $_SESSION['nombreUsuario'];
+        $sql = "SELECT idFacultad FROM cuenta WHERE Usuario='".$nombreadmin."';";    
+        $resultado = mysql_query($sql) or die(mysql_error());
+        $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
+        $fac = $fil[0];
+        //Preguntamos los nombres de las materias segun su idfacultad
+        require_once("../../Conexiones/conexion.php");
+        @session_start();
+        echo "<div id='contenedor_carrera'>";
+        echo "<table>";
+        echo"<tr>";
+        echo"<th>Publicaciones Disponibles</th><th></th><th></th><th></th></tr>";
+        //Preguntamos los nombres de las carreras segun su idfacultad
+        $mysqlfacu="SELECT * FROM publicacion WHERE idFacultad=".$fac.";";
+        $resulf=mysql_query($mysqlfacu) or die(mysql_error());
+        $num_total_registros=mysql_num_rows($resulf);
+        if($num_total_registros==0){
+            echo"<tr><td>Sin Publicaciones</td></tr>";echo "</table></div>";
+        }else{
+        if ($num_total_registros > 0) {
+        //Limito la busqueda
+        $tamano_pag = 10;
         $pagina = false;
-                        //examino pagina a mostrar e inicio
+        //examino pagina a mostrar e inicio
         if (isset($_GET["pagina"]))
-                        $pagina=$_GET['pagina'];
-                        if (!$pagina) {
-                            $inicio=0;
-                            $pagina=1;
-                        }else{
-                            $inicio=($pagina - 1) * $tamano_pag;
-                        }
-                        ///// Calculo todas las paginas
-                        $total_paginas=ceil($num_total_registros / $tamano_pag);
-                        ///realizamos consulta
-                        require_once('../../Conexiones/conexion.php');
-                        $consultas="SELECT idPublicacion, Nombre FROM publicacion WHERE idFacultad=".$fac." ORDER BY diapublicacion DESC LIMIT ".$inicio.",".$tamano_pag;
-                        $rs=mysql_query($consultas)or die(mysql_error());
-
-                        while($row1=mysql_fetch_array($rs)){
+            $pagina=$_GET['pagina'];
+            if (!$pagina) {
+                $inicio=0;
+                $pagina=1;
+            }else{
+                $inicio=($pagina - 1) * $tamano_pag;
+            }
+            ///// Calculo todas las paginas
+            $total_paginas=ceil($num_total_registros / $tamano_pag);
+            ///realizamos consulta
+            require_once('../../Conexiones/conexion.php');
+            $consultas="SELECT idPublicacion, Nombre FROM publicacion WHERE idFacultad=".$fac." ORDER BY diapublicacion DESC LIMIT ".$inicio.",".$tamano_pag;
+            $rs=mysql_query($consultas)or die(mysql_error());
+            while($row1=mysql_fetch_array($rs)){
                         echo "<tr>";
                         echo "<td><a class='text10'>".$row1['Nombre']."</a></td>";
                         echo "<td>
@@ -136,7 +125,7 @@ $(document).ready(function(event){
                                 
                                 echo"</tr>";
             }                 
-            echo "</table></div></div>";
+            echo "</table></div>";
             echo '<p class="textlink">';
 
                 if ($total_paginas > 1) {
@@ -154,7 +143,7 @@ $(document).ready(function(event){
                     if ($pagina != $total_paginas)
                         echo '<a class="textlink"><a class="textlink" href="'.'?pagina='.($pagina+1).'"><img src="../../imagenes/der.gif" border="0"></a></a>';
                 }
-    echo '</p>'; }
+    echo '</p>'; } }
                               ?>
 <br><br></div>
 </body>

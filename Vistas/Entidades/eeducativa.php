@@ -115,7 +115,7 @@ while ($collage=mysql_fetch_array($resulcollage)) {
                        //  $total_paginas=ceil($num_total_registros / $tamano_pag);
                         ///realizamos consulta
                         require_once('../../Conexiones/conexion.php');
-                        $consultas="SELECT idexperienciaeducativa,nombre, idCarrera FROM experienciaeducativa WHERE  idCarrera = ".$collage['idCarrera'].";";
+                        $consultas="SELECT idExperienciaEducativa,nombre, idCarrera FROM experienciaeducativa WHERE  idCarrera = ".$collage['idCarrera'].";";
                          // ORDER BY nombre DESC LIMIT ".$inicio.",".$tamano_pag;
                         $rs=mysql_query($consultas)or die(mysql_error());
 

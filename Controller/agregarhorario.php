@@ -5,7 +5,7 @@ include "../../Vistas/seguridad.php";
     if (@$_POST['guardar']) {
         //agregamos al cnexión
  
-    require_once("../../conexiones/conexion.php");
+    require_once("../../Conexiones/conexion.php");
         if(isset($_POST['fechapub'])and
                 ($_POST['catedratico'])and
                 ($_POST['horaini'])and
@@ -59,7 +59,7 @@ include "../../Vistas/seguridad.php";
 
                 @session_start();
                 $nombreadmin = $_SESSION['nombreUsuario'];
-                $sql = "SELECT idcuenta, usuario, idfacultad FROM cuenta WHERE usuario='".$nombreadmin."';";    
+                $sql = "SELECT idCuenta, Usuario, idFacultad FROM cuenta WHERE Usuario='".$nombreadmin."';";    
                 $resultado = mysql_query($sql) or die (mysql_error());
                 $fila = mysql_fetch_array($resultado, MYSQL_BOTH);
                 $idad = $fila[0];

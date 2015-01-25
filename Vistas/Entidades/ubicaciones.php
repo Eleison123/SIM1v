@@ -72,7 +72,7 @@
                             <th></th>
                             </tr>";
                             //Preguntamos los nombres de las ubicaciones segun su idfacultad
-                         $mysqlfacu="SELECT * FROM ubicacion WHERE idfacultad=".$fac.";";
+                         $mysqlfacu="SELECT * FROM ubicacion WHERE idFacultad=".$fac.";";
                         $resulf=mysql_query($mysqlfacu) or die(mysql_error());
                         $num_total_registros=mysql_num_rows($resulf);
                        if ($num_total_registros > 0) {
@@ -92,7 +92,7 @@
                         $total_paginas=ceil($num_total_registros / $tamano_pag);
                         ///realizamos consulta
                         require_once('../../Conexiones/conexion.php');
-                        $consultas="SELECT * FROM ubicacion ORDER BY nombre DESC LIMIT ".$inicio.",".$tamano_pag;
+                        $consultas="SELECT * FROM ubicacion ORDER BY Nombre DESC LIMIT ".$inicio.",".$tamano_pag;
                         $rs=mysql_query($consultas)or die(mysql_error());
 
                         while($row1=mysql_fetch_array($rs)){

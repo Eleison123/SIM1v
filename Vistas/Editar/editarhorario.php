@@ -128,6 +128,30 @@ $resulid=mysql_query($mysqlid) or die(mysql_error());
 <script src="../../js/jquery-1.10.2.js"></script> 
 <script src="../../js/jquery-ui-1.11.2/jquery-ui.js"></script>
 <link rel="stylesheet" href="../../js/jquery-ui-1.11.2/jquery-ui.theme.css">
+<script>
+  $(function() {
+    $("#datepicker").datepicker();
+  });
+  $(function() {
+    $("#datepicker1").datepicker();
+  });
+  $(function() {
+    $("#datepicker2").datepicker();
+  });
+  $(function() {
+    $("#datepicker3").datepicker();
+  });
+  $(function() {
+    $("#datepicker4").datepicker();
+  });
+  $(function() {
+    $("#datepicker5").datepicker();
+  });
+  $(function() {
+    $( document ).tooltip();
+  });
+
+  </script>
 <title>Editar Horario</title>
 </head>
 <div id="portada">
@@ -189,6 +213,7 @@ $resulid=mysql_query($mysqlid) or die(mysql_error());
 <?php 
  require_once("../../Conexiones/conexion.php");
  //Preguntamos quien es el administrador para obtener la "idfacultad"
+     @session_start();
     $nombreadmin = $_SESSION['nombreUsuario'];
     $sql = "SELECT idfacultad FROM cuenta WHERE usuario='".$nombreadmin."';";    
     $resultado = mysql_query($sql) or die(mysql_error());
@@ -210,15 +235,15 @@ $resulid=mysql_query($mysqlid) or die(mysql_error());
     
     <?php
     //Preguntamos los nombres de las materias segun su idfacultad
- $mysql="SELECT idcatedratico, nombre, apellidomaterno, apellidopaterno FROM catedratico WHERE idfacultad='".$fac."';";
+ $mysql="SELECT idCatedratico, Nombre, Apellidomaterno, Apellidopaterno FROM catedratico WHERE idFacultad='".$fac."';";
 $resul=mysql_query($mysql) or die(mysql_error());
 while($row=mysql_fetch_array($resul)){
-    echo "<option value='".$row['idcatedratico']."'>";
-    echo $row['nombre'];
+    echo "<option value='".$row['idCatedratico']."'>";
+    echo $row['Nombre'];
     echo " ";
-    echo $row['apellidomaterno'];
+    echo $row['Apellidomaterno'];
     echo " ";
-    echo  $row['apellidopaterno'] ;
+    echo  $row['Apellidopaterno'] ;
     echo "</option>";
 }
 
@@ -230,7 +255,7 @@ while($row=mysql_fetch_array($resul)){
  require_once("../../Conexiones/conexion.php");
  //Preguntamos quien es el administrador para obtener la "idfacultad"
     $nombreadmin = $_SESSION['nombreUsuario'];
-    $sql = "SELECT idfacultad FROM cuenta WHERE usuario='".$nombreadmin."';";    
+    $sql = "SELECT idFacultad FROM cuenta WHERE Usuario='".$nombreadmin."';";    
     $resultado = mysql_query($sql) or die(mysql_error());
     $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
     $fac = $fil[0];
@@ -242,11 +267,11 @@ while($row=mysql_fetch_array($resul)){
     echo "<select name='carrera' id='carrera' placeholder='Carrera'>";
     //Preguntamos los nombres de las materias segun su idfacultad
     echo "<option selected value='".$carrera."'>".$nombrecar."</option>";
- $mysql="SELECT idcarrera, nombre FROM carrera WHERE idfacultad='".$fac."';";
+ $mysql="SELECT idCarrera, Nombre FROM carrera WHERE idFacultad='".$fac."';";
 $resul=mysql_query($mysql) or die(mysql_error());
 while($row=mysql_fetch_array($resul)){
 
-    echo "<option value='".$row['idcarrera']."'>";
+    echo "<option value='".$row['idCarrera']."'>";
     echo $row['nombre'];
     echo "</option>";
 }
@@ -259,7 +284,7 @@ echo "</select>";
 
 <select name="materia" id="materia" placeholder="Materia">
     <?php
-    $sqlee = "SELECT nombre FROM experienciaeducativa WHERE idExperienciaEducativa='".$materia."';";    
+    $sqlee = "SELECT Nombre FROM experienciaeducativa WHERE idExperienciaEducativa='".$materia."';";    
     $resultadoee = mysql_query($sqlee) or die(mysql_error());
     $filee = mysql_fetch_array($resultadoee, MYSQL_BOTH);
     $ee = $filee[0];
@@ -326,33 +351,9 @@ echo "</select>";
         <center><input type="submit" value="GUARDAR" id="btnguardar" name="guardar"></center>
   </form>
 </div>
-    </div>
+    </div></div>
 </body>
     <div id="final">
     <img src="../../imagenes/footer.jpg" id="footer">
 </div>
 </html>
-<script>
-  $(function() {
-    $("#datepicker").datepicker();
-  });
-  $(function() {
-    $("#datepicker1").datepicker();
-  });
-  $(function() {
-    $("#datepicker2").datepicker();
-  });
-  $(function() {
-    $("#datepicker3").datepicker();
-  });
-  $(function() {
-    $("#datepicker4").datepicker();
-  });
-  $(function() {
-    $("#datepicker5").datepicker();
-  });
-  $(function() {
-    $( document ).tooltip();
-  });
-
-  </script>

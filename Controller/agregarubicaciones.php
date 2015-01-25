@@ -23,7 +23,7 @@ include "../../Vistas/seguridad.php";
     if($nombre ==$nombrec){
         echo "<script>alert('Mi Ubicacion ya existe');</script>"; }
         else{
-            require_once("../../conexiones/conexion.php");
+            require_once("../../Conexiones/conexion.php");
              @session_start();
             $nombreadmin = $_SESSION['nombreUsuario'];
                 $sql = "SELECT  idfacultad FROM cuenta WHERE usuario='".$nombreadmin."';";    

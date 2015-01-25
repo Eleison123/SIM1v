@@ -61,10 +61,11 @@
  <label for="" class="text1" id="catel1h">CATEDRÁTICO:</label><br>
 <?php 
  
- require_once("../../conexiones/conexion.php");
+ require_once("../../Conexiones/conexion.php");
  //Preguntamos quien es el administrador para obtener la "idfacultad"
+ @session_start();
     $nombreadmin = $_SESSION['nombreUsuario'];
-    $sql = "SELECT idfacultad FROM cuenta WHERE usuario='".$nombreadmin."';";    
+    $sql = "SELECT idFacultad FROM cuenta WHERE Usuario='".$nombreadmin."';";    
     $resultado = mysql_query($sql) or die(mysql_error());
     $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
     $fac = $fil[0];
@@ -74,15 +75,15 @@
     
     <?php
     //Preguntamos los nombres de las materias segun su idfacultad
- $mysql="SELECT idcatedratico, nombre, apellidomaterno, apellidopaterno FROM catedratico WHERE idfacultad='".$fac."';";
+ $mysql="SELECT idCatedratico, Nombre, Apellidomaterno, Apellidopaterno FROM catedratico WHERE idFacultad='".$fac."';";
 $resul=mysql_query($mysql) or die(mysql_error());
 while($row=mysql_fetch_array($resul)){
-    echo "<option value='".$row['idcatedratico']."'>";
-    echo $row['nombre'];
+    echo "<option value='".$row['idCatedratico']."'>";
+    echo $row['Nombre'];
     echo " ";
-    echo $row['apellidomaterno'];
+    echo $row['Apellidomaterno'];
     echo " ";
-    echo  $row['apellidopaterno'] ;
+    echo  $row['Apellidopaterno'] ;
     echo "</option>";
 }
 
@@ -91,10 +92,11 @@ while($row=mysql_fetch_array($resul)){
 <label class="text1">CARRERA:</label><br>
 <?php 
  @session_start();
- require_once("../../conexiones/conexion.php");
+ require_once("../../Conexiones/conexion.php");
  //Preguntamos quien es el administrador para obtener la "idfacultad"
+ @session_start();
     $nombreadmin = $_SESSION['nombreUsuario'];
-    $sql = "SELECT idfacultad FROM cuenta WHERE usuario='".$nombreadmin."';";    
+    $sql = "SELECT idFacultad FROM cuenta WHERE Usuario='".$nombreadmin."';";    
     $resultado = mysql_query($sql) or die(mysql_error());
     $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
     $fac = $fil[0];
@@ -102,12 +104,12 @@ while($row=mysql_fetch_array($resul)){
     echo "<select name='carrera' id='carrera' placeholder='Carrera'>";
     //Preguntamos los nombres de las materias segun su idfacultad
     echo "<option selected value=''>Seleccionar Carrera</option>";
- $mysql="SELECT idcarrera, nombre FROM carrera WHERE idfacultad='".$fac."';";
+ $mysql="SELECT idCarrera, Nombre FROM carrera WHERE idFacultad='".$fac."';";
 $resul=mysql_query($mysql) or die(mysql_error());
 while($row=mysql_fetch_array($resul)){
 
-    echo "<option value='".$row['idcarrera']."'>";
-    echo $row['nombre'];
+    echo "<option value='".$row['idCarrera']."'>";
+    echo $row['Nombre'];
     echo "</option>";
 }
 echo "</select>";

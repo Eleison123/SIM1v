@@ -1,11 +1,11 @@
 <?php
-	require_once("../conexiones/conexion.php");
+	require_once("../Conexiones/conexion.php");
 	include "seguridad.php";
-require_once("../conexiones/conexion.php");
+require_once("../Conexiones/conexion.php");
         @session_start();
         //Preguntamos el id del administrador par sacar la facultad
         $nombreadmin = $_SESSION['nombreUsuario'];
-        $sqlc = "SELECT idcuenta, usuario, idfacultad from cuenta where usuario='".$nombreadmin."';";   
+        $sqlc = "SELECT idCuenta, Usuario, idFacultad from cuenta where Usuario='".$nombreadmin."';";   
         $resultado = mysql_query($sqlc);
         $filax = mysql_fetch_array($resultado, MYSQL_BOTH);
         $idad = $filax[0];
@@ -24,9 +24,9 @@ require_once("../conexiones/conexion.php");
     $pdf->SetFont("Arial","b",9);
     $pdf->Cell(0,5,'Registro del Sistema',0,1,'C');
      $pdf->Cell(0,5,'Fechas',0,1,'C');
-    require_once("../conexiones/conexion.php");
+    require_once("../Conexiones/conexion.php");
     $pdf->Ln();
-$sqlrep="SELECT  publicacion.nombre, registro.idregistro, registro.horareg, registro.diareg, registro.idcuenta, registro.idfacultad , publicacion.visitas, publicacion.prioridad FROM registro INNER JOIN publicacion ON registro.idfacultad = '".$fac."' and registro.idregistro = publicacion.idregistro ORDER BY registro.diareg";
+$sqlrep="SELECT  publicacion.Nombre, registro.idRegistro, registro.horareg, registro.diareg, registro.idCuenta, registro.idFacultad , publicacion.visitas, publicacion.prioridad FROM registro INNER JOIN publicacion ON registro.idFacultad = '".$fac."' and registro.idRegistro = publicacion.idRegistro ORDER BY registro.diareg";
 $rep=mysql_query($sqlrep);
 $pdf->Cell(90,5,'Nombre',1,0,'C');
 $pdf->Cell(30,5,'Fecha',1,0,'C');
@@ -34,11 +34,11 @@ $pdf->Cell(30,5,'Hora',1,0,'C');
 $pdf->Cell(20,5,'Prioridad',1,0,'C');
 $pdf->Cell(20,5,'Registro',1,1,'C');
 while ($row=mysql_fetch_array($rep)) {
-    $nombrep=$row['nombre'];
+    $nombrep=$row['Nombre'];
     $dreg=$row['diareg'];
     $hreg=$row['horareg'];
-    $preg=$row['prioridad'];
-    $sqlad="SELECT usuario FROM cuenta WHERE idcuenta=".$row['idcuenta']."";
+    $preg=$row['Prioridad'];
+    $sqlad="SELECT Usuario FROM cuenta WHERE idCuenta=".$row['idCuenta']."";
     $resultado = mysql_query($sqlad);
         $filaxx = mysql_fetch_array($resultado, MYSQL_BOTH);
         $nombread = $filaxx[0];

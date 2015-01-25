@@ -105,17 +105,17 @@ document.oncontextmenu = function(){return false}
                         $fac=$_SESSION['facultad'] ;
                         
                             //Preguntamos los nombres de las carreras segun su idfacultad
-                         $mysqlfacu="SELECT idpublicacion,nombre, categoria,idfacultad,prioridad FROM publicacion WHERE idfacultad = '".$fac."'; ";
+                         $mysqlfacu="SELECT idPublicacion,Nombre, categoria,idFacultad,Prioridad FROM publicacion WHERE idFacultad = '".$fac."'; ";
                         $resulf=mysql_query($mysqlfacu)or die(mysql_error());
                         $lugarp=1;
                         $var=0;
                         while($row1=mysql_fetch_array($resulf)){
-                           if($row1['prioridad']<="4"){
+                           if($row1['Prioridad']<="4"){
                            if ($row1['categoria']=="Beca") {
 
                            $var=$var+1;
                            echo "<div class='marca'>";
-                            echo "<div class='cuadrobeca' value='".$row1['idpublicacion']."'><p class='textox'> ".$row1['nombre']."</p></div></div>";
+                            echo "<div class='cuadrobeca' value='".$row1['idPublicacion']."'><p class='textox'> ".$row1['Nombre']."</p></div></div>";
                             }}
                         } 
                         if ($var==0) {
@@ -131,16 +131,16 @@ document.oncontextmenu = function(){return false}
                         $fac=$_SESSION['facultad'] ;
                         
                             //Preguntamos los nombres de las carreras segun su idfacultad
-                         $mysqlfacu="SELECT idpublicacion,nombre, categoria,idfacultad,prioridad FROM publicacion WHERE idfacultad = '".$fac."'; ";
+                         $mysqlfacu="SELECT idPublicacion,Nombre, categoria,idFacultad,Prioridad FROM publicacion WHERE idFacultad = '".$fac."'; ";
                         $resulf=mysql_query($mysqlfacu)or die(mysql_error());
                         $lugarp=1;
                        $var=0;
                         while($row1=mysql_fetch_array($resulf)){
-                           if($row1['prioridad']<="4"){
+                           if($row1['Prioridad']<="4"){
                            if ($row1['categoria']=="Empleo") {
                            	$var=$var+1;
                            echo "<div class='marca'>";
-                            echo "<div class='cuadroempleo' value='".$row1['idpublicacion']."' > <p class='textox'> ".$row1['nombre']." </p></div></div>";
+                            echo "<div class='cuadroempleo' value='".$row1['idPublicacion']."' > <p class='textox'> ".$row1['Nombre']." </p></div></div>";
                             }}
                         } 
                          if ($var==0) {
@@ -156,16 +156,16 @@ document.oncontextmenu = function(){return false}
                         $fac=$_SESSION['facultad'] ;
                         
                             //Preguntamos los nombres de las carreras segun su idfacultad
-                         $mysqlfacu="SELECT idpublicacion,nombre, categoria,idfacultad,prioridad FROM publicacion WHERE idfacultad = '".$fac."'; ";
+                         $mysqlfacu="SELECT idPublicacion,Nombre, categoria,idFacultad,Prioridad FROM publicacion WHERE idFacultad = '".$fac."'; ";
                         $resulf=mysql_query($mysqlfacu)or die(mysql_error());
                         $lugarp=1;
                        $var=0;
                         while($row1=mysql_fetch_array($resulf)){
-                           if($row1['prioridad']<="4"){
+                           if($row1['Prioridad']<="4"){
                            if ($row1['categoria']=="Certificación") {
                            	$var=$var+1;
                            echo "<div class='marca'>";
-                            echo "<div class='cuadrocertificacion' value='".$row1['idpublicacion']."' > <p class='textox'> ".$row1['nombre']." </p></div></div>";
+                            echo "<div class='cuadrocertificacion' value='".$row1['idPublicacion']."' > <p class='textox'> ".$row1['Nombre']." </p></div></div>";
                             }}
                         } if ($var==0) {
                           echo "<div class='nomarcas'> <img src='../../imagenes/noavisos.png'></div>'";
@@ -179,16 +179,16 @@ document.oncontextmenu = function(){return false}
                         $fac=$_SESSION['facultad'] ;
                         
                             //Preguntamos los nombres de las carreras segun su idfacultad
-                         $mysqlfacu="SELECT idpublicacion,nombre, categoria,idfacultad,prioridad FROM publicacion WHERE idfacultad = '".$fac."'; ";
+                         $mysqlfacu="SELECT idPublicacion,Nombre, categoria,idFacultad,Prioridad FROM publicacion WHERE idFacultad = '".$fac."'; ";
                         $resulf=mysql_query($mysqlfacu)or die(mysql_error());
                         $lugarp=1;
                        $var=0;
                         while($row1=mysql_fetch_array($resulf)){
-                           if($row1['prioridad']<="4"){
+                           if($row1['Prioridad']<="4"){
                            if ($row1['categoria']=="Seminario") {
                             $var=$var+1;
                              echo "<div class='marca'>";
-                            echo "<div class='cuadroseminario' value='".$row1['idpublicacion']."'><p class='textox'>".$row1['nombre']."</p></div></div>";
+                            echo "<div class='cuadroseminario' value='".$row1['idPublicacion']."'><p class='textox'>".$row1['Nombre']."</p></div></div>";
                             }}
                         }  if ($var==0) {
                           echo "<div class='nomarcas'> <img src='../../imagenes/noavisos.png'></div>'";
@@ -202,16 +202,16 @@ document.oncontextmenu = function(){return false}
                         $fac=$_SESSION['facultad'] ;
                         
                             //Preguntamos los nombres de las carreras segun su idfacultad
-                         $mysqlfacu="SELECT idpublicacion,nombre, categoria,idfacultad,prioridad FROM publicacion WHERE idfacultad = '".$fac."'; ";
+                         $mysqlfacu="SELECT idPublicacion,Nombre, categoria,idFacultad,Prioridad FROM publicacion WHERE idFacultad = '".$fac."'; ";
                         $resulf=mysql_query($mysqlfacu)or die(mysql_error());
                         $lugarp=1;
                        $var=0;
                         while($row1=mysql_fetch_array($resulf)){
-                           if($row1['prioridad']<="4"){
+                           if($row1['Prioridad']<="4"){
                            if ($row1['categoria']=="Junta") {
                            	$var=$var+1;
                            echo "<div class='marca'>";
-                            echo "<div class='cuadrojunta' value='".$row1['idpublicacion']."' > <p class='textox'> ".$row1['nombre']." </p></div></div>";
+                            echo "<div class='cuadrojunta' value='".$row1['idPublicacion']."' > <p class='textox'> ".$row1['Nombre']." </p></div></div>";
                             }}
                         } if ($var==0) {
                           echo "<div class='nomarcas'> <img src='../../imagenes/noavisos.png'></div>'";
@@ -225,16 +225,16 @@ document.oncontextmenu = function(){return false}
                         $fac=$_SESSION['facultad'] ;
                         
                             //Preguntamos los nombres de las carreras segun su idfacultad
-                         $mysqlfacu="SELECT idpublicacion,nombre, categoria,idfacultad,prioridad FROM publicacion WHERE idfacultad = '".$fac."'; ";
+                         $mysqlfacu="SELECT idPublicacion,Nombre, categoria,idFacultad,Prioridad FROM publicacion WHERE idFacultad = '".$fac."'; ";
                         $resulf=mysql_query($mysqlfacu)or die(mysql_error());
                         $lugarp=1;
                        $var=0;
                         while($row1=mysql_fetch_array($resulf)){
-                           if($row1['prioridad']<="4"){
+                           if($row1['Prioridad']<="4"){
                            if ($row1['categoria']=="Aviso") {
                            	$var=$var+1;
                            echo "<div class='marca'>";
-                            echo "<div class='cuadroaviso' value='".$row1['idpublicacion']."' > <p class='textox'> ".$row1['nombre']." </p></div></div>";
+                            echo "<div class='cuadroaviso' value='".$row1['idPublicacion']."' > <p class='textox'> ".$row1['Nombre']." </p></div></div>";
                             }}
                         } 
                         if ($var==0) {
@@ -250,7 +250,7 @@ document.oncontextmenu = function(){return false}
                         $fac=$_SESSION['facultad'] ;
                         
                             //Preguntamos los nombres de las carreras segun su idfacultad
-                         $mysqlfacu="SELECT idpublicacion,nombre, categoria,idfacultad,prioridad FROM publicacion WHERE idfacultad = '".$fac."'; ";
+                         $mysqlfacu="SELECT idPublicacion,Nombre, categoria,idFacultad,Prioridad FROM publicacion WHERE idFacultad = '".$fac."'; ";
                         $resulf=mysql_query($mysqlfacu)or die(mysql_error());
                         $lugarp=1;
                        $var=0;
@@ -259,7 +259,7 @@ document.oncontextmenu = function(){return false}
                            if ($row1['categoria']=="Otro") {
                            	$var=$var+1;
                            echo "<div class='marca'>";
-                            echo "<div class='cuadrootro' value='".$row1['idpublicacion']."'> <p class='textox'> ".$row1['nombre']." </p></div></div>";
+                            echo "<div class='cuadrootro' value='".$row1['idPublicacion']."'> <p class='textox'> ".$row1['Nombre']." </p></div></div>";
                             }}
                         } if ($var==0) {
                           echo "<div class='nomarcas'> <center><img src='../../imagenes/noavisos.png'></center></div>";

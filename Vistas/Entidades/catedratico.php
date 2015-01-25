@@ -116,13 +116,13 @@
                         echo "<td>
 
  <form  method='post' action='../Editar/editarcatedratico.php'>
-    <input type='hidden' name='idcar' value=".$row1['idcatedratico'].">
+    <input type='hidden' name='idcar' value=".$row1['idCatedratico'].">
     <input type='submit' value='Editar'  id='edit' name='Editar' class='conf'><img src='../../imagenes/editar.png' class='icon'>
      </form>
 </td>";
                         echo "<td>
     <form  method='post' action='../../Controller/eliminarcatedratico.php'>
-    <input type='hidden' name='idcate' value=".$row1['idcatedratico'].">
+    <input type='hidden' name='idcate' value=".$row1['idCatedratico'].">
     <input class='conf' type='submit' id='delete' name='Eliminar' value='Eliminar' alingn='center'>
     <img src='../../imagenes/borrar.png' class='icon'>
     

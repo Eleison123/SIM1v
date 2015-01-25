@@ -64,16 +64,16 @@ document.oncontextmenu = function(){return false}
     echo "<label class='text1'> Facultad:</label><br>";
     echo "<select name='facultad' id='facultad' placeholder='facultad'>";
     //Preguntamos los nombres de las materias segun su idfacultad
-    require_once("../../conexiones/conexion.php");
- $mysql="SELECT idfacultad, nombre FROM facultad;";
-$resul=mysql_query($mysql) or die(mysql_error());
-while($row=mysql_fetch_array($resul)){
-    echo "<option value='".$row['idfacultad']."'>";
-    echo $row['nombre'];
+    require_once("../../Conexiones/conexion.php");
+    $mysql="SELECT idFacultad, Nombre FROM facultad;";
+    $resul=mysql_query($mysql) or die(mysql_error());
+    while($row=mysql_fetch_array($resul)){
+    echo "<option value='".$row['idFacultad']."'>";
+    echo $row['Nombre'];
     echo "</option>";
-}
-echo "</select>";
-?>
+    }
+    echo "</select>";
+    ?>
 <br></fieldset>
         
         <center><input  type="submit"  value="GUARDAR" id="btnguardar" name="guardar" > </center>

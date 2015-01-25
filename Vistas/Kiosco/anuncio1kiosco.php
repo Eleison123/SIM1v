@@ -7,7 +7,6 @@
         });
     });    
 </script>
-
 <div id="container">
     <div class="cycle-main"  onmouseout="$('#rot').cycle('resume');">
         <div id="rotar" class="content2">
@@ -19,37 +18,38 @@
     $prio=0;               
     $sqlpu="SELECT * FROM publicacion WHERE idFacultad='".$fac."' order by prioridad";
     $respus=mysql_query($sqlpu) or die(mysql_error());
-    $total=mysql_num_rows($respus);
+  
+    $sql3="SELECT * FROM publicacion WHERE idFacultad='".$fac."' AND Prioridad = 1";
+            $sql4="SELECT * FROM publicacion WHERE idFacultad='".$fac."' AND Prioridad = 2";
+            $respus3=mysql_query($sql3) or die(mysql_error());
+            $respus4=mysql_query($sql4) or die(mysql_error());
+            $total3=mysql_num_rows($respus3);
+            $total4=mysql_num_rows($respus4);
+            $total=$total3 + $total4;
     if ($total==0) {
-        echo"<div id='sinanuncio'><figure><img id='noav' src='../imagenes/Aviso.png'></figure></div></div></div></div>";
+        echo"<div id='sinanuncio'><figure><center><img id='noav' src='../imagenes/Aviso.png'></center></figure></div></div></div></div>";
     }
     else{
     while ($respu=mysql_fetch_array($respus)) {               
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                     Asignamos Variables                                                               ///
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        $fechavig=""; $fechareg="";
     $idpub=$respu['idPublicacion'];
     $prioridad = $respu['Prioridad'];
-    $horareg= date("H:i:s");
-    $fechareg = date("d-m-Y");
-    $diap = strtotime($respu['diapublicacion']);
-    $diapubli = date("d-m-Y",$diap);
-    $diapublicacion = $diapubli;
+    $horareg= Date("H:i:s");
+    $fechareg = Date("Y-m-d");
     $horapublicaicon = $respu['horapublicacion'];
-    $fter = strtotime($respu['fechater']);
-    $fechter = date("d-m-Y",$fter);
-    $fechater = $fechter;
+    $diap = strtotime($respu['diapublicacion']);
+    $diapubli = Date("Y-m-d",$diap);
+    $diapublicacion = $diapubli;
+    $fter = strtotime($respu['fechavig']);
+    $fechter = Date("Y-m-d",$fter);
+    $fechavig = $fechter;
     $horater=$respu['horater'];
-
-    if($fechareg>$fechater){
+    if($fechareg > $fechavig){
         $prioridadd=5;
-            $res=mysql_query("UPDATE  publicacion SET prioridad =".$prioridadd." where idpublicacion=".$idpub."")or die(mysql_error());
-    }
-    if ($fechareg==$fechater) {
-        if ($horareg>=$horater) {
-            $prioridadd=5;
-            $res=mysql_query("UPDATE  publicacion SET prioridad =".$prioridadd." where idpublicacion=".$idpub."")or die(mysql_error());
-        }   
+            $res=mysql_query("UPDATE  publicacion SET Prioridad =".$prioridadd." WHERE idpublicacion=".$idpub."")or die(mysql_error());
     }
     if ($prioridad=="1"){
             if ($fechareg>=$diapublicacion) {
@@ -68,14 +68,14 @@
                 $colorletra = $respu['colorletra'];
                 $url = $respu['url'];
                 $contacto = $respu['contacto'];
-                if ($img=="../../imgPublicaciones/") {
+                if ($img=="../../imgPublicaciones/"){
                     $numavi2=$numavi2+1;
                     echo "<div id='anuncio'style='background:".$color."'>";
                     echo "<h1 style='color:".$colorletra."'id='titulo' class='texto10'>".$nombre."</h1>";
                     echo "";
                         echo "<div >";
                             echo "<div id='infor'>";
-                            echo "<br><p style='color:".$colorletra."'  class='infor'>".$infobreve."</p><br>";
+                            echo "<br><p style='color:".$colorletra."'  class='inform'>".$infobreve."</p><br>";
                             echo "</div><hr><br>";
                                 echo "<div id='inform'>";
                                 echo "<p style='color:".$colorletra."'  class='inform'>".$infobreve."</p><br>";
@@ -143,7 +143,7 @@
                 }
             }
     }
-    if ($prioridad=="2") {
+    if ($prioridad=="2"){
             if ($fechareg>=$diapublicacion) {     
                 if ($prio==0) {
                     $fecharea=$respu['fecharea'];
@@ -236,9 +236,7 @@
     }//Termina prioridad 2
     }//Termina While
     }//termina else
-    if ($numavi2==0) {
-    echo"<div id='anuncio'><figure><img id='noav' src='../imagenes/kioscouv.png'></figure></div></div></div></div>";
-    }
+   
 
 echo "</div>  </div>  </div>";
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -2,7 +2,7 @@
 //incluimos seguridad
 include"seguridad.php";
 //incluimos libreria para código QR
-include "qrlib.php"; 
+require"qrlib.php"; 
 
 $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR;
     
@@ -16,7 +16,7 @@ $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR
     $errorCorrectionLevel = 'L';
     /////////////////////////////////////// 
     if (@$_POST['guardar']) {
-        require_once("../conexiones/conexion.php");
+        require_once("../Conexiones/conexion.php");
         //Verificar que ningun dato venga vacio.
         if(isset($_POST['nombre1p'])and
         ($_POST['info1p'])and
@@ -112,7 +112,7 @@ $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR
                 //Hacer Registro de la publicacion
              @session_start();
                 $nombreadmin = $_SESSION['nombreUsuario'];
-                $sql = "SELECT idCuenta, usuario, idfacultad FROM cuenta WHERE usuario='".$nombreadmin."';";    
+                $sql = "SELECT idCuenta, Usuario, idFacultad FROM cuenta WHERE Usuario='".$nombreadmin."';";    
                 $resultado = mysql_query($sql) or die (mysql_error());
                 $fila = mysql_fetch_array($resultado, MYSQL_BOTH);
                 $idad = $fila[0];
@@ -125,8 +125,8 @@ $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR
                 $reglast_id = mysql_insert_id();
     
 
-$sql="INSERT INTO publicacion(nombre,categoria,fecharea,horarea,fechater,horater,url,lugar,contacto,img,infobreve,info,qr,color,colorletra,diapublicacion,horapublicacion,prioridad,visitas,idregistro,idfacultad,fechavig,idCuenta) 
-VALUES('".$nombre."','".$categoria."','".$fecharea."','".$horarea."','".$fechater."','".$horater."','".$url."','".$lugar."','".$contacto."','".$destino."','".$infob."','".$info."','".$qr."','".$color."','".$colorletra."','".$diapu."','".$horapu."','".$prioridad."',0,'".$reglast_id."','".$facuser."','".$fechavig."','".$idad."')";
+$sql="INSERT INTO publicacion(nombre,categoria,fecharea,horarea,fechater,horater,url,lugar,contacto,img,infobreve,info,qr,color,colorletra,diapublicacion,horapublicacion,prioridad,visitas,idregistro,idfacultad,fechavig) 
+VALUES('".$nombre."','".$categoria."','".$fecharea."','".$horarea."','".$fechater."','".$horater."','".$url."','".$lugar."','".$contacto."','".$destino."','".$infob."','".$info."','".$qr."','".$color."','".$colorletra."','".$diapu."','".$horapu."','".$prioridad."',0,'".$reglast_id."','".$facuser."','".$fechavig."')";
 
 
 $resultado = mysql_query($sql) or die(mysql_error());

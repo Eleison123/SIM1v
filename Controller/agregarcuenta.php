@@ -4,7 +4,7 @@ include"../seguridad.php";
     // si presiona guardar
     if (@$_POST['guardar']) {
         //le metemos conexión
-    require_once("../../conexiones/conexion.php");
+    require_once("../../Conexiones/conexion.php");
         if(isset($_POST['nombre'])and
             ($_POST['contrasena'])and
             ($_POST['tipo']!="")){ 
@@ -22,7 +22,7 @@ include"../seguridad.php";
             $tipo = filter_var($tipo, FILTER_SANITIZE_SPECIAL_CHARS);
             $facu = filter_var($facu, FILTER_SANITIZE_SPECIAL_CHARS);
 
-            $sqluser ="INSERT INTO cuenta (usuario, contrasena, tipo, idfacultad) VALUES ('".$nombre."','".$contrasena."','".$tipo."','".$facu."')";
+            $sqluser ="INSERT INTO cuenta (Usuario, Contrasena, tipo, idFacultad) VALUES ('".$nombre."','".$contrasena."','".$tipo."','".$facu."')";
             mysql_query($sqluser) or die(mysql_error());
         mysql_close();
         ////////////////////  Limpiamos Variables  //////////////////////

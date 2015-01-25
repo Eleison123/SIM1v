@@ -62,11 +62,11 @@ document.oncontextmenu = function(){return false}
             <input type="text" name="nombre" placeholder="Nombre de la Experiencia Educativa ">  <br>     
 
                         <?php 
-                         require_once("../../conexiones/conexion.php");
+                         require_once("../../Conexiones/conexion.php");
                          @session_start();
                          //Preguntamos quien es el administrador para obtener la "idfacultad"
                             $nombreadmin = $_SESSION['nombreUsuario'];
-                            $sql = "SELECT idfacultad FROM Cuenta WHERE usuario='".$nombreadmin."';";    
+                            $sql = "SELECT idFacultad FROM cuenta WHERE Usuario='".$nombreadmin."';";    
                             $resultado = mysql_query($sql) or die(mysql_error());
                             $fil = mysql_fetch_array($resultado, MYSQL_BOTH);
                             $fac = $fil[0];
@@ -77,12 +77,12 @@ document.oncontextmenu = function(){return false}
 
   <?php  
    echo "<select name='carrera'>";
-    $caread="SELECT idcarrera, nombre , idfacultad FROM carrera WHERE idfacultad = '".$fac."';";
+    $caread="SELECT idCarrera, Nombre , idFacultad FROM carrera WHERE idFacultad = '".$fac."';";
     $pregunta= mysql_query($caread) or die(mysql_error());
     
         while ($listado=mysql_fetch_array($pregunta)) {
-            echo "<option value='".$listado['idcarrera']."'>";
-            echo $listado['nombre'];
+            echo "<option value='".$listado['idCarrera']."'>";
+            echo $listado['Nombre'];
             echo "</option>";
         }
         echo "</select><br>";

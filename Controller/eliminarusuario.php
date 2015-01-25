@@ -1,6 +1,6 @@
 <?php
 include"../Vistas/seguridad.php";
-        require_once("../conexiones/conexion.php");
+        require_once("../Conexiones/conexion.php");
         $iduse = $_POST['iduser'];
         
             $rex=mysql_query("DELETE FROM registro WHERE idCuenta=".$iduse."")or die(mysql_error());

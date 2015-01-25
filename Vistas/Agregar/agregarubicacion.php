@@ -54,16 +54,16 @@ document.oncontextmenu = function(){return false}
             <textarea title="Pequeña descripción del lugar a agregar" name="descripcion"></textarea>
         
             <?php
-            require_once("../../conexiones/conexion.php");
+            require_once("../../Conexiones/conexion.php");
              @session_start();
             $nombreadmin = $_SESSION['nombreUsuario'];
-                $sql = "SELECT  idfacultad FROM cuenta WHERE usuario='".$nombreadmin."';";    
+                $sql = "SELECT  idFacultad FROM cuenta WHERE Usuario='".$nombreadmin."';";    
                 $resultado = mysql_query($sql) or die (mysql_error());
                 $filass = mysql_fetch_array($resultado, MYSQL_BOTH);
                 $id = $filass[0];
 
            
-            $mysqlw="SELECT nombre FROM facultad WHERE idfacultad='".$id."';";
+            $mysqlw="SELECT Nombre FROM facultad WHERE idFacultad='".$id."';";
             $resulx=mysql_query($mysqlw) or die(mysql_error());
                 $filaxs = mysql_fetch_array($resulx, MYSQL_BOTH);
                 $fact = $filaxs[0];

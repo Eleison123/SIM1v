@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-01-2015 a las 23:59:57
+-- Tiempo de generación: 21-01-2015 a las 17:14:35
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.11
 
@@ -183,8 +183,6 @@ CREATE TABLE IF NOT EXISTS `experienciaeducativa` (
 --
 
 INSERT INTO `experienciaeducativa` (`idExperienciaEducativa`, `Nombre`, `idCarrera`, `idFacultad`) VALUES
-(2, 'Algoritmos I', 1, 1),
-(3, 'Algoritmos II', 1, 1),
 (4, 'COMPUTACION BASICA', 4, 1),
 (5, 'HABILIDADES DEL PENSAMIENTO CRITICO Y CREATIV', 4, 1),
 (6, 'INGLES I', 4, 1),
@@ -284,7 +282,6 @@ INSERT INTO `experienciaeducativa` (`idExperienciaEducativa`, `Nombre`, `idCarre
 (100, 'DISEÃ‘O DE SOFTWARE', 5, 1),
 (101, 'ESTRUCTURAS DE DATOS', 5, 1),
 (102, 'PARADIGMAS DE PROGRAMACION', 5, 1),
-(103, 'REDES', 1, 1),
 (104, 'REDES', 5, 1),
 (105, 'BASES DE DATOS', 5, 1),
 (106, 'ACREDITACION DEL IDIOMA INGLES', 5, 1),
@@ -406,7 +403,7 @@ CREATE TABLE IF NOT EXISTS `horario` (
   `horafin` time DEFAULT NULL,
   `horain` time DEFAULT NULL,
   `horapub` time DEFAULT NULL,
-  `tipo` varchar(45) DEFAULT NULL,
+  `tipo` int(11) DEFAULT NULL,
   `idCarrera` int(11) NOT NULL,
   `idFacultad` int(11) NOT NULL,
   `idCatedratico` int(11) NOT NULL,
@@ -417,22 +414,41 @@ CREATE TABLE IF NOT EXISTS `horario` (
   `Seccion` varchar(2) DEFAULT NULL,
   `Bloque` varchar(2) DEFAULT NULL,
   `Secretaria` varchar(45) DEFAULT NULL,
-  `acta` varchar(10) NOT NULL,
+  `acta` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`idHorario`,`idCarrera`,`idFacultad`,`idCatedratico`,`idubicacion`,`idExperienciaEducativa`),
   KEY `fk_horario_Carrera1_idx` (`idCarrera`,`idFacultad`),
   KEY `fk_horario_Catedratico1_idx` (`idCatedratico`),
   KEY `fk_horario_ubicacion1_idx` (`idubicacion`),
   KEY `fk_horario_experienciaeducativa1_idx` (`idExperienciaEducativa`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
 
 --
 -- Volcado de datos para la tabla `horario`
 --
 
 INSERT INTO `horario` (`idHorario`, `dia`, `diapub`, `fechavig`, `horafin`, `horain`, `horapub`, `tipo`, `idCarrera`, `idFacultad`, `idCatedratico`, `idubicacion`, `idExperienciaEducativa`, `NRC`, `NRCANT`, `Seccion`, `Bloque`, `Secretaria`, `acta`) VALUES
-(11, 'Martes', '09/15/2014', '29-05-2015', '14:00:00', '13:00:00', '13:00:00', '1', 1, 1, 8, 13, 49, '12345', '--', 'S2', 'B7', '---', ''),
-(12, '01/04/2015', '01-12-2014', '30-04-2015', '13:00:00', '12:00:00', '13:00:00', '6', 1, 1, 1, 19, 49, '12345', '--', 'S2', 'B7', '---', ''),
-(13, '01/12/2015', '01-01-2015', '31-01-2015', '15:00:00', '13:00:00', '13:00:00', '2', 1, 1, 1, 14, 48, '12345', '--', 'S2', 'B7', '---', '');
+(19, 'Lunes', '01/01/2015', '08/02/2015', '19:00:00', '17:00:00', '01:00:00', 1, 1, 1, 1, 9, 59, '---', '---', 'S1', 'B2', '', ''),
+(20, 'Martes', '01/01/2015', '08/01/2015', '19:00:00', '17:00:00', '01:00:00', 1, 1, 1, 1, 11, 59, '---', '30587', 'S1', 'B2', '', ''),
+(21, 'Jueves', '01/01/2015', '08/01/2015', '19:00:00', '17:00:00', '01:00:00', 1, 1, 1, 1, 8, 59, '---', '30587', 'S1', 'B2', '', ''),
+(22, 'Martes', '01/01/2015', '08/01/2015', '19:00:00', '17:00:00', '13:00:00', 1, 1, 1, 16, 14, 40, '--', '27332', 'S1', 'B2', '', ''),
+(23, 'Miercoles', '01/01/2015', '08/01/2015', '19:00:00', '17:00:00', '13:00:00', 1, 1, 1, 16, 14, 40, '--', '27332', 'S1', 'B2', '', ''),
+(24, 'Viernes', '01/01/2015', '08/01/2015', '21:00:00', '19:00:00', '13:00:00', 1, 1, 1, 16, 14, 40, '--', '27332', 'S1', 'B2', '', ''),
+(25, 'Martes', '01/01/2015', '08/01/2015', '09:00:00', '07:00:00', '01:00:00', 1, 1, 1, 8, 13, 46, '---', '27352', 'S1', 'B2', '', ''),
+(26, 'Miercoles', '01/01/2015', '08/01/2015', '09:00:00', '07:00:00', '13:00:00', 1, 1, 1, 8, 6, 46, '', '27352', 'S1', 'B2', '', ''),
+(27, 'Jueves', '01/01/2015', '08/01/2015', '09:00:00', '07:00:00', '01:00:00', 1, 1, 1, 8, 2, 46, '---', '27352', 'S1', 'B2', '', ''),
+(28, 'Martes', '01/01/2015', '08/01/2015', '11:00:00', '10:00:00', '01:00:00', 1, 1, 1, 54, 14, 64, '70671', '27356', 'S1', 'B2', '', ''),
+(29, 'Miercoles', '01/01/2015', '08/01/2015', '13:00:00', '11:00:00', '01:00:00', 1, 1, 1, 54, 11, 64, '70671', '27356', 'S1', 'B2', '', ''),
+(30, 'Jueves', '01/01/2015', '08/01/2015', '13:00:00', '11:00:00', '01:00:00', 1, 1, 1, 54, 8, 64, '70671', '27356', 'S1', 'B2', '', ''),
+(31, 'Lunes', '01/01/2015', '08/01/2015', '15:00:00', '13:00:00', '01:00:00', 1, 1, 1, 1, 9, 43, '70673', '27361', 'S1', 'B2', '', ''),
+(32, 'Miercoles', '01/01/2015', '08/01/2015', '15:00:00', '13:00:00', '01:00:00', 1, 1, 1, 1, 9, 43, '70673', '27361', 'S1', 'B2', '', ''),
+(33, 'Viernes', '01/01/2015', '08/01/2015', '15:00:00', '13:00:00', '01:00:00', 1, 1, 1, 1, 12, 43, '70673', '27361', 'S1', 'B2', '', ''),
+(34, 'Martes', '01/01/2015', '08/01/2015', '21:00:00', '19:00:00', '01:00:00', 1, 1, 1, 28, 12, 43, '---', '27399', 'S2', 'B2', '', ''),
+(35, 'Miercoles', '01/01/2015', '08/01/2015', '17:00:00', '15:00:00', '01:00:00', 1, 1, 1, 28, 8, 43, '---', '27399', 'S2', 'B2', '', ''),
+(36, 'Viernes', '01/01/2015', '08/01/2015', '21:00:00', '19:00:00', '13:00:00', 1, 1, 1, 28, 13, 43, '---', '27399', 'S2', 'B2', '', ''),
+(37, 'Lunes', '01/01/2015', '08/01/2015', '11:00:00', '09:00:00', '13:00:00', 1, 1, 1, 1, 12, 41, '70677', '27402', 'S2', 'B2', '', ''),
+(38, 'Martes', '01/01/2015', '08/01/2015', '10:00:00', '09:00:00', '01:00:00', 1, 1, 1, 1, 14, 41, '70677', '27402', 'S2', 'B2', '', ''),
+(39, 'Jueves', '01/01/2015', '08/01/2015', '11:00:00', '09:00:00', '01:00:00', 1, 1, 1, 1, 14, 41, '70677', '27402', 'S2', 'B2', '', ''),
+(40, 'Lunes', '01/01/2015', '08/01/2015', '11:00:00', '09:00:00', '01:00:00', 1, 1, 1, 49, 10, 39, '---', '27431', 'S2', 'B2', '', '');
 
 -- --------------------------------------------------------
 
@@ -446,9 +462,9 @@ CREATE TABLE IF NOT EXISTS `publicacion` (
   `Color` varchar(45) DEFAULT NULL,
   `Colorletra` varchar(45) DEFAULT NULL,
   `Contacto` varchar(45) DEFAULT NULL,
-  `diapublicacion` date DEFAULT NULL,
-  `fecharea` date DEFAULT NULL,
-  `fechavig` date DEFAULT NULL,
+  `diapublicacion` varchar(10) DEFAULT NULL,
+  `fecharea` varchar(10) DEFAULT NULL,
+  `fechavig` varchar(10) DEFAULT NULL,
   `horapublicacion` time DEFAULT NULL,
   `horarea` time DEFAULT NULL,
   `horater` time DEFAULT NULL,
@@ -462,13 +478,12 @@ CREATE TABLE IF NOT EXISTS `publicacion` (
   `URL` longtext,
   `Visitas` int(11) DEFAULT NULL,
   `idFacultad` int(11) NOT NULL,
-  `fechater` date DEFAULT NULL,
+  `fechater` varchar(10) DEFAULT NULL,
   `idRegistro` int(11) NOT NULL,
-  `idCuenta` int(11) NOT NULL,
-  PRIMARY KEY (`idPublicacion`,`idFacultad`,`idRegistro`,`idCuenta`),
+  PRIMARY KEY (`idPublicacion`,`idFacultad`,`idRegistro`),
   KEY `fk_publicacion_Facultad1_idx` (`idFacultad`),
-  KEY `fk_publicacion_registro1_idx` (`idRegistro`,`idCuenta`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  KEY `fk_publicacion_registro1_idx` (`idRegistro`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 -- --------------------------------------------------------
 
@@ -483,8 +498,8 @@ CREATE TABLE IF NOT EXISTS `registro` (
   `idCuenta` int(11) NOT NULL,
   `idFacultad` int(11) NOT NULL,
   PRIMARY KEY (`idRegistro`,`idCuenta`,`idFacultad`),
-  KEY `fk_registro_Cuenta1_idx` (`idFacultad`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+  KEY `fk_registro_Cuenta1_idx` (`idCuenta`,`idFacultad`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 -- --------------------------------------------------------
 
@@ -618,13 +633,13 @@ ALTER TABLE `horario`
 --
 ALTER TABLE `publicacion`
   ADD CONSTRAINT `fk_publicacion_Facultad1` FOREIGN KEY (`idFacultad`) REFERENCES `facultad` (`idFacultad`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_publicacion_registro1` FOREIGN KEY (`idRegistro`, `idCuenta`) REFERENCES `registro` (`idRegistro`, `idCuenta`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_publicacion_registro1` FOREIGN KEY (`idRegistro`) REFERENCES `registro` (`idRegistro`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `registro`
 --
 ALTER TABLE `registro`
-  ADD CONSTRAINT `fk_registro_Cuenta1` FOREIGN KEY (`idFacultad`) REFERENCES `cuenta` (`idFacultad`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_registro_Cuenta1` FOREIGN KEY (`idCuenta`, `idFacultad`) REFERENCES `cuenta` (`idCuenta`, `idFacultad`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `ubicacion`

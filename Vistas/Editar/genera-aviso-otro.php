@@ -4,22 +4,27 @@ require_once("../../Conexiones/conexion.php");
 
  session_start();
 
-    $consulta = "SELECT * FROM publicacion WHERE idpublicacion = ".$_GET['id']."";
+    $consulta = "SELECT * FROM publicacion WHERE idPublicacion = ".$_GET['id']."";
 
     $query = mysql_query($consulta)or die(mysql_error());
   
     while ($respu = mysql_fetch_array($query)) {
         $idpub=$respu['idPublicacion'];
-    $prioridad = $respu['Prioridad'];
-    $horareg= date("H:i:s");
-    $fechareg = date("Y-m-d");
-    $diapublicacion = $respu['diapublicacion'];
-    $horapublicaicon = $respu['horapublicacion'];
-    $fechater = $respu['fechavig'];
-    if($fechareg>$fechater){
-       
+        $prioridad = $respu['Prioridad'];
+        $horareg= Date("H:i:s");
+        $fechareg = Date("Y-m-d");
+        $diap = strtotime($respu['diapublicacion']);
+        $diapubli = Date("Y-m-d",$diap);
+        $diapublicacion = $diapubli;
+        $horapublicaicon = $respu['horapublicacion'];
+        $fechater1 = strtotime($respu['fechavig']);
+        $fechater=Date("Y-m-d",$fechater1);
+        $fechterm=$fechater;
+
+
+    if($fechareg > $fechterm){
         $prioridad=5;
-            $res=mysql_query("UPDATE  publicacion SET prioridad =".$prioridad." where idpublicacion=".$idpub."")or die(mysql_error()); 
+            $res=mysql_query("UPDATE  publicacion SET Prioridad =".$prioridad." WHERE idpublicacion=".$idpub."")or die(mysql_error()); 
             if($res){
             echo"<script>alert('Mi publicación ya termino!!')</script>";}
         }
@@ -32,7 +37,7 @@ $infobreve = $respu['Infobreve'];
 $horarea = $respu['horarea'];
 $horater=$respu['horater'];
 $lugar = $respu['Lugar'];
-$img = $respu['img'];
+$img = "../".$respu['img'];
 $qr= "../".$respu['QR'];
 
 $visitas = $respu['Visitas'];
@@ -45,11 +50,11 @@ $contacto = $respu['Contacto'];
 
             if ($prioridad<=4) {
 
-if ($img=="../../imgPublicaciones/") {
+if ($img=="../../../imgPublicaciones/") {
      echo"<div class='marcas'>";
  echo"<div id='contenedor'>";
     $visitas=$visitas+1;
-    $vis=mysql_query("UPDATE publicacion SET visitas=".$visitas." where idpublicacion=".$idpub."")or die(mysql_error());
+    $vis=mysql_query("UPDATE publicacion SET visitas=".$visitas." WHERE idpublicacion=".$idpub."")or die(mysql_error());
 echo"<div id='anuncio' style='background:".$color."'>";
             
                     echo"<h1 style='color:".$colorletra."' id='titulo' class='texto1'>".$nombre."</h1>";
@@ -92,7 +97,7 @@ echo"<div id='anuncio' style='background:".$color."'>";
             echo"<div id='anuncio'style='background:".$color."'>";
             echo"<img id='imagen' src='".$img."'>";
             $visitas=$visitas+1;
-             $vis=mysql_query("UPDATE publicacion SET visitas=".$visitas." where idpublicacion=".$idpub."")or die(mysql_error());
+             $vis=mysql_query("UPDATE publicacion SET visitas=".$visitas." WHERE idpublicacion=".$idpub."")or die(mysql_error());
             echo"<h1 style='color:".$colorletra."'id='titulo' class='texto1'>".$nombre."</h1>";
             echo "<hr>";
             echo"<div >";

@@ -2,7 +2,7 @@
 <?php
 include "../Vistas/seguridad.php";
 
-        require_once("../conexiones/conexion.php");
+        require_once("../Conexiones/conexion.php");
         $idpub = $_POST['idpubli'];
       
            
