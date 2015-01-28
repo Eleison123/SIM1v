@@ -55,30 +55,31 @@
             if ($fechareg>=$diapublicacion) {
                 $prio=1;
                 $fecharea=$respu['fecharea'];
-                $nombre = $respu['nombre'];
+                $nombre = $respu['Nombre'];
                 $categoria = $respu['categoria'];
-                $info = $respu['info'];
-                $infobreve = $respu['infobreve'];
+                $info = $respu['Info'];
+                $infobreve = $respu['Infobreve'];
                 $horarea = $respu['horarea'];
-                $lugar = $respu['lugar'];
+                $lugar = $respu['Lugar'];
                 $img = $respu['img'];
-                $qr= $respu['qr'];
-                $visitas = $respu['visitas'];
-                $color = $respu['color'];
-                $colorletra = $respu['colorletra'];
-                $url = $respu['url'];
-                $contacto = $respu['contacto'];
+                $qr= $respu['QR'];
+                $visitas = $respu['Visitas'];
+                $color = $respu['Color'];
+                $colorletra = $respu['Colorletra'];
+                $url = $respu['URL'];
+                $contacto = $respu['Contacto'];
+                
                 if ($img=="../../imgPublicaciones/"){
                     $numavi2=$numavi2+1;
                     echo "<div id='anuncio'style='background:".$color."'>";
+                    if($categoria=="Aviso"){echo"<img id='imagenx' src='../imagenes/iconos_13.png' >";}
+                    if($categoria=="Beca"){echo"<img id='imagenx' src='../imagenes/iconos_63.png' >";}
+                    if($categoria=="Empleo"){echo"<img id='imagenx' src='../imagenes/iconos_46.png' >";}
+                    if($categoria=="Certificación"){echo"<img id='imagenx' src='../imagenes/iconos_37.png' >";}
+                    if($categoria=="Seminario"){echo"<img id='imagenx' src='../imagenes/iconos_43.png' >";}
+                    if($categoria=="Junta"){echo"<img id='imagenx' src='../imagenes/iconos_40.png' >";}
+                    if($categoria=="Otro"){echo"<img id='imagenx' src='../imagenes/iconos_60.png' >";}
                     echo "<h1 style='color:".$colorletra."'id='titulo' class='texto10'>".$nombre."</h1>";
-                    if($categoria=="Aviso"){echo"<img id='imagenx' src='../../imagenes/iconos_13.png' >";}
-                    if($categoria=="Beca"){echo"<img id='imagenx' src='../../imagenes/iconos_63.png' >";}
-                    if($categoria=="Empleo"){echo"<img id='imagenx' src='../../imagenes/iconos_46.png' >";}
-                    if($categoria=="Certificación"){echo"<img id='imagenx' src='../../imagenes/iconos_37.png' >";}
-                    if($categoria=="Seminario"){echo"<img id='imagenx' src='../../imagenes/iconos_43.png' >";}
-                    if($categoria=="Junta"){echo"<img id='imagenx' src='../../imagenes/iconos_40.png' >";}
-                    if($categoria=="Otro"){echo"<img id='imagenx' src='../../imagenes/iconos_60.png' >";}
                     echo "";
                         echo "<div >";
                             echo "<div id='infor'>";

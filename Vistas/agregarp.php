@@ -111,10 +111,10 @@
  <input type="file" value="Subir" id="btnsubir" name="imagen"><br><br>
 
 <label  class="text1">Información Breve de la Publicación:</label><br>
- <textarea type="text" id="infob1p" title="Informacion que aparecera en el kiosko" name="infob1p" maxlength="250" ></textarea><div id="contador1"></div><br>
+ <textarea type="text" id="infob1p" title="Informacion que aparecera en el kiosko" name="infob1p" maxlength="500" ></textarea><div id="contador1"></div><br>
 
  <label for="info1p" class="text1">Información de la Publicación:</label><br>
- <textarea type="text" id="info1p" title="Informacion completa de la publicación" name="info1p" maxlength="500"></textarea><div id="contador2"></div><br>
+ <textarea type="text" id="info1p" title="Informacion completa de la publicación" name="info1p" ></textarea><div id="contador2"></div><br>
 
  <label for="info1p" class="text1">Código QR:</label><br>
  <a class="text1"> Aquí usted podrá proporcionar el tamaño del código QR así como su resolución.</a><br>
@@ -209,7 +209,7 @@ $(document).ready(function(){
     });
 });
 $(document).ready(function(){
-    var max_chars = 250;
+    var max_chars = 500;
     $('#maxii').html(max_chars);
     $('#infob1p').keyup(function() {
         var chars = $(this).val().length;
@@ -217,17 +217,3 @@ $(document).ready(function(){
         $('#contador1').html(diff);   
     });
 });
-$(document).ready(function(){
-
-    var max_chars = 500;
-
-    $('#maxi').html(max_chars);
-
-    $('#info1p').keyup(function() {
-        var chars = $(this).val().length;
-        var diff = max_chars - chars;
-        $('#contador2').html(diff);   
-    });
-});
-
-</script>
