@@ -7,6 +7,9 @@ include"seguridadkiosko2.php";
 <!-- Metas -->
 <meta charset="utf-8"> 
 <meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="refresh" content="300000">
+<link rel="shortcut icon" href="../imagenes/favicon.ico" type="image/png" />
+<title>Sistema Interactivo de Mensajes</title>
 <!-- CSS -->
 <link rel="stylesheet" href="../css/anuncio2.css">
 <!-- JS -->

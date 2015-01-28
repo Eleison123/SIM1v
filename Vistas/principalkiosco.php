@@ -9,11 +9,14 @@ include"seguridadkiosko.php";
 <!-- Metas -->
 	<meta charset="utf-8"> 
 	<meta name="viewport" content=" user-scalable=no">
+	<meta http-equiv="refresh" content="300000">
+	<link rel="shortcut icon" href="../imagenes/favicon.ico" type="image/png" />
 <!-- CSS -->
 	<link rel="stylesheet" href="../css/anuncio1.css">
 <!-- JS -->
 <script src="../js/jquery-1.11.0.min.js"></script>
 <script src="../JS comprimido/jquery.cycle.all.js"></script>
+<title>Sistema Interactivo de Mensajes</title>
 
 <script type="text/javascript">
 $(document).ready(function(){
