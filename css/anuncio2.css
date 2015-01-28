@@ -174,7 +174,7 @@ float:left;
     width: 220px;
     padding: 10px;
     margin-top: 90px;
-    margin-left: 30px;
+    margin-left: 5%;
     height: 350px;
 }
 #image{
@@ -363,7 +363,7 @@ p{
 #imagenx{
     padding: 10px;
     margin-top: 20px;
-    margin-left: -40%;
+    margin-left: -30%;
     height: 230px;
     position: absolute;
 }
