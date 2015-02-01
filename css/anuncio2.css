@@ -1,4 +1,12 @@
-@charset "utf-8";
+@font-face {
+  font-family: 'fuente';
+   src: url('Roboto-Regular.eot'),
+  url('Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+  url('Roboto-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* CSS Document */
 #todo{
 	width: 100%;
@@ -21,10 +29,10 @@ width: 100%;
 *{
 	margin:0px;
 	padding:0px;
-	font-family: ARIAL; 
+	font-family: "fuente"; 
 }
 #ubicate{
-	font-family: ARIAL;
+	font-family: "fuente";
 	font-size: 5em;
 	margin:5%;
 	color: white;
@@ -32,17 +40,17 @@ width: 100%;
 }
 .texto2{
 	font-size: medium;
-	font-family: ARIAL; 
+	font-family: "fuente"; 
 	text-align: center;
 }
 .texto1{
 	font-size: 2em;
-	font-family: ARIAL;
+	font-family: "fuente";
 	text-align: center;
 }
 .texto17{
 	font-size: 1.7em;
-	font-family: ARIAL;
+	font-family: "fuente";
 	text-align: left;
 }
 
@@ -53,7 +61,7 @@ position:relative;
 	height: 40px;
 		}
 #cen{
-	font-family: ARIAL;
+	font-family: "fuente";
 				height: 150px;
 	         width:100%;
 			overflow:hidden;
@@ -68,7 +76,7 @@ position:relative;
 		width:auto;
 		position:relative;
 		font-size: 1.5em;
-		font-family: ARIAL;
+		font-family: "fuente";
 	}
 #contenido{
 	position:relative;
@@ -129,7 +137,7 @@ p.texto{
 	font-size: 1em;
 	color:white;
 	text-align: center;
-	font-family: ARIAL;
+	font-family: "fuente";
 }
 div.botonera:target p.texto{
 	opacity: 1;
@@ -157,7 +165,7 @@ div.botonera:target img.icon{
 }
 #titulo{
 	text-align: center;
-	font-family: ARIAL;
+	font-family: "fuente";
 	font-size: 3em;
 }
 #tit{
@@ -194,7 +202,7 @@ float:left;
 width: 25px;
 }
 .inform{
-	font-family: ARIAL;
+	font-family: "fuente";
 	font-size: 2.5em;
 	width: 50%;
 	height: 60%;
@@ -205,7 +213,7 @@ width: 25px;
     text-align: left;
 }
 .infor{
-	font-family: ARIAL;
+	font-family: "fuente";
 	font-size: 1.7em;
 	width: 50%;
 	height: 60%;
@@ -240,10 +248,10 @@ width: 0px;
 }
 .infor{
 	
-	font-family: ARIAL;
+	font-family: "fuente";
 }
 #infor{
-	font-family: ARIAL;
+	font-family: "fuente";
 	width: 900px;
 	height: 65%;
 	margin: auto;
@@ -251,7 +259,7 @@ width: 0px;
 	word-wrap: break-word;
 	padding: 10px;
 }
-body { margin:0px; font-family:Arial;  background: #39414A;}
+body { margin:0px; font-family:"fuente";  background: #39414A;}
 #container { 
 	width:100%;
 	height: 800px;

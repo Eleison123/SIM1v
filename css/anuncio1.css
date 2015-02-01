@@ -192,8 +192,8 @@ float:left;
 width: 25px;
 }
 #inform{
-	font-family: VERDANA;
-	font-size: 1.em;
+	font-family: "Times New Roman", Georgia, Serif !important;
+	font-size: 1em;
 	width: 50%;
 	height: 60%;
 	margin-top: 5%;

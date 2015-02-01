@@ -5,8 +5,10 @@ include"seguridadkiosko2.php";
 <!DOCTYPE HTML>
 <html lang="es">
 <!-- Metas -->
-<meta charset="utf-8"> 
-<meta name=viewport content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+
 <meta http-equiv="refresh" content="300000">
 <link rel="shortcut icon" href="../imagenes/favicon.ico" type="image/png" />
 <title>Sistema Interactivo de Mensajes</title>
