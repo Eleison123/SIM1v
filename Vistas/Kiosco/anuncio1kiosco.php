@@ -101,6 +101,7 @@
                 $colorletra = $respu['Colorletra'];
                 $url = $respu['URL'];
                 $contacto = $respu['Contacto'];
+                $tipo = $respu['categoria'];
                 
                 if ($img=="../../imgPublicaciones/"){
                     $numavi2=$numavi2+1;
@@ -134,6 +135,8 @@
                                             echo "<tr><td><img src='../imagenes/icon-contacto.png'id='ti'><a style='color:".$colorletra."' class='texto17'>Contacto</a></td>";
                                             echo "<td><a style='color:".$colorletra."' class='texto17'>".$contacto."</a></td></tr>";
                                         }
+                                        echo"<tr><td><a style='color:".$colorletra."' class='texto17'>  Categoría:</a></td>";
+                                        echo"<td><a style='color:".$colorletra."' class='texto17'>".$tipo."</a></td></tr>";
                                         echo "</table>";
                                         echo"</div>";
                                         echo "<div id='qr'>";    
@@ -168,7 +171,8 @@
                                         echo "<tr><td><img src='../imagenes/icon-contacto.png'id='ti'><a style='color:".$colorletra."' class='texto17'>Contacto</a></td>";
                                         echo "<td><a style='color:".$colorletra."' class='texto17'>".$contacto."</a></td></tr>";
                                     }
-                                   
+                                   echo"<tr><td><a style='color:".$colorletra."' class='texto17'>  Categoría:</a></td>";
+                                   echo"<td><a style='color:".$colorletra."' class='texto17'>".$tipo."</a></td></tr>";
                                     echo "</table>";
                                 echo "</div>";
                                     echo "<div id='qr'>";
@@ -232,6 +236,7 @@
                     $colorletra = $respu['Colorletra'];
                     $url = $respu['URL'];
                     $contacto = $respu['Contacto'];
+                    $tipo = $respu['categoria'];
                     if ($img=="../../imgPublicaciones/") {
                         $numavi2=$numavi2+1;
                         echo"<div id='anuncio1'style='background:".$color."'>";
@@ -264,6 +269,9 @@
                                             echo "<tr><td><img src='../imagenes/icon-contacto.png'id='ti'><a style='color:".$colorletra."' class='texto17'>Contacto</a></td>";
                                             echo "<td><a style='color:".$colorletra."' class='texto17'>".$contacto."</a></td></tr>";
                                         }
+                                        echo"<tr><td><a style='color:".$colorletra."' class='texto17'>  Categoría:</a></td>";
+                                        echo"<td><a style='color:".$colorletra."' class='texto17'>".$tipo."</a></td></tr>";
+
                                         echo "</table>";
                                         echo"</div>";
                                         echo "<div id='qr'>";    
@@ -298,7 +306,8 @@
                                         echo "<tr><td><img src='../imagenes/icon-contacto.png'id='ti'><a style='color:".$colorletra."' class='texto17'>Contacto</a></td>";
                                         echo "<td><a style='color:".$colorletra."' class='texto17'>".$contacto."</a></td></tr>";
                                     }
-                                   
+                                   echo"<tr><td><a style='color:".$colorletra."' class='texto17'>  Categoría:</a></td>";
+                                   echo"<td><a style='color:".$colorletra."' class='texto17'>".$tipo."</a></td></tr>";
                                     echo "</table>";
                                 echo "</div>";
                                     echo "<div id='qr'>";

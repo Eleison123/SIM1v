@@ -23,9 +23,7 @@ $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR
         ($_POST['infob1p'])and
         ($_POST['autor1p'])and
         ($_POST['fecharea1p'])and
-        ($_POST['horarea1p'])and
         ($_POST['fechater1p'])and
-        ($_POST['horater1p'])and
         ($_POST['prioridad1p']!="")){ 
             //comparamos fechas
             if ($_POST['fecharea1p']>$_POST['fechater1p']) {

@@ -77,7 +77,7 @@ $(document).ready(function(){
 										echo "<div id='titulox'>";
 										echo"<h1 style='color:".$colorletra."' id='titulo'class='texto10'>".$nombre."</h1></div>";
 										echo "";
-										echo "<a class='texto1' style='color:".$colorletra."'>".$categoria."</a>";
+										echo "<a class='texto1' style='color:".$colorletra."'>Categoría: ".$categoria."</a>";
 										echo "<div id='qrbajo'>
 										<img id='qrimg1' src='".$qr."'>
 										</div>";
