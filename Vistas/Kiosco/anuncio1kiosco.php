@@ -34,26 +34,30 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ///                     Asignamos Variables                                                               ///
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        $fechavig=""; $fechareg="";
-    $idpub=$respu['idPublicacion'];
-    $prioridad = $respu['Prioridad'];
-    $horareg= date("H:i:s");
+    $fechavig =""; $fechareg="";
+    $idpub    =$respu['idPublicacion'];
+    $prioridad= $respu['Prioridad'];
+    $horareg  = date("H:i:s");
     $fechareg = date("Y-m-d");
     $horapublicaicon = $respu['horapublicacion'];
-    $diap = strtotime($respu['diapublicacion']);
+    $diap     = strtotime($respu['diapublicacion']);
     $diapubli = date("Y-m-d",$diap);
     $diapublicacion = $diapubli;
-    $fter = strtotime($respu['fechavig']);
-    $fechter = date("Y-m-d",$fter);
+    $fter     = strtotime($respu['fechavig']);
+    $fechter  = date("Y-m-d",$fter);
     $fechavig = $fechter;
-    $horater=$respu['horater'];
+    $horater  = $respu['horater'];
+    $fecharea="";
+    $fechd="";
     if($fechareg > $fechavig){
         $prioridadd=5;
-            $res=mysql_query("UPDATE  publicacion SET Prioridad =".$prioridadd." WHERE idpublicacion=".$idpub."")or die(mysql_error());
+        $res=mysql_query("UPDATE  publicacion SET Prioridad =".$prioridadd." WHERE idpublicacion=".$idpub."")or die(mysql_error());
     }
     if ($prioridad=="1"){
             if ($fechareg>=$diapublicacion) {
                 $prio=1;
+                if($fechter!=0){ 
+                    $fechter=$respu['fechater'];
                 $fechterx=strtotime($fechter);
                 $fechd = date("d",$fechterx);
                 $fechm = date("m",$fechterx);
@@ -71,6 +75,9 @@
                 if($mex==10){ $mex=" de Octubre ";}
                 if($mex==11){ $mex=" de Noviembre ";}
                 if($mex==12){ $mex=" de Diciembre ";}
+                }
+                $fechasrea=$respu['fecharea'];
+                if($fechasrea!=0){ 
                 $fechar=strtotime($respu['fecharea']);
                 $fecharea=date("d",$fechar);
                 $fecharea1=date("m",$fechar);
@@ -88,6 +95,7 @@
                 if($mes==11){ $mes=" de Noviembre ";}
                 if($mes==12){ $mes=" de Diciembre ";}
                 $fecharea2=date("Y",$fechar);
+                }
                 $nombre = $respu['Nombre'];
                 $categoria = $respu['categoria'];
                 $info = $respu['Info'];
@@ -122,11 +130,20 @@
                                         echo "<div id='bajo1'>";
                                         echo "<br>";
                                         echo "<table id='bajo31'>";
+                                        
+                                        if ($fecharea==0){}else{ 
                                         echo "<tr><td><img src='../imagenes/icon-inicio.png' id='ti'><a style='color:".$colorletra."' class='texto17'>Fecha Inicio</a></td>";
-                                        echo "<td><a style='color:".$colorletra."' class='texto17'> ".$fecharea.$mes.$fecharea2." / </a>";
-                                        echo "<a style='color:".$colorletra."' class='texto17'> ".$horarea."</a></td></tr>";
-                                        echo "<tr><td><img src='../imagenes/icon-termino.png'id='ti'><a style='color:".$colorletra."' class='texto17'>Fecha Término</a></td>";
-                                        echo "<td><a style='color:".$colorletra."' class='texto17'>".$fechd.$mex.$fechy." / </a><a style='color:".$colorletra."' class='texto17'> ".$horater."</a></td></tr>";
+                                        echo "<td><a style='color:".$colorletra."' class='texto17'> ".$fecharea.$mes.$fecharea2." / </a>"; 
+                                        if($horarea==0){}else{
+                                        echo "<a style='color:".$colorletra."' class='texto17'> ".$horarea."</a>";} 
+                                        echo "</td></tr>";}
+                                        if ($fechd==0){}else{ 
+                                            echo "<tr><td><img src='../imagenes/icon-termino.png'id='ti'><a style='color:".$colorletra."' class='texto17'>Fecha Término</a></td>";
+                                            echo "<td><a style='color:".$colorletra."' class='texto17'>".$fechd.$mex.$fechy." / </a>";
+                                        if ($horater==0){}else{  
+                                            echo "<a style='color:".$colorletra."' class='texto17'> ".$horater."</a>"; 
+                                        }
+                                        echo "</td></tr>";}
                                         if ($lugar!="") {
                                             echo "<tr><td><img src='../imagenes/icon-lugar.png'id='ti'><a style='color:".$colorletra."' class='texto17'>Lugar</a></td>";
                                             echo "<td><a style='color:".$colorletra."' class='texto17'>".$lugar."</a></td></tr>";
@@ -159,11 +176,20 @@
                                 echo "<div id='bajo1'>";
                                     echo "<br>";
                                     echo "<table id='bajo31'>";
-                                    echo "<tr><td><img src='../imagenes/icon-inicio.png' id='ti'><a style='color:".$colorletra."' class='texto17'>Fecha Inicio</a></td>";
-                                    echo "<td><a style='color:".$colorletra."' class='texto17'> ".$fecharea.$mes.$fecharea2." / </a><a style='color:".$colorletra."' class='texto17'> ".$horarea."</a></td></tr>";
-                                    echo "<tr><td><img src='../imagenes/icon-termino.png'id='ti'><a style='color:".$colorletra."' class='texto17'>Fecha Término</a></td>";
-                                    echo "<td><a style='color:".$colorletra."' class='texto17'>".$fechd.$mex.$fechy." / </a><a style='color:".$colorletra."' class='texto17'> ".$horater."</a></td></tr>";
-                                    if ($lugar!="") {
+                                    if ($fecharea==0){}else{ 
+                                        echo "<tr><td><img src='../imagenes/icon-inicio.png' id='ti'><a style='color:".$colorletra."' class='texto17'>Fecha Inicio</a></td>";
+                                        echo "<td><a style='color:".$colorletra."' class='texto17'> ".$fecharea.$mes.$fecharea2." / </a>"; 
+                                        if($horarea==0){}else{
+                                        echo "<a style='color:".$colorletra."' class='texto17'> ".$horarea."</a>";} 
+                                        echo "</td></tr>";}
+                                        if ($fechd==0){}else{ 
+                                            echo "<tr><td><img src='../imagenes/icon-termino.png'id='ti'><a style='color:".$colorletra."' class='texto17'>Fecha Término</a></td>";
+                                            echo "<td><a style='color:".$colorletra."' class='texto17'>".$fechd.$mex.$fechy." / </a>";
+                                        if ($horater==0){}else{  
+                                            echo "<a style='color:".$colorletra."' class='texto17'> ".$horater."</a>"; 
+                                        }
+                                        echo "</td></tr>";}
+                                        if ($lugar!="") {
                                         echo "<tr><td><img src='../imagenes/icon-lugar.png'id='ti'><a style='color:".$colorletra."' class='texto17'>Lugar</a></td>";
                                         echo "<td><a style='color:".$colorletra."' class='texto17'>".$lugar."</a></td></tr>";
                                     }
@@ -188,7 +214,9 @@
     if ($prioridad=="2"){
             if ($fechareg>=$diapublicacion) {     
                 if ($prio==0) {
-                    $fechterx=strtotime($fechter);
+                    $fechter=$respu['fechater'];
+                    if($fechter!=0){ 
+                $fechterx=strtotime($fechter);
                 $fechd = date("d",$fechterx);
                 $fechm = date("m",$fechterx);
                 $fechy = date("Y",$fechterx);
@@ -205,6 +233,9 @@
                 if($mex==10){ $mex=" de Octubre ";}
                 if($mex==11){ $mex=" de Noviembre ";}
                 if($mex==12){ $mex=" de Diciembre ";}
+                }
+                $fechasrea=$respu['fecharea'];
+                if($fechasrea!=0){ 
                 $fechar=strtotime($respu['fecharea']);
                 $fecharea=date("d",$fechar);
                 $fecharea1=date("m",$fechar);
@@ -222,6 +253,7 @@
                 if($mes==11){ $mes=" de Noviembre ";}
                 if($mes==12){ $mes=" de Diciembre ";}
                 $fecharea2=date("Y",$fechar);
+                }
                     $nombre = $respu['Nombre'];
                     $categoria = $respu['categoria'];
                     $info = $respu['Info'];
@@ -256,11 +288,19 @@
                                         echo "<div id='bajo1'>";
                                         echo "<br>";
                                         echo "<table id='bajo31'>";
+                                        if ($fecharea==0){}else{ 
                                         echo "<tr><td><img src='../imagenes/icon-inicio.png' id='ti'><a style='color:".$colorletra."' class='texto17'>Fecha Inicio</a></td>";
-                                        echo "<td><a style='color:".$colorletra."' class='texto17'> ".$fecharea.$mes.$fecharea2." / </a>";
-                                        echo "<a style='color:".$colorletra."' class='texto17'> ".$horarea."</a></td></tr>";
-                                        echo "<tr><td><img src='../imagenes/icon-termino.png'id='ti'><a style='color:".$colorletra."' class='texto17'>Fecha Término</a></td>";
-                                        echo "<td><a style='color:".$colorletra."' class='texto17'>".$fechd.$mex.$fechy." / </a><a style='color:".$colorletra."' class='texto17'> ".$horater."</a></td></tr>";
+                                        echo "<td><a style='color:".$colorletra."' class='texto17'> ".$fecharea.$mes.$fecharea2." / </a>"; 
+                                        if($horarea==0){}else{
+                                        echo "<a style='color:".$colorletra."' class='texto17'> ".$horarea."</a>";} 
+                                        echo "</td></tr>";}
+                                        if ($fechd==0){}else{ 
+                                            echo "<tr><td><img src='../imagenes/icon-termino.png'id='ti'><a style='color:".$colorletra."' class='texto17'>Fecha Término</a></td>";
+                                            echo "<td><a style='color:".$colorletra."' class='texto17'>".$fechd.$mex.$fechy." / </a>";
+                                        if ($horater==0){}else{  
+                                            echo "<a style='color:".$colorletra."' class='texto17'> ".$horater."</a>"; 
+                                        }
+                                        echo "</td></tr>";}
                                         if ($lugar!="") {
                                             echo "<tr><td><img src='../imagenes/icon-lugar.png'id='ti'><a style='color:".$colorletra."' class='texto17'>Lugar</a></td>";
                                             echo "<td><a style='color:".$colorletra."' class='texto17'>".$lugar."</a></td></tr>";
@@ -294,11 +334,20 @@
                                 echo "<div id='bajo1'>";
                                     echo "<br>";
                                     echo "<table id='bajo31'>";
-                                    echo "<tr><td><img src='../imagenes/icon-inicio.png' id='ti'><a style='color:".$colorletra."' class='texto17'>Fecha Inicio</a></td>";
-                                    echo "<td><a style='color:".$colorletra."' class='texto17'> ".$fecharea.$mes.$fecharea2." / </a><a style='color:".$colorletra."' class='texto17'> ".$horarea."</a></td></tr>";
-                                    echo "<tr><td><img src='../imagenes/icon-termino.png'id='ti'><a style='color:".$colorletra."' class='texto17'>Fecha Término</a></td>";
-                                    echo "<td><a style='color:".$colorletra."' class='texto17'>".$fechd.$mex.$fechy." / </a><a style='color:".$colorletra."' class='texto17'> ".$horater."</a></td></tr>";
-                                    if ($lugar!="") {
+                                    if ($fecharea==0){}else{ 
+                                        echo "<tr><td><img src='../imagenes/icon-inicio.png' id='ti'><a style='color:".$colorletra."' class='texto17'>Fecha Inicio</a></td>";
+                                        echo "<td><a style='color:".$colorletra."' class='texto17'> ".$fecharea.$mes.$fecharea2." / </a>"; 
+                                        if($horarea==0){}else{
+                                        echo "<a style='color:".$colorletra."' class='texto17'> ".$horarea."</a>";} 
+                                        echo "</td></tr>";}
+                                        if ($fechd==0){}else{ 
+                                            echo "<tr><td><img src='../imagenes/icon-termino.png'id='ti'><a style='color:".$colorletra."' class='texto17'>Fecha Término</a></td>";
+                                            echo "<td><a style='color:".$colorletra."' class='texto17'>".$fechd.$mex.$fechy." / </a>";
+                                        if ($horater==0){}else{  
+                                            echo "<a style='color:".$colorletra."' class='texto17'> ".$horater."</a>"; 
+                                        }
+                                        echo "</td></tr>";}
+                                        if ($lugar!="") {
                                         echo "<tr><td><img src='../imagenes/icon-lugar.png'id='ti'><a style='color:".$colorletra."' class='texto17'>Lugar</a></td>";
                                         echo "<td><a style='color:".$colorletra."' class='texto17'>".$lugar."</a></td></tr>";
                                     }

@@ -87,16 +87,16 @@
  </select><br><br>
 
  <label for="fecharea1p" class="text1">Fecha Inicio:</label>
- <input type="text" maxlength="10" id="datepicker" name="fecharea1p" required>
+ <input type="text" maxlength="10" id="datepicker" name="fecharea1p" >
 
  <label for="horarea1p" class="text1">Hora Inicio:</label>
- <input type="time" id="horarea1p" name="horarea1p" class="inhora" required><br><br>
+ <input type="time" id="horarea1p" name="horarea1p" class="inhora" ><br><br>
 
  <label  class="text1">Fecha Término:</label>
- <input type="text" maxlength="10" id="datepicker2" name="fechater1p"  required>
+ <input type="text" maxlength="10" id="datepicker2" name="fechater1p"  >
  
  <label for="horater1p" class="text1">Hora Término:</label>
- <input type="time" id="horater1p" name="horater1p" class="inhora" required><br><br>
+ <input type="time" id="horater1p" name="horater1p" class="inhora" ><br><br>
 
  <label for="url1p" class="text1">URL:</label><br>
  <input type="url" id="url1p" name="url1p" title="Ejemplo: http://www.ejemplo.com"><br><br>

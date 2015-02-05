@@ -22,8 +22,6 @@ $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR
         ($_POST['info1p'])and
         ($_POST['infob1p'])and
         ($_POST['autor1p'])and
-        ($_POST['fecharea1p'])and
-        ($_POST['fechater1p'])and
         ($_POST['prioridad1p']!="")){ 
             //comparamos fechas
             if ($_POST['fecharea1p']>$_POST['fechater1p']) {
@@ -69,10 +67,14 @@ $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR
                           $horapu = filter_var($horapu, FILTER_SANITIZE_SPECIAL_CHARS);
                            
 
-    
+        if($_POST['fecharea1p']==""){ $fecharea=0; }
+        if($_POST['fechater1p']==""){$fechater=0; }
+        if($_POST['horarea1p']==""){ $horarea=0;}
+        if($_POST['horater1p']==""){$horater=0;}
             $archivo = $_FILES['imagen']['tmp_name'];
             $destino1 =$_FILES['imagen']['name'];
-            $destino= "../../imgPublicaciones/".$destino1."";
+            //$destino= "../../imgPublicaciones/".$destino1."";
+            $destino= "imgPublicaciones/".$destino1."";
             $_FILES['imagen']['size'];
              $data= "Nombre:".$nombre.".Fecha Realización:.".$fecharea.".Hora Realización:.".$horarea.".Lugar:.".$lugar.".Contacto:.".$contacto.".URL:.".$url."";
 
