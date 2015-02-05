@@ -72,7 +72,7 @@
  <a class="text3">Aquí deberas proporcionar los datos que contiene tu publicación</a><br><br>
 
  <label for="nombre1p" class="text1">Nombre:</label>
- <input type="text" id="nombre1p" title="Nombre de la publicación" name="nombre1p" maxlength="50"><div id="contador"></div></br>
+ <input type="text" id="nombre1p" title="Nombre de la publicación" name="nombre1p" ><div id="contador"></div></br>
 
  <label for for="autor1p" class="text1">Categoría:</label>
  <select name="autor1p" id="categoria" required>

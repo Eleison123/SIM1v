@@ -111,7 +111,7 @@
                 $contacto = $respu['Contacto'];
                 $tipo = $respu['categoria'];
                 
-                if ($img=="../../imgPublicaciones/"){
+                if ($img=="imgPublicaciones/"){
                     $numavi2=$numavi2+1;
                         echo"<div id='anuncio1'style='background:".$color."'>";
                             // echo"<img id='imagen' src=".$img."  >";
@@ -269,7 +269,7 @@
                     $url = $respu['URL'];
                     $contacto = $respu['Contacto'];
                     $tipo = $respu['categoria'];
-                    if ($img=="../../imgPublicaciones/") {
+                    if ($img=="imgPublicaciones/") {
                         $numavi2=$numavi2+1;
                         echo"<div id='anuncio1'style='background:".$color."'>";
                             // echo"<img id='imagen' src=".$img."  >";

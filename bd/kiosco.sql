@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-01-2015 a las 17:14:35
+-- Tiempo de generación: 05-02-2015 a las 06:31:26
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.11
 
@@ -472,7 +472,7 @@ CREATE TABLE IF NOT EXISTS `publicacion` (
   `Info` longtext,
   `Infobreve` longtext,
   `Lugar` varchar(45) DEFAULT NULL,
-  `Nombre` varchar(45) DEFAULT NULL,
+  `Nombre` text,
   `Prioridad` varchar(45) DEFAULT NULL,
   `QR` longtext,
   `URL` longtext,
@@ -483,7 +483,7 @@ CREATE TABLE IF NOT EXISTS `publicacion` (
   PRIMARY KEY (`idPublicacion`,`idFacultad`,`idRegistro`),
   KEY `fk_publicacion_Facultad1_idx` (`idFacultad`),
   KEY `fk_publicacion_registro1_idx` (`idRegistro`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 -- --------------------------------------------------------
 
@@ -499,7 +499,16 @@ CREATE TABLE IF NOT EXISTS `registro` (
   `idFacultad` int(11) NOT NULL,
   PRIMARY KEY (`idRegistro`,`idCuenta`,`idFacultad`),
   KEY `fk_registro_Cuenta1_idx` (`idCuenta`,`idFacultad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+
+--
+-- Volcado de datos para la tabla `registro`
+--
+
+INSERT INTO `registro` (`idRegistro`, `diareg`, `horareg`, `idCuenta`, `idFacultad`) VALUES
+(12, '2015-01-22', '00:39:14', 1, 1),
+(13, '2015-02-04', '01:01:00', 1, 1),
+(14, '2015-02-04', '01:50:19', 1, 1);
 
 -- --------------------------------------------------------
 
