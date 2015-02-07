@@ -383,7 +383,7 @@ $(document).ready(function(){
  <label class="text1">Imagen de la Publicación:</label><br>
  <input type="file"  id="imagess" name="imagess" value=<?php echo "'"; echo $img; echo "'"; ?>><br><br>
  <div id="image"><img id="image" src=<?php 
-    if ($img = "imagenes/"){
+    if ($img = "imgPublicaciones/"){
             echo '../imagenes/noimage.jpg';}
     else{
        echo"'"; echo $img; echo "'"; 
@@ -392,8 +392,6 @@ $(document).ready(function(){
 <label  class="text1">Información Breve de la Publicación:</label><br>
  <textarea type="text" id="infob1p"  name="infob1p" maxlength="250"><?php  echo $infobreve;  ?></textarea><div id="contador1"></div><br>
 
- <label for="info1p" class="text1">Información de la Publicación:</label><br>
- <textarea type="text" id="info1p" name="info1p" maxlength="1000"><?php echo $info; ?></textarea><div id="contador2"></div><br>
 
  <label for="info1p" class="text1">Código QR:</label><br>
  <a class="text1"> Aquí usted podrá proporcionar el tamaño del código QR así como su resolución.</a><br>

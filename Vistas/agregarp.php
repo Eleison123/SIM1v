@@ -68,55 +68,56 @@
     <!-- //////////////////////////////    Inicia solicitud de informacion  publicacion  /////////////////////////////////-->
  <fieldset>
  <legend class="text2">Datos de la Publicación</legend>
-
+<?php  date_default_timezone_set('Mexico/General'); $fecha = date("Y-m-d"); $hora = date("H:i")?>
  <a class="text3">Aquí deberas proporcionar los datos que contiene tu publicación</a><br><br>
 
- <label for="nombre1p" class="text1">Nombre:</label>
+ <label for="nombre1p" class="text1">Nombre</label>
  <input type="text" id="nombre1p" title="Nombre de la publicación" name="nombre1p" ><div id="contador"></div></br>
 
- <label for for="autor1p" class="text1">Categoría:</label>
+ <label for for="autor1p" class="text1">Categoría</label>
  <select name="autor1p" id="categoria" required>
-        <option value=""  selected >--Elige Categoria--</option>
+        
         <option>Beca</option>
         <option>Empleo</option>
         <option>Certificación</option>
         <option>Seminario</option>
         <option>Junta</option>
-        <option>Aviso</option>
+        <option selected>Aviso</option>
         <option>Otro</option>
  </select><br><br>
 
- <label for="fecharea1p" class="text1">Fecha Inicio:</label>
- <input type="text" maxlength="10" id="datepicker" name="fecharea1p" >
+ <label for="fecharea1p" class="text1">Fecha Inicio</label>
+ 
+ <input type="text" maxlength="10" id="datepicker" name="fecharea1p" value='<?php echo $fecha; ?>'>
 
- <label for="horarea1p" class="text1">Hora Inicio:</label>
- <input type="time" id="horarea1p" name="horarea1p" class="inhora" ><br><br>
+ <label for="horarea1p" class="text1">Hora Inicio</label>
+ <input type="time" id="horarea1p" name="horarea1p" class="inhora" value='<?php echo $hora; ?>'><br><br>
 
- <label  class="text1">Fecha Término:</label>
+ <label  class="text1">Fecha Término</label>
  <input type="text" maxlength="10" id="datepicker2" name="fechater1p"  >
  
- <label for="horater1p" class="text1">Hora Término:</label>
+ <label for="horater1p" class="text1">Hora Término</label>
  <input type="time" id="horater1p" name="horater1p" class="inhora" ><br><br>
 
- <label for="url1p" class="text1">URL:</label><br>
+ <label for="url1p" class="text1">URL</label><br>
  <input type="url" id="url1p" name="url1p" title="Ejemplo: http://www.ejemplo.com"><br><br>
 
- <label for="lugar1p" class="text1">Lugar de Realización:</label><br>
+ <label for="lugar1p" class="text1">Lugar de Realización</label><br>
  <input type="text" id="lugar1p" title="Lugar de realizacion de la publicacion" name="lugar1p"><br><br>
 
- <label class="text1">Contacto:</label><br>
+ <label class="text1">Contacto</label><br>
  <input type="text" id="contacto1p" title="¿Como contactar la publicacion?(no url)" name="contacto1p"><br><br>
 
  <label class="text1">Imagen de la Publicación </label><br>
+ <label class="text1">Se recomienda ingresar una imagen de 250 X 250</label><br>
  <input type="file" value="Subir" id="btnsubir" name="imagen"><br><br>
 
-<label  class="text1">Información Breve de la Publicación:</label><br>
- <textarea type="text" id="infob1p" title="Informacion que aparecera en el kiosko" name="infob1p" maxlength="500" ></textarea><div id="contador1"></div><br>
 
- <label for="info1p" class="text1">Información de la Publicación:</label><br>
- <textarea type="text" id="info1p" title="Informacion completa de la publicación" name="info1p" ></textarea><div id="contador2"></div><br>
+<label  class="text1">Información Breve de la Publicación*</label><br>
+ <textarea type="text" id="infob1p" title="Informacion que aparecera en el kiosco" name="infob1p" maxlength="500" ></textarea>
+ <div id="contador1"></div> <br>
 
- <label for="info1p" class="text1">Código QR:</label><br>
+ <label for="info1p" class="text1">Código QR*</label><br>
  <a class="text1"> Aquí usted podrá proporcionar el tamaño del código QR así como su resolución.</a><br>
 
  <?php
@@ -143,17 +144,16 @@
  <legend class="text2">Configuración de la Publicación</legend>
  <a class="text3">Aquí puedes programar el día en el que se publicara, esto permitira tener la publicacion en el sistema mas no publicarla, así como unos detalles de visualización y prioridad de la publicación</a><br><br>
 
-<label for="prioridad1p" class="text1">Prioridad:</label></td>
+<label for="prioridad1p" class="text1">Prioridad*</label></td>
                 <select name="prioridad1p" class="op" required>
-                <option value="" selected>Elige Prioridad</option>
                  <option value="1">Ahora</option>
-                <option value="2">Alta</option>
+                <option value="2" selected>Alta</option>
                 <option value="3">Media</option>
                 <option value="4">Baja</option>
                 
         </select><br><br>  
 
- <label class="text1">Color de la Publicación:</label><br>
+ <label class="text1">Color de la Publicación*</label><br>
  <div id="divcolor">
  <input type="radio" id="radio" name="color" value="#e74c3c" ><a class="text1" style="color:#e74c3c">Alizarin</a><br>
  <input type="radio" id="radio" name="color" value="#1abc9c"><a class="text1" style="color:#1abc9c">Turquoise</a><br>
@@ -167,14 +167,14 @@
 
   <input type="hidden" id="radio" name="colorletra" value="white"  checked="checked"><br>
 
- <p class="text1">Día de Publicación:
- <input type="text" maxlength="10" id="datepicker3" name="diapub" /></p><br><br>
+ <p class="text1">Día de Publicación*
+ <input type="text" maxlength="10" id="datepicker3" name="diapub" value='<?php echo $fecha; ?>'/></p><br><br>
 
- <label class="text1">Hora de Publicación</label>
- <input type="time" name="horapub" class="inhora"><br><br>
+ <label class="text1">Hora de Publicación*</label>
+ <input type="time" name="horapub" class="inhora" value='<?php echo $hora; ?>'><br><br>
 
 
-<a class="text2">Vigencia</a><br>
+<a class="text2">Vigencia*</a><br>
     <a class="text1">La vigencia ayuda a que el sistema no muestre publicaciones pasadas.</a><br><br>
 <label><a class="text1">Fecha término de Vigencia</a></label>
 <input type="text" maxlength="10" id="datepicker4" name="fechvig"required/>
@@ -200,20 +200,16 @@
 </html>
 <script type="text/javascript">
 $(document).ready(function(){
-    var max_chars = 50;
-    $('#max').html(max_chars);
-    $('#nombre1p').keyup(function() {
-        var chars = $(this).val().length;
-        var diff = max_chars - chars;
-        $('#contador').html(diff);   
-    });
-});
-$(document).ready(function(){
-    var max_chars = 500;
+
+    var max_chars = 250;
+
     $('#maxii').html(max_chars);
+var esta = $('#infob1p').val().length;
     $('#infob1p').keyup(function() {
         var chars = $(this).val().length;
-        var diff = max_chars - chars;
+        var diff = max_chars - chars ;
         $('#contador1').html(diff);   
     });
 });
+
+</script>

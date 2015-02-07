@@ -19,7 +19,7 @@ $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR
         require_once("../Conexiones/conexion.php");
         //Verificar que ningun dato venga vacio.
         if(isset($_POST['nombre1p'])and
-        ($_POST['info1p'])and
+       
         ($_POST['infob1p'])and
         ($_POST['autor1p'])and
         ($_POST['prioridad1p']!="")){ 
@@ -42,7 +42,7 @@ $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR
             $contacto = mysql_real_escape_string($_POST['contacto1p']);
             $fechavig=mysql_real_escape_string($_POST['fechvig']);
             $infob = mysql_real_escape_string($_POST['infob1p']);
-            $info = mysql_real_escape_string($_POST['info1p']);
+            
             $color =$_POST['color'];
             $colorletra = $_POST['colorletra'];
             $diapu = mysql_real_escape_string($_POST['diapub']);
@@ -62,7 +62,7 @@ $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR
                      $contacto = filter_var($contacto, FILTER_SANITIZE_SPECIAL_CHARS);
                       $fechavig = filter_var($fechavig, FILTER_SANITIZE_SPECIAL_CHARS);
                        $infob = filter_var($infob, FILTER_SANITIZE_SPECIAL_CHARS);
-                        $info = filter_var($info, FILTER_SANITIZE_SPECIAL_CHARS);
+                       
                          $diapu = filter_var($diapu, FILTER_SANITIZE_SPECIAL_CHARS);
                           $horapu = filter_var($horapu, FILTER_SANITIZE_SPECIAL_CHARS);
                            
@@ -76,7 +76,7 @@ $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR
             //$destino= "../../imgPublicaciones/".$destino1."";
             $destino= "imgPublicaciones/".$destino1."";
             $_FILES['imagen']['size'];
-             $data= "Nombre:".$nombre.".Fecha Realización:.".$fecharea.".Hora Realización:.".$horarea.".Lugar:.".$lugar.".Contacto:.".$contacto.".URL:.".$url."";
+             $data= "Nombre:".$nombre." "."Fecha Realización:"." ".$fecharea.".Hora Realización:.".$horarea.".Lugar:.".$lugar.".Contacto:.".$contacto.".URL:.".$url."";
 
              //set it to writable location, a place for temp generated PNG files
       
@@ -109,6 +109,45 @@ $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR
     } 
     
  $qr=$PNG_WEB_DIR.basename($filename);
+   ///Subimos imagen
+    
+    //comprobamos si ha ocurrido un error.
+if ($_FILES["imagen"]["error"] > 0){
+   
+} else {
+    //ahora vamos a verificar si el tipo de archivo es un tipo de imagen permitido.
+    //y que el tamano del archivo no exceda los 100kb
+    $permitidos = array("image/jpg", "image/jpeg", "image/gif", "image/png");
+    $limite_kb = 500;
+
+    if (in_array($_FILES['imagen']['type'], $permitidos) && $_FILES['imagen']['size'] <= $limite_kb * 1024){
+        //esta es la ruta donde copiaremos la imagen
+        //recuerden que deben crear un directorio con este mismo nombre
+        //en el mismo lugar donde se encuentra el archivo subir.php
+        // $ruta = "imagenes/" . $_FILES['imagen']['name'];
+        //comprovamos si este archivo existe para no volverlo a copiar.
+        //pero si quieren pueden obviar esto si no es necesario.
+        //o pueden darle otro nombre para que no sobreescriba el actual.
+        if (!file_exists($destino)){
+            //aqui movemos el archivo desde la ruta temporal a nuestra ruta
+            //usamos la variable $resultado para almacenar el resultado del proceso de mover el archivo
+            //almacenara true o false
+            $resultado = @move_uploaded_file($archivo, $destino);
+            if ($resultado){
+               
+            } else {
+                echo "<script>alert('Ocurrio un error al mover el archivo.')</script>";
+                $destino= "imgPublicaciones/";
+            }
+        } else {
+            echo "<script>alert('".$_FILES['imagen']['name'] . ", este archivo existe')</script>";
+            $destino= "imgPublicaciones/";
+        }
+    } else {
+        echo "<script>alert('Archivo no permitido, es tipo de archivo prohibido o excede el tamano de $limite_kb Kilobytes')</script>";
+        $destino= "imgPublicaciones/";
+    }
+}
                 //Hacer Registro de la publicacion
              @session_start();
                 $nombreadmin = $_SESSION['nombreUsuario'];
@@ -126,13 +165,13 @@ $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR
     
 
 $sql="INSERT INTO publicacion(nombre,categoria,fecharea,horarea,fechater,horater,url,lugar,contacto,img,infobreve,info,qr,color,colorletra,diapublicacion,horapublicacion,prioridad,visitas,idregistro,idfacultad,fechavig) 
-VALUES('".$nombre."','".$categoria."','".$fecharea."','".$horarea."','".$fechater."','".$horater."','".$url."','".$lugar."','".$contacto."','".$destino."','".$infob."','".$info."','".$qr."','".$color."','".$colorletra."','".$diapu."','".$horapu."','".$prioridad."',0,'".$reglast_id."','".$facuser."','".$fechavig."')";
+VALUES('".$nombre."','".$categoria."','".$fecharea."','".$horarea."','".$fechater."','".$horater."','".$url."','".$lugar."','".$contacto."','".$destino."','".$infob."','".$infob."','".$qr."','".$color."','".$colorletra."','".$diapu."','".$horapu."','".$prioridad."',0,'".$reglast_id."','".$facuser."','".$fechavig."')";
 
 
 $resultado = mysql_query($sql) or die(mysql_error());
 mysql_close();
 if ($resultado) {
-    move_uploaded_file($archivo, $destino);
+  
     ///////////////// Limpiamos Variables ////////////////777
             $nombre = "";
             $nombreadmin="";
