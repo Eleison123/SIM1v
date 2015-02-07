@@ -61,12 +61,13 @@
             <br>
             <img src="../imagenes/versiones.png" id="bienvenido">
            <br>
-                <h4><a class="text1">Coatlicue</a></h4><br><br>
+           <center><img src="../imagenes/coatli.png" id="coatli">
+                <h4><a class="text1">Coatlicue</a></h4></center><br><br>
             <table>
-            <tr><td><a class="text1"><strong>Desarrollado por:</strong> L.I.Román Omar Santiaguillo Arcos.</a></tr></td>
+            <tr><td><a class="text1"><strong>Desarrollado por:</strong> Román Omar Santiaguillo Arcos.</a></tr></td>
             <tr><td><a class="text1"><strong>Dirección:</strong> M.C.C.Gerardo Contreras Vega.</a></tr></td>
             <tr><td><a class="text1"><strong>Coodirector:</strong> E.I.S. Blanca Rosa Pensado.</a></tr></td>
-            <tr><td><a class="text1"><strong>Asesores:</strong> M.C.C. Juan Carlos Pérez Arriaga , L.I.Victor Manuel Hernández Olivera.</a></tr></td>
+            <tr><td><a class="text1"><strong>Asesores:</strong> M.C.C. Juan Carlos Pérez Arriaga , L.I.Victor Manuel Hernández Olivera, L.D.G. León del Moral </a></tr></td>
          </table><br><br><br>
     
         

@@ -67,14 +67,14 @@
  <form  method="post" enctype="multipart/form-data">
     <!-- //////////////////////////////    Inicia solicitud de informacion  publicacion  /////////////////////////////////-->
  <fieldset>
- <legend class="text2">Datos de la Publicación</legend>
-<?php  date_default_timezone_set('Mexico/General'); $fecha = date("Y-m-d"); $hora = date("H:i")?>
+ <legend class="text2" style="font-height:bold;">Datos de la Publicación</legend><br>
+<?php  date_default_timezone_set('Mexico/General'); $fecha = date("Y-m-d"); $hora = date("H:i"); $fechate=strtotime('+2 day' , strtotime($fecha)); $fechat=date("Y-m-d",$fechate); ?>
  <a class="text3">Aquí deberas proporcionar los datos que contiene tu publicación</a><br><br>
 
- <label for="nombre1p" class="text1">Nombre</label>
+ <label for="nombre1p" class="text1">Nombre*</label><br>
  <input type="text" id="nombre1p" title="Nombre de la publicación" name="nombre1p" ><div id="contador"></div></br>
 
- <label for for="autor1p" class="text1">Categoría</label>
+ <label for for="autor1p" class="text1">Categoría*</label><br>
  <select name="autor1p" id="categoria" required>
         
         <option>Beca</option>
@@ -86,20 +86,21 @@
         <option>Otro</option>
  </select><br><br>
 
- <label for="fecharea1p" class="text1">Fecha Inicio</label>
+ <label for="fecharea1p" class="text1">Fecha Inicio Publicación</label><br>
  
- <input type="text" maxlength="10" id="datepicker" name="fecharea1p" value='<?php echo $fecha; ?>'>
+ <input type="text" maxlength="10" id="datepicker" name="fecharea1p" value='<?php echo $fecha; ?>'><br><br>
 
- <label for="horarea1p" class="text1">Hora Inicio</label>
+
+ <label for="horarea1p" class="text1">Hora Inicio Publicación</label><br>
  <input type="time" id="horarea1p" name="horarea1p" class="inhora" value='<?php echo $hora; ?>'><br><br>
 
- <label  class="text1">Fecha Término</label>
- <input type="text" maxlength="10" id="datepicker2" name="fechater1p"  >
+ <label  class="text1">Fecha Término Publicación</label><br>
+ <input type="text" maxlength="10" id="datepicker2" name="fechater1p" value='<?php echo $fechat; ?>' ><br><br>
  
- <label for="horater1p" class="text1">Hora Término</label>
- <input type="time" id="horater1p" name="horater1p" class="inhora" ><br><br>
+ <label for="horater1p" class="text1">Hora Término Publicación</label><br>
+ <input type="time" id="horater1p" name="horater1p" class="inhora" value='<?php echo $hora; ?>'><br><br>
 
- <label for="url1p" class="text1">URL</label><br>
+ <label for="url1p" class="text1">Pagina Web</label><br>
  <input type="url" id="url1p" name="url1p" title="Ejemplo: http://www.ejemplo.com"><br><br>
 
  <label for="lugar1p" class="text1">Lugar de Realización</label><br>
@@ -113,10 +114,11 @@
  <input type="file" value="Subir" id="btnsubir" name="imagen"><br><br>
 
 
-<label  class="text1">Información Breve de la Publicación*</label><br>
+<label  class="text1">Información de la Publicación*</label><br>
+<label class="text1">Máximo 500 caracteres</label><br>
  <textarea type="text" id="infob1p" title="Informacion que aparecera en el kiosco" name="infob1p" maxlength="500" ></textarea>
  <div id="contador1"></div> <br>
-
+<div id="QR">
  <label for="info1p" class="text1">Código QR*</label><br>
  <a class="text1"> Aquí usted podrá proporcionar el tamaño del código QR así como su resolución.</a><br>
 
@@ -124,7 +126,7 @@
  echo  '
         &nbsp;<input name="data" id="data" type="hidden" value="'.(isset($_REQUEST['data'])?htmlspecialchars($_REQUEST['data']):'PHP QR Code :)').'"/>&nbsp;
         <a class="text1">Resolución:&nbsp;</a>
-        <select name="level"  id="resolucion" type="hidden">
+        <select name="level"  id="resolucion">
             <option value="L"'.(($errorCorrectionLevel=='L')?' selected':'').'>L - smallest</option>
             <option value="M"'.(($errorCorrectionLevel=='M')?' selected':'').'>M</option>
             <option value="Q"'.(($errorCorrectionLevel=='Q')?' selected':'').'>Q</option>
@@ -138,46 +140,48 @@
         
     echo '</select>&nbsp';
     ?>
+  </div>
  </fieldset><br><br>
  <!--//////////////////////////////////////////////////////  Inicia seccion configuracion diseño publicacion    //////////////////////////////-->
  <fieldset>
  <legend class="text2">Configuración de la Publicación</legend>
  <a class="text3">Aquí puedes programar el día en el que se publicara, esto permitira tener la publicacion en el sistema mas no publicarla, así como unos detalles de visualización y prioridad de la publicación</a><br><br>
 
-<label for="prioridad1p" class="text1">Prioridad*</label></td>
+<label for="prioridad1p" class="text1">Prioridad*</label><br>
                 <select name="prioridad1p" class="op" required>
                  <option value="1">Ahora</option>
                 <option value="2" selected>Alta</option>
-                <option value="3">Media</option>
                 <option value="4">Baja</option>
                 
         </select><br><br>  
 
  <label class="text1">Color de la Publicación*</label><br>
  <div id="divcolor">
- <input type="radio" id="radio" name="color" value="#e74c3c" ><a class="text1" style="color:#e74c3c">Alizarin</a><br>
- <input type="radio" id="radio" name="color" value="#1abc9c"><a class="text1" style="color:#1abc9c">Turquoise</a><br>
- <input type="radio" id="radio" name="color" value="#34495e"><a class="text1" style="color:#34495e" checked="checked">Wet Asphalt</a><br>
+ <input type="radio" id="radio" name="color" value="#e74c3c" ><a class="text1" style="color:#e74c3c">Rojo</a><br>
+ <input type="radio" id="radio" name="color" value="#1abc9c"><a class="text1" style="color:#1abc9c">Turquesa</a><br>
+ <input type="radio" id="radio" name="color" value="#34495e"><a class="text1" style="color:#34495e" checked="checked">Azul Oscuro</a><br>
  <input type="radio" id="radio" name="color" value="#f39c12"><a class="text1" style="color:#f39c12">Naranja</a><br>
  <input type="radio" id="radio" name="color" value="#9b59b6"><a class="text1" style="color:#9b59b6">Amatista</a><br>
- <input type="radio" id="radio" name="color" value="#3498db"><a class="text1" style="color:#3498db">Peter River</a><br>
+ <input type="radio" id="radio" name="color" value="#3498db"><a class="text1" style="color:#3498db">Azul</a><br>
  <input type="radio" id="radio" name="color" value="#2ecc71"><a class="text1" style="color:#2ecc71">Esmeralda</a><br>
 
  </div>
 
   <input type="hidden" id="radio" name="colorletra" value="white"  checked="checked"><br>
 
- <p class="text1">Día de Publicación*
- <input type="text" maxlength="10" id="datepicker3" name="diapub" value='<?php echo $fecha; ?>'/></p><br><br>
+ <label class="text1">Día de Publicación*</label><br>
+ <input type="text" maxlength="10" id="datepicker3" name="diapub" value='<?php echo $fecha; ?>'/><br><br>
 
- <label class="text1">Hora de Publicación*</label>
+ <label class="text1">Hora de Publicación*</label><br>
  <input type="time" name="horapub" class="inhora" value='<?php echo $hora; ?>'><br><br>
 
 
 <a class="text2">Vigencia*</a><br>
     <a class="text1">La vigencia ayuda a que el sistema no muestre publicaciones pasadas.</a><br><br>
-<label><a class="text1">Fecha término de Vigencia</a></label>
-<input type="text" maxlength="10" id="datepicker4" name="fechvig"required/>
+<label><a class="text1">Fecha fin de Vigencia</a></label><br>
+<input type="text" maxlength="10" id="datepicker4" name="fechvig"required/><br><br>
+<label class="text1">Hora fin de Vigencia</label><br>
+<input type="time" maxlength="10" name="horavig" required>
 
 
 
@@ -201,7 +205,7 @@
 <script type="text/javascript">
 $(document).ready(function(){
 
-    var max_chars = 250;
+    var max_chars = 500;
 
     $('#maxii').html(max_chars);
 var esta = $('#infob1p').val().length;
@@ -210,6 +214,9 @@ var esta = $('#infob1p').val().length;
         var diff = max_chars - chars ;
         $('#contador1').html(diff);   
     });
+});
+$(document).ready(function(){
+$("#QR").hide();
 });
 
 </script>

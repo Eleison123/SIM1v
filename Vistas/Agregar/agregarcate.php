@@ -62,20 +62,20 @@ document.oncontextmenu = function(){return false}
 
     echo "<select name='facultad' id='facultad' placeholder='facultad'>";
     //Preguntamos los nombres de las materias segun su idfacultad
-    require_once("../../conexiones/conexion.php");
+    require_once("../../Conexiones/conexion.php");
     
              @session_start();
             $nombreadmin = $_SESSION['nombreUsuario'];
-                $sql = "SELECT  idfacultad FROM cuenta WHERE usuario='".$nombreadmin."';";    
+                $sql = "SELECT  idFacultad FROM cuenta WHERE Usuario='".$nombreadmin."';";    
                 $resultado = mysql_query($sql) or die (mysql_error());
                 $filass = mysql_fetch_array($resultado, MYSQL_BOTH);
                 $id = $filass[0];
 
- $mysql="SELECT idfacultad, nombre from facultad where idfacultad='".$id."';";
+ $mysql="SELECT idFacultad, Nombre FROM facultad WHERE idFacultad='".$id."';";
 $resul=mysql_query($mysql) or die(mysql_error());
 while($row=mysql_fetch_array($resul)){
-    echo "<option value='".$row['idfacultad']."'>";
-    echo $row['nombre'];
+    echo "<option value='".$row['idFacultad']."'>";
+    echo $row['Nombre'];
     echo "</option>";
 }
 echo "</select>";

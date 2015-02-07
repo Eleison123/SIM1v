@@ -52,9 +52,9 @@ document.oncontextmenu = function(){return false}
         <div id="bienvenida">
         <form method="post">
             <fieldset>
-            <label><a class="text1">Nombre:</a></label><br>
+            <label><a class="text1">Nombre*</a></label><br>
             <input type="text" name="nombre"><br>
-            <label><a class="text1">Sede:</a></label><br>
+            <label><a class="text1">Campus*</a></label><br>
             <input type="text"name="sede"><br></fieldset>
         <center><input  type="submit"  value="GUARDAR" id="btnguardar" name="guardar" ></center>
         </form>
