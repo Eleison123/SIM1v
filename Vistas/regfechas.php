@@ -26,7 +26,7 @@ require_once("../Conexiones/conexion.php");
      $pdf->Cell(0,5,'Fechas',0,1,'C');
     require_once("../Conexiones/conexion.php");
     $pdf->Ln();
-$sqlrep="SELECT  publicacion.Nombre, registro.idRegistro, registro.horareg, registro.diareg, registro.idCuenta, registro.idFacultad , publicacion.visitas, publicacion.prioridad FROM registro INNER JOIN publicacion ON registro.idFacultad = '".$fac."' and registro.idRegistro = publicacion.idRegistro ORDER BY registro.diareg";
+$sqlrep="SELECT  publicacion.Nombre, registro.idRegistro, registro.horareg, registro.diareg, registro.idCuenta, registro.idFacultad , publicacion.visitas, publicacion.Prioridad FROM registro INNER JOIN publicacion ON registro.idFacultad = '".$fac."' and registro.idRegistro = publicacion.idRegistro ORDER BY registro.diareg";
 $rep=mysql_query($sqlrep);
 $pdf->Cell(90,5,'Nombre',1,0,'C');
 $pdf->Cell(30,5,'Fecha',1,0,'C');

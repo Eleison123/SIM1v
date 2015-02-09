@@ -45,7 +45,7 @@ include "../../Vistas/seguridad.php";
          if($_POST['tipo']!='1'){$dfecha = $_POST['dfecha'];
                                 if($_POST['secretaria']!=""){$secretaria = mysql_real_escape_string($_POST['secretaria']);}
                                 if($_POST['secretaria']!=""){$secretaria = filter_var($secretaria, FILTER_SANITIZE_SPECIAL_CHARS);}
-                            }
+                            }else{$secretaria="";}
          $dia = $_POST['dia'];
 
          if($_POST['lugar']!=""){$lugar = filter_var($lugar, FILTER_SANITIZE_SPECIAL_CHARS);}

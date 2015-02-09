@@ -78,6 +78,7 @@
 		echo "<th>Publicacion</th>";
 		
 		echo "<th>ID</th>";
+        echo "<th>Cuenta</th>";
 		
 		echo "<th>Hora</th>";
 		
@@ -110,6 +111,11 @@ while($row=mysql_fetch_array($resul)){
 	echo "<td><a class='text10'>".$row['Nombre']."</a></td>";
 	
     echo "<td><a class='text10'>".$row['idRegistro']."</a></td>";
+    $cuent="SELECT Usuario FROM cuenta WHERE idCuenta ='".$row['idCuenta']."';";
+    $cuentaf= mysql_query($cuent);
+        $cuentas=mysql_fetch_array($cuentaf,MYSQL_BOTH);
+
+     echo "<td><a class='text10'>".$cuentas['Usuario']."</a></td>";
  
     echo "<td><a class='text10'>".$row['horareg']."</a></td>";
    

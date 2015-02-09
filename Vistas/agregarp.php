@@ -110,7 +110,7 @@
  <input type="text" id="contacto1p" title="¿Como contactar la publicacion?(no url)" name="contacto1p"><br><br>
 
  <label class="text1">Imagen de la Publicación </label><br>
- <label class="text1">Se recomienda ingresar una imagen de 250 X 250</label><br>
+ <label class="text1">Se recomienda ingresar una imagen de 250 X 350</label><br>
  <input type="file" value="Subir" id="btnsubir" name="imagen"><br><br>
 
 
