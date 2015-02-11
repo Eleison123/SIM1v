@@ -49,13 +49,13 @@ $(document).ready(function(){
 						$idpub=$respu['idPublicacion'];
 					    $prioridad = $respu['Prioridad'];
 					    $horareg= date("H:i:s");
-					    $fechareg = date("d-m-Y");
+					    $fechareg = date("Y-m-d");
 					    $diap = strtotime($respu['diapublicacion']);
-					    $diapubli = date("d-m-Y",$diap);
+					    $diapubli = date("Y-m-d",$diap);
 					    $diapublicacion = $diapubli;
 					    $horapublicaicon = $respu['horapublicacion'];
-					    $fter = strtotime($respu['fechater']);
-					    $fechter = date("d-m-Y",$fter);
+					    $fter = strtotime($respu['fechavig']);
+					    $fechter = date("Y-m-d",$fter);
 					    $fechater = $fechter;
 					    $horater=$respu['horater'];
  							if($prioridad>="3"){

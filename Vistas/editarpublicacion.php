@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php 
 include "seguridad.php"; 
 require "qrlib.php";
@@ -164,18 +165,19 @@ mkdir($PNG_TEMP_DIR);
 
 ?>
 <!DOCTYPE html>
-<html leng="es">
+<html lang="es">
 <head>
 <!-- Metas -->
 <meta charset="utf-8">
 <!-- CSS -->
-<link rel="stylesheet" href="../css/css1a.css">
+
 <link rel="shortcut icon" href="../imagenes/favicon.ico" type="image/png" />
 <!-- JS -->
 <link rel="stylesheet" href="../js/jquery-ui-1.11.2/jquery-ui.css">
 <script src="../js/jquery-1.10.2.js"></script> 
 <script src="../js/jquery-ui-1.11.2/jquery-ui.js"></script>
 <link rel="stylesheet" href="../js/jquery-ui-1.11.2/jquery-ui.theme.css">
+<link rel="stylesheet" href="../css/css1a.css">
 <script type="text/javascript">
 $(document).ready(function(){
     var max_chars = 50;
@@ -187,6 +189,8 @@ $(document).ready(function(){
     $('#contador').html(diff);   
     });
 });
+</script>
+<script type="text/javascript">
     $(document).ready(function(){
     $("#QR").hide();
 });
@@ -200,6 +204,8 @@ $(document).ready(function(){
     $('#contador1').html(diff);   
     });
 });
+</script>
+<script type="text/javascript">
     $(document).ready(function(){
     var max_chars = 1000;
     $('#maxi').html(max_chars);
@@ -210,7 +216,6 @@ $(document).ready(function(){
     $('#contador2').html(diff);   
     });
 });
-
 </script>
         
 <title>Editar Publicación</title>
@@ -255,7 +260,12 @@ $(document).ready(function(){
  <input type="text" id="nombre1p" name="nombre" <?php echo"value='"; echo $nombre; echo "'";?>maxlength="50">
  <div id="contador"></div>
  <br>
+  <script type="text/javascript">
+  $(function() {
+    $( document ).tooltip();
+  });
 
+</script>
 
  <label for for="autor1p" class="text1">Categoría*</label><br>
  <select name="autor1p" class="op" required>
@@ -336,13 +346,22 @@ $(document).ready(function(){
 
  <label for="fecharea1p" class="text1">Fecha Inicio Publicación</label><br>
  <input type="text" id="datepicker" name="fecharea1p" <?php echo"value='"; echo $fecharea; echo"'"; ?> class="infecha"><br>
+ <script type="text/javascript">
+    $(function() {
+    $("#datepicker").datepicker();
+  });
+    </script>
 
  <label for="horarea1p" class="text1">Hora Inicio Publicación</label><br>
  <input type="time" id="horarea1p" name="horarea1p" <?php echo "value='"; echo $horarea; echo "'"; ?> class="inhora"><br><br>
 
  <label for="fechater1p" class="text1">Fecha Término Publicación</label><br>
  <input type="text" id="datepicker1" name="fechater1p" <?php echo "value='"; echo $fechater; echo "'"; ?> class="infecha"><br>
- 
+ <script type="text/javascript">
+  $(function() {
+    $("#datepicker1").datepicker();
+  });
+  </script>
  <label for="horater1p" class="text1">Hora Término Publicación</label><br>
  <input type="time" id="horater1p" name="horater1p" <?php echo "value='"; echo $hoarter; echo "'"; ?> class="inhora"><br><br>
 
@@ -415,7 +434,11 @@ $(document).ready(function(){
 
  <label class="text1">Día de Publicación*</label><br>
  <input type="text" id="datepicker4" name="diapub" <?php echo "value='"; echo $diapublicacion; echo "'"; ?> class="infecha"><br><br>
-
+ <script type="text/javascript">
+  $(function() {
+    $("#datepicker4").datepicker();
+  });
+  </script>
  <label class="text1">Hora Publicación*</label><br>
  <input type="time" name="horapub" <?php echo "value='"; echo $horapublicacion; echo "'"; ?> class="inhora"><br><br>
 
@@ -427,34 +450,51 @@ $(document).ready(function(){
                 echo"
                  <option value='1' selected>Ahora</option>
                 <option value='2'>Alta</option>
-                <option value='4'>Baja</option>";
+                <option value='3'>Baja</option>";
                     }
                     if ($prioridad=="2") {
                       echo"
                  <option value='1' >Ahora</option>
                 <option value='2' selected>Alta</option>
-                <option value='4'>Baja</option>";  
+                <option value='3'>Baja</option>";  
                     }
                    
+                if ($prioridad=="3") {
+                    echo"
+                 <option value='1' >Ahora</option>
+                <option value='2'>Alta</option>
+                <option value='3' selected>Baja</option>";
+                }
                 if ($prioridad=="4") {
                     echo"
                  <option value='1' >Ahora</option>
                 <option value='2'>Alta</option>
-                <option value='4' selected>Baja</option>";
+                <option value='3' selected>Baja</option>";
+                }
+                if ($prioridad=="0") {
+                    echo"
+                    <option value='5'selected>Vencido</option>
+                 <option value='1' >Ahora</option>
+                <option value='2'>Alta</option>
+                <option value='3'>Baja</option>";
                 }
                  if ($prioridad=="5") {
                     echo"
-                    <option value='0'selected>Vencido</option>
+                    <option value='5'selected>Vencido</option>
                  <option value='1' >Ahora</option>
                 <option value='2'>Alta</option>
-                <option value='4'>Baja</option>";
+                <option value='3'>Baja</option>";
                 }
                 ?>
         </select><br><br>  
 <a class="text2">Vigencia:</a><br>
 <label><a class="text1">Fecha Fin de Vigencia*</a></label><br>
 <input type="text" id="datepicker3" class="infecha" name="fechvig" <?php echo "value='"; echo $fechavig; echo "'"; ?> required/><br><br>
-
+ <script type="text/javascript">
+  $(function() {
+    $("#datepicker3").datepicker();
+  });
+  </script>
 <label><a class="text1">Hora Fin de Vigencia*</a></label><br>
 <input type="time"  name="horavig" <?php echo "value='"; echo $horavig; echo "'"; ?> required/><br>
 
@@ -473,27 +513,3 @@ $(document).ready(function(){
 </footer>
 </html>
 
-<script>
-  $(function() {
-    $("#datepicker").datepicker();
-  });
-  $(function() {
-    $("#datepicker1").datepicker();
-  });
-  $(function() {
-    $("#datepicker2").datepicker();
-  });
-  $(function() {
-    $("#datepicker3").datepicker();
-  });
-  $(function() {
-    $("#datepicker4").datepicker();
-  });
-  $(function() {
-    $("#datepicker5").datepicker();
-  });
-  $(function() {
-    $( document ).tooltip();
-  });
-  
-  </script>

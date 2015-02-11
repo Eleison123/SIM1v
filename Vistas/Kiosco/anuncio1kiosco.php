@@ -47,12 +47,17 @@
     $fechter  = date("Y-m-d",$fter);
     $fechavig = $fechter;
     $horater  = $respu['horater'];
-    $fecharea="";
-    $fechd="";
+    $fecharea = "";
+    $fechd    = "";
+    $horavige = strtotime($respu['horavig']);
+    $horavig  = date("G-i",$horavige);
+    $horaho   = strtotime(date("G-i"));
+    $horahoy  = date("G-i",$horaho);
     if($fechareg > $fechavig){
+        if($horahoy >= $horavig ){
         $prioridadd=5;
         $res=mysql_query("UPDATE  publicacion SET Prioridad =".$prioridadd." WHERE idpublicacion=".$idpub."")or die(mysql_error());
-    }
+    } }
     if ($prioridad=="1"){
             if ($fechareg>=$diapublicacion) {
                 $prio=1;
