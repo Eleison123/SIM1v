@@ -68,7 +68,7 @@
     <!-- //////////////////////////////    Inicia solicitud de informacion  publicacion  /////////////////////////////////-->
  <fieldset>
  <legend class="text2" style="font-height:bold;">Datos de la Publicación</legend><br>
-<?php  date_default_timezone_set('Mexico/General'); $fecha = date("Y-m-d"); $hora = date("H:i"); $fechate=strtotime('+2 day' , strtotime($fecha)); $fechat=date("Y-m-d",$fechate); ?>
+<?php  date_default_timezone_set('Mexico/General'); $fecha = date("Y/m/d"); $hora = date("H:i"); $fechate=strtotime('+2 day' , strtotime($fecha)); $fechat=date("Y/m/d",$fechate); ?>
  <a class="text3">Aquí deberas proporcionar los datos que contiene tu publicación</a><br><br>
 
  <label for="nombre1p" class="text1">Nombre*</label><br>
@@ -159,7 +159,7 @@
  <div id="divcolor">
  <input type="radio" id="radio" name="color" value="#e74c3c" ><a class="text1" style="color:#e74c3c">Rojo</a><br>
  <input type="radio" id="radio" name="color" value="#1abc9c"><a class="text1" style="color:#1abc9c">Turquesa</a><br>
- <input type="radio" id="radio" name="color" value="#34495e"><a class="text1" style="color:#34495e" checked="checked">Azul Oscuro</a><br>
+ <input type="radio" id="radio" name="color" value="#34495e" checked="checked"><a class="text1" style="color:#34495e" >Azul Oscuro</a><br>
  <input type="radio" id="radio" name="color" value="#f39c12"><a class="text1" style="color:#f39c12">Naranja</a><br>
  <input type="radio" id="radio" name="color" value="#9b59b6"><a class="text1" style="color:#9b59b6">Amatista</a><br>
  <input type="radio" id="radio" name="color" value="#3498db"><a class="text1" style="color:#3498db">Azul</a><br>

@@ -17,7 +17,7 @@ $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR
     /////////////////////////////////////// 
     if (@$_POST['guardar']) {
         require_once("../Conexiones/conexion.php");
-        var_dump($_POST);
+       
         //Verificar que ningun dato venga vacio.
         if(isset($_POST['nombre1p'])and
         ($_POST['infob1p'])and
@@ -41,7 +41,7 @@ $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR
             $lugar = mysql_real_escape_string($_POST['lugar1p']);
             $contacto = mysql_real_escape_string($_POST['contacto1p']);
             $fechavig=mysql_real_escape_string($_POST['fechvig']);
-            if($_POST['info1p']!=""){$infob = mysql_real_escape_string($_POST['infob1p']);}
+            if($_POST['infob1p']!=""){$infob = mysql_real_escape_string($_POST['infob1p']);}
             
             if($_POST['color']!=""){$color =$_POST['color'];}
             $colorletra = $_POST['colorletra'];
@@ -68,9 +68,9 @@ $PNG_TEMP_DIR = dirname(__FILE__).DIRECTORY_SEPARATOR.'temp'.DIRECTORY_SEPARATOR
                            
 
         if($_POST['fecharea1p']==""){ $fecharea=0; }
-        if($_POST['fecharea1p']!=""){ $fech= strtotime($_POST['fecharea1p']);  $fecharea=date("Y-m-d",$fech); echo "pase";}
+        if($_POST['fecharea1p']!=""){ $fech= strtotime($_POST['fecharea1p']);  $fecharea=date("Y/m/d",$fech); echo "pase";}
         if($_POST['fechater1p']==""){$fechater=0; }
-        if($_POST['fechater1p']!=""){ $fecht= strtotime($_POST['fechater1p']); $fechater=date("Y-m-d",$fecht); echo "pase2";}
+        if($_POST['fechater1p']!=""){ $fecht= strtotime($_POST['fechater1p']); $fechater=date("Y/m/d",$fecht); echo "pase2";}
         if($_POST['horarea1p']==""){ $horarea=0;}
         if($_POST['horater1p']==""){$horater=0;}
             $archivo = $_FILES['imagen']['tmp_name'];
@@ -160,7 +160,7 @@ if ($_FILES["imagen"]["error"] > 0){
                 $nombreUsuario = $fila[1];
                 $facuser = $fila[2];
                 $horareg= date("H:i:s");
-                 $fechareg = date("Y-m-d");
+                 $fechareg = date("Y/m/d");
                 $sqlr = "INSERT INTO registro(horareg, diareg, idCuenta, idfacultad) VALUES('".$horareg."','".$fechareg."','".$idad."','".$facuser."')";
                 mysql_query($sqlr) or die(mysql_error());
                 $reglast_id = mysql_insert_id();
